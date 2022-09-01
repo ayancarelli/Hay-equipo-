@@ -18,7 +18,7 @@
   2. Gervasoni, Federico > 34 años de edad. Radicado en la Ciudad de Santa Fe. Estudiante (eterno) de Lic. en Administración de Empresas y Músico. Empleado Aministrativo de la Provincia de Santa Fe.
   3. Ladetto, Emilio >
   4. Lopez Viel, Santiago > 21 años de edad. Radicado en la Ciudad de Córdoba. Estudiante de Programación Web Full Stack.
-  5. Yancarelli, Alan > 
+  5. Yancarelli, Alan > 30 años de edad, Nacido en la ciudad de saladillo pero actualmente me encuentro en CABA viviendo. Soy estudiante de la carrera de bioquimica, amante de la tecnologia y cada vez mas encantado con la programacion. Trabajo en la industria farmaceutica.
 
 --- LINK DE TABLERO DE TRABAJO: ---
   > https://complete-spinach-e44.notion.site/8ba64839a38e4fa1973a5111dde5296e?v=e530648b1624433b8850dc14ce7e392d
