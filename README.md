@@ -21,3 +21,4 @@
   5. Yancarelli, Alan > 
 
 --- LINK DE TABLERO DE TRABAJO: ---
+  > https://complete-spinach-e44.notion.site/8ba64839a38e4fa1973a5111dde5296e?v=e530648b1624433b8850dc14ce7e392d
