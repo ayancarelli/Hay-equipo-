@@ -17,7 +17,7 @@
   1. Eiras, Sebastian >
   2. Gervasoni, Federico > 34 años de edad. Radicado en la Ciudad de Santa Fe. Estudiante (eterno) de Lic. en Administración de Empresas y Músico. Empleado Aministrativo de la Provincia de Santa Fe.
   3. Ladetto, Emilio >
-  4. Lopez Viel, Santiago >
+  4. Lopez Viel, Santiago > 21 años de edad. Radicado en la Ciudad de Córdoba. Estudiante de Programación Web Full Stack.
   5. Yancarelli, Alan > 
 
 --- LINK DE TABLERO DE TRABAJO: ---
