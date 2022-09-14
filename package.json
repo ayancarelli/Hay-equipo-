@@ -1,0 +1,22 @@
+{
+  "name": "hay-equipo-",
+  "version": "1.0.0",
+  "description": "--- TEMÁTICA Y DESCRIPCIÓN DEL SITIO: ---\r   El sitio pretenderá resolver la necesidad que tendría una firma X de prestar el servicio de alquiler de sus canchas de futsal. Para ello, se diseñará una metodología de pre-reserva, la cual permitirá que un cliente registre/conforme un equipo y determine fecha/horario/cancha para que luego otro cliente, contemplando cierta información, cierre la reserva aceptando coordinar un encuentro con el primer cliente. Además, existirá la posibilidad de reservar un turno de manera tradicional, es decir, alquilando una cancha en una franja horaria teniendo dos o más equipos confirmados.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayancarelli/Hay-equipo-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayancarelli/Hay-equipo-/issues"
+  },
+  "homepage": "https://github.com/ayancarelli/Hay-equipo-#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
