@@ -1,0 +1,33 @@
+header {
+        display: flex;
+        flex-direction: row;
+        font-size: 20px;
+        justify-content: space-between;
+        font-family: "Lato";
+        background-color: #25306A;
+        color: white;
+        align-items: center;
+        padding: 10px;
+}
+
+.logo {
+    width: 200px;
+    }
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin-left: 3px;
+}
+header nav ul li{
+    margin-left: 10px;
+}
+
+.nav-boton{
+    background-color: white;
+    color: #25306A;
+    font-size: 20px;
+    font-family: "Lato";
+    border-radius: 10px;
+    text-align: center;
+}
