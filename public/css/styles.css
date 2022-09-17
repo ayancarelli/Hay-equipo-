@@ -1,33 +1,36 @@
-header {
-        display: flex;
-        flex-direction: row;
-        font-size: 20px;
-        justify-content: space-between;
-        font-family: "Lato";
-        background-color: #25306A;
-        color: white;
-        align-items: center;
-        padding: 10px;
+.container-fluid{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-between;
+    font-family: "Lato";
+    background-color: #25306A;
+    color: white;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
 }
 
 .logo {
     width: 200px;
     }
 
+.header-navbar{
+    display: flex;
+    align-items: center;
+}
+
 header nav ul {
     list-style: none;
     display: flex;
-    margin-left: 3px;
+    align-items: center;
+    margin: auto;
 }
+
 header nav ul li{
     margin-left: 10px;
 }
 
-.nav-boton{
-    background-color: white;
-    color: #25306A;
-    font-size: 20px;
-    font-family: "Lato";
-    border-radius: 10px;
-    text-align: center;
+.btn-outline-light {
+    margin-left: 10px;
 }
