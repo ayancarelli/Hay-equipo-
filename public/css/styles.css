@@ -32,13 +32,18 @@ footer .container-fluid{
     display: flex;
     flex-direction: row;
     font-size: 12px;
-    justify-content: space-between;
+    justify-content: center;
     font-family: "Lato";
     background-color: #25306A;
     color: white;
     align-items: center;
     padding: 10px;
     margin: auto;
+}
+
+.cesped{
+    width: 100vw;
+    opacity: 0.5;
 }
 
 footer .container-fluid p{
