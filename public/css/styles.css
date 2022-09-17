@@ -121,6 +121,47 @@ header .container-fluid{
     --bs-btn-hover-border-color: #25306A;
 }
 
+/* STYLE DEL REGISTRO */
+
+.header-navbar-registro{
+    display: none;
+}
+
+#header-registro{
+    display: flex;
+    justify-content: center;
+}
+
+.registro-cuerpo{
+    display: flex;
+    justify-content: center;
+    background-color: #25306A;
+}
+
+.registro-imagen{
+    width: 50vw;
+    display: none;
+}
+
+.registro-formulario{
+    width: 60%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: solid;
+    background-color: #5E658C;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.registro-formulario .form-control{
+    font-size: 12px;
+}
+
+.registro-formulario #emailHelp{
+    color: #C7CAD9;
+}
+
 footer .container-fluid{
     display: flex;
     flex-direction: row;
@@ -172,4 +213,40 @@ footer .container-fluid p{
 .btn-outline-light {
     margin-left: 10px;
 }
+
+#header-registro{
+    justify-content: space-between;
+}
+
+.header-navbar-registro{
+    display: flex;
+}
+
+.header-navbar-registro i{
+    display: none;
+}
+
+.registro-cuerpo{
+    align-items: center;
+}
+.registro-imagen{
+    width: 100vw;
+    margin-left: 15px;
+    display: flex;
+    position: relative;
+    opacity: 0.80;
+}
+
+.registro-formulario{
+    width: 30vw;
+    padding: 15px;
+    box-sizing: border-box;
+    border: solid;
+    background-color: #5E658C;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+}
+
 }
