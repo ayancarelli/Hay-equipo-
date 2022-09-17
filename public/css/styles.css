@@ -45,6 +45,8 @@ header .container-fluid{
     color: #25306A;
     font-weight: bold;
     margin-left: 15px;
+    margin-bottom: 0px;
+    padding-top: 10px;
 }
 
 .banner-home h3{
@@ -57,16 +59,23 @@ header .container-fluid{
 }
 
 .banner-home button{
-    background-color: #8A8EA6;
+    background-color: #5E658C;
     color: white;
+    font-size: 10px;
+    font-weight: bold;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     margin-left: 15px;
     margin-bottom: 10px;
+    position: sticky;
+    border-color: #5E658C;
 }
 
-.carta-equipo{
+.cartas-equipos{
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 footer .container-fluid{
