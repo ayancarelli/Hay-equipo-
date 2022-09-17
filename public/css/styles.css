@@ -1,4 +1,4 @@
-.container-fluid{
+header .container-fluid{
     display: flex;
     flex-direction: row;
     font-size: 16px;
@@ -13,24 +13,69 @@
 
 .logo {
     width: 200px;
-    }
+}
 
 .header-navbar{
     display: flex;
     align-items: center;
 }
 
-header nav ul {
+.header-navbar i{
+    font-size: 19px;
+}
+
+.menu-navbar{
+    display: none;
+}
+
+footer .container-fluid{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    justify-content: space-between;
+    font-family: "Lato";
+    background-color: #25306A;
+    color: white;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+}
+
+footer .container-fluid p{
+    margin: auto;
+}
+
+.redes-sociales{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: auto;
+    --bs-link-color: white;
+    --bs-link-hover-color: #8A8EA6;
+}
+
+.redes-sociales li{
+    margin-left: 10px;
+}
+
+@media (min-width: 768px) {
+
+.header-navbar i{
+    display: none;
+}
+.menu-navbar {
     list-style: none;
     display: flex;
     align-items: center;
     margin: auto;
 }
 
-header nav ul li{
+.menu-navbar li{
     margin-left: 10px;
 }
 
 .btn-outline-light {
     margin-left: 10px;
+}
 }
