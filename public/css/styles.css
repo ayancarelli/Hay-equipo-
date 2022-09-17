@@ -28,6 +28,47 @@ header .container-fluid{
     display: none;
 }
 
+.banner-home{
+    position: relative;
+}
+
+.banner-home img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+}
+
+.banner-home h2{
+    position: relative;
+    font-size: 34px;
+    color: #25306A;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.banner-home h3{
+    position: relative;
+    font-size: 22px;
+    color: #25306A;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.banner-home button{
+    background-color: #8A8EA6;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.carta-equipo{
+    position: relative;
+}
+
 footer .container-fluid{
     display: flex;
     flex-direction: row;
@@ -39,11 +80,7 @@ footer .container-fluid{
     align-items: center;
     padding: 10px;
     margin: auto;
-}
-
-.cesped{
-    width: 100vw;
-    opacity: 0.5;
+    bottom: 0;
 }
 
 footer .container-fluid p{
