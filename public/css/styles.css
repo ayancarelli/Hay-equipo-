@@ -286,10 +286,7 @@ footer .container-fluid p{
     align-items: center;
 
    justify-content: center;
-    /*position: relative;
-    font-weight: bold;
-    margin-left: 15px;
-    margin-right: 10px;*/
+ 
 }
 .banner-equipo{
     display: flex;
@@ -302,4 +299,57 @@ footer .container-fluid p{
     display: flex;
     position: absolute;
     opacity: 0.80;
+}
+/* STYLE DE CARRITO*/
+
+.banner-carrito h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #25306A;
+}
+.banner-carrito a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.d-flex{
+    display: flex;    
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+.forma-recuadro{
+    border: 2px solid #000000;
+    border-radius: 18px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+}
+
+.carrito-compras{
+    list-style: none;
+    ;
+}
+.imagen-carrito{
+    width: 80px;
+    margin: 12px;
+}
+.reserva-fecha{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+.btn-confirmar{
+    display: flex;
+    flex-direction:row-reverse;
+    margin: 30px;
 }
