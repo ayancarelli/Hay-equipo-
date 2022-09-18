@@ -11,41 +11,56 @@
     <title>Hay equipo</title>
 </head>
 <body>
-    <div class="contenedor-login">
-        <header> 
-                <div class="container-fluid">
-                     <div>
-                        <img class="logo"src="/img/logo.png" alt="logo">
-                    </div>
-                    <nav class="header-navbar">
-                        <i class="fa-solid fa-bars"></i>    
-                        <ul class="menu-navbar">
-                          <li>Canchas</li>
-                          <li>Equipos</li>
-                          <li>Login</li>
-                          <button type="button" class="btn btn-outline-light">Registro</button>
-                      </ul>                
-                    </nav>
-                </div>    
-        </header>
-
-            <section>
-                    <div> <img class="logo-login" src="/img/logo.png" alt="logo"></div>
-            </section>
-            
-            <footer>
-                <div class="container-fluid">
-                    <p>
-                        © 2022 Grupo11
-                    </p>
-                    <ul class="redes-sociales">
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-twitch"></i></a></li>
-                    </ul>
+    <header> 
+        <div class="container-fluid" id="header-registro">
+            <div>
+                <img class="logo"src="/img/logo.png" alt="logo">
+            </div>
+            <nav class="header-navbar-registro">
+                <i class="fa-solid fa-bars"></i>    
+                <ul class="menu-navbar">
+                    <li>Canchas</li>
+                    <li>Equipos</li>
+                    <li class="boton-login">Login</li>
+                    <button type="button" class="btn btn-outline-light">Registro</button>
+                </ul>                
+            </nav>
+        </div>    
+    </header>
+    <section class="registro-cuerpo">
+        <div>
+            <img src="/img/pelota.jpg" class="registro-imagen" alt="Imagen ingreso">
+        </div> 
+        <div class="registro-formulario">
+            <form>
+                
+                    <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="hayequipo@web.com">
+                    <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
                 </div>
-            </footer>
-     </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+              
+                <button type="submit" class="btn btn-primary">INGRESAR</button>
+            </form>            
+        </div> 
+    </section>
+    <footer>
+        <div class="container-fluid">
+            <p>
+                © 2022 Grupo11
+            </p>
+            <ul class="redes-sociales">
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitch"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    
 </body>
 </html>

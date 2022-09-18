@@ -121,7 +121,11 @@ header .container-fluid{
     --bs-btn-hover-border-color: #25306A;
 }
 
-/* STYLE DEL REGISTRO */
+/* STYLE DEL REGISTRO Y LOGIN */
+
+.header-navbar-registro .btn-outline-light{
+    display: none; 
+}
 
 .header-navbar-registro{
     display: none;
@@ -251,20 +255,8 @@ footer .container-fluid p{
 
 }
 
-/* styles del login */
+/* style solo de login */
 
-body .contenedor-login {
-    background-color: #25306A;
-}
-
-
-.logo-login {
-    margin: auto;
-    text-align:center;
-    width: 20%;
-
-} 
-
-@media (min-width: 768px){
-    
+.boton-login {
+    display: none;
 }
