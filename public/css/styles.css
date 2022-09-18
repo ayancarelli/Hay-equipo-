@@ -279,18 +279,27 @@ footer .container-fluid p{
 
 /*STYLE DE EQUIPOS*/
 .banner-equipo h3{
+    display: flex;
     text-align: center;
     background-color:#C7CAD9;
     color: #25306A;
     font-size: 22px;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+
+   justify-content: center;
     /*position: relative;
-    
-    
     font-weight: bold;
     margin-left: 15px;
     margin-right: 10px;*/
 }
-.imagen-equipos{
+.banner-equipo{
+    display: flex;
+    justify-content: center;
+
+}
+.imagen-equipos-fondo{
     width: 100vw;
     margin-left: 15px;
     display: flex;
