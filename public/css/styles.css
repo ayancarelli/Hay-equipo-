@@ -353,3 +353,7 @@ footer .container-fluid p{
     flex-direction:row-reverse;
     margin: 30px;
 }
+.registro-formulario h3{
+    display: flex;
+    justify-content: center;
+}
