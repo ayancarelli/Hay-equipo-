@@ -249,7 +249,14 @@ footer .container-fluid p{
     font-size: 12px;
     position: absolute;
 }
+/*PARTE DEL LOGIN*/
+.header-navbar-login .menu-navbar{
+    display: flex;
+}
+.header-navbar-login i{
+    display: none;
 
+}
 }
 
 /* STYLE DE LOGIN */
@@ -264,16 +271,6 @@ footer .container-fluid p{
 }
 .header-navbar-login .menu-navbar{
     display: none;
-}
-@media (min-width: 768px){
-
-    .header-navbar-login .menu-navbar{
-        display: flex;
-    }
-    .header-navbar-login i{
-        display: none;
-
-}
 }
 
 
@@ -303,6 +300,6 @@ footer .container-fluid p{
     width: 100vw;
     margin-left: 15px;
     display: flex;
-    position: relative;
+    position: absolute;
     opacity: 0.80;
 }
