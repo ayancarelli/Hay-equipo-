@@ -121,3 +121,21 @@ footer .container-fluid p{
     margin-left: 10px;
 }
 }
+
+/* styles del login */
+
+body .contenedor-login {
+    background-color: #25306A;
+}
+
+
+.logo-login {
+    margin: auto;
+    text-align:center;
+    width: 20%;
+
+} 
+
+@media (min-width: 768px){
+    
+}
