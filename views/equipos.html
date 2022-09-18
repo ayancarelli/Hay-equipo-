@@ -2,25 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d3659e7ce9.js" crossorigin="anonymous"></script>
     <title>Hay equipo</title>
 </head>
 <body>
     <header> 
-        
-        <div><img class="logo"src="/img/logo.png" alt="logo"></div>
-        
-        <nav class="header-navbar">    
-            <ul>
-                <li>Canchas</li>
-                 <li>Login</li>
-                <li><button class="nav-boton">Registro</button></li>
-            </ul>
-            
-        </nav>
-
+        <div class="container-fluid">
+            <div>
+                <img class="logo"src="/img/logo.png" alt="logo">
+            </div>
+            <nav class="header-navbar">
+                <i class="fa-solid fa-bars"></i>    
+                <ul class="menu-navbar">
+                    <li>Canchas</li>
+                    
+                    <li>Login</li>
+                    <button type="button" class="btn btn-outline-light">Registro</button>
+                </ul>                
+            </nav>
+        </div>    
     </header>
+
+    <section class="cuerpo-home">
+        <div class="banner-equipo">        
+            <h3>
+                EQUIPOS LISTOS PARA JUGAR
+            </h3>
+        </div>
+    </section>
+    <section class="cartas-equipos">
+        <img class="imagen-equipos"src="/img/red-arco.jpg" alt="">
+        <div class="card" style="width: 18rem;">
+            <span class="marcador"> 100% Asistencia <i class="fa-solid fa-handshake-angle"></i></span>
+            <img src="/img/equipo futsal.jpg" class="card-img-top" alt="Foto Equipo">
+            <div class="card-body">
+              <h5 class="card-title">Equipo A</h5>
+              <p class="card-text">
+                <ul>
+                    <li><i class="fa-solid fa-medal"></i> Fair Play</li>
+                    <li><i class="fa-solid fa-shield"></i> Arquero imbatible</li>
+                    <li><i class="fa-solid fa-person-running"></i> Todos corredores</li>
+                </ul>
+              </p>
+              <a href="#" class="btn btn-primary">Más info ></a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <span class="marcador"> 100% Asistencia <i class="fa-solid fa-handshake-angle"></i></span>
+            <img src="/img/equipo futsal.jpg" class="card-img-top" alt="Foto Equipo">
+            <div class="card-body">
+              <h5 class="card-title">Equipo B</h5>
+              <p class="card-text">
+                <ul>
+                    <li><i class="fa-solid fa-medal"></i> Fair Play</li>
+                    <li><i class="fa-solid fa-shield"></i> Arquero imbatible</li>
+                    <li><i class="fa-solid fa-person-running"></i> Todos corredores</li>
+                </ul>
+              </p>
+              <a href="#" class="btn btn-primary">Más info ></a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="/img/equipo futsal.jpg" class="card-img-top" alt="Foto Equipo">
+            <div class="card-body">
+              <h5 class="card-title">Equipo C</h5>
+              <p class="card-text">
+                <ul>
+                    <li><i class="fa-solid fa-medal"></i> Fair Play</li>
+                    <li><i class="fa-solid fa-shield"></i> Arquero imbatible</li>
+                    <li><i class="fa-solid fa-person-running"></i> Todos corredores</li>
+                </ul>
+              </p>
+              <a href="#" class="btn btn-primary">Más info ></a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="/img/equipo futsal.jpg" class="card-img-top" alt="Foto Equipo">
+            <div class="card-body">
+              <h5 class="card-title">Equipo D</h5>
+              <p class="card-text">
+                <ul>
+                    <li><i class="fa-solid fa-medal"></i> Fair Play</li>
+                    <li><i class="fa-solid fa-shield"></i> Arquero imbatible</li>
+                    <li><i class="fa-solid fa-person-running"></i> Todos corredores</li>
+                </ul>
+              </p>
+              <a href="#" class="btn btn-primary">Más info ></a>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container-fluid">
             <p>
@@ -34,6 +109,5 @@
             </ul>
         </div>
     </footer>
-    
 </body>
 </html>

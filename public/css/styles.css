@@ -123,11 +123,8 @@ header .container-fluid{
 
 /* STYLE DEL REGISTRO Y LOGIN */
 
-.header-navbar-registro .btn-outline-light{
-    display: none; 
-}
 
-.header-navbar-registro{
+.header-navbar-registro .menu-navbar{
     display: none;
 }
 
@@ -203,7 +200,7 @@ footer .container-fluid p{
 .header-navbar i{
     display: none;
 }
-.menu-navbar {
+.header-navbar-registro .menu-navbar {
     list-style: none;
     display: flex;
     align-items: center;
@@ -255,8 +252,48 @@ footer .container-fluid p{
 
 }
 
-/* style solo de login */
+/* STYLE DE LOGIN */
 
-.boton-login {
+
+
+.menu-navbar-registro {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.header-navbar-login .menu-navbar{
     display: none;
+}
+@media (min-width: 768px){
+
+    .header-navbar-login .menu-navbar{
+        display: flex;
+    }
+    .header-navbar-login i{
+        display: none;
+
+}
+}
+
+
+/*STYLE DE EQUIPOS*/
+.banner-equipo h3{
+    text-align: center;
+    background-color:#C7CAD9;
+    color: #25306A;
+    font-size: 22px;
+    /*position: relative;
+    
+    
+    font-weight: bold;
+    margin-left: 15px;
+    margin-right: 10px;*/
+}
+.imagen-equipos{
+    width: 100vw;
+    margin-left: 15px;
+    display: flex;
+    position: relative;
+    opacity: 0.80;
 }
