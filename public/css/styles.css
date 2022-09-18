@@ -45,6 +45,8 @@ header .container-fluid{
     color: #25306A;
     font-weight: bold;
     margin-left: 15px;
+    margin-bottom: 0px;
+    padding-top: 10px;
 }
 
 .banner-home h3{
@@ -57,16 +59,107 @@ header .container-fluid{
 }
 
 .banner-home button{
-    background-color: #8A8EA6;
+    background-color: #5E658C;
     color: white;
+    font-size: 10px;
+    font-weight: bold;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     margin-left: 15px;
     margin-bottom: 10px;
+    position: sticky;
+    border-color: #5E658C;
 }
 
-.carta-equipo{
+.cartas-equipos{
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.esperando-jugar{
+    width: 100vw;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+.card{
+    padding: 10px;
+    margin: 5px;
+}
+
+.card .marcador{
+    position: absolute;
+    background-color: #A1FCC6;
+    border: #5E658C 1px;
+    border-style: solid;
+    font-size: 10px;
+    color: #25306A;
+    border-radius: 20px;
+    padding: 3px 10px;
+    right: -5px;
+    top: -10px;
+}
+
+.card-body h5{
+    font-weight: bold;
+    color: #5E658C;
+}
+.card-body ul{
+    list-style: none;
+    font-size: 14px;
+    color: #25306A;
+}
+
+.card-body .btn-primary{
+    --bs-btn-bg: #8A8EA6;
+    --bs-btn-border-color: #8A8EA6;
+    --bs-btn-hover-bg: #25306A;
+    --bs-btn-hover-border-color: #25306A;
+}
+
+/* STYLE DEL REGISTRO */
+
+.header-navbar-registro{
+    display: none;
+}
+
+#header-registro{
+    display: flex;
+    justify-content: center;
+}
+
+.registro-cuerpo{
+    display: flex;
+    justify-content: center;
+    background-color: #25306A;
+}
+
+.registro-imagen{
+    width: 50vw;
+    display: none;
+}
+
+.registro-formulario{
+    width: 60%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: solid;
+    background-color: #5E658C;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.registro-formulario .form-control{
+    font-size: 12px;
+}
+
+.registro-formulario #emailHelp{
+    color: #C7CAD9;
 }
 
 footer .container-fluid{
@@ -120,6 +213,42 @@ footer .container-fluid p{
 .btn-outline-light {
     margin-left: 10px;
 }
+
+#header-registro{
+    justify-content: space-between;
+}
+
+.header-navbar-registro{
+    display: flex;
+}
+
+.header-navbar-registro i{
+    display: none;
+}
+
+.registro-cuerpo{
+    align-items: center;
+}
+.registro-imagen{
+    width: 100vw;
+    margin-left: 15px;
+    display: flex;
+    position: relative;
+    opacity: 0.80;
+}
+
+.registro-formulario{
+    width: 30vw;
+    padding: 15px;
+    box-sizing: border-box;
+    border: solid;
+    background-color: #5E658C;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+}
+
 }
 
 /* styles del login */
