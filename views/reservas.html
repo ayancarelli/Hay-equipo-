@@ -2,26 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d3659e7ce9.js" crossorigin="anonymous"></script>
     <title>Hay equipo</title>
 </head>
 <body>
     <header> 
-        
-        <div><img class="logo"src="/img/logo.png" alt="logo"></div>
-        
-        <nav class="header-navbar">    
-            <ul>
-                <li>Canchas</li>
-                <li>Equipos</li>
-                <li>Login</li>
-                <li><button class="nav-boton">Registro</button></li>
-            </ul>
-            
-        </nav>
-
+        <div class="container-fluid" id="header-registro">
+            <div>
+                <img class="logo"src="/img/logo.png" alt="logo">
+            </div>
+            <nav class="header-navbar-registro">
+                <i class="fa-solid fa-bars"></i>    
+                <ul class="menu-navbar">
+                    <li>Canchas</li>
+                    <li>Equipos</li>
+                   
+                    
+                </ul>                
+            </nav>
+        </div>    
     </header>
+    <section class="registro-cuerpo">
+        <div>
+            <img src="/img/tactica futbol.jpg" class="registro-imagen" alt="Imagen Registro">
+        </div> 
+        <div class="registro-formulario">
+            <h3>RESERVAS</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Fecha:</label>
+                    <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Fecha">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Turno:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Turno">
+                  </div>
+                    <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Cancha:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Tipo de cancha">
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Precio:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="$$$$$">
+                </div>
+               
+                <button type="submit" class="btn btn-primary">RESERVAR</button>
+            </form>            
+        </div> 
+    </section>
     <footer>
         <div class="container-fluid">
             <p>
@@ -34,6 +68,7 @@
                 <li><a href="#"><i class="fa-brands fa-twitch"></i></a></li>
             </ul>
         </div>
-    </footer>    
+    </footer>
+    
 </body>
 </html>
