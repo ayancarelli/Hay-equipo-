@@ -315,6 +315,16 @@ footer .container-fluid p{
     padding-top: 15px;
     padding-bottom: 15px;
 }
+.titulo-canchas{
+    background-color: #C7CAD9;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+    margin-bottom: 15px;
+}
 .container-padre-canchas{
     display: flex;
     flex-direction: column;
