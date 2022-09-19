@@ -305,20 +305,24 @@ footer .container-fluid p{
 /*STYLE DE CANCHAS*/
 
 .main-canchas{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     background-color: #5E658C;
     text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
-.cancha1{
-    background-image: url('/img/cesped.jpg');
-    background-size: cover;
-    padding: 20px 20px;
+.container-padre-canchas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.cancha2{
-    background-image: url('/img/red-arco.jpg');
-    background-size: cover;
-    padding: 20px 20px;
-}
-ol{
+.ol-canchas{
     display: grid;
     grid-template-columns: repeat(7,1fr);
     padding: 0%;
@@ -346,18 +350,48 @@ ol{
 }
 .imagen{
     border-radius: 15px;
+    border: solid 1px black;
 }
-.container-cancha1{
+.container-canchas{
     background-color: #C7CAD9;
     font-family: "Lato";
     border-radius: 15px;
     width: 330px;
     padding-bottom: 15px;
     margin: auto;
+    border: solid 1px black;
+}
+.cancha1{
+    margin-bottom: 15px;
+}
+.mes-canchas{
+    padding-top: 15px;
+}
+.buttons-canchas{
     margin-top: 15px;
 }
-
+.arrow-canchas:hover{
+    color: grey;
+}
+@media (min-width: 768px){
+    .main-canchas{
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .container-padre-canchas{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .container-canchas{
+        margin-right: 40px;
+    }
+    .cancha1{
+        margin-bottom: 0%;
+    }
+}
 /*FIN STYLE DE CANCHAS*/
+
 /* STYLE DE CARRITO*/
 
 .banner-carrito h3{
