@@ -303,3 +303,61 @@ footer .container-fluid p{
     position: absolute;
     opacity: 0.80;
 }
+
+
+/*STYLE DE CANCHAS*/
+
+.main-canchas{
+    background-color: #5E658C;
+    text-align: center;
+}
+.cancha1{
+    background-image: url('/img/cesped.jpg');
+    background-size: cover;
+    padding: 20px 20px;
+}
+.cancha2{
+    background-image: url('/img/red-arco.jpg');
+    background-size: cover;
+    padding: 20px 20px;
+}
+ol{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    padding: 0%;
+}
+.first-day{
+    grid-column-start: 5;
+}
+.dias{
+    list-style: none;
+    font-weight: bold;
+    padding: 0%;
+    
+}
+.numeros{
+    padding: 0%;
+}
+.calendar{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    background-color: #8A8EA6;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: solid 1px black;
+}
+.imagen{
+    border-radius: 15px;
+}
+.container-cancha1{
+    background-color: #C7CAD9;
+    font-family: "Lato";
+    border-radius: 15px;
+    width: 330px;
+    padding-bottom: 15px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+/*FIN STYLE DE CANCHAS*/
