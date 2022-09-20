@@ -1,9 +1,14 @@
+*{
+    font-family: "Lato";
+}
+
+/* HEADER STYLE - INICIO */
+
 header .container-fluid{
     display: flex;
     flex-direction: row;
     font-size: 16px;
     justify-content: space-between;
-    font-family: "Lato";
     background-color: #25306A;
     color: white;
     align-items: center;
