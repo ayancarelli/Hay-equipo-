@@ -388,7 +388,7 @@ ol{
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .carrito-compras{
@@ -396,7 +396,7 @@ ol{
     ;
 }
 .imagen-carrito{
-    width: 80px;
+    width: 200px;
     margin: 12px;
 }
 .reserva-fecha{
@@ -409,7 +409,7 @@ ol{
 .btn-confirmar{
     display: flex;
     flex-direction:row-reverse;
-    margin: 30px;
+    margin: 50px;
 }
 .registro-formulario h3{
     display: flex;
