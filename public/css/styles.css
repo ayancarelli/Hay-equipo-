@@ -2,7 +2,7 @@
     font-family: "Lato";
 }
 
-/* HEADER STYLE - INICIO */
+/* HEADER STYLE */
 
 header .container-fluid{
     display: flex;
@@ -25,13 +25,49 @@ header .container-fluid{
     align-items: center;
 }
 
-.header-navbar i{
-    font-size: 19px;
+#hamb-icon{
+    font-size: 20px;
+    margin-right: 10px;
 }
 
 .menu-navbar{
     display: none;
 }
+
+/* FIN HEADER STYLER */
+
+/* FOOTER STYLE */
+
+footer .container-fluid{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    justify-content: center;
+    background-color: #25306A;
+    color: white;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+    bottom: 0;
+}
+
+footer .container-fluid p{
+    margin: auto;
+}
+
+.redes-sociales{
+    list-style: none;
+    display: flex;
+    margin: auto;
+    --bs-link-color: white;
+    --bs-link-hover-color: #8A8EA6;
+}
+
+.redes-sociales li{
+    margin-left: 10px;
+}
+
+/* FIN FOOTER STYLE */
 
 .banner-home{
     position: relative;
@@ -128,16 +164,6 @@ header .container-fluid{
 
 /* STYLE DEL REGISTRO Y LOGIN */
 
-
-.header-navbar-registro .menu-navbar{
-    display: none;
-}
-
-#header-registro{
-    display: flex;
-    justify-content: center;
-}
-
 .registro-cuerpo{
     display: flex;
     justify-content: center;
@@ -168,116 +194,7 @@ header .container-fluid{
     color: #C7CAD9;
 }
 
-footer .container-fluid{
-    display: flex;
-    flex-direction: row;
-    font-size: 12px;
-    justify-content: center;
-    font-family: "Lato";
-    background-color: #25306A;
-    color: white;
-    align-items: center;
-    padding: 10px;
-    margin: auto;
-    bottom: 0;
-}
-
-footer .container-fluid p{
-    margin: auto;
-}
-
-.redes-sociales{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin: auto;
-    --bs-link-color: white;
-    --bs-link-hover-color: #8A8EA6;
-}
-
-.redes-sociales li{
-    margin-left: 10px;
-}
-
-@media (min-width: 768px) {
-
-.header-navbar i{
-    display: none;
-}
-.header-navbar-registro .menu-navbar {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: auto;
-}
-
-.menu-navbar li{
-    margin-left: 10px;
-}
-
-.btn-outline-light {
-    margin-left: 10px;
-}
-
-#header-registro{
-    justify-content: space-between;
-}
-
-.header-navbar-registro{
-    display: flex;
-}
-
-.header-navbar-registro i{
-    display: none;
-}
-
-.registro-cuerpo{
-    align-items: center;
-}
-.registro-imagen{
-    width: 100vw;
-    margin-left: 15px;
-    display: flex;
-    position: relative;
-    opacity: 0.80;
-}
-
-.registro-formulario{
-    width: 30vw;
-    padding: 15px;
-    box-sizing: border-box;
-    border: solid;
-    background-color: #5E658C;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 12px;
-    position: absolute;
-}
-/*PARTE DEL LOGIN*/
-.header-navbar-login .menu-navbar{
-    display: flex;
-}
-.header-navbar-login i{
-    display: none;
-
-}
-}
-
 /* STYLE DE LOGIN */
-
-
-
-.menu-navbar-registro {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: auto;
-}
-.header-navbar-login .menu-navbar{
-    display: none;
-}
-
 
 /*STYLE DE EQUIPOS*/
 .banner-equipo h3{
@@ -305,7 +222,6 @@ footer .container-fluid p{
     position: absolute;
     opacity: 0.80;
 }
-
 
 /*STYLE DE CANCHAS*/
 
@@ -413,23 +329,6 @@ footer .container-fluid p{
     transition-property: background-color, width;
     transition-duration: 0.5s;
 }
-@media (min-width: 768px){
-    .main-canchas{
-        flex-direction: column;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .container-padre-canchas{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .container-canchas{
-        margin-right: 40px;
-    }
-    .cancha1{
-        margin-bottom: 0%;
-    }
-}
 /*FIN STYLE DE CANCHAS*/
 
 /* STYLE DE CARRITO*/
@@ -488,4 +387,71 @@ footer .container-fluid p{
 .registro-formulario h3{
     display: flex;
     justify-content: center;
+}
+
+@media (min-width: 768px) {
+
+/* HEADER 768 */
+.header-navbar i{
+    display: none;
+}
+
+.header-navbar .menu-navbar {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: auto;
+    margin-right: 10px;
+}
+
+.menu-navbar li{
+    margin-left: 10px;
+}
+
+.btn-outline-light {
+    margin-left: 10px;
+}
+/* FIN HEADER 768 */
+
+.registro-cuerpo{
+    align-items: center;
+}
+.registro-imagen{
+    width: 100vw;
+    margin-left: 15px;
+    display: flex;
+    position: relative;
+    opacity: 0.80;
+}
+
+.registro-formulario{
+    width: 30vw;
+    padding: 15px;
+    box-sizing: border-box;
+    border: solid;
+    background-color: #5E658C;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+}
+/*PARTE DEL LOGIN*/
+
+/* CANCHAS */
+
+.main-canchas{
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container-padre-canchas{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container-canchas{
+    margin-right: 40px;
+}
+.cancha1{
+    margin-bottom: 0%;
+}
 }
