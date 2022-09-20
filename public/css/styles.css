@@ -176,7 +176,8 @@ footer .container-fluid p{
 }
 
 .registro-formulario{
-    width: 60%;
+    max-width: 350px;
+    min-width: 250px;
     padding: 15px;
     box-sizing: border-box;
     border: solid;
