@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/d3659e7ce9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Hay equipo</title>
 </head>
 <body>
@@ -17,7 +19,7 @@
                 <img class="logo"src="/img/logo.png" alt="logo">
             </div>
             <nav class="header-navbar">
-                <i class="fa-solid fa-bars"></i>    
+                <i class="fa-solid fa-bars" id="hamb-icon"></i>    
                 <ul class="menu-navbar">
                     <li>Canchas</li>
                     
@@ -29,86 +31,68 @@
     </header>
 
     <main class="main-canchas">
-        <div class="container-cancha1">
-            <h2>Cancha descuierta</h2>
-            <img class="imagen" src="/img/pelota.jpg" width="300px" height="150px">
-            <h3>SEPTIEMBRE</h3>
-            <div class="calendar">
-                <ol class="dias">
-                    <li>Dom</li>
-                    <li>Lun</li>
-                    <li>Mar</li>
-                    <li>Mie</li>
-                    <li>Jue</li>
-                    <li>Vie</li>
-                    <li>Sab</li>
-                </ol>
-                <ol class="numeros">
-                    <il class="first-day">1</il>
-                    <il>2</il>
-                    <il>3</il>
-                    <il>4</il>
-                    <il>5</il>
-                    <il>6</il>
-                    <il>7</il>
-                    <il>8</il>
-                    <il>9</il>
-                    <il>10</il>
-                    <il>11</il>
-                    <il>12</il>
-                    <il>13</il>
-                    <il>14</il>
-                    <il>15</il>
-                    <il>16</il>
-                    <il>17</il>
-                    <il>18</il>
-                    <il>19</il>
-                    <il>20</il>
-                    <il>21</il>
-                    <il>22</il>
-                    <il>23</il>
-                    <il>24</il>
-                    <il>25</il>
-                    <il>26</il>
-                    <il>27</il>
-                    <il>28</il>
-                    <il>29</il>
-                    <il>30</il>
-                    <il>31</il>
-                </ol>
+        <div class="titulo-canchas">
+            <h2>SELECCIONÁ FECHA Y HORARIO</h2>
+        </div>
+        <div class="container-padre-canchas">
+            <div class="container-canchas cancha1">
+                <h2>Cancha descubierta</h2>
+                <img class="imagen" src="/img/cancha-descubierta.jpg" width="300px" height="150px">
+                <h5 class="mes-canchas"><i class="bi bi-arrow-left-circle arrow-canchas"></i> SEPTIEMBRE <i class="bi bi-arrow-right-circle arrow-canchas"></i></h5>
+                <div class="calendar">
+                    <ol class="dias ol-canchas">
+                        <li>Dom</li>
+                        <li>Lun</li>
+                        <li>Mar</li>
+                        <li>Mie</li>
+                        <li>Jue</li>
+                        <li>Vie</li>
+                        <li>Sab</li>
+                    </ol>
+                    <ol class="numeros ol-canchas">
+                        <il class="first-day">1</il>
+                        <il >2</il><il>3</il><il>4</il><il>5</il><il>6</il><il>7</il><il>8</il><il>9</il>
+                        <il>10</il><il>11</il><il>12</il><il>13</il><il>14</il><il>15</il><il>16</il>
+                        <il>17</il><il>18</il><il>19</il><il>20</il><il>21</il><il>22</il><il>23</il>
+                        <il>24</il><il>25</il><il>26</il><il>27</il><il>28</il><il>29</il><il>30</il>
+                        <il>31</il>
+                    </ol>
+                </div>
+                <form>
+                    <input class="dates-canchas" type="date" name="fecha-cancha1"  min="2022-09-19" max="2022-12-31">
+                </form>
+            </div>
+            <div class="container-canchas">
+                <h2>Cancha cubierta</h2>
+                <img class="imagen" src="/img/cancha-techada.jpg" width="300px" height="150px">
+                <h5 class="mes-canchas"><i class="bi bi-arrow-left-circle arrow-canchas"></i> SEPTIEMBRE <i class="bi bi-arrow-right-circle arrow-canchas"></i></h5>
+                <div class="calendar">
+                    <ol class="dias ol-canchas">
+                        <li>Dom</li>
+                        <li>Lun</li>
+                        <li>Mar</li>
+                        <li>Mie</li>
+                        <li>Jue</li>
+                        <li>Vie</li>
+                        <li>Sab</li>
+                    </ol>
+                    <ol class="numeros ol-canchas">
+                        <il class="first-day">1</il>
+                        <il>2</il><il>3</il><il>4</il><il>5</il><il>6</il><il>7</il><il>8</il><il>9</il>
+                        <il>10</il><il>11</il><il>12</il><il>13</il><il>14</il><il>15</il><il>16</il>
+                        <il>17</il><il>18</il><il>19</il><il>20</il><il>21</il><il>22</il><il>23</il>
+                        <il>24</il><il>25</il><il>26</il><il>27</il><il>28</il><il>29</il><il>30</il>
+                        <il>31</il>
+                    </ol>
+                </div>
+                <form>
+                    <input class="dates-canchas" type="date" name="fecha-cancha1"  min="2022-09-19" max="2022-12-31">
+                </form>
             </div>
         </div>
-        <div class="container-cancha1">
-            <h2>Cancha cuierta</h2>
-            <img class="imagen" src="/img/pelota.jpg" width="300px" height="150px">
-            <h3>SEPTIEMBRE</h3>
-            <div class="calendar">
-                <ol class="dias">
-                    <li>Dom</li>
-                    <li>Lun</li>
-                    <li>Mar</li>
-                    <li>Mie</li>
-                    <li>Jue</li>
-                    <li>Vie</li>
-                    <li>Sab</li>
-                </ol>
-                <ol class="numeros">
-                    <il class="first-day">1</il>
-                    <il>2</il><il>3</il><il>4</il><il>5</il><il>6</il><il>7</il><il>8</il><il>9</il>
-                    <il>10</il><il>11</il><il>12</il><il>13</il><il>14</il><il>15</il><il>16</il>
-                    <il>17</il><il>18</il><il>19</il><il>20</il><il>21</il><il>22</il><il>23</il>
-                    <il>24</il><il>25</il><il>26</il><il>27</il><il>28</il><il>29</il><il>30</il>
-                    <il>31</il>
-                </ol>
-            </div>
-        </div>
-        <div class="cancha1">
-            <label for="cancha1">Cancha techada</label>
-            <input type="date" name="cancha1" id="cancha1" min="2022-09-18" max="2024-12-31">
-        </div>
-        <div class="cancha2">
-            <label for="cancha2">Cancha cubierta</label>
-            <input type="date" name="cancha2" id="cancha2" min="2022-09-18" max="2024-12-31">
+        <div class="buttons-canchas">
+            <button type="button" class="btn btn-light">Cancel</button>
+            <button class="btn btn-primary" type="submit">Accept</button>
         </div>
     </main>
     <footer>

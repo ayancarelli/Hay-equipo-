@@ -1,9 +1,14 @@
+*{
+    font-family: "Lato";
+}
+
+/* HEADER STYLE */
+
 header .container-fluid{
     display: flex;
     flex-direction: row;
     font-size: 16px;
     justify-content: space-between;
-    font-family: "Lato";
     background-color: #25306A;
     color: white;
     align-items: center;
@@ -20,13 +25,49 @@ header .container-fluid{
     align-items: center;
 }
 
-.header-navbar i{
-    font-size: 19px;
+#hamb-icon{
+    font-size: 20px;
+    margin-right: 10px;
 }
 
 .menu-navbar{
     display: none;
 }
+
+/* FIN HEADER STYLER */
+
+/* FOOTER STYLE */
+
+footer .container-fluid{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    justify-content: center;
+    background-color: #25306A;
+    color: white;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+    bottom: 0;
+}
+
+footer .container-fluid p{
+    margin: auto;
+}
+
+.redes-sociales{
+    list-style: none;
+    display: flex;
+    margin: auto;
+    --bs-link-color: white;
+    --bs-link-hover-color: #8A8EA6;
+}
+
+.redes-sociales li{
+    margin-left: 10px;
+}
+
+/* FIN FOOTER STYLE */
 
 .banner-home{
     position: relative;
@@ -123,29 +164,15 @@ header .container-fluid{
 
 /* STYLE DEL REGISTRO Y LOGIN */
 
-
-.header-navbar-registro .menu-navbar{
-    display: none;
-}
-
-#header-registro{
-    display: flex;
-    justify-content: center;
-}
-
 .registro-cuerpo{
     display: flex;
     justify-content: center;
     background-color: #25306A;
 }
 
-.registro-imagen{
-    width: 50vw;
-    display: none;
-}
-
 .registro-formulario{
-    width: 60%;
+    max-width: 350px;
+    min-width: 250px;
     padding: 15px;
     box-sizing: border-box;
     border: solid;
@@ -163,116 +190,7 @@ header .container-fluid{
     color: #C7CAD9;
 }
 
-footer .container-fluid{
-    display: flex;
-    flex-direction: row;
-    font-size: 12px;
-    justify-content: center;
-    font-family: "Lato";
-    background-color: #25306A;
-    color: white;
-    align-items: center;
-    padding: 10px;
-    margin: auto;
-    bottom: 0;
-}
-
-footer .container-fluid p{
-    margin: auto;
-}
-
-.redes-sociales{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin: auto;
-    --bs-link-color: white;
-    --bs-link-hover-color: #8A8EA6;
-}
-
-.redes-sociales li{
-    margin-left: 10px;
-}
-
-@media (min-width: 768px) {
-
-.header-navbar i{
-    display: none;
-}
-.header-navbar-registro .menu-navbar {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: auto;
-}
-
-.menu-navbar li{
-    margin-left: 10px;
-}
-
-.btn-outline-light {
-    margin-left: 10px;
-}
-
-#header-registro{
-    justify-content: space-between;
-}
-
-.header-navbar-registro{
-    display: flex;
-}
-
-.header-navbar-registro i{
-    display: none;
-}
-
-.registro-cuerpo{
-    align-items: center;
-}
-.registro-imagen{
-    width: 100vw;
-    margin-left: 15px;
-    display: flex;
-    position: relative;
-    opacity: 0.80;
-}
-
-.registro-formulario{
-    width: 30vw;
-    padding: 15px;
-    box-sizing: border-box;
-    border: solid;
-    background-color: #5E658C;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 12px;
-    position: absolute;
-}
-/*PARTE DEL LOGIN*/
-.header-navbar-login .menu-navbar{
-    display: flex;
-}
-.header-navbar-login i{
-    display: none;
-
-}
-}
-
 /* STYLE DE LOGIN */
-
-
-
-.menu-navbar-registro {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: auto;
-}
-.header-navbar-login .menu-navbar{
-    display: none;
-}
-
 
 /*STYLE DE EQUIPOS*/
 .banner-equipo h3{
@@ -301,24 +219,38 @@ footer .container-fluid p{
     opacity: 0.80;
 }
 
-
 /*STYLE DE CANCHAS*/
 
 .main-canchas{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     background-color: #5E658C;
     text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
-.cancha1{
-    background-image: url('/img/cesped.jpg');
-    background-size: cover;
-    padding: 20px 20px;
+.titulo-canchas{
+    background-color: #C7CAD9;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+    margin-bottom: 15px;
 }
-.cancha2{
-    background-image: url('/img/red-arco.jpg');
-    background-size: cover;
-    padding: 20px 20px;
+.container-padre-canchas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
 }
-ol{
+.ol-canchas{
     display: grid;
     grid-template-columns: repeat(7,1fr);
     padding: 0%;
@@ -346,18 +278,55 @@ ol{
 }
 .imagen{
     border-radius: 15px;
+    border: solid 1px black;
 }
-.container-cancha1{
+.container-canchas{
     background-color: #C7CAD9;
     font-family: "Lato";
     border-radius: 15px;
     width: 330px;
     padding-bottom: 15px;
     margin: auto;
+    border: solid 1px black;
+    box-shadow: 0px 0px 10px #25306A;
+}
+.container-canchas:hover{
+    width: 350px;
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+.cancha1{
+    margin-bottom: 15px;
+}
+.mes-canchas{
+    padding-top: 15px;
+    font-weight: bold;
+}
+.buttons-canchas{
     margin-top: 15px;
 }
-
+.arrow-canchas{
+    color: grey;
+}
+.arrow-canchas:hover{
+    color: #25306A;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+.dates-canchas{
+    border-radius: 10px;
+    background-color: #8A8EA6;
+    margin-top: 15px;
+    border: solid 1px black;
+}
+.dates-canchas:hover{
+    background-color: aliceblue;
+    width: 130px;
+    transition-property: background-color, width;
+    transition-duration: 0.5s;
+}
 /*FIN STYLE DE CANCHAS*/
+
 /* STYLE DE CARRITO*/
 
 .banner-carrito h3{
@@ -414,4 +383,86 @@ ol{
 .registro-formulario h3{
     display: flex;
     justify-content: center;
+}
+
+@media (min-width: 768px) {
+
+/* HEADER 768 */
+.header-navbar i{
+    display: none;
+}
+
+.header-navbar .menu-navbar {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: auto;
+    margin-right: 10px;
+}
+
+.menu-navbar li{
+    margin-left: 10px;
+}
+
+.btn-outline-light {
+    margin-left: 10px;
+}
+/* FIN HEADER 768 */
+
+/* CUERPO REGISTRO768 */
+
+.registro-cuerpo{
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.registro-formulario{
+    
+    margin: 9% 0px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: solid;
+    background-color: #5E658C;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    
+}
+/*PARTE DEL LOGIN*/
+#login-fondo{
+background-image: url("/img/pelota.jpg");
+}
+
+/*PARTE REGISTRO*/
+#registro-fondo{
+    background-image: url("/img/tactica-futbol.jpg");
+    
+}
+
+/*PARTE RESERVAS*/
+#fondo-reservas{
+    background-image: url("/img/cesped.jpg");
+
+}
+
+/* CANCHAS */
+
+
+.main-canchas{
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container-padre-canchas{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container-canchas{
+    margin-right: 40px;
+}
+.cancha1{
+    margin-bottom: 0%;
+}
 }
