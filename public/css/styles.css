@@ -170,11 +170,6 @@ footer .container-fluid p{
     background-color: #25306A;
 }
 
-.registro-imagen{
-    width: 50vw;
-    display: none;
-}
-
 .registro-formulario{
     max-width: 350px;
     min-width: 250px;
@@ -414,31 +409,46 @@ footer .container-fluid p{
 }
 /* FIN HEADER 768 */
 
+/* CUERPO REGISTRO768 */
+
 .registro-cuerpo{
     align-items: center;
-}
-.registro-imagen{
-    width: 100vw;
-    margin-left: 15px;
-    display: flex;
-    position: relative;
-    opacity: 0.80;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .registro-formulario{
-    width: 30vw;
+    
+    margin: 9% 0px;
     padding: 15px;
     box-sizing: border-box;
     border: solid;
     background-color: #5E658C;
     border-radius: 20px;
     font-weight: bold;
-    font-size: 12px;
-    position: absolute;
+    font-size: 1.2em;
+    
 }
 /*PARTE DEL LOGIN*/
+#login-fondo{
+background-image: url("/img/pelota.jpg");
+}
+
+/*PARTE REGISTRO*/
+#registro-fondo{
+    background-image: url("/img/tactica-futbol.jpg");
+    
+}
+
+/*PARTE RESERVAS*/
+#fondo-reservas{
+    background-image: url("/img/cesped.jpg");
+
+}
 
 /* CANCHAS */
+
 
 .main-canchas{
     flex-direction: column;
