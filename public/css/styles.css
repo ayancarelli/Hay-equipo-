@@ -331,6 +331,7 @@ footer .container-fluid p{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 .ol-canchas{
     display: grid;
@@ -370,18 +371,42 @@ footer .container-fluid p{
     padding-bottom: 15px;
     margin: auto;
     border: solid 1px black;
+    box-shadow: 0px 0px 10px #25306A;
+}
+.container-canchas:hover{
+    width: 350px;
+    transition-property: width;
+    transition-duration: 0.5s;
 }
 .cancha1{
     margin-bottom: 15px;
 }
 .mes-canchas{
     padding-top: 15px;
+    font-weight: bold;
 }
 .buttons-canchas{
     margin-top: 15px;
 }
-.arrow-canchas:hover{
+.arrow-canchas{
     color: grey;
+}
+.arrow-canchas:hover{
+    color: #25306A;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+.dates-canchas{
+    border-radius: 10px;
+    background-color: #8A8EA6;
+    margin-top: 15px;
+    border: solid 1px black;
+}
+.dates-canchas:hover{
+    background-color: aliceblue;
+    width: 130px;
+    transition-property: background-color, width;
+    transition-duration: 0.5s;
 }
 @media (min-width: 768px){
     .main-canchas{
