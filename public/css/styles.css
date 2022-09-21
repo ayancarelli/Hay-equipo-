@@ -24,6 +24,13 @@ header .container-fluid{
     display: flex;
     align-items: center;
 }
+.header-navbar a{
+    text-decoration: none;
+    color: #FCFCFC;
+}
+.header-navbar a:hover{
+    color: aqua;
+}
 
 #hamb-icon{
     font-size: 20px;
@@ -111,6 +118,12 @@ footer .container-fluid p{
     position: sticky;
     border-color: #5E658C;
 }
+.banner-home a{
+    text-decoration: none;
+    color: #FCFCFC;
+
+}
+
 
 .cartas-equipos{
     position: relative;
