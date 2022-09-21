@@ -27,32 +27,43 @@
             </nav>
         </div>    
     </header>
-    <section class="registro-cuerpo" id="fondo-reservas">
-         
-        <div class="registro-formulario">
-            <h3>RESERVAS</h3>
-            <form>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Fecha:</label>
-                    <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Fecha">
-                  </div>
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Turno:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Turno">
-                  </div>
-                    <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Cancha:</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Tipo de cancha">
-                    
+    <section>
+        <div class="banner-carrito">
+            <h3>
+                TU TURNO SOLICITADO
+            </h3>
+            <a href="canchas" class="boton-volver-reservas">Volver a la reserva</a>
+        </div>
+    </section>
+    
+    <section class="carrito-compras">       
+            <div class="container">
+              <div class="row">
+                    <div class="col-9">Reserva</div>
+                    <div class="col-1">Precio</div>
+              </div>                
+            </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row" id="cuerpo-carrito">
+                <div class="col-9">
+                        <img src="/img/equipo futsal.jpg" class="imagen-carrito" alt="imagen de cancha">
+                        <div class="reserva-fecha">
+                            <p id="p-mobile"> EQUIPO A <br> 18/6/22 <br> 19:00 Hs </p>
+                            <p id="p-web"> EQUIPO A - 18/6/22 - 19:00 Hs </p>
+                            <a href="" class="eliminar-produto">Eliminar</a>
+                        </div> 
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Precio:</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="$$$$$">
+                <div class="col-1">
+                    <p>$$$$$</p>
                 </div>
-               
-                <button type="submit" class="btn btn-primary">RESERVAR</button>
-            </form>            
-        </div> 
+            </div>
+        </div>
+    </section>
+    <section class="btn-confirmar">
+        <button type="submit" class="btn btn-primary">CONFIRMAR</button>
+        <div id="emailHelp" class="form-text">Al confirmar podra ir al metodo de pago</div>
     </section>
     <footer>
         <div class="container-fluid">

@@ -118,10 +118,10 @@ footer .container-fluid p{
     position: sticky;
     border-color: #5E658C;
 }
+
 .banner-home a{
     text-decoration: none;
     color: #FCFCFC;
-
 }
 
 
@@ -140,6 +140,7 @@ footer .container-fluid p{
     margin-bottom: 5px;
     margin-left: 15px;
 }
+
 .card{
     padding: 10px;
     margin: 5px;
@@ -259,7 +260,7 @@ footer .container-fluid p{
 }
 
 .titulo-canchas h2{
-    margin: 10px 0px;
+    margin: 10px 0pxcl;
 }
 
 .container-padre-canchas{
@@ -434,7 +435,26 @@ footer .container-fluid{
     font-size: 16px;
 }
 
-/* FOOTER 768 */
+/* FIN FOOTER 768 */
+
+/* HOME 768 */
+.banner-home h2{
+   
+    font-size: 50px;
+}
+
+.banner-home h3{
+    font-size: 40px;
+}
+
+.banner-home button{
+    font-size: 17px;
+}
+
+.esperando-jugar{
+    font-size: 25px;
+}
+/* FIN HOME 768 */
 
 /* CUERPO REGISTRO 768 */
 
@@ -457,6 +477,7 @@ footer .container-fluid{
     font-size: 1.2em;
     
 }
+
 /*PARTE DEL LOGIN*/
 #login-fondo{
 background-image: url("/img/pelota.jpg");
@@ -466,12 +487,6 @@ background-image: url("/img/pelota.jpg");
 #registro-fondo{
     background-image: url("/img/tactica-futbol.jpg");
     
-}
-
-/*PARTE RESERVAS*/
-#fondo-reservas{
-    background-image: url("/img/cesped.jpg");
-
 }
 
 /* CANCHAS */
