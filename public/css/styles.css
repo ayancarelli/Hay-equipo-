@@ -54,7 +54,7 @@ footer .container-fluid{
     color: white;
     align-items: center;
     padding: 10px;
-    margin: 20px 0px;
+    margin: auto;
     bottom: 0;
 }
 
@@ -125,12 +125,15 @@ footer .container-fluid p{
     color: #FCFCFC;
 }
 
-
 .cartas-equipos{
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+#equipos-home{
+    margin-bottom: 20px;
 }
 
 .esperando-jugar{
