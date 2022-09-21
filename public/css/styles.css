@@ -251,13 +251,17 @@ footer .container-fluid p{
 .titulo-canchas{
     background-color: #C7CAD9;
     width: 100%;
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 0%;
     margin-bottom: 15px;
 }
+
+.titulo-canchas h2{
+    margin: 10px 0px;
+}
+
 .container-padre-canchas{
     display: flex;
     flex-direction: column;
@@ -265,6 +269,11 @@ footer .container-fluid p{
     align-items: center;
     flex-wrap: wrap;
 }
+
+.container-padre-canchas h2{
+    margin: 10px 0px;
+}
+
 .imagen{
     border-radius: 15px;
     border: solid 1px black;
@@ -339,13 +348,14 @@ footer .container-fluid p{
 }
 /*FIN STYLE DE CANCHAS*/
 
+
 /* STYLE DE CARRITO*/
 
 .banner-carrito h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 20px 0px;
     color: #25306A;
 }
 .banner-carrito a{
@@ -367,29 +377,31 @@ footer .container-fluid p{
 }
 
 .imagen-carrito{
-    width: 200px;
+   display: none;
    
 }
+
+#p-web{
+    display: none;
+}
+
 .reserva-fecha{
     display: flex;
     flex-direction: column;
-    margin: 5px 15px;
-
+    text-align: center;
 }
+
 .btn-confirmar{
     display: flex;
-    flex-direction:row-reverse;
-    margin: 50px;
-
+    flex-direction:column-reverse;
+    padding: 30px;
+    align-items: center;
     }
 
 .btn-confirmar #emailHelp {
     margin-right: 10px;
-}
-
-.registro-formulario h3{
-    display: flex;
-    justify-content: center;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -415,6 +427,14 @@ footer .container-fluid p{
     margin-left: 10px;
 }
 /* FIN HEADER 768 */
+
+/* FOOTER 768 */
+
+footer .container-fluid{
+    font-size: 16px;
+}
+
+/* FOOTER 768 */
 
 /* CUERPO REGISTRO 768 */
 
@@ -456,7 +476,6 @@ background-image: url("/img/pelota.jpg");
 
 /* CANCHAS */
 
-
 .main-canchas{
     flex-direction: column;
     justify-content: center;
@@ -472,4 +491,39 @@ background-image: url("/img/pelota.jpg");
 .cancha1{
     margin-bottom: 0%;
 }
+
+/* CARRITO 768 */
+
+.col-9{
+    display: flex;
+    align-items: center;
+    
+}
+
+#cuerpo-carrito{
+    align-items: center;
+    border-top:  solid 1px black;
+    border-bottom:  solid 1px black;
+    padding: 10px 0px;
+}
+
+.imagen-carrito{
+    display: flex;
+    width: 200px;
+   
+}
+
+#p-mobile{
+    display: none;
+}
+#p-web{
+    display: flex;
+}
+.reserva-fecha{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+/* FIN CARRITO 768 */
+
 }
