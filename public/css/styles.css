@@ -54,7 +54,7 @@ footer .container-fluid{
     color: white;
     align-items: center;
     padding: 10px;
-    margin: auto;
+    margin: 20px 0px;
     bottom: 0;
 }
 
@@ -78,6 +78,7 @@ footer .container-fluid p{
 
 .banner-home{
     position: relative;
+    margin-bottom: 10px;
 }
 
 .banner-home img{
