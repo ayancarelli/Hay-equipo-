@@ -216,8 +216,8 @@ footer .container-fluid p{
     height: 70px;
     width: 100%;
     align-items: center;
-
-   justify-content: center;
+    justify-content: center;
+    margin-bottom: 0%;
  
 }
 .banner-equipo{
@@ -225,12 +225,14 @@ footer .container-fluid p{
     justify-content: center;
 
 }
-.imagen-equipos-fondo{
-    width: 100vw;
-    margin-left: 15px;
-    display: flex;
-    position: absolute;
-    opacity: 0.80;
+
+#equipos-section{
+    background-image: url(/img/red-arco.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.8;
+    padding: 10px;
 }
 
 /*STYLE DE CANCHAS*/
