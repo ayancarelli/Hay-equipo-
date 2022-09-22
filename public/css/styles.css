@@ -30,7 +30,28 @@ header .container-fluid{
 }
 #hamb-icon{
     font-size: 20px;
-    margin-right: 10px;
+}
+#magic-button{
+    --bs-btn-bg: none;
+    --bs-btn-border-color: none;
+}
+#offcanvasRight{
+    background-color: #25306A;
+    bottom: unset;
+}
+#boton-cerrar{
+    align-self: flex-end;
+    color: white;
+    background: transparent;
+    border: none;
+    font-weight: bold;
+}
+.offcanvas-header{
+    flex-direction: column;
+    align-items: center;
+}
+#offcanvasRightLabel{
+    margin-bottom: 10px
 }
 .menu-navbar{
     display: none;
@@ -371,7 +392,7 @@ footer .container-fluid p{
 @media (min-width: 768px) {
 
 /* HEADER 768 */
-.header-navbar i{
+.boton-magico{
     display: none;
 }
 .header-navbar .menu-navbar {

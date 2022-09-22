@@ -19,7 +19,17 @@
                 <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
             </div>
             <nav class="header-navbar">
-                <i class="fa-solid fa-bars" id="hamb-icon"></i>    
+                <div class="boton-magico">       
+                    <button class="btn btn-primary" id="magic-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-bars" id="hamb-icon"></i></button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" id="boton-cerrar">X</button>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/canchas">Canchas</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/equipos">Equipos</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/login">Login</a></h5><br>
+                        </div>
+                    </div>
+                </div>    
                 <ul class="menu-navbar">
                     <li><a href="/canchas">Canchas</a></li> 
                     <li><a href="/equipos">Equipos</a></li>
