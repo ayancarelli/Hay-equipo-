@@ -3,7 +3,6 @@
 }
 
 /* HEADER STYLE */
-
 header .container-fluid{
     display: flex;
     flex-direction: row;
@@ -15,11 +14,9 @@ header .container-fluid{
     padding: 10px;
     margin: auto;
 }
-
 .logo {
     width: 200px;
 }
-
 .header-navbar{
     display: flex;
     align-items: center;
@@ -31,20 +28,16 @@ header .container-fluid{
 .header-navbar a:hover{
     color: aqua;
 }
-
 #hamb-icon{
     font-size: 20px;
     margin-right: 10px;
 }
-
 .menu-navbar{
     display: none;
 }
-
 /* FIN HEADER STYLER */
 
 /* FOOTER STYLE */
-
 footer .container-fluid{
     display: flex;
     flex-direction: row;
@@ -57,11 +50,9 @@ footer .container-fluid{
     margin: auto;
     bottom: 0;
 }
-
 footer .container-fluid p{
     margin: auto;
 }
-
 .redes-sociales{
     list-style: none;
     display: flex;
@@ -69,47 +60,35 @@ footer .container-fluid p{
     --bs-link-color: white;
     --bs-link-hover-color: #8A8EA6;
 }
-
 .redes-sociales li{
     margin-left: 10px;
 }
-
 /* FIN FOOTER STYLE */
 
-.banner-home{
-    position: relative;
+/* HOME STYLE */
+#cuerpo-inicio{
     margin-bottom: 10px;
-}
-
-.banner-home img{
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-    position: absolute;
-}
-
-.banner-home h2{
-    position: relative;
-    font-size: 34px;
+    background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.6)) , url(/img/cesped.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     color: #25306A;
+}
+.banner-home h2{
+    font-size: 34px;
     font-weight: bold;
     margin-left: 15px;
     margin-bottom: 0px;
     padding-top: 10px;
 }
-
 .banner-home h3{
-    position: relative;
     font-size: 22px;
-    color: #25306A;
     font-weight: bold;
     margin-left: 15px;
     margin-right: 10px;
 }
-
 .banner-home button{
     background-color: #5E658C;
-    color: white;
     font-size: 10px;
     font-weight: bold;
     border-radius: 10px;
@@ -119,23 +98,19 @@ footer .container-fluid p{
     position: sticky;
     border-color: #5E658C;
 }
-
 .banner-home a{
     text-decoration: none;
     color: #FCFCFC;
 }
-
 .cartas-equipos{
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
 #equipos-home{
     margin-bottom: 20px;
 }
-
 .esperando-jugar{
     width: 100vw;
     font-size: 15px;
@@ -144,12 +119,10 @@ footer .container-fluid p{
     margin-bottom: 5px;
     margin-left: 15px;
 }
-
 .card{
     padding: 10px;
     margin: 5px;
 }
-
 .card .marcador{
     position: absolute;
     background-color: #A1FCC6;
@@ -162,7 +135,6 @@ footer .container-fluid p{
     right: -5px;
     top: -10px;
 }
-
 .card-body h5{
     font-weight: bold;
     color: #5E658C;
@@ -172,22 +144,20 @@ footer .container-fluid p{
     font-size: 14px;
     color: #25306A;
 }
-
 .card-body .btn-primary{
     --bs-btn-bg: #8A8EA6;
     --bs-btn-border-color: #8A8EA6;
     --bs-btn-hover-bg: #25306A;
     --bs-btn-hover-border-color: #25306A;
 }
+/* FIN HOME STYLE */
 
 /* STYLE DEL REGISTRO Y LOGIN */
-
 .registro-cuerpo{
     display: flex;
     justify-content: center;
     background-color: #25306A;
 }
-
 .registro-formulario{
     max-width: 350px;
     min-width: 250px;
@@ -199,17 +169,14 @@ footer .container-fluid p{
     font-weight: bold;
     font-size: 12px;
 }
-
 .registro-formulario .form-control{
     font-size: 12px;
 }
-
 .registro-formulario #emailHelp{
     color: #C7CAD9;
     
 }
-
-/* STYLE DE LOGIN */
+/* FIN STYLE DE REGISTRO Y LOGIN */
 
 /*STYLE DE EQUIPOS*/
 .banner-equipo h3{
@@ -218,30 +185,29 @@ footer .container-fluid p{
     background-color:#C7CAD9;
     color: #25306A;
     font-size: 22px;
+    font-weight: bold;
     height: 70px;
     width: 100%;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0%;
- 
+    margin-bottom: 0%; 
 }
 .banner-equipo{
     display: flex;
     justify-content: center;
 
 }
-
 #equipos-section{
     background-image: url(/img/red-arco.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    opacity: 0.8;
+    opacity: 0.9;
     padding: 10px;
 }
+/*FIN STYLE DE EQUIPOS*/
 
 /*STYLE DE CANCHAS*/
-
 .main-canchas{
     display: flex;
     flex-direction: column;
@@ -262,11 +228,9 @@ footer .container-fluid p{
     margin-top: 0%;
     margin-bottom: 15px;
 }
-
 .titulo-canchas h2{
-    margin: 10px 0pxcl;
+    margin: 10px 0px;
 }
-
 .container-padre-canchas{
     display: flex;
     flex-direction: column;
@@ -274,11 +238,9 @@ footer .container-fluid p{
     align-items: center;
     flex-wrap: wrap;
 }
-
 .container-padre-canchas h2{
     margin: 10px 0px;
 }
-
 .imagen{
     border-radius: 15px;
     border: solid 1px black;
@@ -340,7 +302,6 @@ footer .container-fluid p{
     transition-property: color;
     transition-duration: 0.5s;
 }
-
 .dates-canchas:hover{
     background-color: aliceblue;
     transition-property: background-color, width;
@@ -355,7 +316,6 @@ footer .container-fluid p{
 
 
 /* STYLE DE CARRITO*/
-
 .banner-carrito h3{
     display: flex;
     justify-content: center;
@@ -380,22 +340,18 @@ footer .container-fluid p{
     border-bottom:  solid 1px black;
     padding: 10px 0px;
 }
-
 .imagen-carrito{
    display: none;
    
 }
-
 #p-web{
     display: none;
 }
-
 .reserva-fecha{
     display: flex;
     flex-direction: column;
     text-align: center;
 }
-
 .btn-confirmar{
     display: flex;
     flex-direction:column-reverse;
@@ -408,6 +364,9 @@ footer .container-fluid p{
     margin-bottom: 10px;
     text-align: center;
 }
+/* FIN STYLE DE CARRITO*/
+
+/* --------------------------------------------------------------------------------------------------------------------------------------- */
 
 @media (min-width: 768px) {
 
@@ -415,7 +374,6 @@ footer .container-fluid p{
 .header-navbar i{
     display: none;
 }
-
 .header-navbar .menu-navbar {
     display: flex;
     list-style: none;
@@ -423,22 +381,18 @@ footer .container-fluid p{
     margin: auto;
     margin-right: 10px;
 }
-
 .menu-navbar li{
     margin-left: 10px;
 }
-
 .btn-outline-light {
     margin-left: 10px;
 }
 /* FIN HEADER 768 */
 
 /* FOOTER 768 */
-
 footer .container-fluid{
     font-size: 16px;
 }
-
 /* FIN FOOTER 768 */
 
 /* HOME 768 */
@@ -446,29 +400,24 @@ footer .container-fluid{
    
     font-size: 50px;
 }
-
 .banner-home h3{
     font-size: 40px;
 }
-
 .banner-home button{
     font-size: 17px;
 }
-
 .esperando-jugar{
     font-size: 25px;
 }
 /* FIN HOME 768 */
 
-/* CUERPO REGISTRO 768 */
-
+/* CUERPO REGISTRO Y LOGIN 768 */
 .registro-cuerpo{
     align-items: center;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
-
 .registro-formulario{
     
     margin: 9% 0px;
@@ -481,20 +430,19 @@ footer .container-fluid{
     font-size: 1.2em;
     
 }
-
-/*PARTE DEL LOGIN*/
+/* LOGIN 768 */
 #login-fondo{
 background-image: url("/img/pelota.jpg");
 }
 
-/*PARTE REGISTRO*/
+/* REGISTRO 768*/
 #registro-fondo{
     background-image: url("/img/tactica-futbol.jpg");
     
 }
+/* FIN CUERPO REGISTRO Y LOGIN 768 */
 
-/* CANCHAS */
-
+/* CANCHAS 768 */
 .main-canchas{
     flex-direction: column;
     justify-content: center;
@@ -510,28 +458,25 @@ background-image: url("/img/pelota.jpg");
 .cancha1{
     margin-bottom: 0%;
 }
+/* FIN CANCHAS 768 */
 
 /* CARRITO 768 */
-
 .col-9{
     display: flex;
     align-items: center;
     
 }
-
 #cuerpo-carrito{
     align-items: center;
     border-top:  solid 1px black;
     border-bottom:  solid 1px black;
     padding: 10px 0px;
 }
-
 .imagen-carrito{
     display: flex;
     width: 200px;
    
 }
-
 #p-mobile{
     display: none;
 }
@@ -544,5 +489,4 @@ background-image: url("/img/pelota.jpg");
     margin-left: 10px;
 }
 /* FIN CARRITO 768 */
-
 }
