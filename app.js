@@ -1,41 +1,20 @@
 const express = require('express'); 
 const path = require('path');
 
+const rutasMain = require('./src/routes/main');
+const rutasUsers = require('./src/routes/users');
+const rutasProducts = require('./src/routes/products');
+
 const app = express();
-
-app.get ('/', (req,res) => {
-    res.sendFile (path.resolve(__dirname,'./views/index.html'))
-});
-app.get ('/login', (req,res) => {
-    res.sendFile (path.resolve(__dirname,'./views/login.html'))
-});
-app.get ('/registro', (req,res) => {
-    res.sendFile (path.resolve(__dirname,'./views/registro.html'))
-});
-
-app.get ('/canchas', (req,res) => {
-    res.sendFile (path.resolve(__dirname,'./views/canchas.html'))
-});
-
-app.get ('/carrito', (req,res) => {
-    res.sendFile (path.resolve(__dirname,'./views/carrito.html'))
-});
-
-app.get ('/carrito2', (req,res) => {
-    res.sendFile (path.resolve(__dirname,'./views/carrito2.html'))
-});
-
-app.get ('/equipos', (req,res) => {
-    res.sendFile (path.resolve(__dirname,'./views/equipos.html'))
-});
-
-app.get ('/reservas', (req,res) => {
-    res.sendFile (path.resolve(__dirname,'./views/reservas.html'))
-});
 
 app.use (express.static(path.resolve(__dirname,'./public')));
 
- 
+app.use('/', rutasMain);
+app.use('/products', rutasProducts);
+app.use('/users', rutasUsers);
+
+app.set('view engine', 'ejs');
+
 app.listen(process.env.PORT || 3000, function() {
     console.log("Servidor corriendo");
-})
+});
