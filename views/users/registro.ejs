@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <header> 
+        <div class="container-fluid">
+            <div>
+                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
+            </div>
+            <nav class="header-navbar">
+                <div class="boton-magico">       
+                    <button class="btn btn-primary" id="magic-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-bars" id="hamb-icon"></i></button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" id="boton-cerrar">X</button>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/canchas">Canchas</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/equipos">Equipos</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/login">Login</a></h5><br>
+                        </div>
+                    </div>
+                </div>    
+                <ul class="menu-navbar">
+                    <li><a href="/canchas">Canchas</a></li> 
+                    <li><a href="/equipos">Equipos</a></li>
+                    <li><a href="/login">Login</a></li>                   
+                </ul>                
+            </nav>
+        </div>    
+    </header>
+    <section class="registro-cuerpo" id="registro-fondo">       
+        <div class="registro-formulario">
+            <form>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido">
+                  </div>
+                    <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">
+                    <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
+                </div>
+                <button type="submit" class="btn btn-primary">ENVIAR</button>
+            </form>            
+        </div> 
+    </section>
+    <%- include('../partials/footer') %>   
+</body>
+</html>
