@@ -12,3 +12,5 @@ REUNIÓN DE RESTROSPECTIVA:
 
 >>> "Qué Dejar de hacer"
 - Dentro de lo posible, evitar tiempos prolongados de inactividad. De lo contrario, cada intento de avance es menos eficiente por a la necesidad de revisar y entender lo que se fue agregando. Podría considerarse mantener un ritmo constante de pequeñas intervenciones, posiblemente sea mejor que cargar mucho una jornada.
+
+ATENCIÓN!!! >>> MISMA REUNIÓN DE RETROSPECTIVAAAAA!!! (04/10/22)
