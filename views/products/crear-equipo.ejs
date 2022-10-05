@@ -13,16 +13,16 @@
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                         <div class="offcanvas-header">
                             <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" id="boton-cerrar">X</button>
-                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/canchas">Canchas</a></h5><br>
-                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/equipos">Equipos</a></h5><br>
-                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/login">Login</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="./canchas">Canchas</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="./equipos">Equipos</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="../users/login">Login</a></h5><br>
                         </div>
                     </div>
                 </div>    
                 <ul class="menu-navbar">
-                    <li><a href="/canchas">Canchas</a></li> 
-                    <li><a href="/equipos">Equipos</a></li>
-                    <li><a href="/login">Login</a></li>                   
+                    <li><a href="./canchas">Canchas</a></li> 
+                    <li><a href="./equipos">Equipos</a></li>
+                    <li><a href="../users/login">Login</a></li>                   
                 </ul>                
             </nav>
         </div>    
@@ -31,25 +31,64 @@
         <div class="registro-formulario">
             <form>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre">
-                  </div>
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Apellido:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido">
-                  </div>
-                    <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">
-                    <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
+                    <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Equipo A">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="fotoEquipo" class="form-label">Foto del Equipo:</label>
+                    <input type="file" class="form-control" id="fotoEquipo" accept=".jpg, .png">
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 1:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 2:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 3:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 4:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 5:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 6:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="diasPosibles" class="form-label">Disponibilidad Semanal:</label><br>
+                    <input type="checkbox" id="diasPosibles" value="1"> Lunes</input><br>
+                    <input type="checkbox" id="diasPosibles" value="2"> Martes</input><br> 
+                    <input type="checkbox" id="diasPosibles" value="3"> Miércoles</input><br> 
+                    <input type="checkbox" id="diasPosibles" value="4"> Jueves</input><br> 
+                    <input type="checkbox" id="diasPosibles" value="5"> Viernes</input><br>                    
+                    <input type="checkbox" id="diasPosibles" value="6"> Sábado</input><br>
+                    <input type="checkbox" id="diasPosibles" value="7"> Domingo</input><br>
+                </div>
+                <div class="mb-3">
+                    <label for="franjaHoraria" class="form-label">Franja Horaria Disponible:</label>
+                    <select id="franjaHoraria">
+                        <option value="1">15:00 a 18:00hs</option>
+                        <option value="2">18:00 a 19:00hs</option>
+                        <option value="3">19:00 a 21:00hs</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="restriccionEdad" class="form-label">Restricción de Edad:</label>
+                    <select id="restriccionEdad">
+                        <option value="1">Sin restricción</option>
+                        <option value="2">Menores de 30 años</option>
+                        <option value="3">Mayores de 30 años</option>
+                        <option value="2">Menores de 40 años</option>
+                        <option value="3">Mayores de 40 años</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">ENVIAR</button>
             </form>            
