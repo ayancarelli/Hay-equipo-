@@ -9,9 +9,14 @@ const app = express();
 
 app.use (express.static(path.resolve(__dirname,'./public')));
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
 app.use('/users', rutasUsers);
+    
 
 app.set('view engine', 'ejs');
 

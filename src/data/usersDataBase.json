@@ -1,53 +1,68 @@
 [
-    {
-        "nombre": "Enzo",
-        "apellido": "Francescoli",
-        "dni": 24803772,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "m",
-        "foto":"enxofrancescoli.jpeg",
-        "email": "enzo@gmail.com"
-        
-    },
-    {
-        "nombre": "Enzo",
-        "apellido": "Francescoli",
-        "dni": 24803772,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "m",
-        "foto":"enxofrancescoli.jpeg",
-        "email": "enzo@gmail.com"
-        
-    },
-    {
-        "nombre": "Enzo",
-        "apellido": "Francescoli",
-        "dni": 24803772,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "m",
-        "foto":"enxofrancescoli.jpeg",
-        "email": "enzo@gmail.com"
-        
-    },
-    {
-        "nombre": "Enzo",
-        "apellido": "Francescoli",
-        "dni": 24803772,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "m",
-        "foto":"enxofrancescoli.jpeg",
-        "email": "enzo@gmail.com"
-        
-    },
-    {
-        "nombre": "Enzo",
-        "apellido": "Francescoli",
-        "dni": 24803772,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "m",
-        "foto":"enxofrancescoli.jpeg",
-        "email": "enzo@gmail.com"
-        
-    }
-    
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803773,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "m",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com",
+  "usuario": "enzoCampeon",
+  "contraseña": "aaaaa"
+ },
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803774,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "m",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com",
+  "usuario": "enzoCampeono",
+  "contraseña": "aaaaa"
+ },
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803775,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "m",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com",
+  "usuario": "enzoCampeon",
+  "contraseña": "aaaaa"
+ },
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803776,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "m",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com",
+  "usuario": "enzoCampeon",
+  "contraseña": "aaaaa"
+ },
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803777,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "m",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com",
+  "usuario": "enzoCampeon",
+  "contraseña": "aaaaa"
+ },
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803778,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "m",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com",
+  "usuario": "enzoCampeon",
+  "contraseña": "aaaaa"
+ }
 ]
