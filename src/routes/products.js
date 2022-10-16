@@ -8,5 +8,5 @@ router.get ('/carrito', productsController.carrito);
 router.get ('/carrito2', productsController.carrito2);
 router.get ('/crear-equipo', productsController.create);
 router.get ('/editar-equipo', productsController.edit);
-
+router.post ('/crear-equipo', productsController.crear);
 module.exports = router;

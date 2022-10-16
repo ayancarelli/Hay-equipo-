@@ -1,53 +1,47 @@
 [
-    {
-        "nombre": "Enzo",
-        "apellido": "Francescoli",
-        "dni": 24803772,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "masculino",
-        "foto":"enxofrancescoli.jpeg",
-        "email": "enzo@gmail.com"
-        
-    },
-    {
-        "nombre": "José Luis",
-        "apellido": "Cuciuffo",
-        "dni": 24803773,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "masculino",
-        "foto":"cuciuffo.jpeg",
-        "email": "enzo@gmail.com"
-        
-    },
-    {
-        "nombre": "Enzo",
-        "apellido": "Francescoli",
-        "dni": 24803774,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "m",
-        "foto":"enxofrancescoli.jpeg",
-        "email": "enzo@gmail.com"
-        
-    },
-    {
-        "nombre": "Enzo",
-        "apellido": "Francescoli",
-        "dni": 24803775,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "m",
-        "foto":"enxofrancescoli.jpeg",
-        "email": "enzo@gmail.com"
-        
-    },
-    {
-        "nombre": "Enzo",
-        "apellido": "Francescoli",
-        "dni": 24803776,
-        "fechaDeNacimiento": "15-09-1975",
-        "sexo": "m",
-        "foto":"enxofrancescoli.jpeg",
-        "email": "enzo@gmail.com"
-        
-    }
-    
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803772,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "masculino",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com"
+ },
+ {
+  "nombre": "José Luis",
+  "apellido": "Cuciuffo",
+  "dni": 24803773,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "masculino",
+  "foto": "cuciuffo.jpeg",
+  "email": "enzo@gmail.com"
+ },
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803774,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "m",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com"
+ },
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803775,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "m",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com"
+ },
+ {
+  "nombre": "Enzo",
+  "apellido": "Francescoli",
+  "dni": 24803776,
+  "fechaDeNacimiento": "15-09-1975",
+  "sexo": "m",
+  "foto": "enxofrancescoli.jpeg",
+  "email": "enzo@gmail.com"
+ }
 ]

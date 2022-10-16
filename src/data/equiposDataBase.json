@@ -1,39 +1,35 @@
 [
-    {
-        "id": "1",
-        "nombreEquipo": "Cebollitas",
-        "imgagen": "los-cebollitas.jpeg",
-        "jugador1": "usuario",
-        "jugador2": "usuario",
-        "jugador3": "usuario",
-        "jugador4": "usuario",
-        "jugador5": "usuario",
-        "jugador6": "usuario"
-        
-    },
-    {
-        "id": "2",
-        "nombreEquipo": "Sacachispas",
-        "imgagen": "los-cebollitas.jpeg",
-        "jugador1": "usuario",
-        "jugador2": "usuario",
-        "jugador3": "usuario",
-        "jugador4": "usuario",
-        "jugador5": "usuario",
-        "jugador6": "usuario"
-        
-    },
-    {
-        "id": "3",
-        "nombreEquipo": "Abogados Unidos",
-        "imgagen": "los-cebollitas.jpeg",
-        "jugador1": "usuario",
-        "jugador2": "usuario",
-        "jugador3": "usuario",
-        "jugador4": "usuario",
-        "jugador5": "usuario",
-        "jugador6": "usuario"
-        
-    }
-
+ {
+  "id": "1",
+  "nombreEquipo": "Cebollitas",
+  "imgagen": "los-cebollitas.jpeg",
+  "jugador1": "usuario",
+  "jugador2": "usuario",
+  "jugador3": "usuario",
+  "jugador4": "usuario",
+  "jugador5": "usuario",
+  "jugador6": "usuario"
+ },
+ {
+  "id": "2",
+  "nombreEquipo": "Sacachispas",
+  "imgagen": "los-cebollitas.jpeg",
+  "jugador1": "usuario",
+  "jugador2": "usuario",
+  "jugador3": "usuario",
+  "jugador4": "usuario",
+  "jugador5": "usuario",
+  "jugador6": "usuario"
+ },
+ {
+  "id": "3",
+  "nombreEquipo": "Abogados Unidos",
+  "imgagen": "los-cebollitas.jpeg",
+  "jugador1": "usuario",
+  "jugador2": "usuario",
+  "jugador3": "usuario",
+  "jugador4": "usuario",
+  "jugador5": "usuario",
+  "jugador6": "usuario"
+ }
 ]
