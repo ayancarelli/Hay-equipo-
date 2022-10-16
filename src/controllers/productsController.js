@@ -11,7 +11,8 @@ const controlador = {
         res.render('./products/canchas');
     },
     equipos: (req,res) => {
-        res.render('./products/equipos');
+        const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
+        res.render('./products/equipos', {ps: equiposJson});
     },
     carrito: (req,res) => {
         res.render('./products/carrito');

@@ -1,35 +1,50 @@
 [
  {
-  "id": "1",
-  "nombreEquipo": "Cebollitas",
-  "imgagen": "los-cebollitas.jpeg",
-  "jugador1": "usuario",
-  "jugador2": "usuario",
-  "jugador3": "usuario",
-  "jugador4": "usuario",
-  "jugador5": "usuario",
-  "jugador6": "usuario"
+  "id": "31",
+  "nombreEquipo": "",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "",
+  "jugador2": "",
+  "jugador3": "",
+  "jugador4": "",
+  "jugador5": "",
+  "jugador6": "",
+  "restriccionEdad": "1"
  },
  {
-  "id": "2",
-  "nombreEquipo": "Sacachispas",
-  "imgagen": "los-cebollitas.jpeg",
-  "jugador1": "usuario",
-  "jugador2": "usuario",
-  "jugador3": "usuario",
-  "jugador4": "usuario",
-  "jugador5": "usuario",
-  "jugador6": "usuario"
+  "id": "311",
+  "nombreEquipo": "lo pepes",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "asd",
+  "jugador2": "ddd2123",
+  "jugador3": "asdasd",
+  "jugador4": "fdsfsd",
+  "jugador5": "asd",
+  "jugador6": "qwasdds",
+  "restriccionEdad": "3"
  },
  {
-  "id": "3",
-  "nombreEquipo": "Abogados Unidos",
-  "imgagen": "los-cebollitas.jpeg",
-  "jugador1": "usuario",
-  "jugador2": "usuario",
-  "jugador3": "usuario",
-  "jugador4": "usuario",
-  "jugador5": "usuario",
-  "jugador6": "usuario"
+  "id": "3111",
+  "nombreEquipo": "raspando el 4",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "jose",
+  "jugador2": "pepe",
+  "jugador3": "pepe2",
+  "jugador4": "pepe3",
+  "jugador5": "juan",
+  "jugador6": "hernesto",
+  "restriccionEdad": "2"
+ },
+ {
+  "id": "31111",
+  "nombreEquipo": "caja de pandora",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "",
+  "jugador2": "",
+  "jugador3": "",
+  "jugador4": "",
+  "jugador5": "",
+  "jugador6": "",
+  "restriccionEdad": "1"
  }
 ]
