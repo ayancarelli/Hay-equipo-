@@ -29,26 +29,26 @@
     </header>
     <section class="registro-cuerpo" id="registro-fondo">       
         <div class="registro-formulario">
-            <form>
+            <form action="/users/registro" method="POST">
                 <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                </div>
+                  <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" name= 'apellido' id="apellido" placeholder="Apellido">
                   </div>
                   <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Apellido:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido">
-                  </div>
-                  <div class="mb-3">
-                      <label for="formGroupExampleInput2" class="form-label">Dni:</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Dni">
+                      <label for="dni" class="form-label">Dni:</label>
+                      <input type="number" class="form-control" name= 'dni' id="dni" placeholder="Dni">
                     </div>
                     <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Fecha de nacimiento">
+                        <label for="fechaDeNacimiento" class="form-label">Fecha de nacimiento:</label>
+                        <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" placeholder="Fecha de nacimiento">
                     </div>
                     <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Sexo:</label>
-                        <select id="formGroupExampleInput2">
+                        <label for="sexo" class="form-label">Sexo:</label>
+                        <select name="sexo" id="sexo">
                             <option value="1">Hombre</option>
                             <option value="2">Mujer</option>
                         </select>
@@ -59,9 +59,9 @@
                         <input type="file" class="form-control" id="formGroupExampleInput2" placeholder="Foto de perfil">
                     </div>
 
-                    <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" name= "email" id="email" aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">
                     <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
                 </div>
                 <div class="mb-3">
