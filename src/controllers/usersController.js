@@ -29,9 +29,50 @@ const controlador = {
         userJson.push(usuarioNuevo);
         
         fs.writeFileSync(usersFilePath,JSON.stringify(userJson, null, " "));
-       console.log(usuarioNuevo);
+        console.log(usuarioNuevo);
         res.redirect('/');
-    }
+    },
+    users: (req,res) => {
+        const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        res.render('./users/users', {users : userJson});
+    },
+    edit: (req,res) => {
+        
+        let dniUser = req.params.dni;
+		let objUser;
+
+		for (let e of userJson){
+			if (dniUser == e.dni){
+				objUser=e;
+				break;
+			}
+		}
+
+		res.render('./users/editar-users');/*,{useraEditar: objUser});*/
+
+    },
+    update: (req, res) => {
+
+		let dniUser = req.params.dni;
+
+		for (let s of userJson){
+			if (dniUser == s.dni){
+				s.nombre = req.body.nombre;
+                s.apellido = req.body.apellido;
+                s.dni = req.body.dni;
+                s.fechaDeNacimiento = req.body.fechaDeNacimiento ;
+                s.sexo = req.body.sexo;
+                s.foto = "enzo.jpg";
+                s.email = req.body.email;
+                s.usuario = req.body.usuario
+				break;
+			}
+		}
+
+		fs.writeFileSync(usersFilePath, JSON.stringify(userJson,null,' '));
+
+		res.redirect('/');
+	}
 }
 
 module.exports = controlador;

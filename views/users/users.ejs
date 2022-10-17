@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <header> 
+        <div class="container-fluid">
+            <div>
+                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
+            </div>
+            <nav class="header-navbar">
+              <div class="boton-magico">       
+                <button class="btn btn-primary" id="magic-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-bars" id="hamb-icon"></i></button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="./canchas">Canchas</a></h5><br>
+                    </div>
+                </div>
+              </div>     
+              <ul class="menu-navbar">
+                  <li><a href="./canchas">Canchas</a></li> 
+                  <li><a href="../users/login">Login</a></li>
+                  <button type="button" class="btn btn-outline-light"><a href="../users/registro">Registro</a></button>
+                  <button type="button" class="btn btn-outline-light"><a href="./crear-equipo">Crear Equipo</a></button>
+              </ul>                
+            </nav>
+        </div>    
+    </header>
+
+    <section class="cuerpo-home">
+        <div class="banner-equipo">        
+            <h3>
+                USUARIOS
+            </h3>
+        </div>
+    </section>
+    <section class="cartas-equipos" id="equipos-section">
+      <% for(let objeto of users) { %>    
+      <div class="card" style="width: 18rem;">
+            <img src="/img/<%= objeto.foto %>" class="card-img-top" alt="Foto Equipo">
+            <div class="card-body">
+              <h5 class="card-title"><%= objeto.nombre %></h5>
+              <p class="card-text">
+                <ul>
+                    <li><i class="fa-solid fa-medal"></i> <%= objeto.dni %> </li>
+                    <li><i class="fa-solid fa-shield"></i> <%= objeto.fechaDeNacimiento %></li>
+                    <li><i class="fa-solid fa-person-running"></i> <%= objeto.sexo %></li>
+                </ul>
+              </p>
+              <a href="/users/edit-user/:<%= objeto.dni %>" class="btn btn-primary">Editar</a>
+            </div>
+      </div>
+        <% } %> 
+      </section>
+    <%- include('../partials/footer') %>
+</body>
+</html>
