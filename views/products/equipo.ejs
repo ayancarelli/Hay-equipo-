@@ -31,18 +31,18 @@
         <div class="registro-formulario">
             <form action="/products/crear-equipo" method="POST">
                 <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label"><%= equipo.nombreEquipo %> </label>
+                    <label for="formGroupExampleInput" class="form-label"><%=equipo.nombreEquipo %> </label>
                 </div>
                 <div class="mb-3">
                     <img src="/img/img-equipos/<%= equipo.imagen %>" class="card-img-top" alt="Foto Equipo">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 1: </label>
-                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador1 %></label>
+                    <label for="formGroupExampleInput2" class="form-label"><%=equipo.jugador1 %></label>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 2: </label>
-                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador2 %></label>
+                    <label for="formGroupExampleInput2" class="form-label"><%=equipo.jugador2 %></label>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 3: </label>
@@ -65,7 +65,7 @@
                     <!--<input type="checkbox" id="diasPosibles" value="1"> Mixto</input><br>
                     <input type="checkbox" id="diasPosibles" value="2"> Mujeres</input><br> 
                     <input type="checkbox" id="diasPosibles" value="3">Hombres</input><br> 
-                    <!--<input type="checkbox" id="diasPosibles" value="4"> Jueves</input><br> 
+                    <input type="checkbox" id="diasPosibles" value="4"> Jueves</input><br> 
                     <input type="checkbox" id="diasPosibles" value="5"> Viernes</input><br>                    
                     <input type="checkbox" id="diasPosibles" value="6"> Sábado</input><br>
                     <input type="checkbox" id="diasPosibles" value="7"> Domingo</input><br>
@@ -84,10 +84,12 @@
                 </div>
                 -->
                 <br>
-                <!--<button type="submit" class="btn btn-primary">EDITAR</button>
-                -->
+               
                 <a href="/products/editar-equipo/<%= equipo.id %>" class="btn btn-primary">EDITAR</a>
             </form>            
+            <form action="/products/delete/<%=equipo.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-primary">ELIMINAR</button>
+            </form>
         </div> 
     </section>
     <%- include('../partials/footer') %>   

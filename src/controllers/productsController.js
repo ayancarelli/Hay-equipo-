@@ -73,7 +73,43 @@ const controlador = {
         }
         
         res.render('./products/equipo', {equipo: objEquipo})
-    }
+    },
+    update: (req,res) => {
+   
+        let idEquipo = req.params.id;
+   
+        for (let e of equiposJson){
+            if (idEquipo == e.id){
+                
+                e.nombreEquipo= req.body.nombreEquipo;
+                e.jugador1= req.body.jugador1;
+                e.jugador2= req.body.jugador2;
+                e.jugador3= req.body.jugador3;
+                e.jugador4= req.body.jugador4;
+                e.jugador5= req.body.jugador5;
+                e.jugador6= req.body.jugador6;
+                e.restriccionesEdad= req.body.restriccionesEdad;
+                e.restriccionSexo= req.body.restriccionSexo;
+                break;
+
+            }
+        }
+        fs.writeFileSync(equiposFilePath,JSON.stringify(equiposJson, null, " "));
+      
+        res.redirect('/');
+    },
+    destroy : (req, res) => {
+		
+		let idEquipo = req.params.id;
+
+		let arrEquipos = equiposJson.filter(function(elemento){
+			return elemento.id!=idEquipo;
+		})
+		
+		fs.writeFileSync(equiposFilePath,JSON.stringify(arrEquipos,null," "));
+
+		res.redirect('/');
+	}
 }
 
 module.exports = controlador;
