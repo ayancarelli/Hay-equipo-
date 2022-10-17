@@ -41,6 +41,7 @@
     <section class="cartas-equipos" id="equipos-section">
       <% for(let objeto of ps) { %>    
       <div class="card" style="width: 18rem;">
+        <a href="/products/equipo/<%= objeto.id %>">
             <span class="marcador"> 100% Asistencia <i class="fa-solid fa-handshake-angle"></i></span>
             <img src="/img/img-equipos/<%= objeto.imagen %>" class="card-img-top" alt="Foto Equipo">
             <div class="card-body">
@@ -53,7 +54,7 @@
                 </ul>
               </p>
               <a href="./carrito2" class="btn btn-primary">Desafiar ></a>
-              <a href="" class="btn btn-primary">Más info ></a>
+              <a href="/products/equipo/<%= objeto.id %>" class="btn btn-primary">Más info ></a>
             </div>
         </div>
         <% } %> 

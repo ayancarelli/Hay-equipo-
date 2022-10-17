@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <header> 
+        <div class="container-fluid">
+            <div>
+                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
+            </div>
+            <nav class="header-navbar">
+                <div class="boton-magico">       
+                    <button class="btn btn-primary" id="magic-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-bars" id="hamb-icon"></i></button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" id="boton-cerrar">X</button>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="./canchas">Canchas</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="./equipos">Equipos</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="../users/login">Login</a></h5><br>
+                        </div>
+                    </div>
+                </div>    
+                <ul class="menu-navbar">
+                    <li><a href="./canchas">Canchas</a></li> 
+                    <li><a href="./equipos">Equipos</a></li>
+                    <li><a href="../users/login">Login</a></li>                   
+                </ul>                
+            </nav>
+        </div>    
+    </header>
+    <section class="registro-cuerpo" id="registro-fondo">       
+        <div class="registro-formulario">
+            <form action="/products/crear-equipo" method="POST">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label"><%= equipo.nombreEquipo %> </label>
+                </div>
+                <div class="mb-3">
+                    <img src="/img/img-equipos/<%= equipo.imagen %>" class="card-img-top" alt="Foto Equipo">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 1: </label>
+                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador1 %></label>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 2: </label>
+                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador2 %></label>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 3: </label>
+                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador3 %></label>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 4: </label>
+                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador4 %></label>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 5: </label>
+                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador5 %></label>
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Jugador 6: </label>
+                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador6 %></label>
+                </div>
+                <div class="mb-3">
+                    <label for="diasPosibles" name="restricciones" class="form-label">Restricción de Sexo: <%= equipo.restriccionesSexo%> </label><br>
+                    <!--<input type="checkbox" id="diasPosibles" value="1"> Mixto</input><br>
+                    <input type="checkbox" id="diasPosibles" value="2"> Mujeres</input><br> 
+                    <input type="checkbox" id="diasPosibles" value="3">Hombres</input><br> 
+                    <!--<input type="checkbox" id="diasPosibles" value="4"> Jueves</input><br> 
+                    <input type="checkbox" id="diasPosibles" value="5"> Viernes</input><br>                    
+                    <input type="checkbox" id="diasPosibles" value="6"> Sábado</input><br>
+                    <input type="checkbox" id="diasPosibles" value="7"> Domingo</input><br>
+                    -->
+                </div>
+            
+                <div class="mb-3">
+                    <label for="restriccionEdad" class="form-label"><%= equipo.restriccionEdad %> </label>
+                    <!--<select id="restriccionEdad" name="restriccionEdad">
+                        <option value="1">Sin restricción</option>
+                        <option value="2">Menores de 30 años</option>
+                        <option value="3">Mayores de 30 años</option>
+                        <option value="2">Menores de 40 años</option>
+                        <option value="3">Mayores de 40 años</option>
+                    </select>
+                </div>
+                -->
+                <br>
+                <!--<button type="submit" class="btn btn-primary">EDITAR</button>
+                -->
+                <a href="/products/editar-equipo/<%= equipo.id %>" class="btn btn-primary">EDITAR</a>
+            </form>            
+        </div> 
+    </section>
+    <%- include('../partials/footer') %>   
+</body>
+</html>

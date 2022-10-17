@@ -35,8 +35,8 @@ const controlador = {
             jugador4: req.body.jugador4,
             jugador5: req.body.jugador5,
             jugador6: req.body.jugador6,
-            restricciones: req.body.restricciones,
-            restriccionEdad: req.body.restriccionEdad
+            restriccionesEdad: req.body.restriccionesEdad,
+            restriccionSexo: req.body.restriccionSexo
         };
         
         equiposJson.push(equipoNuevo);
@@ -47,8 +47,33 @@ const controlador = {
     },
 
     edit: (req,res) => {
-        res.render('./products/editar-equipo');
+        let idEquipo = req.params.id;
+		let objEquipo;
+
+		for (let e of equiposJson){
+			if (idEquipo == e.id){
+				objEquipo=e;
+				break;
+			}
+		}
+
+		res.render('./products/editar-equipo',{equipo: objEquipo})
     },
+    
+    equipo: (req,res) => {
+        let idEquipo = req.params.id;
+        let objEquipo;
+
+        for (let e of equiposJson){
+            if (idEquipo == e.id){
+                objEquipo=e;
+                break
+
+            }
+        }
+        
+        res.render('./products/equipo', {equipo: objEquipo})
+    }
 }
 
 module.exports = controlador;

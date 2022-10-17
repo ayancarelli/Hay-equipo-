@@ -1,39 +1,42 @@
 [
  {
   "id": 1,
-  "nombreEquipo": "Los cebollitas",
-  "imagen": "los-cebollitas.jpeg",
-  "jugador1": "",
-  "jugador2": "",
-  "jugador3": "",
-  "jugador4": "",
-  "jugador5": "",
-  "jugador6": "",
-  "restriccionEdad": "1"
+  "nombreEquipo": "Avengers",
+  "imagen": "avg.jpeg",
+  "jugador1": "Iron Man",
+  "jugador2": "Thor",
+  "jugador3": "Hulk",
+  "jugador4": "Black Widow",
+  "jugador5": "Captain America",
+  "jugador6": "Hawkeye",
+  "restriccionEdad": "Mayores de 30 años",
+  "restriccionesSexo": "No"
  },
  {
   "id": 2,
-  "nombreEquipo": "Sacachispas",
+  "nombreEquipo": "Cebollitas",
   "imagen": "los-cebollitas.jpeg",
-  "jugador1": "asd",
-  "jugador2": "ddd2123",
-  "jugador3": "asdasd",
-  "jugador4": "fdsfsd",
-  "jugador5": "asd",
-  "jugador6": "qwasdds",
-  "restriccionEdad": "3"
+  "jugador1": "Diego Maradona",
+  "jugador2": "Enzo Francescoli",
+  "jugador3": "Jose Luis Cuciuffo",
+  "jugador4": "Ariel Ortega",
+  "jugador5": "René Higuita",
+  "jugador6": "Sergio Batista",
+  "restriccionEdad": "Mayores de 30 años",
+  "restriccionesSexo": "No"
  },
  {
   "id": 3,
   "nombreEquipo": "Raspando el 4",
-  "imagen": "los-cebollitas.jpeg",
-  "jugador1": "jose",
-  "jugador2": "pepe",
-  "jugador3": "pepe2",
-  "jugador4": "pepe3",
-  "jugador5": "juan",
-  "jugador6": "hernesto",
-  "restriccionEdad": "2"
+  "imagen": "r4.jpeg",
+  "jugador1": "Fede",
+  "jugador2": "Emilio",
+  "jugador3": "Alan",
+  "jugador4": "Santiago",
+  "jugador5": "",
+  "jugador6": "",
+  "restriccionEdad": "Mayores de 30 años",
+  "restriccionesSexo": "No"
  },
  {
   "id": 4,
@@ -45,18 +48,8 @@
   "jugador4": "",
   "jugador5": "",
   "jugador6": "",
-  "restriccionEdad": "1"
- },
- {
-  "id": 5,
-  "nombreEquipo": "nuevo",
-  "imagen": "los-cebollitas.jpeg",
-  "jugador1": "Emilio",
-  "jugador2": "",
-  "jugador3": "",
-  "jugador4": "",
-  "jugador5": "",
-  "jugador6": "",
-  "restriccionEdad": "1"
+  "restriccionEdad": "",
+  "restriccionesSexo": ""
  }
+ 
 ]
