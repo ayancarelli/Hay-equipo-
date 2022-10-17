@@ -1,11 +1,11 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "cancha": "Cancha cubierta",
         "image": "cancha-techada.jpg"
     },
     {
-        "id": "2",
+        "id": 2,
         "cancha": "Cancha descubierta",
         "image": "cancha-descubierta.jpg"
     }

@@ -4,7 +4,7 @@
   "apellido": "Francescoli",
   "dni": 24803772,
   "fechaDeNacimiento": "15-09-1975",
-  "sexo": "masculino",
+  "sexo": "hombre",
   "foto": "enxofrancescoli.jpeg",
   "email": "enzo@gmail.com"
  },
@@ -13,7 +13,7 @@
   "apellido": "Cuciuffo",
   "dni": 24803773,
   "fechaDeNacimiento": "15-09-1975",
-  "sexo": "masculino",
+  "sexo": "hombre",
   "foto": "cuciuffo.jpeg",
   "email": "enzo@gmail.com"
  },
@@ -22,7 +22,7 @@
   "apellido": "Francescoli",
   "dni": 24803774,
   "fechaDeNacimiento": "15-09-1975",
-  "sexo": "m",
+  "sexo": "hombre",
   "foto": "enxofrancescoli.jpeg",
   "email": "enzo@gmail.com"
  },
@@ -31,7 +31,7 @@
   "apellido": "Francescoli",
   "dni": 24803775,
   "fechaDeNacimiento": "15-09-1975",
-  "sexo": "m",
+  "sexo": "hombre",
   "foto": "enxofrancescoli.jpeg",
   "email": "enzo@gmail.com"
  },
@@ -40,8 +40,17 @@
   "apellido": "Francescoli",
   "dni": 24803776,
   "fechaDeNacimiento": "15-09-1975",
-  "sexo": "m",
+  "sexo": "hombre",
   "foto": "enxofrancescoli.jpeg",
   "email": "enzo@gmail.com"
+ },
+ {
+  "nombre": "Emilio",
+  "apellido": "Ladetto",
+  "dni": 24803772,
+  "fechaDeNacimiento": "1975-09-15",
+  "sexo": "hombre",
+  "foto": "enzo.jpg",
+  "email": "emilioladetto@gmail.com"
  }
 ]

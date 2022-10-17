@@ -21,12 +21,12 @@ const controlador = {
         res.render('./products/carrito2');
     },
     create: (req,res) => {
-        res.render('./products/crear-equipo');
+        res.render('products/crear-equipo');
     },
-    crear: (req,res)=>{
+    crear: (req,res)=> {
         
         let equipoNuevo = {
-            id: (equiposJson[equiposJson.length-1].id+1),
+            id: (equiposJson[equiposJson.length-1].id)+1,
             nombreEquipo: req.body.nombreEquipo,
             imagen: "los-cebollitas.jpeg",
             jugador1: req.body.jugador1,

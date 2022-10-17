@@ -1,7 +1,7 @@
 [
  {
-  "id": "31",
-  "nombreEquipo": "",
+  "id": 1,
+  "nombreEquipo": "Los cebollitas",
   "imagen": "los-cebollitas.jpeg",
   "jugador1": "",
   "jugador2": "",
@@ -12,8 +12,8 @@
   "restriccionEdad": "1"
  },
  {
-  "id": "311",
-  "nombreEquipo": "lo pepes",
+  "id": 2,
+  "nombreEquipo": "Sacachispas",
   "imagen": "los-cebollitas.jpeg",
   "jugador1": "asd",
   "jugador2": "ddd2123",
@@ -24,8 +24,8 @@
   "restriccionEdad": "3"
  },
  {
-  "id": "3111",
-  "nombreEquipo": "raspando el 4",
+  "id": 3,
+  "nombreEquipo": "Raspando el 4",
   "imagen": "los-cebollitas.jpeg",
   "jugador1": "jose",
   "jugador2": "pepe",
@@ -36,10 +36,22 @@
   "restriccionEdad": "2"
  },
  {
-  "id": "31111",
-  "nombreEquipo": "caja de pandora",
+  "id": 4,
+  "nombreEquipo": "Caja de pandora",
   "imagen": "los-cebollitas.jpeg",
   "jugador1": "",
+  "jugador2": "",
+  "jugador3": "",
+  "jugador4": "",
+  "jugador5": "",
+  "jugador6": "",
+  "restriccionEdad": "1"
+ },
+ {
+  "id": 5,
+  "nombreEquipo": "nuevo",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "Emilio",
   "jugador2": "",
   "jugador3": "",
   "jugador4": "",
