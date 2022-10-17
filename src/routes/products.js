@@ -12,6 +12,8 @@ router.get ('/equipo/:id', productsController.equipo);
 
 /*** Para Editar equipos router.put ('/editar-equipo/:id', productsController.update);***/
 router.get ('/editar-equipo/:id', productsController.edit);
+router.put('/editar-equipo/:id', productsController.update); 
+router.delete('/delete/:id', productsController.destroy); 
 
 
   

@@ -1,27 +1,20 @@
 [
  {
   "id": 1,
-  "nombreEquipo": "Avengers",
+  "nombreEquipo": "avenger",
   "imagen": "avg.jpeg",
-  "jugador1": "Iron Man",
-  "jugador2": "Thor",
-  "jugador3": "Hulk",
-  "jugador4": "Black Widow",
-  "jugador5": "Captain America",
-  "jugador6": "Hawkeye",
+  "jugador1": "thor",
+  "jugador2": "spider man",
+  "jugador3": "hulk",
+  "jugador4": "iron man",
+  "jugador5": "mujer maravilla",
+  "jugador6": "batman",
   "restriccionEdad": "Mayores de 30 años",
   "restriccionesSexo": "No"
  },
  {
   "id": 2,
-  "nombreEquipo": "Cebollitas",
   "imagen": "los-cebollitas.jpeg",
-  "jugador1": "Diego Maradona",
-  "jugador2": "Enzo Francescoli",
-  "jugador3": "Jose Luis Cuciuffo",
-  "jugador4": "Ariel Ortega",
-  "jugador5": "René Higuita",
-  "jugador6": "Sergio Batista",
   "restriccionEdad": "Mayores de 30 años",
   "restriccionesSexo": "No"
  },
@@ -50,6 +43,24 @@
   "jugador6": "",
   "restriccionEdad": "",
   "restriccionesSexo": ""
+ },
+ {
+  "id": 5,
+  "nombreEquipo": "asdasd",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "3123",
+  "jugador2": "ewq",
+  "jugador3": "qwe",
+  "jugador4": "qwe",
+  "jugador5": "qwe",
+  "jugador6": ""
+ },
+ {
+  "id": 6,
+  "imagen": "los-cebollitas.jpeg"
+ },
+ {
+  "id": 7,
+  "imagen": "los-cebollitas.jpeg"
  }
- 
 ]

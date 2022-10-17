@@ -29,38 +29,38 @@
     </header>
     <section class="registro-cuerpo" id="registro-fondo">       
         <div class="registro-formulario">
-            <form>
+            <form action="/products/editar-equipo/<%=equipo.id %>?_method=PUT" method="POST">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Equipo A">
+                    <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=equipo.nombreEquipo %>">
                 </div>
                 <div class="mb-3">
                     <label for="fotoEquipo" class="form-label">Foto del Equipo:</label>
-                    <input type="file" class="form-control" id="fotoEquipo" accept=".jpg, .png">
+                    <input type="file" class="form-control" name="imgEquipo" id="fotoEquipo" accept=".jpg, .png">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 1:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                    <input type="text" class="form-control" name="jugador1" id="formGroupExampleInput2" placeholder="@usuario" value="<%=equipo.jugador1 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 2:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                    <input type="text" class="form-control" name="jugador2" id="formGroupExampleInput2" placeholder="@usuario" value="<%=equipo.jugador2 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 3:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                    <input type="text" class="form-control" name="jugador3" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador3 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 4:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                    <input type="text" class="form-control" name="jugador4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador4 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 5:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                    <input type="text" class="form-control" name="jugador5" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador5 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 6:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="@usuario">
+                    <input type="text" class="form-control" name="jugador6" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador6 %>">
                 </div>
                 <div class="mb-3">
                     <label for="diasPosibles" class="form-label">Restriciones</label><br>
