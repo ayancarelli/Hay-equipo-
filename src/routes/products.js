@@ -10,9 +10,11 @@ router.get ('/crear-equipo', productsController.create);
 router.post ('/crear-equipo', productsController.crear);
 router.get ('/equipo/:id', productsController.equipo);
 
-/*** Para Editar equipos router.put ('/editar-equipo/:id', productsController.update);***/
+/*** Para Editar equipos ***/
 router.get ('/editar-equipo/:id', productsController.edit);
-router.put('/editar-equipo/:id', productsController.update); 
+router.put('/editar-equipo/:id', productsController.update);
+
+/*** Para Borrar equipos ***/
 router.delete('/delete/:id', productsController.destroy); 
 
 

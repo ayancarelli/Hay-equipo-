@@ -2,8 +2,8 @@
  {
   "nombre": "Enzo",
   "apellido": "Francescoli",
-  "dni": 24803772,
-  "fechaDeNacimiento": "15-09-1975",
+  "dni": "24803772",
+  "fechaDeNacimiento": "15-09-1976",
   "sexo": "hombre",
   "foto": "enxofrancescoli.jpeg",
   "email": "enzo@gmail.com"
@@ -12,7 +12,7 @@
   "nombre": "José Luis",
   "apellido": "Cuciuffo",
   "dni": 24803773,
-  "fechaDeNacimiento": "15-09-1975",
+  "fechaDeNacimiento": "15-09-1984",
   "sexo": "hombre",
   "foto": "cuciuffo.jpeg",
   "email": "enzo@gmail.com"
@@ -21,7 +21,7 @@
   "nombre": "Enzo",
   "apellido": "Francescoli",
   "dni": 24803774,
-  "fechaDeNacimiento": "15-09-1975",
+  "fechaDeNacimiento": "15-09-2003",
   "sexo": "hombre",
   "foto": "enxofrancescoli.jpeg",
   "email": "enzo@gmail.com"
@@ -30,7 +30,7 @@
   "nombre": "Enzo",
   "apellido": "Francescoli",
   "dni": 24803775,
-  "fechaDeNacimiento": "15-09-1975",
+  "fechaDeNacimiento": "15-09-1998",
   "sexo": "hombre",
   "foto": "enxofrancescoli.jpeg",
   "email": "enzo@gmail.com"
@@ -39,7 +39,7 @@
   "nombre": "Enzo",
   "apellido": "Francescoli",
   "dni": 24803776,
-  "fechaDeNacimiento": "15-09-1975",
+  "fechaDeNacimiento": "1965-09-04",
   "sexo": "hombre",
   "foto": "enxofrancescoli.jpeg",
   "email": "enzo@gmail.com"
