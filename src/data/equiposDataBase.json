@@ -43,24 +43,5 @@
   "jugador6": "",
   "restriccionEdad": "",
   "restriccionesSexo": ""
- },
- {
-  "id": 5,
-  "nombreEquipo": "asdasd",
-  "imagen": "los-cebollitas.jpeg",
-  "jugador1": "3123",
-  "jugador2": "ewq",
-  "jugador3": "qwe",
-  "jugador4": "qwe",
-  "jugador5": "qwe",
-  "jugador6": ""
- },
- {
-  "id": 6,
-  "imagen": "los-cebollitas.jpeg"
- },
- {
-  "id": 7,
-  "imagen": "los-cebollitas.jpeg"
  }
 ]

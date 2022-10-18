@@ -43,7 +43,7 @@ const controlador = {
         
         fs.writeFileSync(equiposFilePath,JSON.stringify(equiposJson, null, " "));
        console.log(equipoNuevo);
-        res.redirect('/');
+       res.redirect('/products/equipos');
     },
 
     edit: (req,res) => {
@@ -96,7 +96,7 @@ const controlador = {
         }
         fs.writeFileSync(equiposFilePath,JSON.stringify(equiposJson, null, " "));
       
-        res.redirect('/');
+        res.redirect('/products/equipos');
     },
     destroy : (req, res) => {
 		
@@ -108,7 +108,7 @@ const controlador = {
 		
 		fs.writeFileSync(equiposFilePath,JSON.stringify(arrEquipos,null," "));
 
-		res.redirect('/');
+		res.redirect('/products/equipos');
 	}
 }
 
