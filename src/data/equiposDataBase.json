@@ -1,18 +1,5 @@
 [
  {
-  "id": 1,
-  "nombreEquipo": "Avengers",
-  "imagen": "avg.jpeg",
-  "jugador1": "thor",
-  "jugador2": "spider man",
-  "jugador3": "hulk",
-  "jugador4": "iron man",
-  "jugador5": "mujer maravilla",
-  "jugador6": "batman",
-  "restriccionEdad": "Mayores de 30 años",
-  "restriccionesSexo": "No"
- },
- {
   "id": 2,
   "nombreEquipo": "Cebollitas",
   "imagen": "los-cebollitas.jpeg",

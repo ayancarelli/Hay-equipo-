@@ -6,8 +6,11 @@ router.get ('/login', usersController.login);
 router.get ('/registro',usersController.registro);
 router.post ('/registro',usersController.crear);
 
+
 router.get('/users',usersController.users);
-router.get('/users/edit-user',usersController.edit);
+router.get('/usuario/:dni',usersController.usuario);
+
+//router.get('/edit-user',usersController.edit);
 //router.put('/users/edit-user/:dni',usersController.update);
 
 module.exports = router;

@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include('../partials/head') %>
 <body>
-    <h1>hola</h1>
+    <header> 
+        <div class="container-fluid">
+            <div>
+                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
+            </div>
+            <nav class="header-navbar">
+                <div class="boton-magico">       
+                    <button class="btn btn-primary" id="magic-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-bars" id="hamb-icon"></i></button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" id="boton-cerrar">X</button>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="../products/canchas">Canchas</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="../products/equipos">Equipos</a></h5><br>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="./login">Login</a></h5><br>
+                        </div>
+                    </div>
+                </div>    
+                <ul class="menu-navbar">
+                    <li><a href="../products/canchas">Canchas</a></li> 
+                    <li><a href="../products/equipos">Equipos</a></li>
+                    <li><a href="./login">Login</a></li>                   
+                </ul>                
+            </nav>
+        </div>    
+    </header>
+    <section class="registro-cuerpo" id="registro-fondo">       
+        <div class="registro-formulario">
+            <form action="/users/edit-user/<%= useraEditar.dni %>?_method=PUT" method="POST">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" value="<%= useraEditar.nombre %>" placeholder="Nombre">
+                </div>
+                  <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" name= 'apellido' id="apellido" value="<%= useraEditar.apellido %> placeholder="Apellido">
+                  </div>
+                  <div class="mb-3">
+                      <label for="dni" class="form-label">Dni:</label>
+                      <input type="number" class="form-control" name= 'dni' id="dni" value="<%= useraEditar.dni %>placeholder="Dni">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaDeNacimiento" class="form-label">Fecha de nacimiento:</label>
+                        <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" value="<%= useraEditar.fechaDeNacimiento %>placeholder="Fecha de nacimiento">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sexo" class="form-label">Sexo:</label>
+                        <select name="sexo" id="sexo" >
+                            <option value="hombre">Hombre</option>
+                            <option value="mujer">Mujer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
+                        <input type="file" class="form-control" id="formGroupExampleInput2" value="<%= useraEditar.nombre %>placeholder="Foto de perfil">
+                    </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" name= "email" id="email" aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">
+                    <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="contraseña" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="***********">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
+                </div>
+                <button type="submit" class="btn btn-primary">ENVIAR</button>
+            </form>            
+        </div> 
+    </section>
+    <%- include('../partials/footer') %>   
 </body>
 </html>
