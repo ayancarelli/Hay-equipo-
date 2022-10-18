@@ -4,8 +4,6 @@ const path = require('path');
 const equiposFilePath = path.join(__dirname, '../data/equiposDataBase.json');
 const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 const controlador = {
     canchas: (req, res) => {
         res.render('./products/canchas');
@@ -35,15 +33,15 @@ const controlador = {
             jugador4: req.body.jugador4,
             jugador5: req.body.jugador5,
             jugador6: req.body.jugador6,
-            restriccionesEdad: req.body.restriccionesEdad,
-            restriccionSexo: req.body.restriccionSexo
+            restriccionEdad: req.body.restriccionEdad,
+            restriccionesSexo: req.body.restriccionesSexo
         };
         
         equiposJson.push(equipoNuevo);
         
         fs.writeFileSync(equiposFilePath,JSON.stringify(equiposJson, null, " "));
-       console.log(equipoNuevo);
-       res.redirect('/products/equipos');
+        console.log(equipoNuevo);
+        res.redirect('/products/equipos');
     },
 
     edit: (req,res) => {
@@ -98,7 +96,7 @@ const controlador = {
       
         res.redirect('/products/equipos');
     },
-    destroy : (req, res) => {
+    destroy: (req, res) => {
 		
 		let idEquipo = req.params.id;
 
@@ -106,7 +104,9 @@ const controlador = {
 			return elemento.id!=idEquipo;
 		})
 		
-		fs.writeFileSync(equiposFilePath,JSON.stringify(arrEquipos,null," "));
+		fs.writeFileSync(
+            path.join(__dirname, '../data/equiposDataBase.json'),
+            JSON.stringify(arrEquipos,null," "));
 
 		res.redirect('/products/equipos');
 	}

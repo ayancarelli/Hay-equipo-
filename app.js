@@ -3,7 +3,6 @@ const path = require('path');
 const methodOverride = require('method-override');
 
 
-
 const rutasMain = require('./src/routes/main');
 const rutasUsers = require('./src/routes/users');
 const rutasProducts = require('./src/routes/products');
@@ -17,14 +16,13 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 
 
-
-
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
 app.use('/users', rutasUsers);
-    
+
 
 app.set('view engine', 'ejs');
+
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("Servidor corriendo");

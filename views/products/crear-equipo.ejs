@@ -63,25 +63,20 @@
                     <input type="text" class="form-control" name="jugador6" id="formGroupExampleInput2" placeholder="@usuario">
                 </div>
                 <div class="mb-3">
-                    <label for="diasPosibles" name="restricciones" class="form-label">Restricción de Sexo</label><br>
-                    <input type="checkbox" id="diasPosibles" value="1"> Mixto</input><br>
-                    <input type="checkbox" id="diasPosibles" value="2"> Mujeres</input><br> 
-                    <input type="checkbox" id="diasPosibles" value="3">Hombres</input><br> 
-                    <!--<input type="checkbox" id="diasPosibles" value="4"> Jueves</input><br> 
-                    <input type="checkbox" id="diasPosibles" value="5"> Viernes</input><br>                    
-                    <input type="checkbox" id="diasPosibles" value="6"> Sábado</input><br>
-                    <input type="checkbox" id="diasPosibles" value="7"> Domingo</input><br>
-                    -->
-                </div>
-            
+                    <label for="restriccionesSexo" class="form-label">Juega Contra:</label><br>
+                    <select id="restriccionEdad" name="restriccionesSexo">
+                        <option value="Mixto"> Mixto </option>
+                        <option value="Solo Mujeres"> Solo Mujeres</option>
+                        <option value="Solo Hombres"> Solo Hombres</option>
+                    </select>           
                 <div class="mb-3">
                     <label for="restriccionEdad" class="form-label">Restricción de Edad:</label>
                     <select id="restriccionEdad" name="restriccionEdad">
-                        <option value="1">Sin restricción</option>
-                        <option value="2">Menores de 30 años</option>
-                        <option value="3">Mayores de 30 años</option>
-                        <option value="2">Menores de 40 años</option>
-                        <option value="3">Mayores de 40 años</option>
+                        <option value="Sin restricción"> Sin restricción</option>
+                        <option value="Menores de 30 años"> Menores de 30 años</option>
+                        <option value="Mayores de 30 años"> Mayores de 30 años</option>
+                        <option value="Menores de 40 años"> Menores de 40 años</option>
+                        <option value="Mayores de 40 años"> Mayores de 40 años</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">ENVIAR</button>

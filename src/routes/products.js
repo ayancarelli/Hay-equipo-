@@ -16,8 +16,6 @@ router.put('/editar-equipo/:id', productsController.update);
 
 /*** Para Borrar equipos ***/
 router.delete('/delete/:id', productsController.destroy); 
-
-
   
 
 module.exports = router;
