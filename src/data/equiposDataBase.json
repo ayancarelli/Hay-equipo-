@@ -1,7 +1,7 @@
 [
  {
   "id": 1,
-  "nombreEquipo": "avenger",
+  "nombreEquipo": "Avengers",
   "imagen": "avg.jpeg",
   "jugador1": "thor",
   "jugador2": "spider man",
@@ -14,7 +14,14 @@
  },
  {
   "id": 2,
+  "nombreEquipo": "Cebollitas",
   "imagen": "los-cebollitas.jpeg",
+  "jugador1": "",
+  "jugador2": "",
+  "jugador3": "",
+  "jugador4": "",
+  "jugador5": "",
+  "jugador6": "",
   "restriccionEdad": "Mayores de 30 años",
   "restriccionesSexo": "No"
  },
@@ -30,37 +37,5 @@
   "jugador6": "",
   "restriccionEdad": "Mayores de 30 años",
   "restriccionesSexo": "No"
- },
- {
-  "id": 4,
-  "nombreEquipo": "Caja de pandora",
-  "imagen": "los-cebollitas.jpeg",
-  "jugador1": "",
-  "jugador2": "",
-  "jugador3": "",
-  "jugador4": "",
-  "jugador5": "",
-  "jugador6": "",
-  "restriccionEdad": "",
-  "restriccionesSexo": ""
- },
- {
-  "id": 5,
-  "nombreEquipo": "asdasd",
-  "imagen": "los-cebollitas.jpeg",
-  "jugador1": "3123",
-  "jugador2": "ewq",
-  "jugador3": "qwe",
-  "jugador4": "qwe",
-  "jugador5": "qwe",
-  "jugador6": ""
- },
- {
-  "id": 6,
-  "imagen": "los-cebollitas.jpeg"
- },
- {
-  "id": 7,
-  "imagen": "los-cebollitas.jpeg"
  }
 ]
