@@ -47,8 +47,8 @@
                         <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" placeholder="Fecha de nacimiento">
                     </div>
                     <div class="mb-3">
-                        <label for="sexo" class="form-label">Sexo:</label>
-                        <select name="sexo" id="sexo">
+                        <label for="genero" class="form-label">Género:</label>
+                        <select name="genero" id="genero">
                             <option value="hombre">Hombre</option>
                             <option value="mujer">Mujer</option>
                         </select>
@@ -56,7 +56,7 @@
                     
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
-                        <input type="file" class="form-control" id="formGroupExampleInput2" placeholder="Foto de perfil">
+                        <input type="file" class="form-control" id="formGroupExampleInput2" name="fotoPerfil" placeholder="Foto de perfil">
                     </div>
 
                 <div class="mb-3">
@@ -66,11 +66,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="***********">
+                    <input type="password" class="form-control" name="password" id="contraseña" placeholder="***********">
                 </div>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tyc" required>
+                    <label class="form-check-label" for="exampleCheck1" >Acepto términos y condiciones</label>
                 </div>
                 <button type="submit" class="btn btn-primary">ENVIAR</button>
             </form>            

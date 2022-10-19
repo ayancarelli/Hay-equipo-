@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
+
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-//const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controlador = {
     login: (req, res) => {
@@ -15,43 +15,54 @@ const controlador = {
     },
     crear: (req,res)=>{
         
+        let newId;
+        if(userJson.length>0){
+            newId = userJson[(userJson.length-1)].id+1;
+        } else {
+            newId = 1    
+        }
         let usuarioNuevo = {
-            id: (userJson[userJson.length-1].id)+1,
+            id: newId,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             dni: req.body.dni,
-            fechaDeNacimiento: req.body.fechaDeNacimiento ,
-            sexo: req.body.sexo,
-            foto: "enzo.jpg",
+            fechaDeNacimiento: req.body.fechaDeNacimiento,
+            genero: req.body.genero,
+            fotoPerfil: "enzo.jpg",
             email: req.body.email,
-            pass: req.body.pass
+            password: req.body.password
         };
         
         userJson.push(usuarioNuevo);
         
         fs.writeFileSync(usersFilePath,JSON.stringify(userJson, null, " "));
         console.log(usuarioNuevo);
-        res.redirect('/');
+        res.redirect('/users/login');
     },
+
+    checkUser: (req, res) => {
+        let userMail = req.body.email;
+        let userPass = req.body.password;
+        let userLogged;
+
+        for(let u of userJson){
+            if(userMail == u.email && userPass == u.password){
+                    userLogged = u;
+                    break;                    
+            } else {
+                res.send('Usuario no encontrado. Verificar datos ingresados.')
+            }               
+        }
+        res.render('./users/usuario', {user : userLogged});
+    },
+    /*
+    --- VER QUE HACEMOS CON ÉSTE MÉTODO --- 
+    
     users: (req,res) => {
         const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
         res.render('./users/users', {users : userJson});
     },
-    usuario: (req,res) =>{
-        //const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        let dniUser = req.params.dni;
-        let usuarioEncontrado;
-
-        for(let p of userJson){
-            if(dniUser == p.dni){
-                usuarioEncontrado = p;
-                breakñ
-            }
-        }
-
-        
-        res.render('./users/usuario', {user : usuarioEncontrado});
-    },
+    */
     edit: (req,res) => {
         
         let dniUser = req.params.dni;
