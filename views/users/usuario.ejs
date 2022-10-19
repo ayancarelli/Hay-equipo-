@@ -29,28 +29,44 @@
     <section class="cuerpo-home">
         <div class="banner-equipo">        
             <h3>
-                USUARIO
+                MI USUARIO
             </h3>
         </div>
     </section>
-    <section class="cartas-equipos" id="equipos-section">
-           
-        <div class="card" style="width: 18rem;">
-              <img src="/img/<%= user.foto %>" class="card-img-top" alt="Foto Equipo">
-              <div class="card-body">
-                <h5 class="card-title"><%= user.nombre %></h5>
-                <p class="card-text">
-                  <ul>
-                      <li><i class="fa-solid fa-medal"></i> <%= user.dni %> </li>
-                      <li><i class="fa-solid fa-shield"></i> <%= user.fechaDeNacimiento %></li>
-                      <li><i class="fa-solid fa-person-running"></i> <%= user.sexo %></li>
-                  </ul>
-                </p>
-                <a href="/users/usuario/:<%= user.dni %>" class="btn btn-primary">Más info ></a>
-              </div>
-        </div>
-           
-        </section>
+    <section class="registro-cuerpo" id="registro-fondo">       
+        <div class="registro-formulario">
+            <form action="/users/usuario" method="POST">
+                <div class="mb-3">
+                    <img src="/img/<%= user.fotoPerfil %>" class="card-img-top" alt="Foto Equipo">
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <label for="nombre" class="form-label"><%= user.nombre %></label>
+                </div>
+                  <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <label for="apellido" class="form-label"><%= user.apellido %></label>
+                  </div>
+                  <div class="mb-3">
+                      <label for="dni" class="form-label">Dni:</label>
+                      <label for="dni" class="form-label"><%= user.dni %></label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaDeNacimiento" class="form-label">Fecha de nacimiento:</label>
+                        <label for="fechaDeNacimiento" class="form-label"><%= user.fechaDeNacimiento %></label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="genero" class="form-label">Género:</label>
+                        <label for="genero" class="form-label"><%= user.genero %></label>                        
+                    </div>            
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <label for="email" class="form-label"><%= user.email %></label>
+                    </div>               
+                    <a href="#" class="btn btn-primary">EDITAR</a>
+            </form>            
+        </div> 
+    </section>
     <%- include('../partials/footer') %>
 </body>
 </html>

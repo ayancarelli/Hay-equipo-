@@ -1,68 +1,24 @@
 [
  {
   "id": 1,
-  "nombre": "Enzo",
-  "apellido": "Francescoli",
-  "dni": 24803772,
-  "fechaDeNacimiento": "15-09-1976",
-  "sexo": "hombre",
-  "foto": "enxofrancescoli.jpeg",
-  "email": "enzo@gmail.com",
-  "pass": ""
+  "nombre": "Federico",
+  "apellido": "Gerva",
+  "dni": "33608423",
+  "fechaDeNacimiento": "2013-04-10",
+  "genero": "hombre",
+  "fotoPerfil": "enzo.jpg",
+  "email": "123@gmail.com",
+  "password": "123456"
  },
  {
   "id": 2,
-  "nombre": "José Luis",
-  "apellido": "Cuciuffo",
-  "dni": 24803773,
-  "fechaDeNacimiento": "15-09-1984",
-  "sexo": "hombre",
-  "foto": "cuciuffo.jpeg",
-  "email": "enzo@gmail.com",
-  "pass": ""
- },
- {
-  "id": 3,
-  "nombre": "Enzo",
-  "apellido": "Francescoli",
-  "dni": 24803774,
-  "fechaDeNacimiento": "15-09-2003",
-  "sexo": "hombre",
-  "foto": "enxofrancescoli.jpeg",
-  "email": "enzo@gmail.com",
-  "pass": ""
- },
- {
-  "id": 4,
-  "nombre": "Enzo",
-  "apellido": "Francescoli",
-  "dni": 24803775,
-  "fechaDeNacimiento": "15-09-1998",
-  "sexo": "hombre",
-  "foto": "enxofrancescoli.jpeg",
-  "email": "enzo@gmail.com",
-  "pass": ""
- },
- {
-  "id": 5,
-  "nombre": "Enzo",
-  "apellido": "Francescoli",
-  "dni": 24803776,
-  "fechaDeNacimiento": "1965-09-04",
-  "sexo": "hombre",
-  "foto": "enxofrancescoli.jpeg",
-  "email": "enzo@gmail.com",
-  "pass": ""
- },
- {
-  "id": 6,
-  "nombre": "Emilio",
-  "apellido": "Ladetto",
-  "dni": 24803772,
-  "fechaDeNacimiento": "1975-09-15",
-  "sexo": "hombre",
-  "foto": "enzo.jpg",
-  "email": "emilioladetto@gmail.com",
-  "pass": ""
+  "nombre": "Alan",
+  "apellido": "Alan",
+  "dni": "12334455",
+  "fechaDeNacimiento": "1985-10-12",
+  "genero": "hombre",
+  "fotoPerfil": "enzo.jpg",
+  "email": "456@gmail.com",
+  "password": "123456"
  }
 ]
