@@ -36,17 +36,17 @@
     <section class="cartas-equipos" id="equipos-section">
            
         <div class="card" style="width: 18rem;">
-              <img src="/img/<%= users.foto %>" class="card-img-top" alt="Foto Equipo">
+              <img src="/img/<%= user.foto %>" class="card-img-top" alt="Foto Equipo">
               <div class="card-body">
-                <h5 class="card-title"><%= users.nombre %></h5>
+                <h5 class="card-title"><%= user.nombre %></h5>
                 <p class="card-text">
                   <ul>
-                      <li><i class="fa-solid fa-medal"></i> <%= users.dni %> </li>
-                      <li><i class="fa-solid fa-shield"></i> <%= users.fechaDeNacimiento %></li>
-                      <li><i class="fa-solid fa-person-running"></i> <%= users.sexo %></li>
+                      <li><i class="fa-solid fa-medal"></i> <%= user.dni %> </li>
+                      <li><i class="fa-solid fa-shield"></i> <%= user.fechaDeNacimiento %></li>
+                      <li><i class="fa-solid fa-person-running"></i> <%= user.sexo %></li>
                   </ul>
                 </p>
-                <a href="/users/usuario/:<%= users.dni %>" class="btn btn-primary">Más info ></a>
+                <a href="/users/usuario/:<%= user.dni %>" class="btn btn-primary">Más info ></a>
               </div>
         </div>
            

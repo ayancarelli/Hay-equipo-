@@ -37,18 +37,19 @@ const controlador = {
         res.render('./users/users', {users : userJson});
     },
     usuario: (req,res) =>{
-        const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        //const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
         let dniUser = req.params.dni;
         let usuarioEncontrado;
 
         for(let p of userJson){
-            if(p.dni == dniUser){
+            if(dniUser == p.dni){
                 usuarioEncontrado = p;
+                breakñ
             }
         }
 
         
-        res.render('./users/usuario', {users : usuarioEncontrado});
+        res.render('./users/usuario', {user : usuarioEncontrado});
     },
     edit: (req,res) => {
         
