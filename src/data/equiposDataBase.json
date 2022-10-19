@@ -1,1 +1,15 @@
-[]
+[
+ {
+  "id": 1,
+  "nombreEquipo": "aaaaaaa",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "j1",
+  "jugador2": "y3",
+  "jugador3": "rsdf",
+  "jugador4": "df",
+  "jugador5": "df",
+  "jugador6": "fs",
+  "restriccionEdad": "Mayores de 30 años",
+  "restriccionesSexo": "Solo Mujeres"
+ }
+]

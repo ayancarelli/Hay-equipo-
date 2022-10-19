@@ -2,7 +2,7 @@
  {
   "nombre": "Enzo",
   "apellido": "Francescoli",
-  "dni": "24803772",
+  "dni": 24803772,
   "fechaDeNacimiento": "15-09-1976",
   "sexo": "hombre",
   "foto": "enxofrancescoli.jpeg",
