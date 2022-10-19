@@ -8,7 +8,7 @@ router.post ('/registro',usersController.crear);
 
 
 router.get('/users',usersController.users);
-router.get('/usuario/:dni',usersController.usuario);
+router.get('/usuario/:id',usersController.usuario);
 
 //router.get('/edit-user',usersController.edit);
 //router.put('/users/edit-user/:dni',usersController.update);

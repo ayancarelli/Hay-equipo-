@@ -4,7 +4,7 @@ const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+//const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controlador = {
     login: (req, res) => {
@@ -16,6 +16,7 @@ const controlador = {
     crear: (req,res)=>{
         
         let usuarioNuevo = {
+            id: (userJson[userJson.length-1].id)+1,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             dni: req.body.dni,
@@ -23,7 +24,7 @@ const controlador = {
             sexo: req.body.sexo,
             foto: "enzo.jpg",
             email: req.body.email,
-            usuario: req.body.usuario
+            pass: req.body.pass
         };
         
         userJson.push(usuarioNuevo);
@@ -37,18 +38,19 @@ const controlador = {
         res.render('./users/users', {users : userJson});
     },
     usuario: (req,res) =>{
-        const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        //const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
         let dniUser = req.params.dni;
         let usuarioEncontrado;
 
         for(let p of userJson){
-            if(p.dni == dniUser){
+            if(dniUser == p.dni){
                 usuarioEncontrado = p;
+                breakñ
             }
         }
 
         
-        res.render('./users/usuario', {users : usuarioEncontrado});
+        res.render('./users/usuario', {user : usuarioEncontrado});
     },
     edit: (req,res) => {
         
