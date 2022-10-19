@@ -22,9 +22,14 @@ const controlador = {
         res.render('products/crear-equipo');
     },
     crear: (req,res)=> {
-        
+        let newId;
+        if(equiposJson.length>0){
+            newId = equiposJson[(equiposJson.length-1)].id+1;
+        } else {
+            newId = 1    
+        }
         let equipoNuevo = {
-            id: (equiposJson[equiposJson.length-1].id)+1,
+            id: newId,
             nombreEquipo: req.body.nombreEquipo,
             imagen: "los-cebollitas.jpeg",
             jugador1: req.body.jugador1,
@@ -86,8 +91,8 @@ const controlador = {
                 e.jugador4= req.body.jugador4;
                 e.jugador5= req.body.jugador5;
                 e.jugador6= req.body.jugador6;
-                e.restriccionesEdad= req.body.restriccionesEdad;
-                e.restriccionSexo= req.body.restriccionSexo;
+                e.restriccionEdad= req.body.restriccionEdad;
+                e.restriccionesSexo= req.body.restriccionesSexo;
                 break;
 
             }
@@ -102,13 +107,13 @@ const controlador = {
 
 		let arrEquipos = equiposJson.filter(function(elemento){
 			return elemento.id!=idEquipo;
-		})
+		});
 		
 		fs.writeFileSync(
             path.join(__dirname, '../data/equiposDataBase.json'),
             JSON.stringify(arrEquipos,null," "));
-
-		res.redirect('/products/equipos');
+            
+        res.redirect('/');        
 	}
 }
 
