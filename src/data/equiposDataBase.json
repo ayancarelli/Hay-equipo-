@@ -1,14 +1,14 @@
 [
  {
-  "id": 1,
-  "nombreEquipo": "aaaaaaa",
+  "id": 2,
+  "nombreEquipo": "EQUIPO PRUEBAS",
   "imagen": "los-cebollitas.jpeg",
-  "jugador1": "j1",
-  "jugador2": "y3",
-  "jugador3": "rsdf",
-  "jugador4": "df",
-  "jugador5": "df",
-  "jugador6": "fs",
+  "jugador1": "MAGO",
+  "jugador2": "HELIO",
+  "jugador3": "JUGADOR",
+  "jugador4": "JUDAGOR",
+  "jugador5": "JUGADOR",
+  "jugador6": "JUGADORAZO",
   "restriccionEdad": "Sin restricción",
   "restriccionesSexo": "Mixto"
  }
