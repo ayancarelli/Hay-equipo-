@@ -20,5 +20,40 @@
   "fotoPerfil": "enzo.jpg",
   "email": "456@gmail.com",
   "password": "123456"
+ },
+ {
+  "id": 3,
+  "nombre": "Jorga",
+  "apellido": "Suspensa",
+  "dni": "1234567",
+  "fechaDeNacimiento": "1987-08-15",
+  "genero": "mujer",
+  "fotoPerfil": "enzo.jpg",
+  "email": "jorga@gmail.com",
+  "password": "123456",
+  "foto": "enzo.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Ana",
+  "apellido": "Cleta",
+  "dni": "23456878",
+  "fechaDeNacimiento": "1987-09-10",
+  "genero": "mujer",
+  "fotoPerfil": "enzo.jpg",
+  "email": "ana@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 5,
+  "nombre": "Super",
+  "apellido": "Usuario",
+  "dni": "11122246",
+  "fechaDeNacimiento": "1995-01-12",
+  "genero": "hombre",
+  "fotoPerfil": "enzo.jpg",
+  "email": "super@gmail.com",
+  "password": "123456",
+  "foto": "enzo.jpg"
  }
 ]
