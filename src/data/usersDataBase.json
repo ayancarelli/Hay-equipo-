@@ -8,9 +8,8 @@
   "genero": "hombre",
   "fotoPerfil": "enzo.jpg",
   "email": "123@gmail.com",
-  "password": "123456",
-  "foto": "enzo.jpg"
- },
+  "password": "123456"
+   },
  {
   "id": 2,
   "nombre": "Alan",
@@ -31,8 +30,7 @@
   "genero": "mujer",
   "fotoPerfil": "enzo.jpg",
   "email": "jorga@gmail.com",
-  "password": "123456",
-  "foto": "enzo.jpg"
+  "password": "123456"
  },
  {
   "id": 4,
@@ -54,8 +52,7 @@
   "genero": "hombre",
   "fotoPerfil": "enzo.jpg",
   "email": "super@gmail.com",
-  "password": "123456",
-  "foto": "enzo.jpg"
+  "password": "123456"
  },
  {
   "id": 6,

@@ -14,7 +14,7 @@
  },
  {
   "id": 3,
-  "nombreEquipo": "NUEVO EQUIPO",
+  "nombreEquipo": "ARGENTINA",
   "imagen": "los-cebollitas.jpeg",
   "jugador1": "LIONEL MESSI",
   "jugador2": "RODRIGO DE PAUL",
@@ -22,8 +22,8 @@
   "jugador4": "NICOLÁS OTAMENDI",
   "jugador5": "EMILIANO MARTINEZ",
   "jugador6": "ANGEL DI MARÍA",
-  "restriccionEdad": "Menores de 40 años",
-  "restriccionesSexo": "Solo Hombres"
+  "restriccionEdad": "Menores de 30 años",
+  "restriccionesSexo": "Mixto"
  },
  {
   "id": 4,
@@ -40,28 +40,28 @@
  },
  {
   "id": 5,
-  "nombreEquipo": "HAY EQUIPO",
+  "nombreEquipo": "BRASIL",
   "imagen": "los-cebollitas.jpeg",
-  "jugador1": "ALAN",
-  "jugador2": "FEDE",
-  "jugador3": "EMILIO",
-  "jugador4": "SANTI",
-  "jugador5": "",
-  "jugador6": "",
-  "restriccionEdad": "Mayores de 40 años",
-  "restriccionesSexo": "Solo Hombres"
+  "jugador1": "NEYMAR",
+  "jugador2": "RONALDINHO",
+  "jugador3": "RONALDO",
+  "jugador4": "ROMARIO",
+  "jugador5": "KAKÁ",
+  "jugador6": "THIAGO SILVA",
+  "restriccionEdad": "Mayores de 30 años",
+  "restriccionesSexo": "Mixto"
  },
  {
   "id": 6,
-  "nombreEquipo": "LOS RÚSTICOS",
+  "nombreEquipo": "URUGUAY",
   "imagen": "los-cebollitas.jpeg",
-  "jugador1": "SATURNINO",
-  "jugador2": "ANASTASIO",
-  "jugador3": "TEÓFILO",
-  "jugador4": "CASIMIRO",
-  "jugador5": "ALFREDO",
-  "jugador6": "RAMÓN",
-  "restriccionEdad": "Sin restricción",
-  "restriccionesSexo": "Mixto"
+  "jugador1": "FORLÁN",
+  "jugador2": "SUÁREZ",
+  "jugador3": "LODEIRO",
+  "jugador4": "RECOBA",
+  "jugador5": "CAVANI",
+  "jugador6": "GODÍN",
+  "restriccionEdad": "Mayores de 40 años",
+  "restriccionesSexo": "Solo Hombres"
  }
 ]
