@@ -63,5 +63,18 @@
   "jugador6": "GODÍN",
   "restriccionEdad": "Mayores de 40 años",
   "restriccionesSexo": "Solo Hombres"
+ },
+ {
+  "id": 7,
+  "nombreEquipo": "RASPANDO EL 4",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "DECLAN",
+  "jugador2": "JUDE",
+  "jugador3": "LIAM",
+  "jugador4": "AXEL",
+  "jugador5": "LUKE",
+  "jugador6": "EVERETT",
+  "restriccionEdad": "Menores de 30 años",
+  "restriccionesSexo": "Mixto"
  }
 ]
