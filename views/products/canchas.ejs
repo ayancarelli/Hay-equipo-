@@ -39,7 +39,7 @@
                     <div class="campos-canchas">
                         <label for="formGroupExampleInput" class="form-label label-canchas">Fecha:</label>
                         <form>
-                            <input class="dates-canchas" type="date" name="fecha-cancha1"  min="2022-09-19" max="2022-12-31">
+                            <input class="dates-canchas" type="date" name="fecha-cancha1"  min="<%= moment().format('YYYY-MM-DD') %>" max="<%= moment().add(1, 'month').format('YYYY-MM-DD') %>">
                         </form>
                     </div>
                     <div class="campos-canchas">
@@ -65,7 +65,7 @@
                     <div class="campos-canchas">
                         <label for="formGroupExampleInput" class="form-label label-canchas">Fecha:</label>
                         <form>
-                            <input class="dates-canchas" type="date" name="fecha-cancha1"  min="2022-09-19" max="2022-12-31">
+                            <input class="dates-canchas" type="date" name="fecha-cancha1"  min="<%= moment().format('YYYY-MM-DD') %>" max="<%= moment().add(1, 'month').format('YYYY-MM-DD') %>">
                         </form>
                     </div>
                     <div class="campos-canchas">

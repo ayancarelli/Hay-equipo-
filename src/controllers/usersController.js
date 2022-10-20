@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const moment = require('moment');
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
@@ -11,8 +12,8 @@ const controlador = {
         res.render('./users/login');
     },
 
-    registro: (req,res) => {
-        res.render('./users/registro');
+    registro: (req,res) => {        
+        res.render('./users/registro', {moment: moment});
     },
 
     crear: (req,res)=>{
@@ -25,8 +26,8 @@ const controlador = {
         }
         let usuarioNuevo = {
             id: newId,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
+            nombre: req.body.nombre.toUpperCase(),
+            apellido: req.body.apellido.toUpperCase(),
             dni: req.body.dni,
             fechaDeNacimiento: req.body.fechaDeNacimiento,
             genero: req.body.genero,
@@ -83,7 +84,7 @@ const controlador = {
 			}
 		}
 
-		res.render('./users/editar-users', {useraEditar: objUser});
+		res.render('./users/editar-users', {useraEditar: objUser, moment: moment});
 
     },
     
@@ -94,8 +95,8 @@ const controlador = {
 
 		for (let s of userJson){
 			if (idUser == s.id){
-				s.nombre = req.body.nombre;
-                s.apellido = req.body.apellido;
+				s.nombre = req.body.nombre.toUpperCase();
+                s.apellido = req.body.apellido.toUpperCase();
                 s.dni = req.body.dni;
                 s.fechaDeNacimiento = req.body.fechaDeNacimiento ;
                 s.genero = req.body.genero;

@@ -1,15 +1,15 @@
 [
  {
   "id": 1,
-  "nombre": "Federico",
-  "apellido": "Gerva",
+  "nombre": "FEDE",
+  "apellido": "GERVASAO",
   "dni": "33608423",
-  "fechaDeNacimiento": "2013-04-10",
+  "fechaDeNacimiento": "2004-10-13",
   "genero": "hombre",
   "fotoPerfil": "enzo.jpg",
   "email": "123@gmail.com",
   "password": "123456"
- },
+   },
  {
   "id": 2,
   "nombre": "Alan",
@@ -30,8 +30,7 @@
   "genero": "mujer",
   "fotoPerfil": "enzo.jpg",
   "email": "jorga@gmail.com",
-  "password": "123456",
-  "foto": "enzo.jpg"
+  "password": "123456"
  },
  {
   "id": 4,
@@ -53,7 +52,39 @@
   "genero": "hombre",
   "fotoPerfil": "enzo.jpg",
   "email": "super@gmail.com",
-  "password": "123456",
-  "foto": "enzo.jpg"
+  "password": "123456"
+ },
+ {
+  "id": 6,
+  "nombre": "Juan Carlos",
+  "apellido": "Que te has puesto",
+  "dni": "33068419",
+  "fechaDeNacimiento": "2004-07-14",
+  "genero": "mujer",
+  "fotoPerfil": "enzo.jpg",
+  "email": "juancarlos@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 7,
+  "nombre": "ERROR",
+  "apellido": "ERRADO",
+  "dni": "12456787",
+  "fechaDeNacimiento": "2004-07-21",
+  "genero": "mujer",
+  "fotoPerfil": "enzo.jpg",
+  "email": "error@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 8,
+  "nombre": "SERGIO",
+  "apellido": "TEVEZ",
+  "dni": "17564823",
+  "fechaDeNacimiento": "2004-08-05",
+  "genero": "hombre",
+  "fotoPerfil": "enzo.jpg",
+  "email": "sergiotevez@gmail.com",
+  "password": "sergio123"
  }
 ]

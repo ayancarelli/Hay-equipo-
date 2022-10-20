@@ -1,5 +1,5 @@
 const controlador = {
-    index: (req, res) => {
+    index: (req, res) => {        
         res.render('index');
     }    
 }

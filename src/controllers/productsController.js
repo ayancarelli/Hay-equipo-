@@ -1,12 +1,13 @@
 const fs = require('fs');
 const path = require('path');
+const moment = require('moment');
 
 const equiposFilePath = path.join(__dirname, '../data/equiposDataBase.json');
 const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
 
 const controlador = {
     canchas: (req, res) => {
-        res.render('./products/canchas');
+        res.render('./products/canchas', {moment: moment});
     },
 
     equipos: (req,res) => {
@@ -35,14 +36,14 @@ const controlador = {
         }
         let equipoNuevo = {
             id: newId,
-            nombreEquipo: req.body.nombreEquipo,
+            nombreEquipo: req.body.nombreEquipo.toUpperCase(),
             imagen: "los-cebollitas.jpeg",
-            jugador1: req.body.jugador1,
-            jugador2: req.body.jugador2,
-            jugador3: req.body.jugador3,
-            jugador4: req.body.jugador4,
-            jugador5: req.body.jugador5,
-            jugador6: req.body.jugador6,
+            jugador1: req.body.jugador1.toUpperCase(),
+            jugador2: req.body.jugador2.toUpperCase(),
+            jugador3: req.body.jugador3.toUpperCase(),
+            jugador4: req.body.jugador4.toUpperCase(),
+            jugador5: req.body.jugador5.toUpperCase(),
+            jugador6: req.body.jugador6.toUpperCase(),
             restriccionEdad: req.body.restriccionEdad,
             restriccionesSexo: req.body.restriccionesSexo
         };
@@ -90,13 +91,13 @@ const controlador = {
         for (let e of equiposJson){
             if (idEquipo == e.id){
                 
-                e.nombreEquipo= req.body.nombreEquipo;
-                e.jugador1= req.body.jugador1;
-                e.jugador2= req.body.jugador2;
-                e.jugador3= req.body.jugador3;
-                e.jugador4= req.body.jugador4;
-                e.jugador5= req.body.jugador5;
-                e.jugador6= req.body.jugador6;
+                e.nombreEquipo= req.body.nombreEquipo.toUpperCase();
+                e.jugador1= req.body.jugador1.toUpperCase();
+                e.jugador2= req.body.jugador2.toUpperCase();
+                e.jugador3= req.body.jugador3.toUpperCase();
+                e.jugador4= req.body.jugador4.toUpperCase();
+                e.jugador5= req.body.jugador5.toUpperCase();
+                e.jugador6= req.body.jugador6.toUpperCase();
                 e.restriccionEdad= req.body.restriccionEdad;
                 e.restriccionesSexo= req.body.restriccionesSexo;
                 break;

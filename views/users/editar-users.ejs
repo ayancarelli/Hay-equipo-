@@ -7,24 +7,6 @@
             <div>
                 <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
             </div>
-            <nav class="header-navbar">
-                <div class="boton-magico">       
-                    <button class="btn btn-primary" id="magic-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-bars" id="hamb-icon"></i></button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                        <div class="offcanvas-header">
-                            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" id="boton-cerrar">X</button>
-                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="../products/canchas">Canchas</a></h5><br>
-                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="../products/equipos">Equipos</a></h5><br>
-                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="./login">Login</a></h5><br>
-                        </div>
-                    </div>
-                </div>    
-                <ul class="menu-navbar">
-                    <li><a href="../products/canchas">Canchas</a></li> 
-                    <li><a href="../products/equipos">Equipos</a></li>
-                    <li><a href="./login">Login</a></li>                   
-                </ul>                
-            </nav>
         </div>    
     </header>
     <section class="registro-cuerpo" id="registro-fondo">       
@@ -32,19 +14,19 @@
             <form action="/users/editar-users/<%= useraEditar.id %>?_method=PUT" method="POST">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" value="<%= useraEditar.nombre %>" placeholder="Nombre">
+                    <input type="text" class="form-control" name="nombre" minlength="4" id="nombre" value="<%= useraEditar.nombre %>" placeholder="Nombre">
                 </div>
                   <div class="mb-3">
                     <label for="apellido" class="form-label">Apellido:</label>
-                    <input type="text" class="form-control" name= 'apellido' id="apellido" value="<%= useraEditar.apellido %>" placeholder="Apellido">
+                    <input type="text" class="form-control" name= 'apellido' minlength="4" id="apellido" value="<%= useraEditar.apellido %>" placeholder="Apellido">
                   </div>
                   <div class="mb-3">
                       <label for="dni" class="form-label">Dni:</label>
-                      <input type="number" class="form-control" name= 'dni' id="dni" value="<%= useraEditar.dni %>" placeholder="Dni">
+                      <input type="number" class="form-control" name= 'dni' id="dni" value="<%= useraEditar.dni %>" min="1000000" max="99999999" placeholder="Dni">
                     </div>
                     <div class="mb-3">
                         <label for="fechaDeNacimiento" class="form-label">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" value="<%= useraEditar.fechaDeNacimiento %>" placeholder="Fecha de nacimiento">
+                        <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" value="<%= useraEditar.fechaDeNacimiento %>" min="<%= moment().subtract(60, 'years').format('YYYY-MM-DD')%>" max="<%= moment().subtract(18, 'years').format('YYYY-MM-DD')%>" placeholder="Fecha de nacimiento">
                     </div>
                     <div class="mb-3">
                         <label for="sexo" class="form-label">Género:</label>                        
@@ -71,9 +53,9 @@
                 </div>
                 <div class="mb-3">
                     <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" name="password" value="<%= useraEditar.password %>" id="contraseña" placeholder="***********">
+                    <input type="password" class="form-control" name="password" value="<%= useraEditar.password %>" minlength="6" id="contraseña" placeholder="***********">
                 </div>                
-                <button type="submit" class="btn btn-primary">ENVIAR</button>
+                <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
             </form>            
         </div> 
     </section>

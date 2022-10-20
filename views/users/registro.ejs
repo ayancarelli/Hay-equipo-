@@ -32,19 +32,19 @@
             <form action="/users/registro" method="POST">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control" name="nombre" minlength="4" id="nombre" placeholder="Nombre">
                 </div>
                   <div class="mb-3">
                     <label for="apellido" class="form-label">Apellido:</label>
-                    <input type="text" class="form-control" name= 'apellido' id="apellido" placeholder="Apellido">
+                    <input type="text" class="form-control" name= 'apellido' minlength="4" id="apellido" placeholder="Apellido">
                   </div>
                   <div class="mb-3">
-                      <label for="dni" class="form-label">Dni:</label>
-                      <input type="number" class="form-control" name= 'dni' id="dni" placeholder="Dni">
+                      <label for="dni" class="form-label">DNI:</label>
+                      <input type="number" class="form-control" name= 'dni' min="1000000" max="99999999" id="dni" placeholder="22333444">
                     </div>
                     <div class="mb-3">
-                        <label for="fechaDeNacimiento" class="form-label">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" placeholder="Fecha de nacimiento">
+                        <label for="fechaDeNacimiento" class="form-label">Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control" name="fechaDeNacimiento" min="<%= moment().subtract(60, 'years').format('YYYY-MM-DD')%>" max="<%= moment().subtract(18, 'years').format('YYYY-MM-DD')%>" id="fechaDeNacimiento" placeholder="<%= moment().format('YYYY-MM-DD') %>">
                     </div>
                     <div class="mb-3">
                         <label for="genero" class="form-label">Género:</label>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" name="password" id="contraseña" placeholder="***********">
+                    <input type="password" class="form-control" name="password" id="contraseña" minlength="6" placeholder="***********">
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tyc" required>

@@ -6,25 +6,7 @@
         <div class="container-fluid">
             <div>
                 <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
-            </div>
-            <nav class="header-navbar">
-                <div class="boton-magico">       
-                    <button class="btn btn-primary" id="magic-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-bars" id="hamb-icon"></i></button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                        <div class="offcanvas-header">
-                            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" id="boton-cerrar">X</button>
-                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="./canchas">Canchas</a></h5><br>
-                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="./equipos">Equipos</a></h5><br>
-                            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="../users/login">Login</a></h5><br>
-                        </div>
-                    </div>
-                </div>    
-                <ul class="menu-navbar">
-                    <li><a href="./canchas">Canchas</a></li> 
-                    <li><a href="./equipos">Equipos</a></li>
-                    <li><a href="../users/login">Login</a></li>                   
-                </ul>                
-            </nav>
+            </div>            
         </div>    
     </header>
     <section class="registro-cuerpo" id="registro-fondo">       
@@ -40,47 +22,83 @@
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 1:</label>
-                    <input type="text" class="form-control" name="jugador1" id="formGroupExampleInput2" placeholder="@usuario" value="<%=equipo.jugador1 %>">
+                    <input type="text" class="form-control" name="jugador1" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=equipo.jugador1 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 2:</label>
-                    <input type="text" class="form-control" name="jugador2" id="formGroupExampleInput2" placeholder="@usuario" value="<%=equipo.jugador2 %>">
+                    <input type="text" class="form-control" name="jugador2" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=equipo.jugador2 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 3:</label>
-                    <input type="text" class="form-control" name="jugador3" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador3 %>">
+                    <input type="text" class="form-control" name="jugador3" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador3 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 4:</label>
-                    <input type="text" class="form-control" name="jugador4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador4 %>">
+                    <input type="text" class="form-control" name="jugador4" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador4 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 5:</label>
-                    <input type="text" class="form-control" name="jugador5" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador5 %>">
+                    <input type="text" class="form-control" name="jugador5" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador5 %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 6:</label>
-                    <input type="text" class="form-control" name="jugador6" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador6 %>">
+                    <input type="text" class="form-control" name="jugador6" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador6 %>">
                 </div>
                 <div class="mb-3">
                     <label for="restriccionesSexo" class="form-label">Juega Contra:</label><br>
+                    <% if (equipo.restriccionesSexo == "Mixto"){ %>
                     <select id="restriccionEdad" name="restriccionesSexo">
-                        <option value="Mixto"> Mixto </option>
+                        <option value="Mixto" selected> Mixto </option>
                         <option value="Solo Mujeres"> Solo Mujeres</option>
                         <option value="Solo Hombres"> Solo Hombres</option>
                     </select>
+                    <% } else if(equipo.restriccionesSexo == "Solo Mujeres"){%>
+                        <select id="restriccionEdad" name="restriccionesSexo">
+                            <option value="Mixto"> Mixto </option>
+                            <option value="Solo Mujeres" selected> Solo Mujeres</option>
+                            <option value="Solo Hombres"> Solo Hombres</option>
+                        </select>
+                    <% } else {%>
+                        <select id="restriccionEdad" name="restriccionesSexo">
+                            <option value="Mixto"> Mixto </option>
+                            <option value="Solo Mujeres"> Solo Mujeres</option>
+                            <option value="Solo Hombres" selected> Solo Hombres</option>
+                        </select>
+                        <% } %> 
                 </div>            
                 <div class="mb-3">
                     <label for="restriccionEdad" class="form-label">Restricción de Edad:</label>
+                    <% if (equipo.restriccionEdad == "Sin restricción"){ %>
                     <select id="restriccionEdad" name="restriccionEdad">
-                        <option value="Sin restricción"> Sin restricción</option>
-                        <option value="Menores de 30 años"> Menores de 30 años</option>
-                        <option value="Mayores de 30 años"> Mayores de 30 años</option>
+                        <option value="Sin restricción" selected> Sin restricción</option>
+                        <option value="Menores de 30 años"> Menores de 30 años</option>                        
                         <option value="Menores de 40 años"> Menores de 40 años</option>
                         <option value="Mayores de 40 años"> Mayores de 40 años</option>
                     </select>
-                </div>
-                <button type="submit" class="btn btn-primary">ACEPTAR</button>
+                    <% } else if(equipo.restriccionEdad == "Menores de 30 años"){%>
+                        <select id="restriccionEdad" name="restriccionEdad">
+                            <option value="Sin restricción" > Sin restricción</option>
+                            <option value="Menores de 30 años" selected> Menores de 30 años</option>                        
+                            <option value="Menores de 40 años"> Menores de 40 años</option>
+                            <option value="Mayores de 40 años"> Mayores de 40 años</option>
+                        </select>
+                    <% } else if(equipo.restriccionEdad == "Menores de 40 años"){%>
+                        <select id="restriccionEdad" name="restriccionEdad">
+                            <option value="Sin restricción" > Sin restricción</option>
+                            <option value="Menores de 30 años"> Menores de 30 años</option>                        
+                            <option value="Menores de 40 años" selected> Menores de 40 años</option>
+                            <option value="Mayores de 40 años"> Mayores de 40 años</option>
+                        </select>
+                    <% } else {%>
+                        <select id="restriccionEdad" name="restriccionEdad">
+                            <option value="Sin restricción" > Sin restricción</option>
+                            <option value="Menores de 30 años"> Menores de 30 años</option>                        
+                            <option value="Menores de 40 años"> Menores de 40 años</option>
+                            <option value="Mayores de 40 años" selected> Mayores de 40 años</option>
+                        </select>    
+                        <% } %>     
+                    </div>
+                <button type="submit" class="btn btn-primary">GUARDAR</button>
             </form>            
         </div> 
     </section>
