@@ -1,8 +1,8 @@
 [
  {
   "id": 1,
-  "nombre": "Federico",
-  "apellido": "Gervasao",
+  "nombre": "FEDE",
+  "apellido": "GERVASAO",
   "dni": "33608423",
   "fechaDeNacimiento": "2004-10-13",
   "genero": "hombre",
@@ -66,6 +66,17 @@
   "genero": "mujer",
   "fotoPerfil": "enzo.jpg",
   "email": "juancarlos@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 7,
+  "nombre": "ERROR",
+  "apellido": "ERRADO",
+  "dni": "12456787",
+  "fechaDeNacimiento": "2004-07-21",
+  "genero": "mujer",
+  "fotoPerfil": "enzo.jpg",
+  "email": "error@gmail.com",
   "password": "123456"
  }
 ]
