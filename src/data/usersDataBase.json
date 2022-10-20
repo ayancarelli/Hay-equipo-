@@ -43,5 +43,17 @@
   "fotoPerfil": "enzo.jpg",
   "email": "ana@gmail.com",
   "password": "123456"
+ },
+ {
+  "id": 5,
+  "nombre": "Super",
+  "apellido": "Usuario",
+  "dni": "11122246",
+  "fechaDeNacimiento": "1995-01-12",
+  "genero": "hombre",
+  "fotoPerfil": "enzo.jpg",
+  "email": "super@gmail.com",
+  "password": "123456",
+  "foto": "enzo.jpg"
  }
 ]
