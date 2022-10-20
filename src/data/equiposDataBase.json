@@ -37,5 +37,31 @@
   "jugador6": "HINDÚ",
   "restriccionEdad": "Menores de 40 años",
   "restriccionesSexo": "Mixto"
+ },
+ {
+  "id": 5,
+  "nombreEquipo": "HAY EQUIPO",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "ALAN",
+  "jugador2": "FEDE",
+  "jugador3": "EMILIO",
+  "jugador4": "SANTI",
+  "jugador5": "",
+  "jugador6": "",
+  "restriccionEdad": "Mayores de 40 años",
+  "restriccionesSexo": "Solo Hombres"
+ },
+ {
+  "id": 6,
+  "nombreEquipo": "LOS RÚSTICOS",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "SATURNINO",
+  "jugador2": "ANASTASIO",
+  "jugador3": "TEÓFILO",
+  "jugador4": "CASIMIRO",
+  "jugador5": "ALFREDO",
+  "jugador6": "RAMÓN",
+  "restriccionEdad": "Sin restricción",
+  "restriccionesSexo": "Mixto"
  }
 ]

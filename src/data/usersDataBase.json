@@ -78,5 +78,16 @@
   "fotoPerfil": "enzo.jpg",
   "email": "error@gmail.com",
   "password": "123456"
+ },
+ {
+  "id": 8,
+  "nombre": "SERGIO",
+  "apellido": "TEVEZ",
+  "dni": "17564823",
+  "fechaDeNacimiento": "2004-08-05",
+  "genero": "hombre",
+  "fotoPerfil": "enzo.jpg",
+  "email": "sergiotevez@gmail.com",
+  "password": "sergio123"
  }
 ]
