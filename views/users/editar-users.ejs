@@ -29,49 +29,50 @@
     </header>
     <section class="registro-cuerpo" id="registro-fondo">       
         <div class="registro-formulario">
-            <form action="/users/edit-user/<%= useraEditar.dni %>?_method=PUT" method="POST">
+            <form action="/users/editar-users/<%= useraEditar.id %>?_method=PUT" method="POST">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre:</label>
                     <input type="text" class="form-control" name="nombre" id="nombre" value="<%= useraEditar.nombre %>" placeholder="Nombre">
                 </div>
                   <div class="mb-3">
                     <label for="apellido" class="form-label">Apellido:</label>
-                    <input type="text" class="form-control" name= 'apellido' id="apellido" value="<%= useraEditar.apellido %> placeholder="Apellido">
+                    <input type="text" class="form-control" name= 'apellido' id="apellido" value="<%= useraEditar.apellido %>" placeholder="Apellido">
                   </div>
                   <div class="mb-3">
                       <label for="dni" class="form-label">Dni:</label>
-                      <input type="number" class="form-control" name= 'dni' id="dni" value="<%= useraEditar.dni %>placeholder="Dni">
+                      <input type="number" class="form-control" name= 'dni' id="dni" value="<%= useraEditar.dni %>" placeholder="Dni">
                     </div>
                     <div class="mb-3">
                         <label for="fechaDeNacimiento" class="form-label">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" value="<%= useraEditar.fechaDeNacimiento %>placeholder="Fecha de nacimiento">
+                        <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" value="<%= useraEditar.fechaDeNacimiento %>" placeholder="Fecha de nacimiento">
                     </div>
                     <div class="mb-3">
-                        <label for="sexo" class="form-label">Sexo:</label>
-                        <select name="sexo" id="sexo" >
+                        <label for="sexo" class="form-label">Género:</label>                        
+                        <% if (useraEditar.genero == "mujer"){ %>
+                        <select name="genero" id="sexo">
                             <option value="hombre">Hombre</option>
-                            <option value="mujer">Mujer</option>
+                            <option value="mujer" selected>Mujer</option>
                         </select>
-                    </div>
-                    
+                        <% } else {%>
+                            <select name="genero" id="sexo">
+                                <option value="hombre"selected>Hombre</option>
+                                <option value="mujer">Mujer</option>
+                            </select>
+                            <% } %>  
+                    </div>                    
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
-                        <input type="file" class="form-control" id="formGroupExampleInput2" value="<%= useraEditar.nombre %>placeholder="Foto de perfil">
+                        <input type="file" class="form-control" id="formGroupExampleInput2" value="<%= useraEditar.fotoPerfil %>" placeholder="Foto de perfil">
                     </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name= "email" id="email" aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">
-                    <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
+                    <input type="email" class="form-control" name= "email" id="email" value="<%= useraEditar.email %>" aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">                    
                 </div>
                 <div class="mb-3">
                     <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="***********">
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
-                </div>
+                    <input type="password" class="form-control" name="password" value="<%= useraEditar.password %>" id="contraseña" placeholder="***********">
+                </div>                
                 <button type="submit" class="btn btn-primary">ENVIAR</button>
             </form>            
         </div> 

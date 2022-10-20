@@ -10,9 +10,11 @@ const controlador = {
     login: (req, res) => {
         res.render('./users/login');
     },
+
     registro: (req,res) => {
         res.render('./users/registro');
     },
+
     crear: (req,res)=>{
         
         let newId;
@@ -41,18 +43,23 @@ const controlador = {
     },
 
     checkUser: (req, res) => {
+        
         let userMail = req.body.email;
         let userPass = req.body.password;
-        let userLogged;
+        let userLogged = false;
 
-        for(let u of userJson){
-            if(userMail == u.email && userPass == u.password){
+        for(let u of userJson){            
+            if((userMail == u.email) && (userPass == u.password)){
                     userLogged = u;
-                    break;                    
-            } else {
-                res.send('Usuario no encontrado. Verificar datos ingresados.')
-            }               
+                    break;                                                            
+            }
         }
+
+        if (userLogged == false){
+            res.send('Usuario no encontrado. Revisar datos ingresados.')
+        }
+
+        console.log(userLogged);        
         res.render('./users/usuario', {user : userLogged});
     },
     /*
@@ -63,13 +70,14 @@ const controlador = {
         res.render('./users/users', {users : userJson});
     },
     */
+
     edit: (req,res) => {
         
-        let dniUser = req.params.dni;
+        let idUser = req.params.id;
 		let objUser;
 
 		for (let e of userJson){
-			if (dniUser == e.dni){
+			if (idUser == e.id){
 				objUser=e;
 				break;
 			}
@@ -78,27 +86,30 @@ const controlador = {
 		res.render('./users/editar-users', {useraEditar: objUser});
 
     },
+    
     update: (req, res) => {
 
-		let dniUser = req.params.dni;
+		let idUser = req.params.id;
+        let userEdited;
 
 		for (let s of userJson){
-			if (dniUser == s.dni){
+			if (idUser == s.id){
 				s.nombre = req.body.nombre;
                 s.apellido = req.body.apellido;
                 s.dni = req.body.dni;
                 s.fechaDeNacimiento = req.body.fechaDeNacimiento ;
-                s.sexo = req.body.sexo;
+                s.genero = req.body.genero;
                 s.foto = "enzo.jpg";
                 s.email = req.body.email;
-                s.usuario = req.body.usuario
+                s.password = req.body.password
+                userEdited = s;
 				break;
 			}
 		}
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(userJson,null,' '));
 
-		res.redirect('/');
+		res.render('./users/usuario', {user : userEdited});
 	}
 }
 

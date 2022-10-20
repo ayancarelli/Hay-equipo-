@@ -7,11 +7,11 @@ router.post ('/login', usersController.checkUser);
 router.get ('/registro',usersController.registro);
 router.post ('/registro',usersController.crear);
 
-
+// --- EN VEREMOS ESTA VISTA ---
 // router.get('/users',usersController.users);
 
 // --- EDITAR USUARIO ---
-// router.get('/edit-user',usersController.edit);
-// router.put('/users/edit-user/:dni',usersController.update);
+router.get('/editar-users/:id',usersController.edit);
+router.put('/editar-users/:id',usersController.update);
 
 module.exports = router;

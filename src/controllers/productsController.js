@@ -8,19 +8,24 @@ const controlador = {
     canchas: (req, res) => {
         res.render('./products/canchas');
     },
+
     equipos: (req,res) => {
         const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
         res.render('./products/equipos', {ps: equiposJson});
     },
+
     carrito: (req,res) => {
         res.render('./products/carrito');
     },
+
     carrito2: (req,res) => {
         res.render('./products/carrito2');
     },
+
     create: (req,res) => {
         res.render('products/crear-equipo');
     },
+
     crear: (req,res)=> {
         let newId;
         if(equiposJson.length>0){
@@ -77,6 +82,7 @@ const controlador = {
         
         res.render('./products/equipo', {equipo: objEquipo})
     },
+    
     update: (req,res) => {
    
         let idEquipo = req.params.id;
@@ -101,6 +107,7 @@ const controlador = {
       
         res.redirect('/products/equipos');
     },
+
     destroy: (req, res) => {
 		
 		let idEquipo = req.params.id;
