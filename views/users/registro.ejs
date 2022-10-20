@@ -44,7 +44,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="fechaDeNacimiento" class="form-label">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" placeholder="Fecha de nacimiento">
+                        <input type="date" class="form-control" name="fechaDeNacimiento" min="<%= moment().subtract(60, 'years').format('YYYY-MM-DD') %>" max="<%= moment().subtract(18, 'years').format('YYYY-MM-DD')%>" id="fechaDeNacimiento" placeholder="<%= moment().format('YYYY-MM-DD') %>">
                     </div>
                     <div class="mb-3">
                         <label for="genero" class="form-label">Género:</label>

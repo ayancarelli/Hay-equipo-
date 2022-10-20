@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const moment = require('moment');
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
@@ -11,8 +12,8 @@ const controlador = {
         res.render('./users/login');
     },
 
-    registro: (req,res) => {
-        res.render('./users/registro');
+    registro: (req,res) => {        
+        res.render('./users/registro', {moment: moment});
     },
 
     crear: (req,res)=>{
