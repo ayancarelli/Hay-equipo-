@@ -76,5 +76,18 @@
   "jugador6": "EVERETT",
   "restriccionEdad": "Menores de 30 años",
   "restriccionesSexo": "Mixto"
+ },
+ {
+  "id": 8,
+  "nombreEquipo": "CAJA DE PANDORA",
+  "imagen": "los-cebollitas.jpeg",
+  "jugador1": "JOSE",
+  "jugador2": "PEPE",
+  "jugador3": "QWE",
+  "jugador4": "DSA",
+  "jugador5": "ASD",
+  "jugador6": "HERNESTO",
+  "restriccionEdad": "Sin restricción",
+  "restriccionesSexo": "Mixto"
  }
 ]

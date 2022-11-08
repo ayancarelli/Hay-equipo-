@@ -11,7 +11,7 @@
     </header>
     <section class="registro-cuerpo" id="registro-fondo">       
         <div class="registro-formulario">
-            <form action="/products/editar-equipo/<%=equipo.id %>?_method=PUT" method="POST">
+            <form action="/products/editar-equipo/<%=equipo.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
                     <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=equipo.nombreEquipo %>">
