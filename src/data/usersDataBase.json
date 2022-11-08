@@ -9,7 +9,7 @@
   "fotoPerfil": "enzo.jpg",
   "email": "123@gmail.com",
   "password": "123456"
-   },
+ },
  {
   "id": 2,
   "nombre": "Alan",
@@ -86,5 +86,16 @@
   "fotoPerfil": "enzo.jpg",
   "email": "sergiotevez@gmail.com",
   "password": "sergio123"
+ },
+ {
+  "id": 9,
+  "nombre": "ASD",
+  "apellido": "YANCARELLI",
+  "dni": "35560580",
+  "fechaDeNacimiento": "2004-11-04",
+  "genero": "hombre",
+  "fotoPerfil": "enzo.jpg",
+  "email": "ay@hotmail.com",
+  "password": "123123"
  }
 ]
