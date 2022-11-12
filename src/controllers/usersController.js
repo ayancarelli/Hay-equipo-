@@ -69,8 +69,7 @@ const controlador = {
         if (userLogged == false){
             res.send('Usuario no encontrado. Revisar datos ingresados.')
         }
-
-        console.log(userLogged);        
+                      
         res.render('./users/usuario', {user : userLogged});
     },
     /*
