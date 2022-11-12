@@ -2,7 +2,43 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const { body } = require('express-validator');
 const usersController = require('../controllers/usersController');
+
+const validaciones = [
+    body('nombre')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isLength({ min: 4}).withMessage('Éste campo debe tener al menos 4 caracteres'),
+    body('apellido')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isLength({ min: 4}).withMessage('Éste campo debe tener al menos 4 caracteres'),
+    body('dni')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isInt({ min: 10000000, max: 50000000}).withMessage('Ingresar DNI válido'),
+    body('fechaDeNacimiento')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+    body('genero').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+    body('email')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isEmail().withMessage('Escribir un e-mail válido'),
+    body('password')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isLength({min: 6, max: 12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+    body('fotoPerfil').custom((value, { req }) => {
+        let file = req.file;
+        let extensionesValidas = ['.jpg', '.jpeg' , '.png'];
+
+        if(!file) {
+            throw new Error('Debes subir una imagen.'); 
+        } else {
+            let fileExtension = path.extname(file.originalname);
+            if(!extensionesValidas.includes(fileExtension)) {
+                throw new Error(`Las extensiones de archivo permitidas son: ${extensionesValidas.join(', ')}`);
+            }
+        }
+        return true;
+    })
+];
 
 const storage = multer.diskStorage({
     destination: (req,file,cb) =>{
@@ -19,7 +55,7 @@ const upload = multer ({storage: storage});
 router.get ('/login', usersController.login);
 router.post ('/login', usersController.checkUser);
 router.get ('/registro',usersController.registro);
-router.post ('/registro',upload.single('fotoPerfil') ,usersController.crear);
+router.post ('/registro',upload.single('fotoPerfil'), validaciones, usersController.crear);
 
 // --- EN VEREMOS ESTA VISTA ---
 // router.get('/users',usersController.users);

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
+const { validationResult } = require('express-validator');
 
 const equiposFilePath = path.join(__dirname, '../data/equiposDataBase.json');
 const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
@@ -28,8 +29,16 @@ const controlador = {
     },
 
     crear: (req,res)=> {
+        const rdosValidaciones = validationResult(req);
+        
+        if(rdosValidaciones.errors.length > 0){
+            res.render('./products/crear-equipo', {
+                errors: rdosValidaciones.mapped()
+            });
+        }
+        
         let newId;
-        if(equiposJson.length>0){
+        if(equiposJson.length > 0){
             newId = equiposJson[(equiposJson.length-1)].id+1;
         } else {
             newId = 1    

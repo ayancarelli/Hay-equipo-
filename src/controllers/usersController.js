@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
+const { validationResult } = require('express-validator');
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
@@ -17,7 +18,16 @@ const controlador = {
     },
 
     crear: (req,res)=>{
+        const rdosValidaciones = validationResult(req);
         
+        if(rdosValidaciones.errors.length > 0){            
+            return res.render('./users/registro', {
+                moment: moment,
+                errors: rdosValidaciones.mapped(),
+                oldData: req.body
+            });
+        }        
+
         let newId;
         if(userJson.length>0){
             newId = userJson[(userJson.length-1)].id+1;
@@ -40,7 +50,7 @@ const controlador = {
         
         fs.writeFileSync(usersFilePath,JSON.stringify(userJson, null, " "));
         console.log(usuarioNuevo);
-        res.redirect('/users/login');
+        res.redirect('/users/login');        
     },
 
     checkUser: (req, res) => {

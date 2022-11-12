@@ -2,7 +2,19 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const { body } = require('express-validator');
 const productsController = require('../controllers/productsController');
+
+const validaciones = [
+    body('nombreEquipo').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+    body('jugador1').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+    body('jugador2').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+    body('jugador3').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+    body('jugador4').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+    body('jugador5').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+    body('restriccionEdad').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+    body('restriccionesSexo').notEmpty().withMessage('Éste campo no puede quedar vacío.')
+];
 
 const storage = multer.diskStorage({
     destination: (req, file,cb) =>{
@@ -19,6 +31,7 @@ const storage = multer.diskStorage({
 const upload = multer ({storage: storage});
 
 
+
 router.get ('/canchas', productsController.canchas);
 router.get ('/equipos', productsController.equipos);
 router.get ('/carrito', productsController.carrito);
@@ -28,7 +41,7 @@ router.get ('/equipo/:id', productsController.equipo);
 
 /*** Para Crear Equipos ***/
 router.get ('/crear-equipo', productsController.create);
-router.post ('/crear-equipo', upload.single("imgEquipo"), productsController.crear);
+router.post ('/crear-equipo', upload.single("imgEquipo"), validaciones, productsController.crear);
 
 /*** Para Editar Equipos ***/
 router.get ('/editar-equipo/:id', productsController.edit);

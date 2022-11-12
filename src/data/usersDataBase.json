@@ -108,5 +108,16 @@
   "fotoPerfil": "img-user-1668268314667.jpg",
   "email": "345@gmail.com",
   "password": "123456"
+ },
+ {
+  "id": 11,
+  "nombre": "FEDERICO",
+  "apellido": "GERVASONI",
+  "dni": "35444666",
+  "fechaDeNacimiento": "1987-10-05",
+  "genero": "Hombre",
+  "fotoPerfil": "img-user-1668282837317.png",
+  "email": "666@gmail.com",
+  "password": "123456"
  }
 ]

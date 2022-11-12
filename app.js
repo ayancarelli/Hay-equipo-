@@ -15,13 +15,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
+app.set('view engine', 'ejs');
 
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
 app.use('/users', rutasUsers);
 
 
-app.set('view engine', 'ejs');
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("Servidor corriendo");

@@ -33,34 +33,64 @@
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
                     <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A">
+                    <% if (locals.errors && errors.nombreEquipo) { %>
+                        <div class="text-danger">
+                            <%= errors.nombreEquipo.msg %>    
+                        </div>                     
+                    <% } %>                        
                 </div>
                 <div class="mb-3">
                     <label for="fotoEquipo" class="form-label">Foto del Equipo:</label>
-                    <input type="file" class="form-control" name="imgEquipo" id="fotoEquipo" accept=".jpg, .png">
+                    <input type="file" class="form-control" name="imgEquipo" id="fotoEquipo" accept=".jpg, .png">                    
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 1:</label>
                     <input type="text" class="form-control" name="jugador1" minlength="4" id="formGroupExampleInput2" placeholder="@usuario">
+                    <% if (locals.errors && errors.jugador1) { %>
+                        <div class="text-danger">
+                            <%= errors.jugador1.msg %>    
+                        </div>                     
+                    <% } %> 
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 2:</label>
                     <input type="text" class="form-control" name="jugador2" minlength="4" id="formGroupExampleInput2" placeholder="@usuario">
+                    <% if (locals.errors && errors.jugador2) { %>
+                        <div class="text-danger">
+                            <%= errors.jugador2.msg %>    
+                        </div>                     
+                    <% } %>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 3:</label>
                     <input type="text" class="form-control" name="jugador3" minlength="4" id="formGroupExampleInput2" placeholder="@usuario">
+                    <% if (locals.errors && errors.jugador3) { %>
+                        <div class="text-danger">
+                            <%= errors.jugador3.msg %>    
+                        </div>                     
+                    <% } %>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 4:</label>
                     <input type="text" class="form-control" name="jugador4" minlength="4" id="formGroupExampleInput2" placeholder="@usuario">
+                    <% if (locals.errors && errors.jugador4) { %>
+                        <div class="text-danger">
+                            <%= errors.jugador4.msg %>    
+                        </div>                     
+                    <% } %>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 5:</label>
                     <input type="text" class="form-control" name="jugador5" minlength="4" id="formGroupExampleInput2" placeholder="@usuario">
+                    <% if (locals.errors && errors.jugador5) { %>
+                        <div class="text-danger">
+                            <%= errors.jugador5.msg %>    
+                        </div>                     
+                    <% } %>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 6:</label>
-                    <input type="text" class="form-control" name="jugador6" minlength="4" id="formGroupExampleInput2" placeholder="@usuario">
+                    <input type="text" class="form-control" name="jugador6" id="formGroupExampleInput2" placeholder="@usuario">
                 </div>
                 <div class="mb-3">
                     <label for="restriccionesSexo" class="form-label">Juega Contra:</label><br>

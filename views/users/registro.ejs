@@ -32,41 +32,128 @@
             <form action="/users/registro" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" name="nombre" minlength="4" id="nombre" placeholder="Nombre">
+                    <input 
+                    type="text" 
+                    class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>" 
+                    name="nombre" 
+                    id="nombre"
+                    value="<%= locals.oldData ? oldData.nombre : null %>" 
+                    placeholder="Nombre">
+                    <% if (locals.errors && errors.nombre) { %>
+                        <div class="text-danger">
+                            <%= errors.nombre.msg %>    
+                        </div>                     
+                    <% } %>
                 </div>
                   <div class="mb-3">
                     <label for="apellido" class="form-label">Apellido:</label>
-                    <input type="text" class="form-control" name= 'apellido' minlength="4" id="apellido" placeholder="Apellido">
+                    <input 
+                    type="text" 
+                    class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>" 
+                    name= 'apellido' 
+                    id="apellido"
+                    value="<%= locals.oldData ? oldData.apellido : null %>" 
+                    placeholder="Apellido">
+                    <% if (locals.errors && errors.apellido) { %>
+                        <div class="text-danger">
+                            <%= errors.apellido.msg %>    
+                        </div>                     
+                    <% } %>
                   </div>
                   <div class="mb-3">
                       <label for="dni" class="form-label">DNI:</label>
-                      <input type="number" class="form-control" name= 'dni' min="1000000" max="99999999" id="dni" placeholder="22333444">
+                      <input 
+                      type="number" 
+                      class="form-control <%= locals.errors && errors.dni ? 'is-invalid' : null %>" 
+                      name= 'dni' 
+                      id="dni"
+                      value="<%= locals.oldData ? oldData.dni : null %>" 
+                      placeholder="22333444">
+                      <% if (locals.errors && errors.dni) { %>
+                        <div class="text-danger">
+                            <%= errors.dni.msg %>    
+                        </div>                     
+                    <% } %>
                     </div>
                     <div class="mb-3">
                         <label for="fechaDeNacimiento" class="form-label">Fecha de Nacimiento:</label>
-                        <input type="date" class="form-control" name="fechaDeNacimiento" min="<%= moment().subtract(60, 'years').format('YYYY-MM-DD')%>" max="<%= moment().subtract(18, 'years').format('YYYY-MM-DD')%>" id="fechaDeNacimiento" placeholder="<%= moment().format('YYYY-MM-DD') %>">
+                        <input 
+                        type="date" 
+                        class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>" 
+                        name="fechaDeNacimiento" 
+                        id="fechaDeNacimiento"
+                        min="<%= moment().subtract(60, 'years').format('YYYY-MM-DD')%>"
+                        max="<%= moment().subtract(18, 'years').format('YYYY-MM-DD')%>"
+                        value="<%= locals.oldData ? oldData.fechaDeNacimiento : null %>">
+                        <% if (locals.errors && errors.fechaDeNacimiento) { %>
+                            <div class="text-danger">
+                                <%= errors.fechaDeNacimiento.msg %>    
+                            </div>                     
+                        <% } %>
                     </div>
                     <div class="mb-3">
                         <label for="genero" class="form-label">Género:</label>
-                        <select name="genero" id="genero">
-                            <option value="hombre">Hombre</option>
-                            <option value="mujer">Mujer</option>
+                        <select 
+                        name="genero"
+                        class="<%= locals.errors && errors.genero ? 'is-invalid' : null %>" 
+                        id="genero">
+                            <option value=""> ... </option>
+                            <% let generos = ['Hombre', 'Mujer']; %>
+                            <% for( let genero of generos ) { %>
+                                <option 
+                                    value="<%= genero %>"
+                                    <%= locals.oldData && (genero == oldData.genero) ? 'selected' : null %> 
+                                >
+                                <%= genero %></option>                              
+                            <% } %>
                         </select>
+                        <% if (locals.errors && errors.genero) { %>
+                            <div class="text-danger">
+                                <%= errors.genero.msg %>    
+                            </div>                     
+                        <% } %>
                     </div>
                     
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
                         <input type="file" class="form-control" id="formGroupExampleInput2" name="fotoPerfil" placeholder="Foto de perfil">
+                        <% if (locals.errors && errors.fotoPerfil) { %>
+                            <div class="text-danger">
+                                <%= errors.fotoPerfil.msg %>    
+                            </div>                     
+                        <% } %>
                     </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name= "email" id="email" aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">
+                    <input 
+                    type="text" 
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
+                    name= "email" 
+                    id="email"                    
+                    value="<%= locals.oldData ? oldData.email : null %>" 
+                    placeholder="usuario@hayequipo.com">
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>    
+                        </div>                     
+                    <% } %>
                     <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
                 </div>
                 <div class="mb-3">
                     <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" name="password" id="contraseña" minlength="6" placeholder="***********">
+                    <input 
+                    type="password" 
+                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" 
+                    name="password" 
+                    id="contraseña"
+                    value="<%= locals.oldData ? oldData.password : null %>" 
+                    placeholder="***********">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>    
+                        </div>                     
+                    <% } %>
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tyc" required>
