@@ -37,7 +37,7 @@ const controlador = {
         let equipoNuevo = {
             id: newId,
             nombreEquipo: req.body.nombreEquipo.toUpperCase(),
-            imagen: "los-cebollitas.jpeg",
+            imagen: req.file.filename,
             jugador1: req.body.jugador1.toUpperCase(),
             jugador2: req.body.jugador2.toUpperCase(),
             jugador3: req.body.jugador3.toUpperCase(),

@@ -97,5 +97,16 @@
   "fotoPerfil": "enzo.jpg",
   "email": "ay@hotmail.com",
   "password": "123123"
+ },
+ {
+  "id": 10,
+  "nombre": "PEPEE",
+  "apellido": "JOSEGFO",
+  "dni": "45645645",
+  "fechaDeNacimiento": "2004-11-04",
+  "genero": "hombre",
+  "fotoPerfil": "img-user-1668268314667.jpg",
+  "email": "345@gmail.com",
+  "password": "123456"
  }
 ]

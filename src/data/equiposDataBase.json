@@ -89,5 +89,66 @@
   "jugador6": "HERNESTO",
   "restriccionEdad": "Sin restricción",
   "restriccionesSexo": "Mixto"
+ },
+ {
+  "id": 9,
+  "nombreEquipo": "LO PEPES",
+  "jugador1": "JOSE",
+  "jugador2": "PEPE",
+  "jugador3": "ASDASD",
+  "jugador4": "IRON MAN",
+  "jugador5": "JUAN",
+  "jugador6": "EVERETT",
+  "restriccionEdad": "Sin restricción",
+  "restriccionesSexo": "Mixto"
+ },
+ {
+  "id": 10,
+  "nombreEquipo": "D",
+  "jugador1": "JOSE",
+  "jugador2": "ASD",
+  "jugador3": "PEPE2",
+  "jugador4": "DSA",
+  "jugador5": "DSAASD",
+  "jugador6": "8",
+  "restriccionEdad": "Sin restricción",
+  "restriccionesSexo": "Mixto"
+ },
+ {
+  "id": 11,
+  "nombreEquipo": "D",
+  "jugador1": "JOSE",
+  "jugador2": "PEPE",
+  "jugador3": "HULK",
+  "jugador4": "QWE",
+  "jugador5": "ASD",
+  "jugador6": "HERNESTO",
+  "restriccionEdad": "Sin restricción",
+  "restriccionesSexo": "Mixto"
+ },
+ {
+  "id": 12,
+  "nombreEquipo": "CAJA DE PANDORA",
+  "jugador1": "JOSE",
+  "jugador2": "ASD",
+  "jugador3": "ASD",
+  "jugador4": "FDSFSD",
+  "jugador5": "DSAASD",
+  "jugador6": "QWASDDS",
+  "restriccionEdad": "Sin restricción",
+  "restriccionesSexo": "Mixto"
+ },
+ {
+  "id": 13,
+  "nombreEquipo": "CAJA DE PANDORA2",
+  "imagen": "img-equipo-1668268136684.jpg",
+  "jugador1": "JOSE",
+  "jugador2": "ASD",
+  "jugador3": "ASD",
+  "jugador4": "FDSFSD",
+  "jugador5": "DSAASD",
+  "jugador6": "QWASDDS",
+  "restriccionEdad": "Sin restricción",
+  "restriccionesSexo": "Mixto"
  }
 ]

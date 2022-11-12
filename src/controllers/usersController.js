@@ -31,7 +31,7 @@ const controlador = {
             dni: req.body.dni,
             fechaDeNacimiento: req.body.fechaDeNacimiento,
             genero: req.body.genero,
-            fotoPerfil: "enzo.jpg",
+            fotoPerfil: req.file.filename,
             email: req.body.email,
             password: req.body.password
         };
