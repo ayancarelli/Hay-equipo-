@@ -26,7 +26,7 @@ router.put('/editar-equipo/:id', upload.single("fotoEquipo"), productsController
 // BORRAR Equipo
 router.delete('/delete/:id', productsController.destroy);
 
-// RUTAS A VER !!!
+// VISTAS A DEFINIR !!!
 router.get ('/canchas', productsController.canchas);
 router.get ('/equipos', productsController.equipos);
 router.get ('/carrito', productsController.carrito);
