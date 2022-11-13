@@ -3,6 +3,7 @@ const session = require('express-session');
 const path = require('path');
 const methodOverride = require('method-override');
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
+const cookies = require('cookie-parser');
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.static(path.resolve(__dirname,'./public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(cookies());
 app.use(userLoggedMiddleware);
 
 

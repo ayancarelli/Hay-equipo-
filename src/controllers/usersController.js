@@ -58,7 +58,12 @@ const controlador = {
             if (passwordOk) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
-                res.render('./users/usuario', {user : req.session.userLogged});
+                
+                if(req.body.recordar) {
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 })
+                }
+                
+                res.redirect('/users/usuario');
             }
                
             return res.render('./users/login', {
@@ -88,6 +93,7 @@ const controlador = {
     },
 
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/');
     },
