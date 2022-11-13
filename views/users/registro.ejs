@@ -116,7 +116,12 @@
                     
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
-                        <input type="file" class="form-control" id="formGroupExampleInput2" name="fotoPerfil" placeholder="Foto de perfil">
+                        <input 
+                        type="file" 
+                        class="form-control" 
+                        id="formGroupExampleInput2"
+                        name="fotoPerfil"                        
+                        placeholder="Foto de perfil">
                         <% if (locals.errors && errors.fotoPerfil) { %>
                             <div class="text-danger">
                                 <%= errors.fotoPerfil.msg %>    

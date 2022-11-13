@@ -1,7 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
+const encriptar = require('bcryptjs');
 const { validationResult } = require('express-validator');
+
+const User = require('../models/User');
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
@@ -28,28 +31,28 @@ const controlador = {
             });
         }        
 
-        let newId;
-        if(userJson.length>0){
-            newId = userJson[(userJson.length-1)].id+1;
-        } else {
-            newId = 1    
+        let userInDB = User.findByField('email', req.body.email);
+
+        if(userInDB) {
+            return res.render('./users/registro', {
+                moment: moment,
+                errors: {
+                    email: {
+                        msg: 'Éste email ya se encuentra registrado.'
+                    }
+                },
+                oldData: req.body
+            });
         }
-        let usuarioNuevo = {
-            id: newId,
-            nombre: req.body.nombre.toUpperCase(),
-            apellido: req.body.apellido.toUpperCase(),
-            dni: req.body.dni,
-            fechaDeNacimiento: req.body.fechaDeNacimiento,
-            genero: req.body.genero,
+
+        let userToCreate = {
+            ...req.body,
             fotoPerfil: req.file.filename,
-            email: req.body.email,
-            password: req.body.password
-        };
-        
-        userJson.push(usuarioNuevo);
-        
-        fs.writeFileSync(usersFilePath,JSON.stringify(userJson, null, " "));
-        console.log(usuarioNuevo);
+            password: encriptar.hashSync(req.body.password, 10)
+        }
+
+        let userCreated = User.create(userToCreate);
+       
         res.redirect('/users/login');        
     },
 

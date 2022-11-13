@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
-const { validationResult } = require('express-validator');
 
 const equiposFilePath = path.join(__dirname, '../data/equiposDataBase.json');
 const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
@@ -29,17 +28,8 @@ const controlador = {
     },
 
     crear: (req,res)=> {
-        const rdosValidaciones = validationResult(req);
-        
-        if(rdosValidaciones.errors.length > 0){
-            return res.render('./products/crear-equipo', {
-                errors: rdosValidaciones.mapped(),
-                oldData: req.body
-            });
-        }
-        
         let newId;
-        if(equiposJson.length > 0){
+        if(equiposJson.length>0){
             newId = equiposJson[(equiposJson.length-1)].id+1;
         } else {
             newId = 1    
@@ -47,7 +37,7 @@ const controlador = {
         let equipoNuevo = {
             id: newId,
             nombreEquipo: req.body.nombreEquipo.toUpperCase(),
-            imgEquipo: req.file.filename,
+            imagen: req.file.filename,
             jugador1: req.body.jugador1.toUpperCase(),
             jugador2: req.body.jugador2.toUpperCase(),
             jugador3: req.body.jugador3.toUpperCase(),
@@ -101,17 +91,17 @@ const controlador = {
         for (let e of equiposJson){
             if (idEquipo == e.id){
                 
-                e.nombreEquipo = req.body.nombreEquipo.toUpperCase();
-                e.imgEquipo = req.file.filename;
-                e.jugador1 = req.body.jugador1.toUpperCase();
-                e.jugador2 = req.body.jugador2.toUpperCase();
-                e.jugador3 = req.body.jugador3.toUpperCase();
-                e.jugador4 = req.body.jugador4.toUpperCase();
-                e.jugador5 = req.body.jugador5.toUpperCase();
-                e.jugador6 = req.body.jugador6.toUpperCase();
-                e.restriccionEdad = req.body.restriccionEdad;
-                e.restriccionesSexo = req.body.restriccionesSexo;
+                e.nombreEquipo= req.body.nombreEquipo.toUpperCase();
+                e.jugador1= req.body.jugador1.toUpperCase();
+                e.jugador2= req.body.jugador2.toUpperCase();
+                e.jugador3= req.body.jugador3.toUpperCase();
+                e.jugador4= req.body.jugador4.toUpperCase();
+                e.jugador5= req.body.jugador5.toUpperCase();
+                e.jugador6= req.body.jugador6.toUpperCase();
+                e.restriccionEdad= req.body.restriccionEdad;
+                e.restriccionesSexo= req.body.restriccionesSexo;
                 break;
+
             }
         }
         fs.writeFileSync(equiposFilePath,JSON.stringify(equiposJson, null, " "));

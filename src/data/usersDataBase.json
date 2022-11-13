@@ -119,5 +119,94 @@
   "fotoPerfil": "img-user-1668282837317.png",
   "email": "666@gmail.com",
   "password": "123456"
+ },
+ {
+  "id": 12,
+  "nombre": "PRUEBA",
+  "apellido": "COOKIE",
+  "dni": "22233344",
+  "fechaDeNacimiento": "2004-02-12",
+  "genero": "Hombre",
+  "fotoPerfil": "img-user-1668350492111.jpg",
+  "email": "222@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 13,
+  "nombre": "PROBANDO",
+  "apellido": "COOKIES",
+  "dni": "11122233",
+  "fechaDeNacimiento": "2004-06-17",
+  "genero": "Mujer",
+  "fotoPerfil": "img-user-1668350688424.jpg",
+  "email": "333@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 14,
+  "nombre": "PROBETA",
+  "apellido": "COOKIE",
+  "dni": "33344456",
+  "fechaDeNacimiento": "2002-11-06",
+  "genero": "Hombre",
+  "fotoPerfil": "img-user-1668351351680.jpg",
+  "email": "910@hotmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 15,
+  "nombre": "PROBEISHON",
+  "apellido": "COOKIES",
+  "dni": "34343434",
+  "fechaDeNacimiento": "2004-09-08",
+  "genero": "Hombre",
+  "fotoPerfil": "img-user-1668351962819.jpg",
+  "email": "777@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 16,
+  "nombre": "PRUEBA",
+  "apellido": "HASH",
+  "dni": "22334455",
+  "fechaDeNacimiento": "2004-11-03",
+  "genero": "Hombre",
+  "fotoPerfil": "img-user-1668352239785.jpg",
+  "email": "999@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 17,
+  "nombre": "PROBANDO",
+  "apellido": "HASH",
+  "dni": "12345678",
+  "fechaDeNacimiento": "2004-09-07",
+  "genero": "Hombre",
+  "fotoPerfil": "img-user-1668352469281.jpg",
+  "email": "1010@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 18,
+  "nombre": "PRUEBITA",
+  "apellido": "HASH",
+  "dni": "22233344",
+  "fechaDeNacimiento": "2004-11-03",
+  "genero": "Hombre",
+  "fotoPerfil": "img-user-1668352558693.jpg",
+  "email": "456456@gmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 19,
+  "nombre": "Pruebasss",
+  "apellido": "Hashing",
+  "dni": "22334455",
+  "fechaDeNacimiento": "2004-09-09",
+  "genero": "Hombre",
+  "email": "123456@gmail.com",
+  "password": "$2a$10$c9JKCOxVhlqXHJETNA9RJuEIEZbzzlW/3yBvV8etF5bIu6okrNi/u",
+  "tyc": "on",
+  "fotoPerfil": "img-user-1668353417801.jpg"
  }
 ]
