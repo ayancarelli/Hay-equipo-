@@ -33,12 +33,34 @@
             <form action="/users/login" method="POST">                
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="hayequipo@web.com">
+                    <input 
+                    type="email" 
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
+                    id="exampleInputEmail1" 
+                    name="email" 
+                    value="<%= locals.oldData ? oldData.email : null %>" 
+                    placeholder="hayequipo@web.com">
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>    
+                        </div>                     
+                    <% } %>
                     <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                    <input 
+                    type="password" 
+                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" 
+                    name="password" 
+                    id="exampleInputPassword1"
+                    value="<%= locals.oldData ? oldData.password : null %>"
+                    placeholder="***********">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>    
+                        </div>                     
+                    <% } %>
                 </div>              
                 <button type="submit" class="btn btn-primary">INGRESAR</button>
             </form>            

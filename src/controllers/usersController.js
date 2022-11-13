@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 const moment = require('moment');
 const encriptar = require('bcryptjs');
 const { validationResult } = require('express-validator');
@@ -7,15 +5,7 @@ const { validationResult } = require('express-validator');
 const User = require('../models/User');
 
 
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-
 const controlador = {
-    login: (req, res) => {
-        res.render('./users/login');
-    },
-
     registro: (req,res) => {        
         res.render('./users/registro', {moment: moment});
     },
@@ -23,12 +13,12 @@ const controlador = {
     crear: (req,res)=>{
         const rdosValidaciones = validationResult(req);
         
-        if(rdosValidaciones.errors.length > 0){            
-            return res.render('./users/registro', {
+        if(rdosValidaciones.errors.length > 0){      
+                return res.render('./users/registro', {
                 moment: moment,
                 errors: rdosValidaciones.mapped(),
                 oldData: req.body
-            });
+            });            
         }        
 
         let userInDB = User.findByField('email', req.body.email);
@@ -56,34 +46,49 @@ const controlador = {
         res.redirect('/users/login');        
     },
 
-    checkUser: (req, res) => {
+    login: (req, res) => {
+        res.render('./users/login');
+    },
+
+    loginProcess:  (req, res) => {
+        let userToLogin = User.findByField("email", req.body.email); 
         
-        let userMail = req.body.email;
-        let userPass = req.body.password;
-        let userLogged = false;
-
-        for(let u of userJson){            
-            if((userMail == u.email) && (userPass == u.password)){
-                    userLogged = u;
-                    break;                                                            
+        if(userToLogin){
+            let passwordOk = encriptar.compareSync(req.body.password, userToLogin.password);
+            if (passwordOk) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                res.render('./users/usuario', {user : req.session.userLogged});
             }
+               
+            return res.render('./users/login', {
+                errors: {
+                    email: {
+                        msg: 'Las credenciales son inválidas'
+                    },
+                    password: {
+                        msg: 'Las credenciales son inválidas'
+                    }
+                }
+            });
         }
-
-        if (userLogged == false){
-            res.send('Usuario no encontrado. Revisar datos ingresados.')
-        }
-                      
-        res.render('./users/usuario', {user : userLogged});
-    },
-    /*
-    --- VER QUE HACEMOS CON ÉSTE MÉTODO --- 
+        
+        return res.render('./users/login', {
+            errors: {
+                email: {
+                    msg: 'Verificar email ingresado.'
+                }
+            }
+        });
     
-    users: (req,res) => {
-        const userJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        res.render('./users/users', {users : userJson});
     },
-    */
 
+    perfilUsuario: (req, res) => {
+        res.render('./users/usuario', {user : req.session.userLogged});
+    }
+    
+    /*,
+   
     edit: (req,res) => {
         
         let idUser = req.params.id;
@@ -123,7 +128,7 @@ const controlador = {
 		fs.writeFileSync(usersFilePath, JSON.stringify(userJson,null,' '));
 
 		res.render('./users/usuario', {user : userEdited});
-	}
+	}*/
 }
 
 module.exports = controlador;
