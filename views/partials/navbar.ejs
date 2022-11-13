@@ -1,0 +1,52 @@
+<nav class="header-navbar">            
+    <div class="boton-magico">                         
+    <button class="btn btn-primary" id="magic-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-bars" id="hamb-icon"></i></button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" id="boton-cerrar">X</button>
+            <% if (locals.isLogged) { %>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/img/img-users/<%= locals.userLogged.fotoPerfil %>" width="40" style="border-radius: 100%">
+                        Hola <%= locals.userLogged.nombre %>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/users/usuario">Mi Usuario</a>                                
+                    <li><hr class="dropdown-divider"></li>
+                    <a class="dropdown-item" href="/products/crear-equipo">Crear Equipo</a>                                
+                    <li><hr class="dropdown-divider"></li>
+                    <a class="dropdown-item" href="/products/canchas">Canchas</a>
+                    <li><hr class="dropdown-divider"></li>
+                    <a class="dropdown-item" href="/users/logout">Logout</a>
+                    </ul>
+                </li>                            
+            <% } else { %>                        
+            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/users/login">Login</a></h5><br>
+            <h5 class="offcanvas-title" id="offcanvasRightLabel"><a href="/users/registro">Registro</a></h5><br>
+            <% } %>
+        </div>
+    </div>
+    </div>                
+    <ul class="menu-navbar">
+        <% if (locals.isLogged) { %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="/img/img-users/<%= locals.userLogged.fotoPerfil %>" width="40" style="border-radius: 100%">
+                    Hola <%= locals.userLogged.nombre %>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/users/usuario">Mi Usuario</a>                                
+                    <li><hr class="dropdown-divider"></li>
+                    <a class="dropdown-item" href="/products/crear-equipo">Crear Equipo</a>                                
+                    <li><hr class="dropdown-divider"></li>
+                    <a class="dropdown-item" href="/products/canchas">Canchas</a>
+                    <li><hr class="dropdown-divider"></li>
+                    <a class="dropdown-item" href="/users/logout">Logout</a>
+                </ul>
+            </li>                        
+        <% } else { %>                        
+            <li><a href="/users/login">Login</a></li> 
+            <button type="button" class="btn btn-outline-light"><a href="/users/registro">Registro</a></button>
+        <% } %>                   
+    </ul>                
+</nav>

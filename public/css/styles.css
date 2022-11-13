@@ -53,6 +53,9 @@ header .container-fluid{
 #offcanvasRightLabel{
     margin-bottom: 10px
 }
+.dropdown-menu{
+    background-color: #25306A;
+}
 .menu-navbar{
     display: none;
 }

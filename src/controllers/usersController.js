@@ -85,7 +85,12 @@ const controlador = {
 
     perfilUsuario: (req, res) => {
         res.render('./users/usuario', {user : req.session.userLogged});
-    }
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect('/');
+    },
     
     /*,
    
