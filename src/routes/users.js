@@ -13,6 +13,7 @@ const validacionCrearUsuario = require('../middlewares/validacionCrearUsuario');
 const validacionLogin = require('../middlewares/validacionLogin');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const validacionEditarUsuario = require('../middlewares/validacionEditarUsuario');
 
 
 // REGISTRO Usuario
@@ -30,8 +31,8 @@ router.get('/usuario', authMiddleware, usersController.perfilUsuario);
 router.get('/logout', authMiddleware, usersController.logout);
 
 // EDITAR Usuario
-// router.get('/editar-users/:id', usersController.edit);
-// router.put('/editar-users/:id', usersController.update);
+router.get('/editar-users', authMiddleware, usersController.edit);
+// router.put('/editar-users/', validacionEditarUsuario, usersController.update);
 
 // --- EN VEREMOS ESTA VISTA ---
 // router.get('/users',usersController.users);

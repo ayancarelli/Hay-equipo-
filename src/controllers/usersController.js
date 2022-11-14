@@ -84,8 +84,7 @@ const controlador = {
                     msg: 'Verificar email ingresado.'
                 }
             }
-        });
-    
+        });    
     },
 
     perfilUsuario: (req, res) => {
@@ -96,29 +95,50 @@ const controlador = {
         res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/');
-    },
-    
-    /*,
+    },    
    
-    edit: (req,res) => {
-        
-        let idUser = req.params.id;
-		let objUser;
+    edit: (req,res) => {        
+        let userToEdit = User.findByField("email", req.session.userLogged.email);
 
-		for (let e of userJson){
-			if (idUser == e.id){
-				objUser=e;
-				break;
-			}
-		}
-
-		res.render('./users/editar-users', {useraEditar: objUser, moment: moment});
-
-    },
+		res.render('./users/editar-users', {useraEditar: userToEdit, moment: moment});
+    } /*,
     
     update: (req, res) => {
+        const rdosValidaciones = validationResult(req);
+        
+        if(rdosValidaciones.errors.length > 0){      
+                return res.render('./users/editar-users', {
+                moment: moment,
+                errors: rdosValidaciones.mapped(),
+                oldData: req.body
+            });            
+        }           
 
-		let idUser = req.params.id;
+        let userInDB = User.findByField('email', req.body.email);
+        
+        if(userInDB && (userInDB.email !== req.session.userLogged.email)) {
+                return res.render('./users/editar-users', {
+                    moment: moment,
+                    errors: {
+                        email: {
+                            msg: 'Éste email ya se encuentra registrado.'
+                        }
+                    },
+                    oldData: req.body
+                });
+            }
+
+        let userToEdit = {
+            ...req.body,
+            fotoPerfil: req.file.filename,
+            password: encriptar.hashSync(req.body.password, 10)
+        }
+
+        let userEdited = User.edit(userToEdit);
+    
+        res.redirect('/users/usuario');
+
+		/* let idUser = req.params.id;
         let userEdited;
 
 		for (let s of userJson){
@@ -138,8 +158,8 @@ const controlador = {
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(userJson,null,' '));
 
-		res.render('./users/usuario', {user : userEdited});
-	}*/
+		res.render('./users/usuario', {user : userEdited}); 
+	} */
 }
 
 module.exports = controlador;
