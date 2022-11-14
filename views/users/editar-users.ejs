@@ -15,11 +15,23 @@
             <form action="/users/editar-users?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" name="nombre" minlength="4" id="nombre" value="<%= useraEditar.nombre %>" placeholder="Nombre">
+                    <input 
+                    type="text" 
+                    class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>" 
+                    name="nombre"
+                    id="nombre" 
+                    value="<%= locals.oldData ? oldData.nombre : useraEditar.nombre %>"
+                    placeholder="Nombre">
                 </div>
                   <div class="mb-3">
                     <label for="apellido" class="form-label">Apellido:</label>
-                    <input type="text" class="form-control" name= 'apellido' minlength="4" id="apellido" value="<%= useraEditar.apellido %>" placeholder="Apellido">
+                    <input 
+                    type="text" 
+                    class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                    name= 'apellido' 
+                    id="apellido" 
+                    value="<%= useraEditar.apellido %>" 
+                    placeholder="Apellido">
                   </div>
                   <div class="mb-3">
                       <label for="dni" class="form-label">Dni:</label>
@@ -43,15 +55,27 @@
                             </select>
                             <% } %>  
                     </div>                    
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
                         <input type="file" class="form-control" id="formGroupExampleInput2" value="<%= useraEditar.fotoPerfil %>" placeholder="Foto de perfil">
-                    </div>
+                    </div> -->
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" name= "email" id="email" value="<%= useraEditar.email %>" aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">                    
+                    <input 
+                    type="email" 
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
+                    name= "email" 
+                    id="email" 
+                    value="<%= locals.oldData ? oldData.email : useraEditar.email %>" 
+                    aria-describedby="emailHelp" 
+                    placeholder="usuario@hayequipo.com">                    
                 </div>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>    
+                    </div>                     
+                <% } %>
                 <div class="mb-3">
                     <label for="contraseña" class="form-label">Contraseña:</label>
                     <input type="password" class="form-control" name="password" value="<%= useraEditar.password %>" minlength="6" id="contraseña" placeholder="***********">

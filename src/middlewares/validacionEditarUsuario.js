@@ -20,7 +20,7 @@ const validacionEditarUsuario = [
     body('password')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
         .isLength({min: 6, max: 12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
-    body('fotoPerfil').custom((value, { req }) => {
+  /*   body('fotoPerfil').custom((value, { req }) => {
         let file = req.file;
         let extensionesValidas = ['.jpg', '.jpeg' , '.png'];
 
@@ -33,7 +33,7 @@ const validacionEditarUsuario = [
             }
         }
         return true;
-    })
+    }) */
 ];
 
 module.exports = validacionEditarUsuario;

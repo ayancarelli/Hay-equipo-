@@ -3,36 +3,36 @@ const fs = require('fs');
 const User = {
     fileName: './src/data/usersDataBase.json',
 
-    getData: function() {
+    getData: function () {
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
     },
 
-    findAll: function() {
+    findAll: function () {
         return this.getData();
     },
 
-    generateId: function() {
+    generateId: function () {
         let allUsers = this.findAll();
         let lastUser = allUsers.pop();
-        if(lastUser) {
+        if (lastUser) {
             return lastUser.id + 1;
         }
         return 1;
     },
 
-    findByPk: function(id) {
+    findByPk: function (id) {
         let allUsers = this.findAll();
         let userFound = allUsers.find(oneUser => oneUser.id === id);
         return userFound;
     },
 
-    findByField: function(field, text) {
+    findByField: function (field, text) {
         let allUsers = this.findAll();
         let userFound = allUsers.find(oneUser => oneUser[field] === text);
         return userFound;
     },
 
-    create: function(userData) {
+    create: function (userData) {
         let allUsers = this.findAll();
         let newUser = {
             id: this.generateId(),
@@ -43,7 +43,28 @@ const User = {
         return newUser;
     },
 
-    delete: function(id) {
+    /* edit: function (userData) {
+        let allUsers = this.findAll();
+        let userToModify;
+        for (let user of allUsers) {
+            if (userData.id == user.id) {
+                user.nombre = userData.nombre;
+                user.apellido = userData.apellido;
+                user.dni = userData.dni;
+                user.fechaDeNacimiento = userData.fechaDeNacimiento;
+                user.genero = userData.genero;
+                user.fotoPerfil = userData.fotoPerfil;
+                user.email = userData.email;
+                userToModify = user;
+                break;
+            }
+        }
+
+        fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
+        return userToModify;
+    }, */
+
+    delete: function (id) {
         let allUsers = this.findAll();
         let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
         fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));

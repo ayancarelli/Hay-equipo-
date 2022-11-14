@@ -208,5 +208,17 @@
   "password": "$2a$10$c9JKCOxVhlqXHJETNA9RJuEIEZbzzlW/3yBvV8etF5bIu6okrNi/u",
   "tyc": "on",
   "fotoPerfil": "img-user-1668353417801.jpg"
+ },
+ {
+  "id": 20,
+  "nombre": "Lucas",
+  "apellido": "Sevesosco",
+  "dni": "33444555",
+  "fechaDeNacimiento": "2004-11-04",
+  "genero": "Hombre",
+  "email": "789789@gmail.com",
+  "password": "$2a$10$p.mBZTKj4/TFwAy5qfBYo.HpimoL3vgGnGEw6mcPGtdeiaxVY/PSi",
+  "tyc": "on",
+  "fotoPerfil": "img-user-1668455052905.jpg"
  }
 ]

@@ -3,7 +3,7 @@
   "id": 2,
   "nombreEquipo": "EQUIPO PRUEBAS",
   "imgEquipo": "los-cebollitas.jpeg",
-  "jugador1": "PEPE",
+  "jugador1": "PRUEBITIS",
   "jugador2": "HELIO",
   "jugador3": "JUGADOR",
   "jugador4": "JUDAGOR",
@@ -48,7 +48,7 @@
   "jugador4": "ROMARIO",
   "jugador5": "KAKÁ",
   "jugador6": "THIAGO SILVA",
-  "restriccionEdad": "Mayores de 30 años",
+  "restriccionEdad": "Mayores de 40 años",
   "restriccionesSexo": "Mixto"
  },
  {
@@ -120,13 +120,13 @@
   "id": 14,
   "nombreEquipo": "EQUIPO VALIDADO",
   "imgEquipo": "img-equipo-1668292620304.png",
-  "jugador1": "JUGADOR VALIDADO 1",
+  "jugador1": "JUGADORAZO",
   "jugador2": "JUGADOR VALIDADO 2",
   "jugador3": "JUGADOR VALIDADO 3",
   "jugador4": "JUGADOR VALIDADO 4",
   "jugador5": "JUGADOR VALIDADO 5",
   "jugador6": "",
-  "restriccionEdad": "Mayores de 30 años",
+  "restriccionEdad": "Mayores de 40 años",
   "restriccionesSexo": "Solo Mujeres"
  }
 ]
