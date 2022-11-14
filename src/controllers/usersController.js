@@ -101,11 +101,11 @@ const controlador = {
         let userToEdit = User.findByField("email", req.session.userLogged.email);
 
         res.render('./users/editar-users', { useraEditar: userToEdit, moment: moment });
-    }
+    },
 
-    /* update: (req, res) => {
-
-        let userToEdit = User.findByField("email", req.session.userLogged.email);
+    update: (req, res) => {
+        res.send('VISTA EN MANTENIMIENTO. PRÓXIMAMENTE FUNCIONANDO. ESTAMOS TRABAJANDO ARDUAMENTE EN ELLO.');
+        /* let userToEdit = User.findByField("email", req.session.userLogged.email);
         const rdosValidaciones = validationResult(req);
         console.log(rdosValidaciones);
 
@@ -181,5 +181,5 @@ const controlador = {
     res.render('./users/usuario', {user : userEdited}); 
 } */
 }
-
+}
 module.exports = controlador;
