@@ -63,7 +63,7 @@ const controlador = {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 })
                 }
                 
-                res.redirect('/users/usuario');
+                return res.redirect('/users/usuario');
             }
                
             return res.render('./users/login', {
