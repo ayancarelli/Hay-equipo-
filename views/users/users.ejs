@@ -21,14 +21,14 @@
     <section class="cartas-equipos" id="equipos-section">
       <% for(let objeto of users) { %>    
       <div class="card" style="width: 18rem;">
-            <img src="/img/<%= objeto.foto %>" class="card-img-top" alt="Foto Equipo">
+            <img src="/img/img-users/<%= objeto.foto_perfil %>" class="card-img-top" alt="Foto Equipo">
             <div class="card-body">
               <h5 class="card-title"><%= objeto.nombre %></h5>
               <p class="card-text">
                 <ul>
-                    <li><i class="fa-solid fa-medal"></i> <%= objeto.dni %> </li>
-                    <li><i class="fa-solid fa-shield"></i> <%= objeto.fechaDeNacimiento %></li>
-                    <li><i class="fa-solid fa-person-running"></i> <%= objeto.sexo %></li>
+                    <li><i class="fa-solid fa-medal"></i> <%= objeto.apellido %> </li>
+                    <li><i class="fa-solid fa-shield"></i> <%= objeto.dni%></li>
+                    <li><i class="fa-solid fa-person-running"></i> <%= objeto.id %></li>
                 </ul>
               </p>
               <a href="/users/usuario/:<%= objeto.dni %>" class="btn btn-primary">Más info ></a>

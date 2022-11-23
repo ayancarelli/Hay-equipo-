@@ -4,6 +4,8 @@ const { validationResult } = require('express-validator');
 
 const User = require('../models/User');
 
+const db = require('../database/models');
+
 
 const controlador = {
     registro: (req, res) => {
@@ -103,6 +105,47 @@ const controlador = {
         res.render('./users/editar-users', { useraEditar: userToEdit, moment: moment });
     },
 
+    users: (req, res) => {
+        db.usuario.findAll().then((usuarios) => {
+
+            res.render('./users/users', { users: usuarios });
+        });
+    },
+
+    check: (req, res) => {
+
+        /*   db.equipo.findAll().then((equipos) => {
+            
+              
+          }); */
+
+        db.usuario.findAll({ include: [{ association: 'equipo' }] }).then((resultados) => {
+            
+            let listaResultados = [];
+
+            for (rdo of resultados) {
+                
+                let listaEquipos = [];                
+
+                for (team of rdo.equipo) {                  
+                    listaEquipos.push(team.nombre_equipo, team.creacion);
+                }
+
+                console.log(rdo);
+                let objAux = {
+                    nombre: rdo.nombre,
+                    apellido: rdo.apellido,
+                    equipos: listaEquipos
+                }
+
+                listaResultados.push(objAux);
+            }
+
+            console.log(listaResultados);
+            res.send(listaResultados);
+        });
+    },
+
     update: (req, res) => {
         res.send('VISTA EN MANTENIMIENTO. PRÓXIMAMENTE FUNCIONANDO. ESTAMOS TRABAJANDO ARDUAMENTE EN ELLO.');
         /* let userToEdit = User.findByField("email", req.session.userLogged.email);
@@ -156,30 +199,30 @@ const controlador = {
         let userEdited = User.edit(userToEdit);
         res.render('./users/usuario', { user: userEdited }); */
 
-    /*
-    --- LÓGICA VIEJA JERO ---
-    let idUser = req.params.id;
-    let userEdited;
-
-    for (let s of userJson){
-        if (idUser == s.id){
-            s.nombre = req.body.nombre.toUpperCase();
-            s.apellido = req.body.apellido.toUpperCase();
-            s.dni = req.body.dni;
-            s.fechaDeNacimiento = req.body.fechaDeNacimiento ;
-            s.genero = req.body.genero;
-            s.foto = "enzo.jpg";
-            s.email = req.body.email;
-            s.password = req.body.password
-            userEdited = s;
-            break;
+        /*
+        --- LÓGICA VIEJA JERO ---
+        let idUser = req.params.id;
+        let userEdited;
+    
+        for (let s of userJson){
+            if (idUser == s.id){
+                s.nombre = req.body.nombre.toUpperCase();
+                s.apellido = req.body.apellido.toUpperCase();
+                s.dni = req.body.dni;
+                s.fechaDeNacimiento = req.body.fechaDeNacimiento ;
+                s.genero = req.body.genero;
+                s.foto = "enzo.jpg";
+                s.email = req.body.email;
+                s.password = req.body.password
+                userEdited = s;
+                break;
+            }
         }
+    
+        fs.writeFileSync(usersFilePath, JSON.stringify(userJson,null,' '));
+    
+        res.render('./users/usuario', {user : userEdited}); 
+    } */
     }
-
-    fs.writeFileSync(usersFilePath, JSON.stringify(userJson,null,' '));
-
-    res.render('./users/usuario', {user : userEdited}); 
-} */
-}
 }
 module.exports = controlador;

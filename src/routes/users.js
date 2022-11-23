@@ -35,6 +35,7 @@ router.get('/editar-users', authMiddleware, usersController.edit);
 router.put('/editar-users/', usersController.update);
 
 // --- EN VEREMOS ESTA VISTA ---
-// router.get('/users',usersController.users);
+router.get('/users', usersController.users);
+router.get('/check', usersController.check);
 
 module.exports = router;
