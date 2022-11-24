@@ -142,7 +142,7 @@ const controlador = {
             }
 
             console.log(listaResultados);
-            res.send(listaResultados);
+            res.json(listaResultados);
         });
     },
 
