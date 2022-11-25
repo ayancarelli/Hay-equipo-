@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body>
-    <header> 
-        <div class="container-fluid">
-            <div>
-                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
-            </div>
-            <%- include('../partials/navbar') %>
-        </div>    
+
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div>
+          <a href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
+        </div>
+        <%- include('../partials/navbar') %>
+      </div>
     </header>
 
     <section class="cuerpo-home">
-        <div class="banner-equipo">        
-            <h3>
-                USUARIOS
-            </h3>
-        </div>
+      <div class="banner-equipo">
+        <h3>
+          USUARIOS
+        </h3>
+      </div>
     </section>
     <section class="cartas-equipos" id="equipos-section">
-      <% for(let objeto of users) { %>    
-      <div class="card" style="width: 18rem;">
-            <img src="/img/img-users/<%= objeto.foto_perfil %>" class="card-img-top" alt="Foto Equipo">
-            <div class="card-body">
-              <h5 class="card-title"><%= objeto.nombre %></h5>
-              <p class="card-text">
-                <ul>
-                    <li><i class="fa-solid fa-medal"></i> <%= objeto.apellido %> </li>
-                    <li><i class="fa-solid fa-shield"></i> <%= objeto.dni%></li>
-                    <li><i class="fa-solid fa-person-running"></i> <%= objeto.id %></li>
-                </ul>
-              </p>
-              <a href="/users/usuario/:<%= objeto.dni %>" class="btn btn-primary">Más info ></a>
-            </div>
-      </div>
-        <% } %> 
-      </section>
+      <% for(let objeto of users) { %>
+        <div class="card" style="width: 18rem;">
+          <img src="/img/img-users/<%= objeto.foto_perfil %>" class="card-img-top" alt="Foto Equipo">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= objeto.nombre %>
+            </h5>
+            <p class="card-text">
+            <ul>
+              <li><i class="fa-solid fa-medal"></i>
+                <%= objeto.apellido %>
+              </li>
+              <li><i class="fa-solid fa-shield"></i>
+                <%= objeto.dni%>
+              </li>
+              <li><i class="fa-solid fa-person-running"></i>
+                <%= objeto.id %>
+              </li>
+            </ul>
+            </p>
+            <a href="/users/usuario/:<%= objeto.dni %>" class="btn btn-primary">Más info ></a>
+          </div>
+        </div>
+        <% } %>
+    </section>
     <%- include('../partials/footer') %>
-</body>
+  </body>
+
 </html>
