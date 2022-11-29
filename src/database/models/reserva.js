@@ -11,19 +11,14 @@ function reservaData(sequelize, Datatypes) {
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };
-    const reserva = sequelize.define('reserva')
-    const equipo = sequelize.define('equipo')
-    const complejo = sequelize.define('complejo')
-    const franja_horaria = sequelize.define('franja_horaria')
+    const reserva = sequelize.define(alias, cols, config);
     
-
-
-    equipo.belongsToMany(complejo, { through: reserva });
+    /* equipo.belongsToMany(complejo, { through: reserva });
     equipo.belongsToMany(franja_horaria, { through: reserva });
     complejo.belongsToMany(equipo, { through: reserva });
     complejo.belongsToMany(franja_horaria, { through: reserva });
     franja_horaria.belongsToMany(equipo, { through: reserva });
-    franja_horaria.belongsToMany(complejo, { through: reserva });
+    franja_horaria.belongsToMany(complejo, { through: reserva }); */
     
 
     return reserva;

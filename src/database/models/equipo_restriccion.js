@@ -7,15 +7,8 @@ function equipo_restriccionData(sequelize, Datatypes) {
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };
-    const equipo_restriccion = sequelize.define('equipo_restriccion')
-    const equipo = sequelize.define('equipo')
-    const restriccion = sequelize.define('restriccion')
-    
 
-
-    equipo.belongsToMany(restriccion, { through: equipo_restriccion });
-    restriccion.belongsToMany(equipo, { through: equipo_restriccion });
-    
+    const equipo_restriccion = sequelize.define(alias, cols, config);
 
     return equipo_restriccion;
 }

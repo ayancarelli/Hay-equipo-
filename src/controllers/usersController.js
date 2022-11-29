@@ -114,142 +114,147 @@ const controlador = {
 
     check: (req, res) => {
 
-        /*   db.equipo.findAll().then((equipos) => {
-            
-              
-          }); */
+        /*  db.reserva.findAll().then((rsv) => {
+           res.json(rsv)              
+         }); */
 
-        /* db.usuario.findAll({ include: [{ association: 'equipo' }] }).then((resultados) => {
+        db.equipo.findAll({ include: [{ association: 'restriccion' }] }).then((resultados) => {
 
+            /* let listaResultados = [];
+
+            for (rdo of resultados) {
+                
+                let listaRestriccion = [];
+
+                for (rcion of rdo.restriccion) {
+                    let tipoRest = [];
+
+                    for (tipoR of rcion.tipo_restriccion_id){
+                        tipoRest.push(tipoR.descripcion);
+                        console.log(tipoRest);
+                    }
+                    listaRestriccion.push(rcion);
+                    console.log(listaRestriccion);
+                }
+                
+                let objAux = {
+                    equipo: rdo.nombre,
+                    nombreR: rcion.nombre,
+                    tipoR: tipoR.descripcion
+                }
+
+                listaResultados.push(listaRestriccion);
+            }
+
+            console.log(listaResultados); */
+            res.send(resultados);
+        });
+        /* db.restriccion.findAll({ include: [{ association: 'tipo_restriccion' }] }).then((resultados) => {
+
+            console.log(resultados);
             let listaResultados = [];
 
             for (rdo of resultados) {
+                console.log(rdo);
+                let listaTipoRestricciones = [];
 
-                let listaEquipos = [];
-
-                for (team of rdo.equipo) {
-                    listaEquipos.push(team.nombre_equipo, team.creacion);
+                for (restricc of rdo.tipo_restriccion) {
+                    console.log(restricc);
+                    listaTipoRestricciones.push(restricc.descripcion);
                 }
 
-                console.log(rdo);
+                console.log(listaTipoRestricciones);
                 let objAux = {
-                    nombre: rdo.nombre,
-                    apellido: rdo.apellido,
-                    equipos: listaEquipos
+                    restriccion: rdo.nombre,
+                    tipo_restriccion: listaTipoRestricciones
                 }
 
                 listaResultados.push(objAux);
             }
 
-            console.log(listaResultados);
+            
             res.json(listaResultados);
         }); */
-        db.restriccion.findAll({ include: [{ association: 'tipo_restriccion' }] }).then((resultados) => {
 
-            /* console.log(resultados); */
-            let listaResultados = [];
+    },
 
-            for (rdo of resultados) {
-                /* console.log(rdo); */
-                let listaTipoRestricciones = [];
-
-                for (restricc of rdo.tipo_restriccion) {
-                    console.log(restricc);
-                    /* listaTipoRestricciones.push(restricc.descripcion); */
-                }
-
-                /* console.log(listaTipoRestricciones); */
-                /* let objAux = {
-                    restriccion: rdo.nombre,
-                    tipo_restriccion: listaTipoRestricciones
-                }
-
-                listaResultados.push(objAux); */
-            }
-
-            
-            /* res.json(listaResultados); */
-        });
-
-        },
-
-            update: (req, res) => {
-                res.send('VISTA EN MANTENIMIENTO. PRÓXIMAMENTE FUNCIONANDO. ESTAMOS TRABAJANDO ARDUAMENTE EN ELLO.');
-                /* let userToEdit = User.findByField("email", req.session.userLogged.email);
-                const rdosValidaciones = validationResult(req);
-                console.log(rdosValidaciones);
-        
-                if (rdosValidaciones.errors.length > 0) {
-                    return res.render('./users/editar-users', {
-                        useraEditar: userToEdit,
-                        moment: moment,
-                        errors: rdosValidaciones.mapped(),
-                        oldData: req.body
-                    });
-                }
-        
-                let newEmail = User.findByField("email", req.body.email);
-                if ((req.body.email !== userToEdit.email) && (newEmail !== undefined)) {
-                    return res.render('./users/editar-users', {
-                        useraEditar: userToEdit,
-                        moment: moment,
-                        errors: {
-                            email: {
-                                msg: 'Éste email ya se encuentra registrado.'
-                            }
-                        },
-                        oldData: req.body
-                    });
-                }
-        
-                let passwordIgual = encriptar.compareSync(req.body.password, userToEdit.password);
-        
-                if (passwordIgual === false) {
-                    return res.render('./users/editar-users', {
-                        useraEditar: userToEdit,
-                        moment: moment,
-                        errors: {
-                            password: {
-                                msg: 'No coincide con la contraseña registrada.'
-                            }
-                        },
-                        oldData: req.body
-                    });
-                }
-                console.log(req.file.filename);
-                console.log(userToEdit.fotoPerfil);
-        
-                userToEdit = {
-                    ...req.body
-                }
-        
-                let userEdited = User.edit(userToEdit);
-                res.render('./users/usuario', { user: userEdited }); */
-
-                /*
-                --- LÓGICA VIEJA JERO ---
-                let idUser = req.params.id;
-                let userEdited;
-            
-                for (let s of userJson){
-                    if (idUser == s.id){
-                        s.nombre = req.body.nombre.toUpperCase();
-                        s.apellido = req.body.apellido.toUpperCase();
-                        s.dni = req.body.dni;
-                        s.fechaDeNacimiento = req.body.fechaDeNacimiento ;
-                        s.genero = req.body.genero;
-                        s.foto = "enzo.jpg";
-                        s.email = req.body.email;
-                        s.password = req.body.password
-                        userEdited = s;
-                        break;
+    update: (req, res) => {
+        res.send('VISTA EN MANTENIMIENTO. PRÓXIMAMENTE FUNCIONANDO. ESTAMOS TRABAJANDO ARDUAMENTE EN ELLO.');
+        /* let userToEdit = User.findByField("email", req.session.userLogged.email);
+        const rdosValidaciones = validationResult(req);
+        console.log(rdosValidaciones);
+ 
+        if (rdosValidaciones.errors.length > 0) {
+            return res.render('./users/editar-users', {
+                useraEditar: userToEdit,
+                moment: moment,
+                errors: rdosValidaciones.mapped(),
+                oldData: req.body
+            });
+        }
+ 
+        let newEmail = User.findByField("email", req.body.email);
+        if ((req.body.email !== userToEdit.email) && (newEmail !== undefined)) {
+            return res.render('./users/editar-users', {
+                useraEditar: userToEdit,
+                moment: moment,
+                errors: {
+                    email: {
+                        msg: 'Éste email ya se encuentra registrado.'
                     }
-                }
-            
-                fs.writeFileSync(usersFilePath, JSON.stringify(userJson,null,' '));
-            
-                res.render('./users/usuario', {user : userEdited}); 
-            } */
+                },
+                oldData: req.body
+            });
+        }
+ 
+        let passwordIgual = encriptar.compareSync(req.body.password, userToEdit.password);
+ 
+        if (passwordIgual === false) {
+            return res.render('./users/editar-users', {
+                useraEditar: userToEdit,
+                moment: moment,
+                errors: {
+                    password: {
+                        msg: 'No coincide con la contraseña registrada.'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+        console.log(req.file.filename);
+        console.log(userToEdit.fotoPerfil);
+ 
+        userToEdit = {
+            ...req.body
+        }
+ 
+        let userEdited = User.edit(userToEdit);
+        res.render('./users/usuario', { user: userEdited }); */
+
+        /*
+        --- LÓGICA VIEJA JERO ---
+        let idUser = req.params.id;
+        let userEdited;
+    
+        for (let s of userJson){
+            if (idUser == s.id){
+                s.nombre = req.body.nombre.toUpperCase();
+                s.apellido = req.body.apellido.toUpperCase();
+                s.dni = req.body.dni;
+                s.fechaDeNacimiento = req.body.fechaDeNacimiento ;
+                s.genero = req.body.genero;
+                s.foto = "enzo.jpg";
+                s.email = req.body.email;
+                s.password = req.body.password
+                userEdited = s;
+                break;
             }
+        }
+    
+        fs.writeFileSync(usersFilePath, JSON.stringify(userJson,null,' '));
+    
+        res.render('./users/usuario', {user : userEdited}); 
+    } */
+    }
 }
 module.exports = controlador;

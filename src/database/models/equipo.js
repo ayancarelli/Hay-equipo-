@@ -11,17 +11,20 @@ function equipoData(sequelize, Datatypes) {
     config = { freezeTableName: true, timestamps: false, camelCase: false };
     const equipo = sequelize.define(alias, cols, config)
 
-    equipo.associate = function (modelos) {
-        /*  equipo.hasMany(modelos.usuario_equipo, {
-             as: "usuario_equipo",
-             foreignKey: "equipo_id"
-         }); */
-
+    equipo.associate = function (modelos) {       
         equipo.belongsToMany(modelos.usuario, {
             as: "usuario",
             through: "usuario_equipo",
             foreignKey: "equipo_id",
             otherKey: "usuario_id",
+            timestamps: false
+        });
+
+        equipo.belongsToMany(modelos.restriccion, {
+            as: "restriccion",
+            through: "equipo_restriccion",
+            foreignKey: "equipo_id",
+            otherKey: "restriccion_id",
             timestamps: false
         });
     }
