@@ -220,5 +220,17 @@
   "password": "$2a$10$p.mBZTKj4/TFwAy5qfBYo.HpimoL3vgGnGEw6mcPGtdeiaxVY/PSi",
   "tyc": "on",
   "fotoPerfil": "img-user-1668455052905.jpg"
+ },
+ {
+  "id": 21,
+  "nombre": "Angel",
+  "apellido": "Di Maria",
+  "dni": "35123321",
+  "fechaDeNacimiento": "1990-06-15",
+  "genero": "Hombre",
+  "email": "angeldimaria@gmail.com",
+  "password": "$2a$10$R56pla8Emt.a7QxOCoaWgeKmKIlrGj2UJRV1Pe/Wb./.QjNNBtTc2",
+  "tyc": "on",
+  "fotoPerfil": "img-user-1669750092796.jpg"
  }
 ]
