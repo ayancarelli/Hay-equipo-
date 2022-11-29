@@ -37,13 +37,18 @@ const controlador = {
             });
         }
 
-        let userToCreate = {
+        /*let userToCreate = {
             ...req.body,
             fotoPerfil: req.file.filename,
             password: encriptar.hashSync(req.body.password, 10)
         }
 
-        let userCreated = User.create(userToCreate);
+        let userCreated = User.create(userToCreate);*/
+        db.usuario.create({
+            ...req.body,
+            fotoPerfil: req.file.filename,
+            password: encriptar.hashSync(req.body.password, 10)
+        })
 
         res.redirect('/users/login');
     },
