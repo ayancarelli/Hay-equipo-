@@ -23,8 +23,16 @@ const controlador = {
             });
         }
 
+        //Vieja forma de buscar email
         let userInDB = User.findByField('email', req.body.email);
 
+        /*let userInDB = db.usuario.findOne({
+            where: {
+                email: req.body.email
+            }
+        })*/
+         
+        
         if (userInDB) {
             return res.render('./users/registro', {
                 moment: moment,
@@ -37,19 +45,23 @@ const controlador = {
             });
         }
 
-        /*let userToCreate = {
-            ...req.body,
-            fotoPerfil: req.file.filename,
-            password: encriptar.hashSync(req.body.password, 10)
-        }
-
-        let userCreated = User.create(userToCreate);*/
+        //ESTO DE ABAJO ES CON BASE DE DATOS
         db.usuario.create({
             ...req.body,
             fotoPerfil: req.file.filename,
             password: encriptar.hashSync(req.body.password, 10)
         })
 
+
+        //ESTO DE ABAJO ES CON JSON
+        /*let userToCreate = {
+            ...req.body,
+            fotoPerfil: req.file.filename,
+            password: encriptar.hashSync(req.body.password, 10)
+        }
+        let userCreated = User.create(userToCreate);*/
+
+        
         res.redirect('/users/login');
     },
 
