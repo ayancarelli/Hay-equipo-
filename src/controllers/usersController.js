@@ -45,12 +45,13 @@ const controlador = {
             });
         }
 
-        //ESTO DE ABAJO ES CON BASE DE DATOS
+        //CREAR USUARIO CON BASE DE DATOS
         db.usuario.create({
             ...req.body,
-            fotoPerfil: req.file.filename,
+            foto_perfil: req.file.filename,
             password: encriptar.hashSync(req.body.password, 10)
         })
+
 
 
         //ESTO DE ABAJO ES CON JSON
