@@ -14,12 +14,7 @@ function usuarioData(sequelize, Datatypes) {
     config = { freezeTableName: true, timestamps: false, camelCase: false };
     const usuario = sequelize.define(alias, cols, config)
 
-    usuario.associate = function (modelos) {
-        /*  usuario.hasMany(modelos.usuario_equipo, {
-             as: "usuario_equipo",            
-             foreignKey: "usuario_id"
-         }); */
-
+    usuario.associate = function (modelos) {        
         usuario.belongsToMany(modelos.equipo, {
             as: "equipo",
             through: "usuario_equipo",
