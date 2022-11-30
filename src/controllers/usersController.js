@@ -119,11 +119,11 @@ const controlador = {
 
     check: (req, res) => {
 
-        /*  db.reserva.findAll().then((rsv) => {
+         /* db.equipo.findAll().then((rsv) => {
            res.json(rsv)              
          }); */
 
-        db.equipo.findAll({ include: [{ association: 'restriccion' }] }).then((resultados) => {
+        db.reserva.findAll({ include: [{ association: 'complejo' }, { association: 'franja_horaria' }, { association: 'equipo1' }, { association: 'equipo2' }] }).then((resultados) => {
 
             /* let listaResultados = [];
 
@@ -134,9 +134,9 @@ const controlador = {
                 for (rcion of rdo.restriccion) {
                     let tipoRest = [];
 
-                    for (tipoR of rcion.tipo_restriccion_id){
-                        tipoRest.push(tipoR.descripcion);
-                        console.log(tipoRest);
+                    for (tiipoRest.push(tipoR.descripcion);
+                        console.logpoR of rcion.tipo_restriccion_id){
+                        t(tipoRest);
                     }
                     listaRestriccion.push(rcion);
                     console.log(listaRestriccion);

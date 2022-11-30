@@ -12,14 +12,29 @@ function reservaData(sequelize, Datatypes) {
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };
     const reserva = sequelize.define(alias, cols, config);
-    
-    /* equipo.belongsToMany(complejo, { through: reserva });
-    equipo.belongsToMany(franja_horaria, { through: reserva });
-    complejo.belongsToMany(equipo, { through: reserva });
-    complejo.belongsToMany(franja_horaria, { through: reserva });
-    franja_horaria.belongsToMany(equipo, { through: reserva });
-    franja_horaria.belongsToMany(complejo, { through: reserva }); */
-    
+
+    reserva.associate = function (modelos) {
+        reserva.belongsTo(modelos.franja_horaria, {
+            as: "franja_horaria",
+            foreignKey: "franja_horaria_id"
+        });
+
+        reserva.belongsTo(modelos.complejo, {
+            as: "complejo",
+            foreignKey: "complejo_id"
+        });
+
+        reserva.belongsTo(modelos.equipo, {
+            as: "equipo1",
+            foreignKey: "equipo1_id"
+        });
+
+        reserva.belongsTo(modelos.equipo, {
+            as: "equipo2",
+            foreignKey: "equipo2_id"
+        });
+    }
+
 
     return reserva;
 }

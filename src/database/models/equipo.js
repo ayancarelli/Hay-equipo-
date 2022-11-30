@@ -27,6 +27,16 @@ function equipoData(sequelize, Datatypes) {
             otherKey: "restriccion_id",
             timestamps: false
         });
+
+        equipo.hasMany(modelos.reserva, {
+            as: "reserva1",
+            foreignKey: "equipo1_id"
+        });
+
+        equipo.hasMany(modelos.reserva, {
+            as: "reserva2",
+            foreignKey: "equipo2_id"
+        });
     }
 
     return equipo;

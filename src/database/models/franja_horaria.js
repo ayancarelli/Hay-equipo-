@@ -8,12 +8,12 @@ function franja_horariaData(sequelize, Datatypes) {
     config = { freezeTableName: true, timestamps: false, camelCase: false };
     const franja_horaria = sequelize.define(alias, cols, config);
 
-    /* franja_horaria.associate = function (modelos) {
-        franja_horaria.belongsTo(modelos.reserva, {
+    franja_horaria.associate = function (modelos) {
+        franja_horaria.hasMany(modelos.reserva, {
             as: "reserva",
             foreignKey: "franja_horaria_id"
         });
-    } */
+    }
 
     return franja_horaria;
 }
