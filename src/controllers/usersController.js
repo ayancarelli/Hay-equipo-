@@ -48,7 +48,7 @@ const controlador = {
         //CREAR USUARIO CON BASE DE DATOS
         db.usuario.create({
             ...req.body,
-            fotoPerfil: req.file.filename,
+            foto_perfil: req.file.filename,
             password: encriptar.hashSync(req.body.password, 10)
         })
 
