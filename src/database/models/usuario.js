@@ -8,7 +8,7 @@ function usuarioData(sequelize, Datatypes) {
         genero: { type: Datatypes.BOOLEAN },
         email: { type: Datatypes.STRING(50) },
         password: { type: Datatypes.STRING(16) },
-        foto_perfil: { type: Datatypes.STRING(50) }
+        fotoPerfil: { type: Datatypes.STRING(50) }
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };
