@@ -47,10 +47,16 @@ const controlador = {
 
         //CREAR USUARIO CON BASE DE DATOS
         db.usuario.create({
-            ...req.body,
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            dni: req.body.dni,
+            genero: req.body.genero,
+            email: req.body.email,
             foto_perfil: req.file.filename,
             password: encriptar.hashSync(req.body.password, 10)
         })
+
+        console.log(req.file);
 
 
 
@@ -136,9 +142,9 @@ const controlador = {
            res.json(rsv)              
          }); */
 
-        db.reserva.findAll({ include: [{ association: 'complejo' }, { association: 'franja_horaria' }, { association: 'equipo1' }, { association: 'equipo2' }] }).then((resultados) => {
+        db.equipo.findAll({ include: [{ association: 'restriccion' }] }).then((resultados) => {
 
-            /* let listaResultados = [];
+            let listaResultados = [];
 
             for (rdo of resultados) {
                 
@@ -146,26 +152,26 @@ const controlador = {
 
                 for (rcion of rdo.restriccion) {
                     let tipoRest = [];
+                    
 
-                    for (tiipoRest.push(tipoR.descripcion);
+                   /*  for (tiipoRest.push(tipoR.descripcion);
                         console.logpoR of rcion.tipo_restriccion_id){
                         t(tipoRest);
-                    }
+                    } */
                     listaRestriccion.push(rcion);
                     console.log(listaRestriccion);
                 }
                 
                 let objAux = {
-                    equipo: rdo.nombre,
-                    nombreR: rcion.nombre,
-                    tipoR: tipoR.descripcion
+                    equipo: rdo.nombre_equipo,
+                    restriccion: listaRestriccion
                 }
 
-                listaResultados.push(listaRestriccion);
+                listaResultados.push(objAux);
             }
 
-            console.log(listaResultados); */
-            res.send(resultados);
+            /* console.log(listaResultados); */
+            res.send(listaResultados);
         });
         /* db.restriccion.findAll({ include: [{ association: 'tipo_restriccion' }] }).then((resultados) => {
 
