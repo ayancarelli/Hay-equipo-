@@ -24,52 +24,40 @@ const controlador = {
         }
 
         //Vieja forma de buscar email
-        let userInDB = User.findByField('email', req.body.email);
+        //let userInDB = User.findByField('email', req.body.email);
+        
 
-        /*let userInDB = db.usuario.findOne({
+        db.usuario.findOne({
             where: {
-                email: req.body.email
+                 email: req.body.email
+             }
+        }).then((resultado) =>{
+            
+            if (resultado != null) {
+                console.log("Se encontro un usuario");
+                return res.render('./users/registro', {
+                    moment: moment,
+                    errors: {
+                        email: {
+                            msg: 'Éste email ya se encuentra registrado.'
+                        }
+                    },
+                    oldData: req.body
+                });
+            } else{
+                db.usuario.create({
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    dni: req.body.dni,
+                    genero: req.body.genero,
+                    email: req.body.email,
+                    foto_perfil: req.file.filename,
+                    password: encriptar.hashSync(req.body.password, 10)
+                })
+                res.redirect('/users/login');
             }
-        })*/
-         
-        
-        if (userInDB) {
-            return res.render('./users/registro', {
-                moment: moment,
-                errors: {
-                    email: {
-                        msg: 'Éste email ya se encuentra registrado.'
-                    }
-                },
-                oldData: req.body
-            });
-        }
-
-        //CREAR USUARIO CON BASE DE DATOS
-        db.usuario.create({
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            dni: req.body.dni,
-            genero: req.body.genero,
-            email: req.body.email,
-            foto_perfil: req.file.filename,
-            password: encriptar.hashSync(req.body.password, 10)
         })
-
-        console.log(req.file);
-
-
-
-        //ESTO DE ABAJO ES CON JSON
-        /*let userToCreate = {
-            ...req.body,
-            fotoPerfil: req.file.filename,
-            password: encriptar.hashSync(req.body.password, 10)
-        }
-        let userCreated = User.create(userToCreate);*/
-
         
-        res.redirect('/users/login');
     },
 
     login: (req, res) => {
