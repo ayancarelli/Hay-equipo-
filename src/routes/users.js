@@ -37,5 +37,6 @@ router.put('/editar-users/', usersController.update);
 // --- EN VEREMOS ESTA VISTA ---
 router.get('/users', usersController.users);
 router.get('/check', usersController.check);
+router.get('/check2', usersController.check2);
 
 module.exports = router;

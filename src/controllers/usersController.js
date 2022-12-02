@@ -1,4 +1,3 @@
-const moment = require('moment');
 const encriptar = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
@@ -9,7 +8,7 @@ const db = require('../database/models');
 
 const controlador = {
     registro: (req, res) => {
-        res.render('./users/registro', { moment: moment });
+        res.render('./users/registro');
     },
 
     crear: (req, res) => {
@@ -17,7 +16,6 @@ const controlador = {
 
         if (rdosValidaciones.errors.length > 0) {
             return res.render('./users/registro', {
-                moment: moment,
                 errors: rdosValidaciones.mapped(),
                 oldData: req.body
             });
@@ -25,18 +23,16 @@ const controlador = {
 
         //Vieja forma de buscar email
         //let userInDB = User.findByField('email', req.body.email);
-        
 
         db.usuario.findOne({
             where: {
-                 email: req.body.email
-             }
-        }).then((resultado) =>{
-            
-            if (resultado != null) {
-                console.log("Se encontro un usuario");
+                email: req.body.email
+            }
+        }).then((userToCreate) => {
+
+            if (userToCreate != null) {
+                console.log("Se encontró un usuario");
                 return res.render('./users/registro', {
-                    moment: moment,
                     errors: {
                         email: {
                             msg: 'Éste email ya se encuentra registrado.'
@@ -44,7 +40,7 @@ const controlador = {
                     },
                     oldData: req.body
                 });
-            } else{
+            } else {
                 db.usuario.create({
                     nombre: req.body.nombre,
                     apellido: req.body.apellido,
@@ -57,7 +53,7 @@ const controlador = {
                 res.redirect('/users/login');
             }
         })
-        
+
     },
 
     login: (req, res) => {
@@ -65,40 +61,46 @@ const controlador = {
     },
 
     loginProcess: (req, res) => {
-        let userToLogin = User.findByField("email", req.body.email);
+        db.usuario.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then((resultado) => {
 
-        if (userToLogin) {
-            let passwordOk = encriptar.compareSync(req.body.password, userToLogin.password);
-            if (passwordOk) {
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
+            let userToLogin = resultado;
 
-                if (req.body.recordar) {
-                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 })
+            if (userToLogin) {
+                let passwordOk = encriptar.compareSync(req.body.password, userToLogin.password);
+                if (passwordOk) {
+                    delete userToLogin.password;
+                    req.session.userLogged = userToLogin;
+
+                    if (req.body.recordar) {
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 })
+                    }
+                    return res.redirect('/users/usuario');
                 }
 
-                return res.redirect('/users/usuario');
+                return res.render('./users/login', {
+                    errors: {
+                        email: {
+                            msg: 'Las credenciales son inválidas'
+                        },
+                        password: {
+                            msg: 'Las credenciales son inválidas'
+                        }
+                    }
+                });
             }
 
             return res.render('./users/login', {
                 errors: {
                     email: {
-                        msg: 'Las credenciales son inválidas'
-                    },
-                    password: {
-                        msg: 'Las credenciales son inválidas'
+                        msg: 'Verificar email ingresado.'
                     }
                 }
             });
-        }
-
-        return res.render('./users/login', {
-            errors: {
-                email: {
-                    msg: 'Verificar email ingresado.'
-                }
-            }
-        });
+        })
     },
 
     perfilUsuario: (req, res) => {
@@ -126,30 +128,30 @@ const controlador = {
 
     check: (req, res) => {
 
-         /* db.equipo.findAll().then((rsv) => {
-           res.json(rsv)              
-         }); */
+        /* db.equipo.findAll().then((rsv) => {
+          res.json(rsv)              
+        }); */
 
         db.equipo.findAll({ include: [{ association: 'restriccion' }] }).then((resultados) => {
 
             let listaResultados = [];
 
             for (rdo of resultados) {
-                
+
                 let listaRestriccion = [];
 
                 for (rcion of rdo.restriccion) {
                     let tipoRest = [];
-                    
 
-                   /*  for (tiipoRest.push(tipoR.descripcion);
-                        console.logpoR of rcion.tipo_restriccion_id){
-                        t(tipoRest);
-                    } */
+
+                    /*  for (tiipoRest.push(tipoR.descripcion);
+                         console.logpoR of rcion.tipo_restriccion_id){
+                         t(tipoRest);
+                     } */
                     listaRestriccion.push(rcion);
                     console.log(listaRestriccion);
                 }
-                
+
                 let objAux = {
                     equipo: rdo.nombre_equipo,
                     restriccion: listaRestriccion
@@ -188,6 +190,13 @@ const controlador = {
             res.json(listaResultados);
         }); */
 
+    },
+
+    check2: (req, res) => {
+        db.usuario.findOne({ where: { email: '555@gmail.com' } }).then((resultado) => {
+            console.log(resultado);
+            res.send(resultado);
+        });
     },
 
     update: (req, res) => {

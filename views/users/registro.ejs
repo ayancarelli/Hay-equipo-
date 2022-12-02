@@ -1,156 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body>
-    <header> 
-        <div class="container-fluid">
-            <div>
-                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
-            </div>
-            <%- include('../partials/navbar') %>
-        </div>    
-    </header>
-    <section class="registro-cuerpo" id="registro-fondo">       
-        <div class="registro-formulario">
-            <form action="/users/registro" method="POST" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>" 
-                    name="nombre" 
-                    id="nombre"
-                    value="<%= locals.oldData ? oldData.nombre : null %>" 
-                    placeholder="Nombre">
-                    <% if (locals.errors && errors.nombre) { %>
-                        <div class="text-danger">
-                            <%= errors.nombre.msg %>    
-                        </div>                     
-                    <% } %>
+
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div>
+                    <a href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
                 </div>
-                  <div class="mb-3">
-                    <label for="apellido" class="form-label">Apellido:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>" 
-                    name= 'apellido' 
-                    id="apellido"
-                    value="<%= locals.oldData ? oldData.apellido : null %>" 
-                    placeholder="Apellido">
-                    <% if (locals.errors && errors.apellido) { %>
-                        <div class="text-danger">
-                            <%= errors.apellido.msg %>    
-                        </div>                     
-                    <% } %>
-                  </div>
-                  <div class="mb-3">
-                      <label for="dni" class="form-label">DNI:</label>
-                      <input 
-                      type="number" 
-                      class="form-control <%= locals.errors && errors.dni ? 'is-invalid' : null %>" 
-                      name= 'dni' 
-                      id="dni"
-                      value="<%= locals.oldData ? oldData.dni : null %>" 
-                      placeholder="22333444">
-                      <% if (locals.errors && errors.dni) { %>
-                        <div class="text-danger">
-                            <%= errors.dni.msg %>    
-                        </div>                     
-                    <% } %>
+                <%- include('../partials/navbar') %>
+            </div>
+        </header>
+        <section class="registro-cuerpo" id="registro-fondo">
+            <div class="registro-formulario">
+                <form action="/users/registro" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                            name="nombre" id="nombre" value="<%= locals.oldData ? oldData.nombre : null %>"
+                            placeholder="Nombre">
+                        <% if (locals.errors && errors.nombre) { %>
+                            <div class="text-danger">
+                                <%= errors.nombre.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="fechaDeNacimiento" class="form-label">Fecha de Nacimiento:</label>
-                        <input 
-                        type="date" 
-                        class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>" 
-                        name="fechaDeNacimiento" 
-                        id="fechaDeNacimiento"
-                        min="<%= moment().subtract(60, 'years').format('YYYY-MM-DD')%>"
-                        max="<%= moment().subtract(18, 'years').format('YYYY-MM-DD')%>"
-                        value="<%= locals.oldData ? oldData.fechaDeNacimiento : null %>">
-                        <% if (locals.errors && errors.fechaDeNacimiento) { %>
+                        <label for="apellido" class="form-label">Apellido:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                            name='apellido' id="apellido" value="<%= locals.oldData ? oldData.apellido : null %>"
+                            placeholder="Apellido">
+                        <% if (locals.errors && errors.apellido) { %>
                             <div class="text-danger">
-                                <%= errors.fechaDeNacimiento.msg %>    
-                            </div>                     
-                        <% } %>
+                                <%= errors.apellido.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dni" class="form-label">DNI:</label>
+                        <input type="number"
+                            class="form-control <%= locals.errors && errors.dni ? 'is-invalid' : null %>" name='dni'
+                            id="dni" value="<%= locals.oldData ? oldData.dni : null %>" placeholder="22333444">
+                        <% if (locals.errors && errors.dni) { %>
+                            <div class="text-danger">
+                                <%= errors.dni.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="mb-3">
                         <label for="genero" class="form-label">Género:</label>
-                        <select 
-                        name="genero"
-                        class="<%= locals.errors && errors.genero ? 'is-invalid' : null %>" 
-                        id="genero">
+                        <select name="genero" class="<%= locals.errors && errors.genero ? 'is-invalid' : null %>"
+                            id="genero">
                             <option value=""> ... </option>
-                            <% let generos = ['Hombre', 'Mujer']; %>
-                            <% for( let genero of generos ) { %>
-                                <option 
-                                    value="<%= genero %>"
-                                    <%= locals.oldData && (genero == oldData.genero) ? 'selected' : null %> 
-                                >
-                                <%= genero %></option>                              
-                            <% } %>
+                            <% let generos=['Hombre', 'Mujer' ]; %>
+                                <% for( let genero of generos ) { %>
+                                    <option value="<%= genero %>" <%=locals.oldData && (genero==oldData.genero)
+                                        ? 'selected' : null %>
+                                        >
+                                        <%= genero %>
+                                    </option>
+                                    <% } %>
                         </select>
                         <% if (locals.errors && errors.genero) { %>
                             <div class="text-danger">
-                                <%= errors.genero.msg %>    
-                            </div>                     
-                        <% } %>
+                                <%= errors.genero.msg %>
+                            </div>
+                            <% } %>
                     </div>
-                    
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
-                        <input 
-                        type="file" 
-                        class="form-control" 
-                        id="formGroupExampleInput2"
-                        name="fotoPerfil"                        
-                        placeholder="Foto de perfil">
+                        <input type="file" class="form-control" id="formGroupExampleInput2" name="fotoPerfil"
+                            placeholder="Foto de perfil">
                         <% if (locals.errors && errors.fotoPerfil) { %>
                             <div class="text-danger">
-                                <%= errors.fotoPerfil.msg %>    
-                            </div>                     
-                        <% } %>
+                                <%= errors.fotoPerfil.msg %>
+                            </div>
+                            <% } %>
                     </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" name="email"
+                            id="email" value="<%= locals.oldData ? oldData.email : null %>"
+                            placeholder="usuario@hayequipo.com">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger">
+                                <%= errors.email.msg %>
+                            </div>
+                            <% } %>
+                                <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contraseña" class="form-label">Contraseña:</label>
+                        <input type="password"
+                            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                            name="password" id="contraseña" value="<%= locals.oldData ? oldData.password : null %>"
+                            placeholder="***********">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tyc" required>
+                        <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">ENVIAR</button>
+                </form>
+            </div>
+        </section>
+        <%- include('../partials/footer') %>
+    </body>
 
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
-                    name= "email" 
-                    id="email"                    
-                    value="<%= locals.oldData ? oldData.email : null %>" 
-                    placeholder="usuario@hayequipo.com">
-                    <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger">
-                            <%= errors.email.msg %>    
-                        </div>                     
-                    <% } %>
-                    <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input 
-                    type="password" 
-                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" 
-                    name="password" 
-                    id="contraseña"
-                    value="<%= locals.oldData ? oldData.password : null %>" 
-                    placeholder="***********">
-                    <% if (locals.errors && errors.password) { %>
-                        <div class="text-danger">
-                            <%= errors.password.msg %>    
-                        </div>                     
-                    <% } %>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tyc" required>
-                    <label class="form-check-label" for="exampleCheck1" >Acepto términos y condiciones</label>
-                </div>
-                <button type="submit" class="btn btn-primary">ENVIAR</button>
-            </form>            
-        </div> 
-    </section>
-    <%- include('../partials/footer') %>   
-</body>
 </html>
