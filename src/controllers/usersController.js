@@ -192,6 +192,27 @@ const controlador = {
 
     update: (req, res) => {
         res.send('VISTA EN MANTENIMIENTO. PRÓXIMAMENTE FUNCIONANDO. ESTAMOS TRABAJANDO ARDUAMENTE EN ELLO.');
+        
+
+        /*
+        PRUEBA PARA EDITAR USUARIO
+        db.usuario.update(
+            {
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                dni: req.body.dni,
+                genero: req.body.genero,
+                email: req.body.email
+            },
+            {
+                where: {
+                    id: req.session.userLogged.id
+                }
+            }
+        );
+
+        res.redirect('/users/usuario'); */
+
         /* let userToEdit = User.findByField("email", req.session.userLogged.email);
         const rdosValidaciones = validationResult(req);
         console.log(rdosValidaciones);

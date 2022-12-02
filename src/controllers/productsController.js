@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
 
+const db = require('../database/models');
+
 const equiposFilePath = path.join(__dirname, '../data/equiposDataBase.json');
 const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
 
@@ -11,8 +13,12 @@ const controlador = {
     },
 
     equipos: (req,res) => {
-        const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
-        res.render('./products/equipos', {ps: equiposJson});
+        //const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
+        //res.render('./products/equipos', {ps: equiposJson});
+        db.equipo.findAll().then((equipos) => {
+
+            res.render('./products/equipos', { ps: equipos });
+        });
     },
 
     carrito: (req,res) => {
@@ -80,6 +86,11 @@ const controlador = {
 
             }
         }
+        /* db.equipo.findOne({
+            where:{
+                id: req.params.id
+            }
+        }) */
         
         res.render('./products/equipo', {equipo: objEquipo})
     },
