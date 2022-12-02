@@ -10,9 +10,7 @@ const validacionEditarUsuario = [
         .isLength({ min: 4}).withMessage('Éste campo debe tener al menos 4 caracteres'),
     body('dni')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isInt({ min: 10000000, max: 50000000}).withMessage('Ingresar DNI válido'),
-    body('fechaDeNacimiento')
-        .notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+        .isInt({ min: 10000000, max: 50000000}).withMessage('Ingresar DNI válido'),   
     body('genero').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
     body('email')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()

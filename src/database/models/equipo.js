@@ -12,12 +12,9 @@ function equipoData(sequelize, Datatypes) {
     const equipo = sequelize.define(alias, cols, config)
 
     equipo.associate = function (modelos) {       
-        equipo.belongsToMany(modelos.usuario, {
-            as: "usuario",
-            through: "usuario_equipo",
-            foreignKey: "equipo_id",
-            otherKey: "usuario_id",
-            timestamps: false
+        equipo.hasMany(modelos.usuario_equipo, {
+            as: "usuario_equipo",
+            foreignKey: "equipo_id"
         });
 
         equipo.belongsToMany(modelos.restriccion, {

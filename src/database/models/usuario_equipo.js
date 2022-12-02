@@ -11,6 +11,18 @@ function usuarioEquipoIntermedia(sequelize, Datatypes) {
     config = { freezeTableName: true, timestamps: false, camelCase: false };
     const usuario_equipo = sequelize.define(alias, cols, config);
 
+    usuario_equipo.associate = function (modelos) {
+        usuario_equipo.belongsTo(modelos.usuario, {
+            as: "usuario",
+            foreignKey: "usuario_id"
+        });
+
+        usuario_equipo.belongsTo(modelos.equipo, {
+            as: "equipo",
+            foreignKey: "equipo_id"
+        });
+    }
+
     return usuario_equipo;
 }
 

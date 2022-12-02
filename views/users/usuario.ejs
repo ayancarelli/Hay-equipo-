@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body>
-    <header> 
-        <div class="container-fluid">
-            <div>
-                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
-            </div>
-            <%- include('../partials/navbar') %>
-        </div>    
-    </header>
 
-    <section class="cuerpo-home">
-        <div class="banner-equipo">        
-            <h3>
-                MI USUARIO
-            </h3>
-        </div>
-    </section>
-    <section class="registro-cuerpo" id="registro-fondo">       
-        <div class="registro-formulario">
-            <form action="/users/usuario" method="POST">
-                <div class="mb-3">
-                    <img src="/img/img-users/<%= user.fotoPerfil %>" class="card-img-top" alt="Foto Equipo">
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div>
+                    <a href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
                 </div>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <label for="nombre" class="form-label"><%= user.nombre %></label>
-                </div>
-                  <div class="mb-3">
-                    <label for="apellido" class="form-label">Apellido:</label>
-                    <label for="apellido" class="form-label"><%= user.apellido %></label>
-                  </div>
-                  <div class="mb-3">
-                      <label for="dni" class="form-label">Dni:</label>
-                      <label for="dni" class="form-label"><%= user.dni %></label>
+                <%- include('../partials/navbar') %>
+            </div>
+        </header>
+
+        <section class="cuerpo-home">
+            <div class="banner-equipo">
+                <h3>
+                    MI USUARIO
+                </h3>
+            </div>
+        </section>
+        <section class="registro-cuerpo" id="registro-fondo">
+            <div class="registro-formulario">
+                <form action="/users/usuario" method="POST">
+                    <div class="mb-3">
+                        <img src="/img/img-users/<%= user.foto_perfil %>" class="card-img-top" alt="Foto Equipo">
                     </div>
                     <div class="mb-3">
-                        <label for="fechaDeNacimiento" class="form-label">Fecha de nacimiento:</label>
-                        <label for="fechaDeNacimiento" class="form-label"><%= user.fechaDeNacimiento %></label>
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <label for="nombre" class="form-label">
+                            <%= user.nombre %>
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido:</label>
+                        <label for="apellido" class="form-label">
+                            <%= user.apellido %>
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dni" class="form-label">Dni:</label>
+                        <label for="dni" class="form-label">
+                            <%= user.dni %>
+                        </label>
                     </div>
                     <div class="mb-3">
                         <label for="genero" class="form-label">Género:</label>
-                        <label for="genero" class="form-label"><%= user.genero %></label>                        
-                    </div>            
+                        <label for="genero" class="form-label">
+                            <%= user.genero %>
+                        </label>
+                    </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <label for="email" class="form-label"><%= user.email %></label>
-                    </div>               
+                        <label for="email" class="form-label">
+                            <%= user.email %>
+                        </label>
+                    </div>
                     <a href="/users/editar-users" class="btn btn-primary">EDITAR</a>
                     <a href="/users/logout" class="btn btn-primary">CERRAR SESIÓN</a>
-            </form>            
-        </div> 
-    </section>
-    <%- include('../partials/footer') %>
-</body>
+                </form>
+            </div>
+        </section>
+        <%- include('../partials/footer') %>
+    </body>
+
 </html>

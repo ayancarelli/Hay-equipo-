@@ -21,9 +21,6 @@ const controlador = {
             });
         }
 
-        //Vieja forma de buscar email
-        //let userInDB = User.findByField('email', req.body.email);
-
         db.usuario.findOne({
             where: {
                 email: req.body.email
@@ -65,16 +62,12 @@ const controlador = {
             where: {
                 email: req.body.email
             }
-        }).then((resultado) => {
-
-            let userToLogin = resultado;
-
-            if (userToLogin) {
-                let passwordOk = encriptar.compareSync(req.body.password, userToLogin.password);
+        }).then((userToLogin) => {            
+            if (userToLogin != null) {
+                let passwordOk = encriptar.compareSync(req.body.password, userToLogin.password);                
                 if (passwordOk) {
                     delete userToLogin.password;
                     req.session.userLogged = userToLogin;
-
                     if (req.body.recordar) {
                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 })
                     }
@@ -114,9 +107,13 @@ const controlador = {
     },
 
     edit: (req, res) => {
-        let userToEdit = User.findByField("email", req.session.userLogged.email);
-
-        res.render('./users/editar-users', { useraEditar: userToEdit, moment: moment });
+        db.usuario.findOne({
+            where: {
+                email: req.session.userLogged.email
+            }
+        }).then((userToEdit) => {
+            res.render('./users/editar-users', { useraEditar: userToEdit });
+        })
     },
 
     users: (req, res) => {
@@ -132,22 +129,16 @@ const controlador = {
           res.json(rsv)              
         }); */
 
-        db.equipo.findAll({ include: [{ association: 'restriccion' }] }).then((resultados) => {
+        db.usuario_equipo.findAll({ include: [{ association: 'usuario' }, { association: 'equipo' }] }).then((resultados) => {
 
-            let listaResultados = [];
+            /* let listaResultados = [];
 
             for (rdo of resultados) {
 
                 let listaRestriccion = [];
 
                 for (rcion of rdo.restriccion) {
-                    let tipoRest = [];
 
-
-                    /*  for (tiipoRest.push(tipoR.descripcion);
-                         console.logpoR of rcion.tipo_restriccion_id){
-                         t(tipoRest);
-                     } */
                     listaRestriccion.push(rcion);
                     console.log(listaRestriccion);
                 }
@@ -160,8 +151,8 @@ const controlador = {
                 listaResultados.push(objAux);
             }
 
-            /* console.log(listaResultados); */
-            res.send(listaResultados);
+            console.log(listaResultados); */
+            res.send(resultados);
         });
         /* db.restriccion.findAll({ include: [{ association: 'tipo_restriccion' }] }).then((resultados) => {
 

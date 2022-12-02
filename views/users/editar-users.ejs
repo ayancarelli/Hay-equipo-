@@ -1,89 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body>
-    <header> 
-        <div class="container-fluid">
-            <div>
-                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
-            </div>
-            <%- include('../partials/navbar') %>
-        </div>    
-    </header>
-    <section class="registro-cuerpo" id="registro-fondo">       
-        <div class="registro-formulario">
-            <form action="/users/editar-users?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>" 
-                    name="nombre"
-                    id="nombre" 
-                    value="<%= locals.oldData ? oldData.nombre : useraEditar.nombre %>"
-                    placeholder="Nombre">
+
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div>
+                    <a href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
                 </div>
-                  <div class="mb-3">
-                    <label for="apellido" class="form-label">Apellido:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
-                    name= 'apellido' 
-                    id="apellido" 
-                    value="<%= useraEditar.apellido %>" 
-                    placeholder="Apellido">
-                  </div>
-                  <div class="mb-3">
-                      <label for="dni" class="form-label">Dni:</label>
-                      <input type="number" class="form-control" name= 'dni' id="dni" value="<%= useraEditar.dni %>" min="1000000" max="99999999" placeholder="Dni">
+                <%- include('../partials/navbar') %>
+            </div>
+        </header>
+        <section class="registro-cuerpo" id="registro-fondo">
+            <div class="registro-formulario">
+                <form action="/users/editar-users?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                            name="nombre" id="nombre"
+                            value="<%= locals.oldData ? oldData.nombre : useraEditar.nombre %>" placeholder="Nombre">
                     </div>
                     <div class="mb-3">
-                        <label for="fechaDeNacimiento" class="form-label">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control" name="fechaDeNacimiento" id="fechaDeNacimiento" value="<%= useraEditar.fechaDeNacimiento %>" min="<%= moment().subtract(60, 'years').format('YYYY-MM-DD')%>" max="<%= moment().subtract(18, 'years').format('YYYY-MM-DD')%>" placeholder="Fecha de nacimiento">
+                        <label for="apellido" class="form-label">Apellido:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                            name='apellido' id="apellido" value="<%= useraEditar.apellido %>" placeholder="Apellido">
                     </div>
                     <div class="mb-3">
-                        <label for="sexo" class="form-label">Género:</label>                        
-                        <% if (useraEditar.genero == "mujer"){ %>
-                        <select name="genero" id="sexo">
-                            <option value="hombre">Hombre</option>
-                            <option value="mujer" selected>Mujer</option>
-                        </select>
-                        <% } else {%>
-                            <select name="genero" id="sexo">
-                                <option value="hombre"selected>Hombre</option>
-                                <option value="mujer">Mujer</option>
-                            </select>
-                            <% } %>  
+                        <label for="dni" class="form-label">Dni:</label>
+                        <input type="number" class="form-control" name='dni' id="dni" value="<%= useraEditar.dni %>"
+                            min="1000000" max="99999999" placeholder="Dni">
                     </div>                    
+                    <div class="mb-3">
+                        <label for="sexo" class="form-label">Género:</label>
+                        <% if (useraEditar.genero=="mujer" ){ %>
+                            <select name="genero" id="sexo">
+                                <option value="hombre">Hombre</option>
+                                <option value="mujer" selected>Mujer</option>
+                            </select>
+                            <% } else {%>
+                                <select name="genero" id="sexo">
+                                    <option value="hombre" selected>Hombre</option>
+                                    <option value="mujer">Mujer</option>
+                                </select>
+                                <% } %>
+                    </div>
                     <!-- <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
                         <input type="file" class="form-control" id="formGroupExampleInput2" value="<%= useraEditar.fotoPerfil %>" placeholder="Foto de perfil">
                     </div> -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email"
+                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" name="email"
+                            id="email" value="<%= locals.oldData ? oldData.email : useraEditar.email %>"
+                            aria-describedby="emailHelp" placeholder="usuario@hayequipo.com">
+                    </div>
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                        <% } %>
+                            <div class="mb-3">
+                                <label for="contraseña" class="form-label">Contraseña:</label>
+                                <input type="password" class="form-control" name="password"
+                                    value="<%= useraEditar.password %>" minlength="6" id="contraseña"
+                                    placeholder="***********">
+                            </div>
+                            <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
+                </form>
+            </div>
+        </section>
+        <%- include('../partials/footer') %>
+    </body>
 
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email:</label>
-                    <input 
-                    type="email" 
-                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
-                    name= "email" 
-                    id="email" 
-                    value="<%= locals.oldData ? oldData.email : useraEditar.email %>" 
-                    aria-describedby="emailHelp" 
-                    placeholder="usuario@hayequipo.com">                    
-                </div>
-                <% if (locals.errors && errors.email) { %>
-                    <div class="text-danger">
-                        <%= errors.email.msg %>    
-                    </div>                     
-                <% } %>
-                <div class="mb-3">
-                    <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" name="password" value="<%= useraEditar.password %>" minlength="6" id="contraseña" placeholder="***********">
-                </div>                
-                <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
-            </form>            
-        </div> 
-    </section>
-    <%- include('../partials/footer') %>   
-</body>
 </html>
