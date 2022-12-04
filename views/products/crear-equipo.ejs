@@ -1,175 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body>
-    <header> 
-        <div class="container-fluid">
-            <div>
-                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
+
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div>
+                    <a href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
+                </div>
+                <%- include('../partials/navbar') %>
             </div>
-            <%- include('../partials/navbar') %>
-        </div>    
-    </header>
-    <section class="registro-cuerpo" id="registro-fondo">       
-        <div class="registro-formulario">
-            <form action="/products/crear-equipo" method="POST" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.nombreEquipo ? 'is-invalid' : null %>" 
-                    name="nombreEquipo" 
-                    id="formGroupExampleInput"
-                    value="<%= locals.oldData ? oldData.nombreEquipo : null %>" 
-                    placeholder="Equipo A">
-                    <% if (locals.errors && errors.nombreEquipo) { %>
-                        <div class="text-danger">
-                            <%= errors.nombreEquipo.msg %>    
-                        </div>                     
-                    <% } %>                        
-                </div>
-                <div class="mb-3">
-                    <label for="fotoEquipo" class="form-label">Foto del Equipo:</label>
-                    <input type="file" class="form-control" name="imgEquipo" id="fotoEquipo">
-                    <% if (locals.errors && errors.imgEquipo) { %>
-                        <div class="text-danger">
-                            <%= errors.imgEquipo.msg %>    
-                        </div>                     
-                    <% } %>                    
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 1:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.jugador1 ? 'is-invalid' : null %>" 
-                    name="jugador1" 
-                    id="formGroupExampleInput2"
-                    value="<%= locals.oldData ? oldData.jugador1 : null %>" 
-                    placeholder="Nombre Apellido">
-                    <% if (locals.errors && errors.jugador1) { %>
-                        <div class="text-danger">
-                            <%= errors.jugador1.msg %>    
-                        </div>                     
-                    <% } %> 
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 2:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.jugador2 ? 'is-invalid' : null %>" 
-                    name="jugador2" 
-                    id="formGroupExampleInput2"
-                    value="<%= locals.oldData ? oldData.jugador2 : null %>" 
-                    placeholder="Nombre Apellido">
-                    <% if (locals.errors && errors.jugador2) { %>
-                        <div class="text-danger">
-                            <%= errors.jugador2.msg %>    
-                        </div>                     
-                    <% } %>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 3:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.jugador3 ? 'is-invalid' : null %>" 
-                    name="jugador3" 
-                    id="formGroupExampleInput2"
-                    value="<%= locals.oldData ? oldData.jugador3 : null %>" 
-                    placeholder="Nombre Apellido">
-                    <% if (locals.errors && errors.jugador3) { %>
-                        <div class="text-danger">
-                            <%= errors.jugador3.msg %>    
-                        </div>                     
-                    <% } %>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 4:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.jugador4 ? 'is-invalid' : null %>" 
-                    name="jugador4" 
-                    id="formGroupExampleInput2"
-                    value="<%= locals.oldData ? oldData.jugador4 : null %>" 
-                    placeholder="Nombre Apellido">
-                    <% if (locals.errors && errors.jugador4) { %>
-                        <div class="text-danger">
-                            <%= errors.jugador4.msg %>    
-                        </div>                     
-                    <% } %>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 5:</label>
-                    <input 
-                    type="text" 
-                    class="form-control <%= locals.errors && errors.jugador5 ? 'is-invalid' : null %>" 
-                    name="jugador5" 
-                    id="formGroupExampleInput2"
-                    value="<%= locals.oldData ? oldData.jugador5 : null %>" 
-                    placeholder="Nombre Apellido">
-                    <% if (locals.errors && errors.jugador5) { %>
-                        <div class="text-danger">
-                            <%= errors.jugador5.msg %>    
-                        </div>                     
-                    <% } %>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 6:</label>
-                    <input 
-                    type="text" 
-                    class="form-control"
-                    name="jugador6" 
-                    id="formGroupExampleInput2"
-                    value="<%= locals.oldData ? oldData.jugador6 : null %>" 
-                    placeholder="Nombre Apellido">
-                </div>
-                <div class="mb-3">
-                    <label for="restriccionesSexo" class="form-label">Juega Contra:</label><br>
-                    <select 
-                    id="restriccionEdad"
-                    class="<%= locals.errors && errors.restriccionesSexo ? 'is-invalid' : null %>" 
-                    name="restriccionesSexo">
-                        <option value=""> ... </option>
-                        <% let restriccionesSexo = ['Mixto', 'Solo Mujeres', 'Solo Hombres']; %>
-                        <% for( let restr of restriccionesSexo) { %>
-                            <option 
-                                value="<%= restr %>"
-                                <%= locals.oldData && (restr == oldData.restriccionesSexo) ? 'selected' : null %> 
-                            >
-                            <%= restr %></option>                              
-                        <% } %>                        
-                    </select>
-                    <% if (locals.errors && errors.restriccionesSexo) { %>
-                        <div class="text-danger">
-                            <%= errors.restriccionesSexo.msg %>    
-                        </div>                     
-                    <% } %>
-                </div>               
-                <div class="mb-3">
-                    <label for="restriccionEdad" class="form-label">Restricción de Edad:</label>
-                    <select 
-                    id="restriccionEdad"
-                    class="<%= locals.errors && errors.restriccionEdad ? 'is-invalid' : null %>" 
-                    name="restriccionEdad">
-                        <option value=""> ... </option>
-                        <% let restriccionEdad = ['Sin restricción', 'Menores de 30 años', 'Mayores de 30 años', 'Menores de 40 años', 'Mayores de 40 años']; %>
-                        <% for( let restr of restriccionEdad) { %>
-                            <option 
-                                value="<%= restr %>"
-                                <%= locals.oldData && (restr == oldData.restriccionEdad) ? 'selected' : null %> 
-                            >
-                            <%= restr %></option>                              
-                        <% } %>                       
-                    </select>
-                    <% if (locals.errors && errors.restriccionEdad) { %>
-                        <div class="text-danger">
-                            <%= errors.restriccionEdad.msg %>    
-                        </div>                     
-                    <% } %>
-                </div>
-                <button type="submit" class="btn btn-primary">ENVIAR</button>
-            </form>            
-        </div> 
-    </section>
-    <%- include('../partials/footer') %>   
-</body>
+        </header>
+        <section class="registro-cuerpo" id="registro-fondo">
+            <div class="registro-formulario">
+                <form action="/products/crear-equipo" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.nombreEquipo ? 'is-invalid' : null %>"
+                            name="nombreEquipo" id="formGroupExampleInput"
+                            value="<%= locals.oldData ? oldData.nombreEquipo : null %>" placeholder="Equipo A">
+                        <% if (locals.errors && errors.nombreEquipo) { %>
+                            <div class="text-danger">
+                                <%= errors.nombreEquipo.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fotoEquipo" class="form-label">Foto del Equipo:</label>
+                        <input type="file" class="form-control" name="imgEquipo" id="fotoEquipo">
+                        <% if (locals.errors && errors.imgEquipo) { %>
+                            <div class="text-danger">
+                                <%= errors.imgEquipo.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Jugador 1:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.jugador1 ? 'is-invalid' : null %>"
+                            name="jugador1" id="formGroupExampleInput2"
+                            value="<%= locals.oldData ? oldData.jugador1 : null %>" placeholder="Nombre Apellido">
+                        <% if (locals.errors && errors.jugador1) { %>
+                            <div class="text-danger">
+                                <%= errors.jugador1.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Jugador 2:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.jugador2 ? 'is-invalid' : null %>"
+                            name="jugador2" id="formGroupExampleInput2"
+                            value="<%= locals.oldData ? oldData.jugador2 : null %>" placeholder="Nombre Apellido">
+                        <% if (locals.errors && errors.jugador2) { %>
+                            <div class="text-danger">
+                                <%= errors.jugador2.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Jugador 3:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.jugador3 ? 'is-invalid' : null %>"
+                            name="jugador3" id="formGroupExampleInput2"
+                            value="<%= locals.oldData ? oldData.jugador3 : null %>" placeholder="Nombre Apellido">
+                        <% if (locals.errors && errors.jugador3) { %>
+                            <div class="text-danger">
+                                <%= errors.jugador3.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Jugador 4:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.jugador4 ? 'is-invalid' : null %>"
+                            name="jugador4" id="formGroupExampleInput2"
+                            value="<%= locals.oldData ? oldData.jugador4 : null %>" placeholder="Nombre Apellido">
+                        <% if (locals.errors && errors.jugador4) { %>
+                            <div class="text-danger">
+                                <%= errors.jugador4.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Jugador 5:</label>
+                        <input type="text"
+                            class="form-control <%= locals.errors && errors.jugador5 ? 'is-invalid' : null %>"
+                            name="jugador5" id="formGroupExampleInput2"
+                            value="<%= locals.oldData ? oldData.jugador5 : null %>" placeholder="Nombre Apellido">
+                        <% if (locals.errors && errors.jugador5) { %>
+                            <div class="text-danger">
+                                <%= errors.jugador5.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Jugador 6:</label>
+                        <input type="text" class="form-control" name="jugador6" id="formGroupExampleInput2"
+                            value="<%= locals.oldData ? oldData.jugador6 : null %>" placeholder="Nombre Apellido">
+                    </div>
+                    <% for( let a of restricciones ) { %>
+                        <div class="mb-3">
+                            <label for="restriccionesSexo" class="form-label">
+                                <%= a.descripcion %>
+                            </label><br>
+                            <select id="restriccionEdad"
+                                class="<%= locals.errors && errors.restriccionesSexo ? 'is-invalid' : null %>"
+                                name="restriccionesSexo">
+                                <% for( let p of a.restriccion ) { %>
+                                    <option value="<%= p.id  %> ">
+                                        <%= p.nombre %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                            <% if (locals.errors && errors.restriccionesSexo) { %>
+                                <div class="text-danger">
+                                    <%= errors.restriccionesSexo.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+                        <% } %>
+                            <button type="submit" class="btn btn-primary">ENVIAR</button>
+                </form>
+            </div>
+        </section>
+        <%- include('../partials/footer') %>
+    </body>
+
 </html>
