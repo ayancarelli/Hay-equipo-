@@ -128,5 +128,18 @@
   "jugador6": "",
   "restriccionEdad": "Mayores de 40 años",
   "restriccionesSexo": "Solo Mujeres"
+ },
+ {
+  "id": 15,
+  "nombreEquipo": "LOS BRUJOS",
+  "imagen": "img-equipo-1670024572868.jpg",
+  "jugador1": "EL BRUJO",
+  "jugador2": "JUGADOR 2",
+  "jugador3": "HOLA!",
+  "jugador4": "FIN@",
+  "jugador5": "NO SE PONER",
+  "jugador6": "123456",
+  "restriccionEdad": "Sin restricción",
+  "restriccionesSexo": "Mixto"
  }
 ]
