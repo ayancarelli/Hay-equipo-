@@ -1,9 +1,9 @@
 function equipo_restriccionData(sequelize, Datatypes) {
     alias = 'equipo_restriccion';
     cols = {
-        id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-        equipo_id: { type: Datatypes.TINYINT(4) },
-        restriccion_id: { type: Datatypes.TINYINT(4) }
+        id: { type: Datatypes.TINYINT(4).UNSIGNED, primaryKey: true, autoIncrement: true, allowNull: false },
+        equipo_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
+        restriccion_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false }
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };

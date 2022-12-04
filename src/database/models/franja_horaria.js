@@ -1,8 +1,8 @@
 function franja_horariaData(sequelize, Datatypes) {
     alias = 'franja_horaria';
     cols = {
-        id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-        detalle: { type: Datatypes.STRING(50) },        
+        id: { type: Datatypes.TINYINT(4).UNSIGNED, primaryKey: true, autoIncrement: true, allowNull: false },
+        detalle: { type: Datatypes.STRING(50), allowNull: false },
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };

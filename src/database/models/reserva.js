@@ -1,13 +1,13 @@
 function reservaData(sequelize, Datatypes) {
     alias = 'reserva';
     cols = {
-        id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-        equipo1_id: { type: Datatypes.TINYINT(4) },
-        equipo2_id: { type: Datatypes.TINYINT(4) },
-        fecha_creacion: { type: Datatypes.DATEONLY },
-        fecha_partido: { type: Datatypes.DATEONLY },
-        franja_horaria_id: { type: Datatypes.TINYINT(4) },
-        complejo_id: { type: Datatypes.TINYINT(4) },
+        id: { type: Datatypes.TINYINT(4).UNSIGNED, primaryKey: true, autoIncrement: true, allowNull: false },
+        equipo1_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
+        equipo2_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
+        fecha_creacion: { type: Datatypes.DATEONLY, allowNull: false },
+        fecha_partido: { type: Datatypes.DATEONLY, allowNull: false },
+        franja_horaria_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
+        complejo_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };

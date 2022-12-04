@@ -64,7 +64,7 @@ const controlador = {
             }
         }).then((userToLogin) => {            
             if (userToLogin != null) {
-                let passwordOk = encriptar.compareSync(req.body.password, userToLogin.password);                
+                let passwordOk = encriptar.compareSync(req.body.password, userToLogin.password);               
                 if (passwordOk) {
                     delete userToLogin.password;
                     req.session.userLogged = userToLogin;

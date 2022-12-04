@@ -1,11 +1,11 @@
 function usuarioEquipoIntermedia(sequelize, Datatypes) {
     alias = 'usuario_equipo';
     cols = {
-        id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-        equipo_id: { type: Datatypes.TINYINT(4) },
-        usuario_id: { type: Datatypes.TINYINT(4) },
-        nombre_jugador: { type: Datatypes.STRING(20) },
-        apellido_jugador: { type: Datatypes.STRING(20) }
+        id: { type: Datatypes.TINYINT(4).UNSIGNED, primaryKey: true, autoIncrement: true, allowNull: false },
+        equipo_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
+        usuario_id: { type: Datatypes.TINYINT(4).UNSIGNED },
+        nombre_jugador: { type: Datatypes.STRING(20), allowNull: false },
+        apellido_jugador: { type: Datatypes.STRING(20), allowNull: false }
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };

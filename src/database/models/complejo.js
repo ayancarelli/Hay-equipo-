@@ -2,11 +2,10 @@ function complejoData(sequelize, Datatypes) {
     alias = 'complejo';
 
     cols = {
-        id: { type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true },
-        nombre: { type: Datatypes.STRING(20) },
-        direccion: { type: Datatypes.STRING(30) },
-        ciudad_id: { type: Datatypes.TINYINT(4) },
-
+        id: { type: Datatypes.TINYINT(4).UNSIGNED, primaryKey: true, autoIncrement: true, allowNull: false },
+        nombre: { type: Datatypes.STRING(20), allowNull: false },
+        direccion: { type: Datatypes.STRING(30), allowNull: false },
+        ciudad_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };
