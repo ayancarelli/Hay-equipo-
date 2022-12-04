@@ -62,9 +62,9 @@ const controlador = {
             where: {
                 email: req.body.email
             }
-        }).then((userToLogin) => {            
+        }).then((userToLogin) => {
             if (userToLogin != null) {
-                let passwordOk = encriptar.compareSync(req.body.password, userToLogin.password);               
+                let passwordOk = encriptar.compareSync(req.body.password, userToLogin.password);
                 if (passwordOk) {
                     delete userToLogin.password;
                     req.session.userLogged = userToLogin;
@@ -184,53 +184,31 @@ const controlador = {
     },
 
     check2: (req, res) => {
-        db.usuario.findOne({ where: { email: '555@gmail.com' } }).then((resultado) => {
-            console.log(resultado);
+        db.equipo_restriccion.findAll().then((resultado) => {
             res.send(resultado);
         });
     },
 
-    update: (req, res) => {
-        res.send('VISTA EN MANTENIMIENTO. PRÓXIMAMENTE FUNCIONANDO. ESTAMOS TRABAJANDO ARDUAMENTE EN ELLO.');
-        
-
-        /*
-        PRUEBA PARA EDITAR USUARIO
-        db.usuario.update(
-            {
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                dni: req.body.dni,
-                genero: req.body.genero,
-                email: req.body.email
-            },
-            {
-                where: {
-                    id: req.session.userLogged.id
-                }
-            }
-        );
-
-        res.redirect('/users/usuario'); */
-
-        /* let userToEdit = User.findByField("email", req.session.userLogged.email);
+    update: async (req, res) => {
         const rdosValidaciones = validationResult(req);
-        console.log(rdosValidaciones);
- 
+        
         if (rdosValidaciones.errors.length > 0) {
             return res.render('./users/editar-users', {
-                useraEditar: userToEdit,
-                moment: moment,
+                useraEditar: req.session.userLogged,
                 errors: rdosValidaciones.mapped(),
                 oldData: req.body
             });
         }
- 
-        let newEmail = User.findByField("email", req.body.email);
-        if ((req.body.email !== userToEdit.email) && (newEmail !== undefined)) {
+
+        let mailEnDB = await db.usuario.findOne({
+            where: {
+                email: req.body.email
+            }
+        });
+
+        if ((mailEnDB != null) && (mailEnDB != req.session.userLogged.email)) {
             return res.render('./users/editar-users', {
-                useraEditar: userToEdit,
-                moment: moment,
+                useraEditar: req.session.userLogged,
                 errors: {
                     email: {
                         msg: 'Éste email ya se encuentra registrado.'
@@ -238,56 +216,18 @@ const controlador = {
                 },
                 oldData: req.body
             });
+        } else {
+            db.usuario.update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                dni: req.body.dni,
+                genero: req.body.genero,
+                email: req.body.email
+            },
+                { where: { id: req.session.userLogged.id } }).then(() => {
+                    res.redirect('/users/usuario')
+                })
         }
- 
-        let passwordIgual = encriptar.compareSync(req.body.password, userToEdit.password);
- 
-        if (passwordIgual === false) {
-            return res.render('./users/editar-users', {
-                useraEditar: userToEdit,
-                moment: moment,
-                errors: {
-                    password: {
-                        msg: 'No coincide con la contraseña registrada.'
-                    }
-                },
-                oldData: req.body
-            });
-        }
-        console.log(req.file.filename);
-        console.log(userToEdit.fotoPerfil);
- 
-        userToEdit = {
-            ...req.body
-        }
- 
-        let userEdited = User.edit(userToEdit);
-        res.render('./users/usuario', { user: userEdited }); */
-
-        /*
-        --- LÓGICA VIEJA JERO ---
-        let idUser = req.params.id;
-        let userEdited;
-    
-        for (let s of userJson){
-            if (idUser == s.id){
-                s.nombre = req.body.nombre.toUpperCase();
-                s.apellido = req.body.apellido.toUpperCase();
-                s.dni = req.body.dni;
-                s.fechaDeNacimiento = req.body.fechaDeNacimiento ;
-                s.genero = req.body.genero;
-                s.foto = "enzo.jpg";
-                s.email = req.body.email;
-                s.password = req.body.password
-                userEdited = s;
-                break;
-            }
-        }
-    
-        fs.writeFileSync(usersFilePath, JSON.stringify(userJson,null,' '));
-    
-        res.render('./users/usuario', {user : userEdited}); 
-    } */
     }
 }
 module.exports = controlador;
