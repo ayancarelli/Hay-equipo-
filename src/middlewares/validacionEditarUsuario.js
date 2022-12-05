@@ -17,7 +17,7 @@ const validacionEditarUsuario = [
         .isEmail().withMessage('Escribir un e-mail válido'),
     body('password')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({min: 6, max: 12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+        .isLength({min: 6, max: 12}).withMessage('La contraseña debe tener entre 6 y 12 caracteres')
   /*   body('fotoPerfil').custom((value, { req }) => {
         let file = req.file;
         let extensionesValidas = ['.jpg', '.jpeg' , '.png'];
