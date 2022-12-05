@@ -116,6 +116,52 @@ const controlador = {
         })
     },
 
+    update: async (req, res) => {
+        const rdosValidaciones = validationResult(req);
+        
+        if (rdosValidaciones.errors.length > 0) {
+            return res.render('./users/editar-users', {
+                useraEditar: req.session.userLogged,
+                errors: rdosValidaciones.mapped(),
+                oldData: req.body
+            });
+        }
+
+        console.log(req.body.email);
+
+        let mailEnDB = await db.usuario.findOne({
+            where: {
+                email: req.body.email
+            }
+        });
+        
+        console.log(mailEnDB);
+
+        if ((req.body.email != req.session.userLogged.email) && (mailEnDB != null)) {
+            return res.render('./users/editar-users', {
+                useraEditar: req.session.userLogged,
+                errors: {
+                    email: {
+                        msg: 'Éste email ya se encuentra registrado.'
+                    }
+                },
+                oldData: req.body
+            });
+        } else {
+            db.usuario.update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                dni: req.body.dni,
+                genero: req.body.genero,
+                email: req.body.email
+            },
+                { where: { id: req.session.userLogged.id } }).then(() => {                    
+                    req.session.destroy();
+                    return res.redirect('/users/login')
+                })
+        }
+    },
+
     users: (req, res) => {
         db.usuario.findAll().then((usuarios) => {
 
@@ -187,47 +233,6 @@ const controlador = {
         db.equipo_restriccion.findAll().then((resultado) => {
             res.send(resultado);
         });
-    },
-
-    update: async (req, res) => {
-        const rdosValidaciones = validationResult(req);
-        
-        if (rdosValidaciones.errors.length > 0) {
-            return res.render('./users/editar-users', {
-                useraEditar: req.session.userLogged,
-                errors: rdosValidaciones.mapped(),
-                oldData: req.body
-            });
-        }
-
-        let mailEnDB = await db.usuario.findOne({
-            where: {
-                email: req.body.email
-            }
-        });
-
-        if ((mailEnDB != null) && (mailEnDB != req.session.userLogged.email)) {
-            return res.render('./users/editar-users', {
-                useraEditar: req.session.userLogged,
-                errors: {
-                    email: {
-                        msg: 'Éste email ya se encuentra registrado.'
-                    }
-                },
-                oldData: req.body
-            });
-        } else {
-            db.usuario.update({
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                dni: req.body.dni,
-                genero: req.body.genero,
-                email: req.body.email
-            },
-                { where: { id: req.session.userLogged.id } }).then(() => {
-                    res.redirect('/users/usuario')
-                })
-        }
     }
 }
 module.exports = controlador;

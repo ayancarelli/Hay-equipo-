@@ -32,7 +32,7 @@ router.get('/logout', authMiddleware, usersController.logout);
 
 // EDITAR Usuario
 router.get('/editar-users', authMiddleware, usersController.edit);
-router.put('/editar-users/', usersController.update);
+router.put('/editar-users/', validacionEditarUsuario, usersController.update);
 
 // --- EN VEREMOS ESTA VISTA ---
 router.get('/users', usersController.users);

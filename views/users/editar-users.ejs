@@ -13,7 +13,7 @@
         </header>
         <section class="registro-cuerpo" id="registro-fondo">
             <div class="registro-formulario">
-                <form action="/users/editar-users?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/users/editar-users?_method=PUT" method="POST">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
                         <input type="text"
@@ -21,17 +21,32 @@
                             name="nombre" id="nombre"
                             value="<%= locals.oldData ? oldData.nombre : useraEditar.nombre %>" placeholder="Nombre">
                     </div>
+                    <% if (locals.errors && errors.nombre) { %>
+                        <div class="text-danger">
+                            <%= errors.nombre.msg %>
+                        </div>
+                        <% } %>
                     <div class="mb-3">
                         <label for="apellido" class="form-label">Apellido:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
                             name='apellido' id="apellido" value="<%= useraEditar.apellido %>" placeholder="Apellido">
                     </div>
+                    <% if (locals.errors && errors.apellido) { %>
+                        <div class="text-danger">
+                            <%= errors.apellido.msg %>
+                        </div>
+                        <% } %>
                     <div class="mb-3">
                         <label for="dni" class="form-label">Dni:</label>
                         <input type="number" class="form-control" name='dni' id="dni" value="<%= useraEditar.dni %>"
                             min="1000000" max="99999999" placeholder="Dni">
-                    </div>                    
+                    </div>
+                    <% if (locals.errors && errors.dni) { %>
+                        <div class="text-danger">
+                            <%= errors.dni.msg %>
+                        </div>
+                        <% } %>
                     <div class="mb-3">
                         <label for="sexo" class="form-label">Género:</label>
                         <% if (useraEditar.genero=="mujer" ){ %>
@@ -48,7 +63,7 @@
                     </div>
                     <!-- <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
-                        <input type="file" class="form-control" id="formGroupExampleInput2" value="<%= useraEditar.fotoPerfil %>" placeholder="Foto de perfil">
+                        <input type="file" class="form-control" id="formGroupExampleInput2" value="" placeholder="Foto de perfil">
                     </div> -->
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
@@ -62,13 +77,18 @@
                             <%= errors.email.msg %>
                         </div>
                         <% } %>
-                            <div class="mb-3">
-                                <label for="contraseña" class="form-label">Contraseña:</label>
-                                <input type="password" class="form-control" name="password"
-                                    value="<%= useraEditar.password %>" minlength="6" id="contraseña"
-                                    placeholder="***********">
-                            </div>
-                            <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
+                    <div class="mb-3">
+                        <label for="contraseña" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" name="password"
+                            value="<%= useraEditar.password %>" minlength="6" id="contraseña"
+                            placeholder="***********">
+                    </div>
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>
+                        </div>
+                        <% } %>
+                    <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
                 </form>
             </div>
         </section>
