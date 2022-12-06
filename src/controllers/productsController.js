@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const moment = require('moment');
@@ -12,7 +13,7 @@ const controlador = {
         res.render('./products/canchas', { moment: moment });
     },
 
-    equipos: (req, res) => {        
+    equipos: (req, res) => {
         db.equipo.findAll().then((equipos) => {
             res.render('./products/equipos', { ps: equipos });
         });
@@ -27,37 +28,55 @@ const controlador = {
     },
 
     create: async (req, res) => {
-        let restricciones = await db.tipo_restriccion.findAll({include: [{ association: 'restriccion' }]})
-        
-        res.render('products/crear-equipo', { restricciones: restricciones});
+        let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] })
+
+        res.render('products/crear-equipo', { restricciones: restricciones });
     },
 
-    crear: (req, res) => {
-        let newId;
-        if (equiposJson.length > 0) {
-            newId = equiposJson[(equiposJson.length - 1)].id + 1;
-        } else {
-            newId = 1
+    crear: async (req, res) => {
+        let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] });
+        /* let usersTeams = await db.usuario_equipo.findAll({ include: [{ association: 'usuario' }, { association: 'equipo' }] });  */       
+        
+        const rdosValidaciones = validationResult(req);
+
+        if (rdosValidaciones.errors.length > 0) {
+            return res.render('./products/crear-equipo', {
+                restricciones: restricciones,
+                errors: rdosValidaciones.mapped(),
+                oldData: req.body
+            });
         }
-        let equipoNuevo = {
-            id: newId,
-            nombreEquipo: req.body.nombreEquipo.toUpperCase(),
-            imagen: req.file.filename,
-            jugador1: req.body.jugador1.toUpperCase(),
-            jugador2: req.body.jugador2.toUpperCase(),
-            jugador3: req.body.jugador3.toUpperCase(),
-            jugador4: req.body.jugador4.toUpperCase(),
-            jugador5: req.body.jugador5.toUpperCase(),
-            jugador6: req.body.jugador6.toUpperCase(),
-            restriccionEdad: req.body.restriccionEdad,
-            restriccionesSexo: req.body.restriccionesSexo
-        };
 
-        equiposJson.push(equipoNuevo);
+        await db.equipo.findOne({
+            where: {
+                nombre_equipo: req.body.nombreEquipo
+            }
+        }).then((teamToCreate) => {
 
-        fs.writeFileSync(equiposFilePath, JSON.stringify(equiposJson, null, " "));
-        console.log(equipoNuevo);
-        res.redirect('/products/equipos');
+            if (teamToCreate != null) {
+                console.log("Se encontró un equipo del mismo nombre");
+                return res.render('./products/crear-equipo', {
+                    restricciones: restricciones,
+                    errors: {
+                        nombreEquipo: {
+                            msg: 'Éste nombre de equipo ya se encuentra registrado.'
+                        }
+                    },
+                    oldData: req.body
+                });            
+            } else {
+                /* db.usuario_equipo.create({
+                    nombre: req.body.nombre.toUpperCase(),
+                    apellido: req.body.apellido.toUpperCase(),
+                    dni: req.body.dni,
+                    genero: req.body.genero,
+                    email: req.body.email,
+                    foto_perfil: req.file.filename,
+                    password: encriptar.hashSync(req.body.password, 10)
+                }) */
+                res.redirect('/users/login');
+            }
+        })        
     },
 
     edit: (req, res) => {

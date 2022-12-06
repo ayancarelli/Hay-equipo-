@@ -4,24 +4,37 @@ const { body } = require('express-validator');
 const validacionCrearEquipo = [
     body('nombreEquipo')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 4}).withMessage('Éste campo debe tener al menos 4 caracteres'),
-    body('jugador1')
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('nombre1')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 4}).withMessage('Éste campo debe tener al menos 4 caracteres'),
-    body('jugador2')
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('nombre2')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 4}).withMessage('Éste campo debe tener al menos 4 caracteres'),
-    body('jugador3')
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('nombre3')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 4}).withMessage('Éste campo debe tener al menos 4 caracteres'),
-    body('jugador4')
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('nombre4')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 4}).withMessage('Éste campo debe tener al menos 4 caracteres'),
-    body('jugador5')
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('nombre5')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 4}).withMessage('Éste campo debe tener al menos 4 caracteres'),
-    body('restriccionEdad').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
-    body('restriccionesSexo').notEmpty().withMessage('Éste campo no puede quedar vacío.'),
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('apellido1')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('apellido2')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('apellido3')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('apellido4')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
+    body('apellido5')
+        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
+        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),    
     body('imgEquipo').custom((value, { req }) => {
         let file = req.file;
         let extensionesValidas = ['.jpg', '.jpeg' , '.png'];

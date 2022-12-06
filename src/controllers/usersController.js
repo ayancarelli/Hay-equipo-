@@ -11,7 +11,7 @@ const controlador = {
     crear: (req, res) => {
         const rdosValidaciones = validationResult(req);
 
-        if (rdosValidaciones.errors.length > 0) {
+        if (rdosValidaciones.errors.length > 0) {            
             return res.render('./users/registro', {
                 errors: rdosValidaciones.mapped(),
                 oldData: req.body
@@ -63,7 +63,7 @@ const controlador = {
                 oldData: req.body
             });
         }
-        
+
         db.usuario.findOne({
             where: {
                 email: req.body.email
@@ -102,7 +102,7 @@ const controlador = {
         })
     },
 
-    perfilUsuario: (req, res) => {        
+    perfilUsuario: (req, res) => {
         res.render('./users/usuario', { user: req.session.userLogged });
     },
 
@@ -124,7 +124,7 @@ const controlador = {
 
     update: async (req, res) => {
         const rdosValidaciones = validationResult(req);
-        
+
         if (rdosValidaciones.errors.length > 0) {
             return res.render('./users/editar-users', {
                 useraEditar: req.session.userLogged,
@@ -140,7 +140,7 @@ const controlador = {
                 email: req.body.email
             }
         });
-        
+
         console.log(mailEnDB);
 
         if ((req.body.email != req.session.userLogged.email) && (mailEnDB != null)) {
@@ -161,7 +161,7 @@ const controlador = {
                 genero: req.body.genero,
                 email: req.body.email
             },
-                { where: { id: req.session.userLogged.id } }).then(() => {                    
+                { where: { id: req.session.userLogged.id } }).then(() => {
                     req.session.destroy();
                     return res.redirect('/users/login')
                 })
@@ -174,68 +174,18 @@ const controlador = {
         });
     },
 
-    check: (req, res) => {
-
-        /* db.equipo.findAll().then((rsv) => {
-          res.json(rsv)              
-        }); */
-
-        db.usuario_equipo.findAll({ include: [{ association: 'usuario' }, { association: 'equipo' }] }).then((resultados) => {
-
-            /* let listaResultados = [];
-
-            for (rdo of resultados) {
-
-                let listaRestriccion = [];
-
-                for (rcion of rdo.restriccion) {
-
-                    listaRestriccion.push(rcion);
-                    console.log(listaRestriccion);
-                }
-
-                let objAux = {
-                    equipo: rdo.nombre_equipo,
-                    restriccion: listaRestriccion
-                }
-
-                listaResultados.push(objAux);
-            }
-
-            console.log(listaResultados); */
-            res.send(resultados);
-        });
-        /* db.restriccion.findAll({ include: [{ association: 'tipo_restriccion' }] }).then((resultados) => {
-
-            console.log(resultados);
-            let listaResultados = [];
-
-            for (rdo of resultados) {
-                console.log(rdo);
-                let listaTipoRestricciones = [];
-
-                for (restricc of rdo.tipo_restriccion) {
-                    console.log(restricc);
-                    listaTipoRestricciones.push(restricc.descripcion);
-                }
-
-                console.log(listaTipoRestricciones);
-                let objAux = {
-                    restriccion: rdo.nombre,
-                    tipo_restriccion: listaTipoRestricciones
-                }
-
-                listaResultados.push(objAux);
-            }
-
-            
-            res.json(listaResultados);
-        }); */
+    check: async (req, res) => {
+        let usersTeams = await db.usuario.findAll({ include: [{ association: 'usuario_equipo' }] });
+        let teamUsers = await db.equipo.findAll({ include: [{ association: 'usuario_equipo' }] });
+        res.json(usersTeams.nombre)
+        console.log(teamUsers);     
 
     },
 
     check2: (req, res) => {
-        db.equipo_restriccion.findAll().then((resultado) => {
+        db.equipo.findOne({
+            order: [['id', 'DESC']],
+        }).then((resultado) => {
             res.send(resultado);
         });
     }
