@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 
 
 // Controller
@@ -35,7 +34,7 @@ router.get('/editar-users', authMiddleware, usersController.edit);
 router.put('/editar-users/', validacionEditarUsuario, usersController.update);
 
 // --- EN VEREMOS ESTA VISTA ---
-router.get('/users', guestMiddleware, usersController.users);
+router.get('/users', authMiddleware, usersController.users);
 router.get('/check', usersController.check);
 router.get('/check2', usersController.check2);
 
