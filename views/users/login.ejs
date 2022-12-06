@@ -1,63 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body>
-    <header> 
-        <div class="container-fluid">
-            <div>
-                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
+
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div>
+                    <a href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
+                </div>
+                <%- include('../partials/navbar') %>
             </div>
-            <%- include('../partials/navbar') %>
-        </div>    
-    </header>
-    <section class="registro-cuerpo" id="login-fondo">
-        
-        <div class="registro-formulario">
-            <form action="/users/login" method="POST">                
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email:</label>
-                    <input 
-                    type="email" 
-                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
-                    id="exampleInputEmail1" 
-                    name="email" 
-                    value="<%= locals.oldData ? oldData.email : null %>" 
-                    placeholder="hayequipo@web.com">
-                    <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger">
-                            <%= errors.email.msg %>    
-                        </div>                     
-                    <% } %>
-                    <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
-                    <input 
-                    type="password" 
-                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" 
-                    name="password" 
-                    id="exampleInputPassword1"
-                    value="<%= locals.oldData ? oldData.password : null %>"
-                    placeholder="***********">
-                    <% if (locals.errors && errors.password) { %>
-                        <div class="text-danger">
-                            <%= errors.password.msg %>    
-                        </div>                     
-                    <% } %>
-                </div>
-                <div class="form-group form-check">
-                    <label class="form-check-label">
-                        <input 
-                        type="checkbox" 
-                        class="form-check-input" 
-                        name="recordar">Recordar mi usuario
-                    </label>
-                </div>
-                <br>              
-                <button type="submit" class="btn btn-primary">INGRESAR</button>
-            </form>            
-        </div> 
-    </section>
-    <%- include('../partials/footer') %>    
-</body>
+        </header>
+        <section class="registro-cuerpo" id="login-fondo">
+
+            <div class="registro-formulario">
+                <form action="/users/login" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email:</label>
+                        <input type="email"
+                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                            id="exampleInputEmail1" name="email" value="<%= locals.oldData ? oldData.email : null %>"
+                            placeholder="hayequipo@web.com">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger">
+                                <%= errors.email.msg %>
+                            </div>
+                            <% } %>
+                                <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
+                        <input type="password"
+                            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                            name="password" id="exampleInputPassword1"
+                            value="<%= locals.oldData ? oldData.password : null %>" placeholder="***********">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="recordar">Recordar mi usuario
+                        </label>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">INGRESAR</button>
+                </form>
+            </div>
+        </section>
+        <%- include('../partials/footer') %>
+    </body>
+
 </html>

@@ -58,6 +58,15 @@ const controlador = {
     },
 
     loginProcess: (req, res) => {
+        const rdosValidaciones = validationResult(req);
+
+        if (rdosValidaciones.errors.length > 0) {
+            return res.render('./users/login', {
+                errors: rdosValidaciones.mapped(),
+                oldData: req.body
+            });
+        }
+        
         db.usuario.findOne({
             where: {
                 email: req.body.email
