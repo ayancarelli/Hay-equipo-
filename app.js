@@ -1,5 +1,4 @@
-const express = require('express'); 
-// const session = require('cookie-session');
+const express = require('express');
 const session = require('express-session');
 const path = require('path');
 const methodOverride = require('method-override');

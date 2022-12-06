@@ -56,7 +56,7 @@
                             <option value=""> ... </option>
                             <% let generos=['Hombre', 'Mujer' ]; %>
                                 <% for( let genero of generos ) { %>
-                                    <option value="<%= genero %>" <%=locals.oldData && (genero==oldData.genero)
+                                    <option value="<%= (genero == 'Hombre') ? true : false %>" <%=locals.oldData && (genero==oldData.genero)
                                         ? 'selected' : null %>
                                         >
                                         <%= genero %>

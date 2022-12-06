@@ -49,15 +49,15 @@
                         <% } %>
                     <div class="mb-3">
                         <label for="sexo" class="form-label">Género:</label>
-                        <% if (useraEditar.genero=="mujer" ){ %>
+                        <% if (useraEditar.genero==false ){ %>
                             <select name="genero" id="sexo">
-                                <option value="hombre">Hombre</option>
-                                <option value="mujer" selected>Mujer</option>
+                                <option value="true">Hombre</option>
+                                <option value="false" selected>Mujer</option>
                             </select>
                             <% } else {%>
                                 <select name="genero" id="sexo">
-                                    <option value="hombre" selected>Hombre</option>
-                                    <option value="mujer">Mujer</option>
+                                    <option value="true" selected>Hombre</option>
+                                    <option value="false">Mujer</option>
                                 </select>
                                 <% } %>
                     </div>

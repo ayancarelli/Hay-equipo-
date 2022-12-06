@@ -1,8 +1,5 @@
 const encriptar = require('bcryptjs');
 const { validationResult } = require('express-validator');
-
-const User = require('../models/User');
-
 const db = require('../database/models');
 
 
@@ -39,8 +36,8 @@ const controlador = {
                 });
             } else {
                 db.usuario.create({
-                    nombre: req.body.nombre,
-                    apellido: req.body.apellido,
+                    nombre: req.body.nombre.toUpperCase(),
+                    apellido: req.body.apellido.toUpperCase(),
                     dni: req.body.dni,
                     genero: req.body.genero,
                     email: req.body.email,
@@ -105,7 +102,7 @@ const controlador = {
         })
     },
 
-    perfilUsuario: (req, res) => {
+    perfilUsuario: (req, res) => {        
         res.render('./users/usuario', { user: req.session.userLogged });
     },
 
@@ -158,8 +155,8 @@ const controlador = {
             });
         } else {
             db.usuario.update({
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
+                nombre: req.body.nombre.toUpperCase(),
+                apellido: req.body.apellido.toUpperCase(),
                 dni: req.body.dni,
                 genero: req.body.genero,
                 email: req.body.email
@@ -173,7 +170,6 @@ const controlador = {
 
     users: (req, res) => {
         db.usuario.findAll().then((usuarios) => {
-
             res.render('./users/users', { users: usuarios });
         });
     },

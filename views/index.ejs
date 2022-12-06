@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head') %>
-<body>
-    <header> 
-        <div class="container-fluid">
+
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div>
+                    <img class="logo" src="/img/logo.png" alt="logo">
+                </div>
+                <%- include('./partials/navbar') %>
+            </div>
+        </header>
+        <section class="cuerpo-home" id="cuerpo-inicio">
+            <div class="banner-home">
+                <h2>
+                    EXPLORÁ
+                </h2>
+                <h3>
+                    LA NUEVA MANERA DE JUGAR
+                </h3>
+                <button type="submit"><a href="./products/equipos">VER EQUIPOS ></a></button>
+            </div>
+        </section>
+        <section class="cartas-equipos" id="equipos-home">
             <div>
-                <img class="logo"src="/img/logo.png" alt="logo">
-            </div>            
-            <%- include('./partials/navbar') %>
-        </div>    
-    </header>
-    <section class="cuerpo-home" id="cuerpo-inicio">
-        <div class="banner-home">
-            <h2>
-                EXPLORÁ
-            </h2>
-            <h3>
-                LA NUEVA MANERA DE JUGAR
-            </h3>
-            <button type="submit"><a href="./products/equipos">VER EQUIPOS ></a></button>
-        </div>
-    </section>
-    <section class="cartas-equipos" id="equipos-home">
-        <div>
-            <h4 class="esperando-jugar">
-                Esperando para jugar...
-            </h4>
-        </div>
-        <% let cartasInicio = ps.slice(0,4); 
-        for(let objeto of cartasInicio) { %>    
-            <div class="card" style="width: 18rem;">
-              <a href="/products/equipo/<%= objeto.id %>">
-                  <span class="marcador"> 100% Asistencia <i class="fa-solid fa-handshake-angle"></i></span>
-                  <img src="/img/img-equipos/<%= objeto.imgEquipo %>" class="card-img-top" alt="Foto Equipo">
-                  <div class="card-body">
-                    <h5 class="card-title"><%= objeto.nombreEquipo %></h5>
-                    <p class="card-text">
-                      <ul>
-                          <li><i class="fa-solid fa-medal"></i> Fair Play</li>
-                          <li><i class="fa-solid fa-shield"></i> Arquero imbatible</li>
-                          <li><i class="fa-solid fa-person-running"></i> Todos corredores</li>
-                      </ul>
-                    </p>                    
-                    <a href="/products/equipo/<%= objeto.id %>" class="btn btn-primary">Más info ></a>
-                  </div>
-              </div>
-              <% } %> 
-       
-    </section> 
-    <%- include('./partials/footer') %>
-</body>
+                <h4 class="esperando-jugar">
+                    Esperando para jugar...
+                </h4>
+            </div>
+            <% let cartasInicio=ps.slice(0,4); for(let objeto of cartasInicio) { %>
+                <div class="card" style="width: 18rem;">
+                    <a href="/products/equipo/<%= objeto.id %>">
+                        <span class="marcador"> 100% Asistencia <i class="fa-solid fa-handshake-angle"></i></span>
+                        <img src="/img/img-equipos/<%= objeto.img_equipo %>" class="card-img-top" alt="Foto Equipo">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= objeto.nombre_equipo %>
+                            </h5>
+                            <p class="card-text">
+                            <ul>
+                                <li><i class="fa-solid fa-medal"></i> Fair Play</li>
+                                <li><i class="fa-solid fa-shield"></i> Arquero imbatible</li>
+                                <li><i class="fa-solid fa-person-running"></i> Todos corredores</li>
+                            </ul>
+                            </p>
+                            <a href="/products/equipo/<%= objeto.id %>" class="btn btn-primary">Más info ></a>
+                        </div>
+                </div>
+                <% } %>
+
+        </section>
+        <%- include('./partials/footer') %>
+    </body>
+
 </html>

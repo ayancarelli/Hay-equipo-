@@ -1,13 +1,11 @@
-const fs = require('fs');
-const path = require('path');
-
-const equiposFilePath = path.join(__dirname, '../data/equiposDataBase.json');
-const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
+const db = require('../database/models');
 
 const controlador = {
-    index: (req, res) => {        
-        res.render('index', {ps: equiposJson});
+    index: (req, res) => {
+        db.equipo.findAll().then((equipos) => {
+            res.render('index', { ps: equipos });
+        });
     }
-}       
+}
 
 module.exports = controlador;
