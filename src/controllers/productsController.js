@@ -35,10 +35,12 @@ const controlador = {
 
     crear: async (req, res) => {
         let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] });
-        /* let usersTeams = await db.usuario_equipo.findAll({ include: [{ association: 'usuario' }, { association: 'equipo' }] });  */       
+        /* let usersTeams = await db.usuario_equipo.findAll({ include: [{ association: 'usuario' }, 
+                                                                     { association: 'equipo' }] });
+        let team = await db.equipo.findAll({ include: [{ association: "usuario_equipo"}] }); */
         
         const rdosValidaciones = validationResult(req);
-
+  
         if (rdosValidaciones.errors.length > 0) {
             return res.render('./products/crear-equipo', {
                 restricciones: restricciones,
@@ -51,8 +53,8 @@ const controlador = {
             where: {
                 nombre_equipo: req.body.nombreEquipo
             }
-        }).then((teamToCreate) => {
-
+        }).then(async (teamToCreate) => {
+            console.log(teamToCreate);
             if (teamToCreate != null) {
                 console.log("Se encontró un equipo del mismo nombre");
                 return res.render('./products/crear-equipo', {
@@ -65,18 +67,59 @@ const controlador = {
                     oldData: req.body
                 });            
             } else {
-                /* db.usuario_equipo.create({
-                    nombre: req.body.nombre.toUpperCase(),
-                    apellido: req.body.apellido.toUpperCase(),
-                    dni: req.body.dni,
-                    genero: req.body.genero,
-                    email: req.body.email,
-                    foto_perfil: req.file.filename,
-                    password: encriptar.hashSync(req.body.password, 10)
-                }) */
-                res.redirect('/users/login');
+
+                let a = await db.equipo.create(
+                    {
+                        nombre_equipo: req.body.nombreEquipo,
+                        img_equipo: req.file.filename
+                    }
+                )
+                    
+                db.usuario_equipo.bulkCreate([
+                    {
+                        nombre_jugador: req.body.nombre1,
+                        apellido_jugador: req.body.apellido1,
+                        equipo_id: a.id,
+                        usuario_id: 1,
+                    },
+                    {
+                        nombre_jugador: req.body.nombre2,
+                        apellido_jugador: req.body.apellido2,
+                        equipo_id: a.id,
+                        usuario_id: 1,
+                    },
+                    {
+                        nombre_jugador: req.body.nombre3,
+                        apellido_jugador: req.body.apellido3,
+                        equipo_id: a.id,
+                        usuario_id: 1,
+                    },
+                    {
+                        nombre_jugador: req.body.nombre4,
+                        apellido_jugador: req.body.apellido4,
+                        equipo_id: a.id,
+                        usuario_id: 1,
+                    },
+                    {
+                        nombre_jugador: req.body.nombre5,
+                        apellido_jugador: req.body.apellido5,
+                        equipo_id: a.id,
+                        usuario_id: 1,
+                    }
+                ])
+
+                if(req.body.nombre6 && req.body.apellido6){
+                    db.usuario_equipo.create({
+                        nombre_jugador: req.body.nombre6,
+                        apellido_jugador: req.body.apellido6,
+                        equipo_id: a.id,
+                        usuario_id: 1
+                    })
+                }
+                    
+                res.redirect('/users/login'); 
             }
-        })        
+        })
     },
 
     edit: (req, res) => {

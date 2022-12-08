@@ -75,7 +75,7 @@ const controlador = {
                     delete userToLogin.password;
                     req.session.userLogged = userToLogin;
                     if (req.body.recordar) {
-                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 })
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 10 })
                     }
                     return res.redirect('/users/usuario');
                 }
@@ -175,11 +175,11 @@ const controlador = {
     },
 
     check: async (req, res) => {
-        let usersTeams = await db.usuario.findAll({ include: [{ association: 'usuario_equipo' }] });
+        /* let usersTeams = await db.usuario.findAll({ include: [{ association: 'usuario_equipo' }] });
         let teamUsers = await db.equipo.findAll({ include: [{ association: 'usuario_equipo' }] });
         res.json(usersTeams.nombre)
-        console.log(teamUsers);     
-
+        console.log(teamUsers);  */    
+        
     },
 
     check2: (req, res) => {
