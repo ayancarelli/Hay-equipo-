@@ -75,38 +75,49 @@ const controlador = {
                     }
                 )
                     
-                db.usuario_equipo.bulkCreate([
-                    {
-                        nombre_jugador: req.body.nombre1,
-                        apellido_jugador: req.body.apellido1,
-                        equipo_id: a.id,
-                        usuario_id: 1,
-                    },
-                    {
-                        nombre_jugador: req.body.nombre2,
-                        apellido_jugador: req.body.apellido2,
-                        equipo_id: a.id,
-                        usuario_id: 1,
-                    },
-                    {
-                        nombre_jugador: req.body.nombre3,
-                        apellido_jugador: req.body.apellido3,
-                        equipo_id: a.id,
-                        usuario_id: 1,
-                    },
-                    {
-                        nombre_jugador: req.body.nombre4,
-                        apellido_jugador: req.body.apellido4,
-                        equipo_id: a.id,
-                        usuario_id: 1,
-                    },
-                    {
-                        nombre_jugador: req.body.nombre5,
-                        apellido_jugador: req.body.apellido5,
-                        equipo_id: a.id,
-                        usuario_id: 1,
+                await db.usuario.findOne({
+                    where:{
+                        email: req.cookies.userEmail
                     }
-                ])
+                }).then((usuarioLogged)=>{
+                    let p = usuarioLogged.id;
+                    return p;
+                }).then((letra)=>{
+                    db.usuario_equipo.bulkCreate([
+                        {
+                            nombre_jugador: req.body.nombre1,
+                            apellido_jugador: req.body.apellido1,
+                            equipo_id: a.id,
+                            usuario_id: letra,
+                        },
+                        {
+                            nombre_jugador: req.body.nombre2,
+                            apellido_jugador: req.body.apellido2,
+                            equipo_id: a.id,
+                            usuario_id: letra,
+                        },
+                        {
+                            nombre_jugador: req.body.nombre3,
+                            apellido_jugador: req.body.apellido3,
+                            equipo_id: a.id,
+                            usuario_id: letra,
+                        },
+                        {
+                            nombre_jugador: req.body.nombre4,
+                            apellido_jugador: req.body.apellido4,
+                            equipo_id: a.id,
+                            usuario_id: letra,
+                        },
+                        {
+                            nombre_jugador: req.body.nombre5,
+                            apellido_jugador: req.body.apellido5,
+                            equipo_id: a.id,
+                            usuario_id: letra,
+                        }
+                    ])
+                })
+
+                
 
                 if(req.body.nombre6 && req.body.apellido6){
                     db.usuario_equipo.create({
