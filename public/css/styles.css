@@ -238,7 +238,8 @@ footer .container-fluid p{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #5E658C;
+   /*  background-color: #5E658C; */
+    background: linear-gradient(#5E658C, #25306A, #5E658C);
     text-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -271,7 +272,7 @@ footer .container-fluid p{
     box-shadow: 0px 0px 3px #25306A;
 }
 .container-canchas{
-    background-color: #C7CAD9;
+    background: linear-gradient(to top, #4d5eb6, 40%, #C7CAD9);
     font-family: "Lato";
     border-radius: 15px;
     width: 330px;
