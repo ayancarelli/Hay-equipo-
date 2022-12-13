@@ -19,30 +19,13 @@
                 <div class="mb-3">
                     <img src="/img/img-equipos/<%= equipo.img_equipo %>" class="card-img-top" alt="Foto Equipo">
                 </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 1: </label>
-                    <label for="formGroupExampleInput2" class="form-label"><%=equipo.jugador1 %></label>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 2: </label>
-                    <label for="formGroupExampleInput2" class="form-label"><%=equipo.jugador2 %></label>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 3: </label>
-                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador3 %></label>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 4: </label>
-                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador4 %></label>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 5: </label>
-                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador5 %></label>
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 6: </label>
-                    <label for="formGroupExampleInput2" class="form-label"><%= equipo.jugador6 %></label>
-                </div>
+                <% for( let i = 0; i < ju.length; i++ ) { %>
+                
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Jugador <%= (i+1) %>: </label>
+                        <label for="formGroupExampleInput2" class="form-label"><%=ju[i].nombre_jugador +" "+ ju[i].apellido_jugador  %></label>
+                    </div>
+                <% } %>
                 <div class="mb-3">
                     <label for="restriccionesSexo" name="restriccionesSexo" class="form-label">Juega Contra: <%= equipo.restriccionesSexo%> </label><br>                 
                 </div>

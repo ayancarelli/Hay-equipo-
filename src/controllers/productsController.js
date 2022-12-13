@@ -117,8 +117,6 @@ const controlador = {
                     ])
                 })
 
-                
-
                 if(req.body.nombre6 && req.body.apellido6){
                     db.usuario_equipo.create({
                         nombre_jugador: req.body.nombre6,
@@ -127,7 +125,7 @@ const controlador = {
                         usuario_id: 1
                     })
                 }
-                    
+              
                 res.redirect('/users/login'); 
             }
         })
@@ -143,13 +141,23 @@ const controlador = {
         })
     },
 
-    equipo: (req, res) => {
+    equipo: async(req, res) => {
+        
+        let ju = await db.usuario_equipo.findAll(
+            {
+                where: {
+                    Equipo_id: req.params.id
+                }
+            }
+        )
+
         db.equipo.findOne({
             where: {
                 id: req.params.id
             }
         }).then((objEquipo) => {
-            res.render('./products/equipo', { equipo: objEquipo })
+            console.log(ju);
+            res.render('./products/equipo', { equipo: objEquipo, ju: ju })
         })
     },
 

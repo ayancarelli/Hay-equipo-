@@ -178,8 +178,8 @@ const controlador = {
         /* let usersTeams = await db.usuario.findAll({ include: [{ association: 'usuario_equipo' }] });
         let teamUsers = await db.equipo.findAll({ include: [{ association: 'usuario_equipo' }] });
         res.json(usersTeams.nombre)
-        console.log(teamUsers);  */    
-        
+        console.log(teamUsers);  */ 
+       
     },
 
     check2: (req, res) => {
