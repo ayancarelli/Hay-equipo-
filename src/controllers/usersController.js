@@ -175,10 +175,18 @@ const controlador = {
     },
 
     check: async (req, res) => {
-        /* let usersTeams = await db.usuario.findAll({ include: [{ association: 'usuario_equipo' }] });
-        let teamUsers = await db.equipo.findAll({ include: [{ association: 'usuario_equipo' }] });
-        res.json(usersTeams.nombre)
-        console.log(teamUsers);  */ 
+        
+        let restr = await db.equipo.findAll(
+            {
+                
+                where: {
+                    id: 27
+                },
+                include: [{ association: 'restriccion' }]
+                
+            }
+        )
+        res.json(restr[0].restriccion[0].nombre)
        
     },
 
@@ -191,3 +199,35 @@ const controlador = {
     }
 }
 module.exports = controlador;
+
+
+/* [
+    {
+        "id":24,
+        "nombre_equipo":"Instituto",
+        "img_equipo":"img-equipo-1670700932391.jpg",
+        "creacion":"2022-12-10T19:35:33.000Z",
+        "fecha_baja":null,
+        "restriccion":[
+                        {
+                            "id":6,
+                            "nombre": "Mayores de 30 años",
+                            "tipo_restriccion_id":2,
+                            "equipo_restriccion":{  
+                                                    "id":1,
+                                                    "equipo_id":24,
+                                                    "restriccion_id":6
+                                                }
+                        },{
+                            "id":2,
+                            "nombre":"Solo Hombres",
+                            "tipo_restriccion_id":1,
+                            "equipo_restriccion":{  
+                                                    "id":2,
+                                                    "equipo_id":24,
+                                                    "restriccion_id":2
+                                                }
+                        }
+        ]
+    }
+] */

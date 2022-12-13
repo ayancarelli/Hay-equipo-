@@ -151,13 +151,24 @@ const controlador = {
             }
         )
 
+        let restr = await db.equipo.findAll(
+            {
+                
+                where: {
+                    id: req.params.id
+                },
+                include: [{ association: 'restriccion' }]
+                
+            }
+        )
+
         db.equipo.findOne({
             where: {
                 id: req.params.id
             }
         }).then((objEquipo) => {
             console.log(ju);
-            res.render('./products/equipo', { equipo: objEquipo, ju: ju })
+            res.render('./products/equipo', { equipo: objEquipo, ju: ju, restr: restr })
         })
     },
 
