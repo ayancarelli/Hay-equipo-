@@ -153,12 +153,10 @@ const controlador = {
 
         let restr = await db.equipo.findAll(
             {
-                
                 where: {
                     id: req.params.id
                 },
                 include: [{ association: 'restriccion' }]
-                
             }
         )
 
@@ -167,7 +165,6 @@ const controlador = {
                 id: req.params.id
             }
         }).then((objEquipo) => {
-            console.log(ju);
             res.render('./products/equipo', { equipo: objEquipo, ju: ju, restr: restr })
         })
     },
@@ -197,20 +194,30 @@ const controlador = {
         res.redirect('/products/equipos');
     },
 
-    destroy: (req, res) => {
+    destroy: async (req, res) => {
 
-        let idEquipo = req.params.id;
+        db.usuario_equipo.destroy({
+            where: {
+                Equipo_id: req.params.id
+            }
+        }).then(()=>{
+            db.equipo_restriccion.destroy({
+                where: {
+                    equipo_id: req.params.id
+                }
+            })
+        }).then(()=>{
+            db.equipo.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+        }).then(()=>{
+            res.redirect('/products/equipos');
+        })
 
-        let arrEquipos = equiposJson.filter(function (elemento) {
-            return elemento.id != idEquipo;
-        });
-
-        fs.writeFileSync(
-            path.join(__dirname, '../data/equiposDataBase.json'),
-            JSON.stringify(arrEquipos, null, " "));
-
-        res.redirect('/');
     },
+
     misEquipos: async (req,res)=> {
         // PRIMEROS PASOS DE ESTA VISTA
         db.equipo.findAll({

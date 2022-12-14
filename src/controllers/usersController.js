@@ -155,6 +155,7 @@ const controlador = {
             });
         } else {
             db.usuario.update({
+                //foto_perfil: req.file.filename,
                 nombre: req.body.nombre.toUpperCase(),
                 apellido: req.body.apellido.toUpperCase(),
                 dni: req.body.dni,

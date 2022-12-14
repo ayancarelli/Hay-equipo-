@@ -31,7 +31,7 @@ router.get('/logout', authMiddleware, usersController.logout);
 
 // EDITAR Usuario
 router.get('/editar-users', authMiddleware, usersController.edit);
-router.put('/editar-users/', validacionEditarUsuario, usersController.update);
+router.put('/editar-users/', upload.single('fotoPerfil'),validacionEditarUsuario, usersController.update);
 
 // --- EN VEREMOS ESTA VISTA ---
 router.get('/users', authMiddleware, usersController.users);
