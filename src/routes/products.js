@@ -33,5 +33,8 @@ router.get ('/canchas', productsController.canchas);
 router.get ('/equipos', productsController.equipos);
 router.get ('/carrito', productsController.carrito);
 router.get ('/carrito2', productsController.carrito2);
+
+// MUESTRA MIS EQUIPOS
+router.get ('/mis-equipos', productsController.misEquipos);
   
 module.exports = router;

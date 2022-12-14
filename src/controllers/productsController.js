@@ -210,6 +210,16 @@ const controlador = {
             JSON.stringify(arrEquipos, null, " "));
 
         res.redirect('/');
+    },
+    misEquipos: async (req,res)=> {
+        // PRIMEROS PASOS DE ESTA VISTA
+        db.equipo.findAll({
+            where:{
+                id: 24
+            }
+        }).then((miEquipo)=>{
+            res.render("./products/mis-equipos", {miEquipo})
+        })
     }
 }
 
