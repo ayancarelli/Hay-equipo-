@@ -4,6 +4,7 @@ const path = require('path');
 const moment = require('moment');
 
 const db = require('../database/models');
+const { getMaxListeners } = require('process');
 
 const equiposFilePath = path.join(__dirname, '../data/equiposDataBase.json');
 const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
@@ -35,10 +36,7 @@ const controlador = {
 
     crear: async (req, res) => {
         let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] });
-        /* let usersTeams = await db.usuario_equipo.findAll({ include: [{ association: 'usuario' }, 
-                                                                     { association: 'equipo' }] });
-        let team = await db.equipo.findAll({ include: [{ association: "usuario_equipo"}] }); */
-        
+
         const rdosValidaciones = validationResult(req);
   
         if (rdosValidaciones.errors.length > 0) {
@@ -115,18 +113,28 @@ const controlador = {
                             usuario_id: letra,
                         }
                     ])
+                    if(req.body.nombre6 && req.body.apellido6){
+                        db.usuario_equipo.create({
+                            nombre_jugador: req.body.nombre6,
+                            apellido_jugador: req.body.apellido6,
+                            equipo_id: a.id,
+                            usuario_id: letra
+                        })
+                    }
+                    db.equipo_restriccion.bulkCreate([
+                        {
+                            equipo_id: a.id,
+                            restriccion_id: req.body.restriccion1
+                        },
+                        {
+                            equipo_id: a.id,
+                            restriccion_id: req.body.restriccion2
+                        }
+                    ])
                 })
 
-                if(req.body.nombre6 && req.body.apellido6){
-                    db.usuario_equipo.create({
-                        nombre_jugador: req.body.nombre6,
-                        apellido_jugador: req.body.apellido6,
-                        equipo_id: a.id,
-                        usuario_id: 1
-                    })
-                }
               
-                res.redirect('/users/login'); 
+                res.redirect('/'); 
             }
         })
     },
@@ -169,11 +177,34 @@ const controlador = {
         })
     },
 
-    update: (req, res) => {
+    update: async (req, res) => {
 
-        let idEquipo = req.params.id;
+        /* let idEquipo = req.params.id;
+        let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] });
 
-        for (let e of equiposJson) {
+        const rdosValidaciones = validationResult(req);
+        res.render('./products/editar-equipo', {
+            restricciones: restricciones,
+            errors: rdosValidaciones.mapped(),
+            oldData: req.body
+        })
+        if (rdosValidaciones.errors.length > 0) {
+            return res.render('./products/editar-equipo', {
+                restricciones: restricciones,
+                errors: rdosValidaciones.mapped(),
+                oldData: req.body
+            });
+        }
+
+        await db.equipo.findOne({
+            where: {
+                id: idEquipo
+            }
+        }).then((resultado)=>{
+            console.log(resultado);
+        }) 
+
+         for (let e of equiposJson) {
             if (idEquipo == e.id) {
 
                 e.nombreEquipo = req.body.nombreEquipo.toUpperCase();
@@ -191,7 +222,7 @@ const controlador = {
         }
         fs.writeFileSync(equiposFilePath, JSON.stringify(equiposJson, null, " "));
 
-        res.redirect('/products/equipos');
+        res.redirect('/products/equipos'); */
     },
 
     destroy: async (req, res) => {
@@ -219,15 +250,43 @@ const controlador = {
     },
 
     misEquipos: async (req,res)=> {
-        // PRIMEROS PASOS DE ESTA VISTA
-        db.equipo.findAll({
-            where:{
-                id: 24
+        
+        await db.usuario.findOne({
+            where:{ 
+                email: req.cookies.userEmail
             }
-        }).then((miEquipo)=>{
-            res.render("./products/mis-equipos", {miEquipo})
-        })
-    }
-}
+        }).then(async (usuarioLogged)=>{
+            
+            db.usuario_equipo.findAll({
+                where:{
+                    Usuario_id: usuarioLogged.id
+                }
 
+            }).then((p)=>{
+                
+                var teams = [];
+                var idTeams = [];
+                for(let i = 0; i<p.length; i++){
+
+                    teams.push(p[i].equipo_id);
+                    
+                }
+                for(let j = 0; j<teams.length; j++){
+                    if(!idTeams.includes(teams[j])){
+                        idTeams.push(teams[j]);
+                    }
+                }
+                return idTeams;
+                
+            }).then(async (idsEquipos)=>{
+                var miEquipo = await db.equipo.findAll()
+                 res.render('./products/mis-equipos', {miEquipo, idsEquipos});
+            })
+            
+        })
+
+    }
+
+}
+    
 module.exports = controlador;

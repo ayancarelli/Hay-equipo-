@@ -15,7 +15,7 @@
             <form action="/products/editar-equipo/<%=equipo.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
-                    <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=equipo.nombreEquipo %>">
+                    <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=oldData.nombre_equipo %>">
                 </div>
                 <div class="mb-3">
                     <label for="fotoEquipo" class="form-label">Foto del Equipo:</label>

@@ -21,24 +21,32 @@
         
     </section>
     <section class="cartas-equipos" id="equipos-section">
-      <% for(let objeto of miEquipo) { %>    
-      <div class="card" style="width: 18rem;">
-        <a href="/products/equipo/<%= objeto.id %>">
-            <span class="marcador"> 100% Asistencia <i class="fa-solid fa-handshake-angle"></i></span>
-            <img src="/img/img-equipos/<%= objeto.img_equipo %>" class="card-img-top" alt="Foto Equipo">
-            <div class="card-body">
-              <h5 class="card-title"><%= objeto.nombre_equipo %></h5>
-              <p class="card-text">
-                <ul>
-                    <li><i class="fa-solid fa-medal"></i> Fair Play</li>
-                    <li><i class="fa-solid fa-shield"></i> Arquero imbatible</li>
-                    <li><i class="fa-solid fa-person-running"></i> Todos corredores</li>
-                </ul>
-              </p>
-              
-              <a href="/products/equipo/<%= objeto.id %>" class="btn btn-primary">Más info ></a>
-            </div>
-        </div>
+      <% for(let objeto of miEquipo) { %> 
+        <% for(let i of idsEquipos){ %>
+            <% if(objeto.id == i) { %>
+                <div class="card" style="width: 18rem;">
+                    <a href="/products/equipo/<%= objeto.id %>">
+                    <span class="marcador"> 100% Asistencia <i class="fa-solid fa-handshake-angle"></i></span>
+                    <img src="/img/img-equipos/<%= objeto.img_equipo %>" class="card-img-top" alt="Foto Equipo">
+                    <div class="card-body">
+                    <h5 class="card-title"><%= objeto.nombre_equipo %></h5>
+                    <p class="card-text">
+                        <ul>
+                            <li><i class="fa-solid fa-medal"></i> Fair Play</li>
+                            <li><i class="fa-solid fa-shield"></i> Arquero imbatible</li>
+                            <li><i class="fa-solid fa-person-running"></i> Todos corredores</li>
+                        </ul>
+                    </p>
+                    
+                    <a href="/products/equipo/<%= objeto.id %>" class="btn btn-primary">Más info ></a>
+                    </div>
+                </div>
+            <% } %>
+        <% } %> 
+        
+         
+
+            
         <% } %> 
     </section>
     <%- include('../partials/footer') %>

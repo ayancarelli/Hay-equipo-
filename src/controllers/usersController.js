@@ -75,7 +75,7 @@ const controlador = {
                     delete userToLogin.password;
                     req.session.userLogged = userToLogin;
                     if (req.body.recordar) {
-                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 10 })
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 1000 })
                     }
                     return res.redirect('/users/usuario');
                 }
