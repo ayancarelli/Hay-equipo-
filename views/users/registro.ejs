@@ -13,7 +13,7 @@
         </header>
         <section class="registro-cuerpo" id="registro-fondo">
             <div class="registro-formulario">
-                <form action="/users/registro" method="POST" enctype="multipart/form-data">
+                <form action="/users/registro" method="POST" enctype="multipart/form-data" id="formularioRegistro">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
                         <input type="text"
@@ -109,10 +109,12 @@
                         <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
                     </div>
                     <button type="submit" class="btn btn-primary">ENVIAR</button>
+                    <p class="warnings" id="warnings"></p>
                 </form>
             </div>
         </section>
         <%- include('../partials/footer') %>
+        <script src="/frontValidations/validacionRegistro.js"></script>
     </body>
 
 </html>

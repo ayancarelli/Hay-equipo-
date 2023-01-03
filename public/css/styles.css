@@ -177,6 +177,14 @@ footer .container-fluid p{
 /* FIN HOME STYLE */
 
 /* STYLE DEL REGISTRO Y LOGIN */
+.registro-formulario .warnings{
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    color: #B06AB3;
+    padding-top: 20px;
+}
+
 .registro-cuerpo{
     display: flex;
     justify-content: center;
