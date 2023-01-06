@@ -17,9 +17,11 @@
                 <form action="/users/login" method="POST" id="form">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email:</label>
-                        <input type="email"
+                        <input
                             class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                            id="exampleInputEmail1" name="email" value="<%= locals.oldData ? oldData.email : null %>"
+                            id="exampleInputEmail1" 
+                            name="email" 
+                            value="<%= locals.oldData ? oldData.email : null %>"
                             placeholder="hayequipo@web.com">
                         <% if (locals.errors && errors.email) { %>
                             <div class="text-danger">

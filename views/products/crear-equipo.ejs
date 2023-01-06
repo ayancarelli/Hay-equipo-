@@ -13,12 +13,13 @@
         </header>
         <section class="registro-cuerpo" id="registro-fondo">
             <div class="registro-formulario">
-                <form action="/products/crear-equipo" method="POST" enctype="multipart/form-data">
+                <form action="/products/crear-equipo" method="POST" enctype="multipart/form-data" id="form2">
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombreEquipo ? 'is-invalid' : null %>"
-                            name="nombreEquipo" id="formGroupExampleInput"
+                            name="nombreEquipo" 
+                            id="formGroupExampleInput" 
                             value="<%= locals.oldData ? oldData.nombreEquipo : null %>" placeholder="Equipo A">
                         <% if (locals.errors && errors.nombreEquipo) { %>
                             <div class="text-danger">
@@ -36,10 +37,10 @@
                             <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Jugador 1:</label>
+                        <label for="nombre1" class="form-label">Jugador 1:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre1 ? 'is-invalid' : null %>"
-                            name="nombre1" id="formGroupExampleInput2"
+                            name="nombre1" id="nombre1"
                             value="<%= locals.oldData ? oldData.nombre1 : null %>" placeholder="Nombre"><br>
                         <% if (locals.errors && errors.nombre1) { %>
                             <div class="text-danger">
@@ -48,7 +49,7 @@
                         <% } %>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.apellido1 ? 'is-invalid' : null %>"
-                            name="apellido1" id="formGroupExampleInput2"
+                            name="apellido1" id="apellido1"
                             value="<%= locals.oldData ? oldData.apellido1 : null %>" placeholder="Apellido">
                         <% if (locals.errors && errors.apellido1) { %>
                             <div class="text-danger">
@@ -57,10 +58,10 @@
                         <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Jugador 2:</label>
+                        <label for="nombre2" class="form-label">Jugador 2:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre2 ? 'is-invalid' : null %>"
-                            name="nombre2" id="formGroupExampleInput2"
+                            name="nombre2" id="nombre2"
                             value="<%= locals.oldData ? oldData.nombre2 : null %>" placeholder="Nombre"><br>
                         <% if (locals.errors && errors.nombre2) { %>
                             <div class="text-danger">
@@ -69,7 +70,7 @@
                         <% } %>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.apellido2 ? 'is-invalid' : null %>"
-                            name="apellido2" id="formGroupExampleInput2"
+                            name="apellido2" id="apellido2"
                             value="<%= locals.oldData ? oldData.apellido2 : null %>" placeholder="Apellido">
                         <% if (locals.errors && errors.apellido2) { %>
                             <div class="text-danger">
@@ -78,10 +79,10 @@
                         <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Jugador 3:</label>
+                        <label for="nombre3" class="form-label">Jugador 3:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre3 ? 'is-invalid' : null %>"
-                            name="nombre3" id="formGroupExampleInput2"
+                            name="nombre3" id="nombre3"
                             value="<%= locals.oldData ? oldData.nombre3 : null %>" placeholder="Nombre"><br>
                         <% if (locals.errors && errors.nombre3) { %>
                             <div class="text-danger">
@@ -90,7 +91,7 @@
                         <% } %>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.apellido3 ? 'is-invalid' : null %>"
-                            name="apellido3" id="formGroupExampleInput2"
+                            name="apellido3" id="apellido3"
                             value="<%= locals.oldData ? oldData.apellido3 : null %>" placeholder="Apellido">
                         <% if (locals.errors && errors.apellido3) { %>
                             <div class="text-danger">
@@ -98,11 +99,11 @@
                             </div>
                         <% } %>
                     </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Jugador 4:</label>
+                    <div class="mb-3" id="error1">
+                        <label for="nombre4" class="form-label">Jugador 4:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre4 ? 'is-invalid' : null %>"
-                            name="nombre4" id="formGroupExampleInput2"
+                            name="nombre4" id="nombre4"
                             value="<%= locals.oldData ? oldData.nombre4 : null %>" placeholder="Nombre"><br>
                         <% if (locals.errors && errors.nombre4) { %>
                             <div class="text-danger">
@@ -111,7 +112,7 @@
                         <% } %>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.apellido4 ? 'is-invalid' : null %>"
-                            name="apellido4" id="formGroupExampleInput2"
+                            name="apellido4" id="apellido4"
                             value="<%= locals.oldData ? oldData.apellido4 : null %>" placeholder="Apellido">
                         <% if (locals.errors && errors.apellido4) { %>
                             <div class="text-danger">
@@ -120,10 +121,10 @@
                         <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Jugador 5:</label>
+                        <label for="nombre5" class="form-label">Jugador 5:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre5 ? 'is-invalid' : null %>"
-                            name="nombre5" id="formGroupExampleInput2"
+                            name="nombre5" id="nombre5"
                             value="<%= locals.oldData ? oldData.nombre5 : null %>" placeholder="Nombre"><br>
                         <% if (locals.errors && errors.nombre5) { %>
                             <div class="text-danger">
@@ -132,7 +133,7 @@
                         <% } %>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.apellido5 ? 'is-invalid' : null %>"
-                            name="apellido5" id="formGroupExampleInput2"
+                            name="apellido5" id="apellido5"
                             value="<%= locals.oldData ? oldData.apellido5 : null %>" placeholder="Apellido">
                         <% if (locals.errors && errors.apellido5) { %>
                             <div class="text-danger">
@@ -163,10 +164,12 @@
                         </div>
                         <% } %>
                             <button type="submit" class="btn btn-primary">ENVIAR</button>
+                            <p class="warnings" id="warnings"></p>
                 </form>
             </div>
         </section>
         <%- include('../partials/footer') %>
+        <script src="/frontValidations/valCrearProducto.js"></script>
     </body>
 
 </html>

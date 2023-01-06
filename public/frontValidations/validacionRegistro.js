@@ -15,38 +15,33 @@ form.addEventListener("submit", (e)=>{
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     
     parrafo.innerHTML = ""
-        if(nombre.value.length <4){
+
+    if(nombre.value.length <4){
             warnings += 'El nombre no es valido <br>'
             entrar = true
         }
-        if(apellido.value.length <4){
+    if(apellido.value.length <4){
             warnings += 'El apellido no es valido <br>'
             entrar = true
         }
-        if(dni.value.length <8){
+    if(dni.value.length <8){
             warnings += 'El DNI no es valido <br>'
             entrar = true
         }
     
-        if(!regexEmail.test(email.value)){
-            warnings += 'el mail no es valido <br>'
+    if(!regexEmail.test(email.value)){
+            warnings += 'El email no es valido <br>'
             entrar = true
         }
-        if(password.value.length <6){
-            warnings += 'la contraseña no es valido <br>'
+    if(password.value.length <6){
+            warnings += 'La contraseña no es valido <br>'
             entrar = true
         }
-        if(entrar){
+    if(entrar){
             parrafo.innerHTML = warnings
         }
-    })
-
-
-
-
-
-
-//const expresiones = {
-  //  email: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-   // password: /^.{6,12}$/
+    if (entrar == false){
+            form.submit ()
+        }
+})
 
