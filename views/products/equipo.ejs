@@ -33,12 +33,16 @@
             
                 <div class="mb-3">
                     <label for="restriccionEdad" class="form-label">Restricción de Edad: <%= restr[0].restriccion[1].nombre %> </label><br>
-                </div>               
+                </div>
+                <% if (locals.isLogged) { %>             
                 <a href="/products/editar-equipo/<%= equipo.id %>" class="btn btn-primary">EDITAR</a>
-            </form>            
+                <% } %> 
+            </form> 
+            <% if (locals.isLogged) { %>            
             <form action="/products/delete/<%=equipo.id %>?_method=DELETE" method="POST">
                 <button type="submit" class="btn btn-primary">ELIMINAR</button>
             </form>
+            <% } %>
         </div> 
     </section>
     <%- include('../partials/footer') %>   
