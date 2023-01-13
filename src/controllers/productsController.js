@@ -159,6 +159,13 @@ const controlador = {
                 }
             }
         )
+        let jug = await db.usuario_equipo.findOne(
+            {
+                where: {
+                    Equipo_id: req.params.id
+                }
+            }
+        )
 
         let restr = await db.equipo.findAll(
             {
@@ -169,12 +176,18 @@ const controlador = {
             }
         )
 
+        let us = await db.usuario.findOne({
+            where:{ 
+                email: req.cookies.userEmail
+            }
+        })
+
         db.equipo.findOne({
             where: {
                 id: req.params.id
             }
         }).then((objEquipo) => {
-            res.render('./products/equipo', { equipo: objEquipo, ju: ju, restr: restr })
+            res.render('./products/equipo', { equipo: objEquipo, ju: ju, us, jug, restr: restr })
         })
     },
 
