@@ -84,31 +84,26 @@ const controlador = {
                     db.usuario_equipo.bulkCreate([
                         {
                             nombre_jugador: req.body.nombre1,
-                            apellido_jugador: req.body.apellido1,
                             equipo_id: a.id,
                             usuario_id: letra,
                         },
                         {
                             nombre_jugador: req.body.nombre2,
-                            apellido_jugador: req.body.apellido2,
                             equipo_id: a.id,
                             usuario_id: letra,
                         },
                         {
                             nombre_jugador: req.body.nombre3,
-                            apellido_jugador: req.body.apellido3,
                             equipo_id: a.id,
                             usuario_id: letra,
                         },
                         {
                             nombre_jugador: req.body.nombre4,
-                            apellido_jugador: req.body.apellido4,
                             equipo_id: a.id,
                             usuario_id: letra,
                         },
                         {
                             nombre_jugador: req.body.nombre5,
-                            apellido_jugador: req.body.apellido5,
                             equipo_id: a.id,
                             usuario_id: letra,
                         }
@@ -116,7 +111,6 @@ const controlador = {
                     if(req.body.nombre6 && req.body.apellido6){
                         db.usuario_equipo.create({
                             nombre_jugador: req.body.nombre6,
-                            apellido_jugador: req.body.apellido6,
                             equipo_id: a.id,
                             usuario_id: letra
                         })
@@ -139,13 +133,20 @@ const controlador = {
         })
     },
 
-    edit: (req, res) => {
+    edit: async (req, res) => {
+        
+         let jugs = await db.usuario_equipo.findAll({
+            where: {
+                Equipo_id: req.params.id
+            }
+        })
+        
         db.equipo.findOne({
             where: {
                 id: req.params.id
             }
         }).then((objEquipo) => {
-            res.render('./products/editar-equipo', { equipo: objEquipo })
+            res.render('./products/editar-equipo', { equipo: objEquipo, jugs })
         })
     },
 
@@ -179,8 +180,35 @@ const controlador = {
 
     update: async (req, res) => {
 
-        /* let idEquipo = req.params.id;
-        let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] });
+        let idEquipo = await req.params.id;
+        console.log(req.body.nombreEquipo);
+
+        db.equipo.update(
+            {
+                nombre_equipo: req.body.nombreEquipo
+            },
+            {
+                where: {
+                            id: idEquipo
+                        }
+            }
+        );
+
+        //VER COMO ACTUALIZAR JUGADORES---------------------------
+        /* db.usuario_equipo.update(
+            {
+                nombre_jugador: req.body.jugador1
+            },
+            {
+                where: {
+                            id: idEquipo
+                        }
+            }
+        ); */
+
+        res.redirect('/products/equipos');
+
+        /*let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] });
 
         const rdosValidaciones = validationResult(req);
         res.render('./products/editar-equipo', {
@@ -194,35 +222,8 @@ const controlador = {
                 errors: rdosValidaciones.mapped(),
                 oldData: req.body
             });
-        }
+        }*/
 
-        await db.equipo.findOne({
-            where: {
-                id: idEquipo
-            }
-        }).then((resultado)=>{
-            console.log(resultado);
-        }) 
-
-         for (let e of equiposJson) {
-            if (idEquipo == e.id) {
-
-                e.nombreEquipo = req.body.nombreEquipo.toUpperCase();
-                e.jugador1 = req.body.jugador1.toUpperCase();
-                e.jugador2 = req.body.jugador2.toUpperCase();
-                e.jugador3 = req.body.jugador3.toUpperCase();
-                e.jugador4 = req.body.jugador4.toUpperCase();
-                e.jugador5 = req.body.jugador5.toUpperCase();
-                e.jugador6 = req.body.jugador6.toUpperCase();
-                e.restriccionEdad = req.body.restriccionEdad;
-                e.restriccionesSexo = req.body.restriccionesSexo;
-                break;
-
-            }
-        }
-        fs.writeFileSync(equiposFilePath, JSON.stringify(equiposJson, null, " "));
-
-        res.redirect('/products/equipos'); */
     },
 
     destroy: async (req, res) => {

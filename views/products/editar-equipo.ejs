@@ -15,36 +15,36 @@
             <form action="/products/editar-equipo/<%=equipo.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
-                    <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=oldData.nombre_equipo %>">
+                    <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=equipo.nombre_equipo %>"> <!-- value="</%=oldData.nombre_equipo %>" -->
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="fotoEquipo" class="form-label">Foto del Equipo:</label>
                     <input type="file" class="form-control" name="imgEquipo" id="fotoEquipo" accept=".jpg, .png">
-                </div>
+                </div> -->
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 1:</label>
-                    <input type="text" class="form-control" name="jugador1" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=equipo.jugador1 %>">
+                    <input type="text" class="form-control" name="jugador1" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=jugs[0].dataValues.nombre_jugador %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 2:</label>
-                    <input type="text" class="form-control" name="jugador2" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=equipo.jugador2 %>">
+                    <input type="text" class="form-control" name="jugador2" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=jugs[1].dataValues.nombre_jugador %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 3:</label>
-                    <input type="text" class="form-control" name="jugador3" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador3 %>">
+                    <input type="text" class="form-control" name="jugador3" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=jugs[2].dataValues.nombre_jugador %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 4:</label>
-                    <input type="text" class="form-control" name="jugador4" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador4 %>">
+                    <input type="text" class="form-control" name="jugador4" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=jugs[3].dataValues.nombre_jugador %>">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 5:</label>
-                    <input type="text" class="form-control" name="jugador5" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador5 %>">
+                    <input type="text" class="form-control" name="jugador5" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=jugs[4].dataValues.nombre_jugador %>">
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 6:</label>
                     <input type="text" class="form-control" name="jugador6" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador6 %>">
-                </div>
+                </div> -->
                 <div class="mb-3">
                     <label for="restriccionesSexo" class="form-label">Juega Contra:</label><br>
                     <% if (equipo.restriccionesSexo == "Mixto"){ %>
