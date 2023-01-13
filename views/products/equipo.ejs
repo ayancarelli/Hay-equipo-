@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<body>
-    <header> 
-        <div class="container-fluid">
-            <div>
-                <a href="/"><img class="logo"src="/img/logo.png" alt="logo"></a>
+
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div>
+                    <a href="/"><img class="logo" src="/img/logo.png" alt="logo"></a>
+                </div>
+                <%- include('../partials/navbar') %>
             </div>
-            <%- include('../partials/navbar') %>
-        </div>    
-    </header>
-    <section class="registro-cuerpo" id="registro-fondo">       
-        <div class="registro-formulario">
-            <form action="/products/crear-equipo" method="POST">
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label"><%=equipo.nombre_equipo %> </label>
-                </div>
-                <div class="mb-3">
-                    <img src="/img/img-equipos/<%= equipo.img_equipo %>" class="card-img-top" alt="Foto Equipo">
-                </div>
-                <% for( let i = 0; i < ju.length; i++ ) { %>
-                
+        </header>
+        <section class="registro-cuerpo" id="registro-fondo">
+            <div class="registro-formulario">
+                <form action="/products/crear-equipo" method="POST">
                     <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Jugador <%= (i+1) %>: </label>
-                        <label for="formGroupExampleInput2" class="form-label"><%=ju[i].nombre_jugador +" "+ ju[i].apellido_jugador  %></label>
+                        <label for="formGroupExampleInput" class="form-label">
+                            <%=equipo.nombre_equipo %>
+                        </label>
                     </div>
-                <% } %>
-                
-                <div class="mb-3">
-                    <label for="restriccionesSexo" name="restriccionesSexo" class="form-label">Juega Contra: <%= restr[0].restriccion[0].nombre %> </label><br>                 
-                </div>
-            
-                <div class="mb-3">
-                    <label for="restriccionEdad" class="form-label">Restricción de Edad: <%= restr[0].restriccion[1].nombre %> </label><br>
-                </div>
-                <% if (locals.isLogged) { %>  
-                    <% if (us.id == jug.dataValues.usuario_id) { %>           
+                    <div class="mb-3">
+                        <img src="/img/img-equipos/<%= equipo.img_equipo %>" class="card-img-top" alt="Foto Equipo">
+                    </div>
+                    <% for( let i=0; i < equipo.usuario_equipo.length; i++ ) { %>
+                        <div class="mb-3">
+                                <label for="formGroupExampleInput2" class="form-label">Jugador <%= (i+1) %>: </label>
+                                <label for="formGroupExampleInput2" class="form-label">
+                                    <%=equipo.usuario_equipo[i].nombre_jugador +" "+ equipo.usuario_equipo[i].apellido_jugador  %></label>
+                        </div>
+                    <% } %>                
+                    <div class=" mb-3">
+                        <label for="restriccionesSexo" name="restriccionesSexo" class="form-label">Juega Contra: <%= equipo.restriccion[1].nombre %> </label><br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="restriccionEdad" class="form-label">Restricción de Edad: <%= equipo.restriccion[0].nombre %> </label><br>
+                    </div>
+                    <% if ((locals.isLogged) && (userLogged.id==equipo.usuario_equipo[0].usuario_id)){ %>
                         <a href="/products/editar-equipo/<%= equipo.id %>" class="btn btn-primary">EDITAR</a>
                     <% } %>
-                <% } %> 
-            </form> 
-            <% if (locals.isLogged) { %>            
-                <% if (us.id == jug.dataValues.usuario_id) { %>
+                </form>
+                <% if ((locals.isLogged) && (userLogged.id==equipo.usuario_equipo[0].usuario_id)){ %>
                     <form action="/products/delete/<%=equipo.id %>?_method=DELETE" method="POST">
                         <button type="submit" class="btn btn-primary">ELIMINAR</button>
                     </form>
                 <% } %>
-            <% } %>
-            <a href="/products/equipos" class="btn btn-primary">VOLVER</a>
-        </div> 
-    </section>
-    <%- include('../partials/footer') %>   
-</body>
+                <a href="/products/equipos" class="btn btn-primary">VOLVER</a>
+            </div>
+        </section>
+        <%- include('../partials/footer') %>
+    </body>
 </html>

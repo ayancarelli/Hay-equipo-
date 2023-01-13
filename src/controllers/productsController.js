@@ -1,19 +1,10 @@
 const { validationResult } = require('express-validator');
-const fs = require('fs');
-const path = require('path');
 const moment = require('moment');
 
 const db = require('../database/models');
-const { getMaxListeners } = require('process');
-
-const equiposFilePath = path.join(__dirname, '../data/equiposDataBase.json');
-const equiposJson = JSON.parse(fs.readFileSync(equiposFilePath, 'utf-8'));
+/* const { getMaxListeners } = require('process'); */
 
 const controlador = {
-    canchas: (req, res) => {
-        res.render('./products/canchas', { moment: moment });
-    },
-
     equipos: async (req, res) => {
         //ESTO DE ABAJO SI FUNCIONA, SOLO FALTA SABER LOGICA PARA MOSTRAR RESTRICCIONES POR EQUIPO
         /* let restr = await db.equipo_restriccion.findAll();
@@ -22,18 +13,10 @@ const controlador = {
             console.log("----------------------------------------");
             console.log(restr[i].dataValues);
         } */
-            
+
         db.equipo.findAll().then((equipos) => {
-            res.render('./products/equipos', { ps: equipos});
+            res.render('./products/equipos', { ps: equipos });
         });
-    },
-
-    carrito: (req, res) => {
-        res.render('./products/carrito');
-    },
-
-    carrito2: (req, res) => {
-        res.render('./products/carrito2');
     },
 
     create: async (req, res) => {
@@ -46,7 +29,7 @@ const controlador = {
         let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] });
 
         const rdosValidaciones = validationResult(req);
-  
+
         if (rdosValidaciones.errors.length > 0) {
             return res.render('./products/crear-equipo', {
                 restricciones: restricciones,
@@ -71,7 +54,7 @@ const controlador = {
                         }
                     },
                     oldData: req.body
-                });            
+                });
             } else {
 
                 let a = await db.equipo.create(
@@ -80,49 +63,42 @@ const controlador = {
                         img_equipo: req.file.filename
                     }
                 )
-                    
+
                 await db.usuario.findOne({
-                    where:{
+                    where: {
                         email: req.cookies.userEmail
                     }
-                }).then((usuarioLogged)=>{
+                }).then((usuarioLogged) => {
                     let p = usuarioLogged.id;
                     return p;
-                }).then((letra)=>{
+                }).then((letra) => {
                     db.usuario_equipo.bulkCreate([
                         {
                             nombre_jugador: req.body.nombre1,
                             equipo_id: a.id,
-                            usuario_id: letra,
+                            usuario_id: letra
                         },
                         {
                             nombre_jugador: req.body.nombre2,
                             equipo_id: a.id,
-                            usuario_id: letra,
+                            usuario_id: null
                         },
                         {
                             nombre_jugador: req.body.nombre3,
                             equipo_id: a.id,
-                            usuario_id: letra,
+                            usuario_id: null
                         },
                         {
                             nombre_jugador: req.body.nombre4,
                             equipo_id: a.id,
-                            usuario_id: letra,
+                            usuario_id: null
                         },
                         {
                             nombre_jugador: req.body.nombre5,
                             equipo_id: a.id,
-                            usuario_id: letra,
+                            usuario_id: null
                         }
                     ])
-                    if(req.body.nombre6 && req.body.apellido6){
-                        db.usuario_equipo.create({
-                            nombre_jugador: req.body.nombre6,
-                            equipo_id: a.id,
-                            usuario_id: letra
-                        })
-                    }
                     db.equipo_restriccion.bulkCreate([
                         {
                             equipo_id: a.id,
@@ -135,67 +111,49 @@ const controlador = {
                     ])
                 })
 
-              
-                res.redirect('/'); 
+
+                res.redirect('/');
             }
         })
     },
 
+    equipo: (req, res) => {
+        db.equipo.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [{ association: 'restriccion' }, { association: 'usuario_equipo' }]
+        }).then((objEquipo) => {
+            res.render('products/equipo', { equipo: objEquipo });
+        })
+    },
+
+    misEquipos: async (req, res) => {
+        console.log(req.session.userLogged)
+        db.usuario_equipo.findAll({
+            where: {
+                usuario_id: req.session.userLogged.id
+            },
+            include: [{ association: 'equipo' }]
+        }).then((objEquipo) => {
+            res.render('products/mis-equipos', { e: objEquipo });
+        })
+    },
+
     edit: async (req, res) => {
-        
-         let jugs = await db.usuario_equipo.findAll({
+
+        let jugs = await db.usuario_equipo.findAll({
             where: {
                 Equipo_id: req.params.id
             }
         })
-        
+
         db.equipo.findOne({
             where: {
                 id: req.params.id
             }
         }).then((objEquipo) => {
             res.render('./products/editar-equipo', { equipo: objEquipo, jugs })
-        })
-    },
-
-    equipo: async(req, res) => {
-        
-        let ju = await db.usuario_equipo.findAll(
-            {
-                where: {
-                    Equipo_id: req.params.id
-                }
-            }
-        )
-        let jug = await db.usuario_equipo.findOne(
-            {
-                where: {
-                    Equipo_id: req.params.id
-                }
-            }
-        )
-
-        let restr = await db.equipo.findAll(
-            {
-                where: {
-                    id: req.params.id
-                },
-                include: [{ association: 'restriccion' }]
-            }
-        )
-
-        let us = await db.usuario.findOne({
-            where:{ 
-                email: req.cookies.userEmail
-            }
-        })
-
-        db.equipo.findOne({
-            where: {
-                id: req.params.id
-            }
-        }).then((objEquipo) => {
-            res.render('./products/equipo', { equipo: objEquipo, ju: ju, us, jug, restr: restr })
         })
     },
 
@@ -210,8 +168,8 @@ const controlador = {
             },
             {
                 where: {
-                            id: idEquipo
-                        }
+                    id: idEquipo
+                }
             }
         );
 
@@ -253,62 +211,34 @@ const controlador = {
             where: {
                 Equipo_id: req.params.id
             }
-        }).then(()=>{
+        }).then(() => {
             db.equipo_restriccion.destroy({
                 where: {
                     equipo_id: req.params.id
                 }
             })
-        }).then(()=>{
+        }).then(() => {
             db.equipo.destroy({
                 where: {
                     id: req.params.id
                 }
             })
-        }).then(()=>{
+        }).then(() => {
             res.redirect('/products/equipos');
         })
 
     },
 
-    misEquipos: async (req,res)=> {
-        
-        await db.usuario.findOne({
-            where:{ 
-                email: req.cookies.userEmail
-            }
-        }).then(async (usuarioLogged)=>{
-            
-            db.usuario_equipo.findAll({
-                where:{
-                    Usuario_id: usuarioLogged.id
-                }
+    carrito: (req, res) => {
+        res.render('./products/carrito');
+    },
 
-            }).then((p)=>{
-                
-                var teams = [];
-                var idTeams = [];
-                for(let i = 0; i<p.length; i++){
-
-                    teams.push(p[i].equipo_id);
-                    
-                }
-                for(let j = 0; j<teams.length; j++){
-                    if(!idTeams.includes(teams[j])){
-                        idTeams.push(teams[j]);
-                    }
-                }
-                return idTeams;
-                
-            }).then(async (idsEquipos)=>{
-                var miEquipo = await db.equipo.findAll()
-                 res.render('./products/mis-equipos', {miEquipo, idsEquipos});
-            })
-            
-        })
-
+    carrito2: (req, res) => {
+        res.render('./products/carrito2');
+    },
+    canchas: (req, res) => {
+        res.render('./products/canchas', { moment: moment });
     }
-
 }
-    
+
 module.exports = controlador;

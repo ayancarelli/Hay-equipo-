@@ -35,6 +35,6 @@ router.get ('/carrito', productsController.carrito);
 router.get ('/carrito2', productsController.carrito2);
 
 // MUESTRA MIS EQUIPOS
-router.get ('/mis-equipos', productsController.misEquipos);
+router.get ('/mis-equipos', authMiddleware, productsController.misEquipos);
   
 module.exports = router;
