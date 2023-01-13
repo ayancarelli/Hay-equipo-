@@ -20,21 +20,7 @@ const validacionCrearEquipo = [
     body('nombre5')
         .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
         .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
-    body('apellido1')
-        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
-    body('apellido2')
-        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
-    body('apellido3')
-        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
-    body('apellido4')
-        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),
-    body('apellido5')
-        .notEmpty().withMessage('Éste campo no puede quedar vacío.').bail()
-        .isLength({ min: 3}).withMessage('Éste campo debe tener al menos 3 caracteres'),    
+        
     body('imgEquipo').custom((value, { req }) => {
         let file = req.file;
         let extensionesValidas = ['.jpg', '.jpeg' , '.png'];

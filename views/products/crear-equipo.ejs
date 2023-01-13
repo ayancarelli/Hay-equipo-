@@ -41,113 +41,67 @@
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre1 ? 'is-invalid' : null %>"
                             name="nombre1" id="nombre1"
-                            value="<%= locals.oldData ? oldData.nombre1 : null %>" placeholder="Nombre"><br>
+                            value="<%= locals.oldData ? oldData.nombre1 : null %>" placeholder="Nombre y Apellido">
                         <% if (locals.errors && errors.nombre1) { %>
                             <div class="text-danger">
                                 <%= errors.nombre1.msg %>
                             </div>
                         <% } %>
-                        <input type="text"
-                            class="form-control <%= locals.errors && errors.apellido1 ? 'is-invalid' : null %>"
-                            name="apellido1" id="apellido1"
-                            value="<%= locals.oldData ? oldData.apellido1 : null %>" placeholder="Apellido">
-                        <% if (locals.errors && errors.apellido1) { %>
-                            <div class="text-danger">
-                                <%= errors.apellido1.msg %>
-                            </div>
-                        <% } %>
+                     
                     </div>
                     <div class="mb-3">
                         <label for="nombre2" class="form-label">Jugador 2:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre2 ? 'is-invalid' : null %>"
                             name="nombre2" id="nombre2"
-                            value="<%= locals.oldData ? oldData.nombre2 : null %>" placeholder="Nombre"><br>
+                            value="<%= locals.oldData ? oldData.nombre2 : null %>" placeholder="Nombre y Apellido">
                         <% if (locals.errors && errors.nombre2) { %>
                             <div class="text-danger">
                                 <%= errors.nombre2.msg %>
                             </div>
                         <% } %>
-                        <input type="text"
-                            class="form-control <%= locals.errors && errors.apellido2 ? 'is-invalid' : null %>"
-                            name="apellido2" id="apellido2"
-                            value="<%= locals.oldData ? oldData.apellido2 : null %>" placeholder="Apellido">
-                        <% if (locals.errors && errors.apellido2) { %>
-                            <div class="text-danger">
-                                <%= errors.apellido2.msg %>
-                            </div>
-                        <% } %>
+                      
                     </div>
                     <div class="mb-3">
                         <label for="nombre3" class="form-label">Jugador 3:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre3 ? 'is-invalid' : null %>"
                             name="nombre3" id="nombre3"
-                            value="<%= locals.oldData ? oldData.nombre3 : null %>" placeholder="Nombre"><br>
+                            value="<%= locals.oldData ? oldData.nombre3 : null %>" placeholder="Nombre y Apellido">
                         <% if (locals.errors && errors.nombre3) { %>
                             <div class="text-danger">
                                 <%= errors.nombre3.msg %>
                             </div>
                         <% } %>
-                        <input type="text"
-                            class="form-control <%= locals.errors && errors.apellido3 ? 'is-invalid' : null %>"
-                            name="apellido3" id="apellido3"
-                            value="<%= locals.oldData ? oldData.apellido3 : null %>" placeholder="Apellido">
-                        <% if (locals.errors && errors.apellido3) { %>
-                            <div class="text-danger">
-                                <%= errors.apellido3.msg %>
-                            </div>
-                        <% } %>
+                      
                     </div>
                     <div class="mb-3" id="error1">
                         <label for="nombre4" class="form-label">Jugador 4:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre4 ? 'is-invalid' : null %>"
                             name="nombre4" id="nombre4"
-                            value="<%= locals.oldData ? oldData.nombre4 : null %>" placeholder="Nombre"><br>
+                            value="<%= locals.oldData ? oldData.nombre4 : null %>" placeholder="Nombre y Apellido">
                         <% if (locals.errors && errors.nombre4) { %>
                             <div class="text-danger">
                                 <%= errors.nombre4.msg %>
                             </div>
                         <% } %>
-                        <input type="text"
-                            class="form-control <%= locals.errors && errors.apellido4 ? 'is-invalid' : null %>"
-                            name="apellido4" id="apellido4"
-                            value="<%= locals.oldData ? oldData.apellido4 : null %>" placeholder="Apellido">
-                        <% if (locals.errors && errors.apellido4) { %>
-                            <div class="text-danger">
-                                <%= errors.apellido4.msg %>
-                            </div>
-                        <% } %>
+                       
                     </div>
                     <div class="mb-3">
                         <label for="nombre5" class="form-label">Jugador 5:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre5 ? 'is-invalid' : null %>"
                             name="nombre5" id="nombre5"
-                            value="<%= locals.oldData ? oldData.nombre5 : null %>" placeholder="Nombre"><br>
+                            value="<%= locals.oldData ? oldData.nombre5 : null %>" placeholder="Nombre y Apellido">
                         <% if (locals.errors && errors.nombre5) { %>
                             <div class="text-danger">
                                 <%= errors.nombre5.msg %>
                             </div>
                         <% } %>
-                        <input type="text"
-                            class="form-control <%= locals.errors && errors.apellido5 ? 'is-invalid' : null %>"
-                            name="apellido5" id="apellido5"
-                            value="<%= locals.oldData ? oldData.apellido5 : null %>" placeholder="Apellido">
-                        <% if (locals.errors && errors.apellido5) { %>
-                            <div class="text-danger">
-                                <%= errors.apellido5.msg %>
-                            </div>
-                        <% } %>
+                      
                     </div>
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Jugador 6: (Opcional)</label>
-                        <input type="text" class="form-control" name="nombre6" id="formGroupExampleInput2"
-                            value="<%= locals.oldData ? oldData.nombre6 : null %>" placeholder="Nombre"><br>
-                        <input type="text" class="form-control" name="apellido6" id="formGroupExampleInput2"
-                            value="<%= locals.oldData ? oldData.apellido6 : null %>" placeholder="Apellido">
-                    </div>
+                    
                     <% for( let a of restricciones ) { %>
                         <div class="mb-3">
                             <label for="restriccion" class="form-label">
