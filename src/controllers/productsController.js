@@ -14,9 +14,17 @@ const controlador = {
         res.render('./products/canchas', { moment: moment });
     },
 
-    equipos: (req, res) => {
+    equipos: async (req, res) => {
+        //ESTO DE ABAJO SI FUNCIONA, SOLO FALTA SABER LOGICA PARA MOSTRAR RESTRICCIONES POR EQUIPO
+        /* let restr = await db.equipo_restriccion.findAll();
+
+        for(let i = 0; i<restr.length; i++){
+            console.log("----------------------------------------");
+            console.log(restr[i].dataValues);
+        } */
+            
         db.equipo.findAll().then((equipos) => {
-            res.render('./products/equipos', { ps: equipos });
+            res.render('./products/equipos', { ps: equipos});
         });
     },
 
