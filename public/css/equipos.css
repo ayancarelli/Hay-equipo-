@@ -1,0 +1,30 @@
+/*STYLE DE EQUIPOS*/
+.banner-equipo h3{
+    display: flex;
+    text-align: center;
+    background-color:#C7CAD9;
+    color: #25306A;
+    font-size: 22px;
+    font-weight: bold;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0%; 
+}
+.banner-equipo{
+    display: flex;
+    justify-content: center;
+
+}
+#equipos-section{
+    background-image: url(/img/red-arco.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.9;
+    padding: 10px;
+}
+
+    
+

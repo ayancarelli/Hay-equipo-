@@ -1,0 +1,104 @@
+/* HOME STYLE */
+#cuerpo-inicio{
+    margin-bottom: 10px;
+    background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.6)) , url(/img/cesped.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #25306A;
+}
+.banner-home h2{
+    font-size: 34px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+}
+.banner-home h3{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+.banner-home button{
+    background-color: #5E658C;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    position: sticky;
+    border-color: #5E658C;
+}
+.banner-home a{
+    text-decoration: none;
+    color: #FCFCFC;
+}
+.cartas-equipos{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#equipos-home{
+    margin-bottom: 20px;
+}
+.esperando-jugar{
+    width: 100vw;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+.card{
+    padding: 10px;
+    margin: 5px;
+}
+.card .marcador{
+    position: absolute;
+    background-color: #A1FCC6;
+    border: #5E658C 1px;
+    border-style: solid;
+    font-size: 10px;
+    color: #25306A;
+    border-radius: 20px;
+    padding: 3px 10px;
+    right: -5px;
+    top: -10px;
+}
+.card-body h5{
+    font-weight: bold;
+    color: #5E658C;
+}
+.card-body ul{
+    list-style: none;
+    font-size: 14px;
+    color: #25306A;
+}
+.card-body .btn-primary{
+    --bs-btn-bg: #8A8EA6;
+    --bs-btn-border-color: #8A8EA6;
+    --bs-btn-hover-bg: #25306A;
+    --bs-btn-hover-border-color: #25306A;
+}
+
+@media (min-width: 768px) {
+
+    /* HOME 768 */
+    .banner-home h2{
+       
+        font-size: 50px;
+    }
+    .banner-home h3{
+        font-size: 40px;
+    }
+    .banner-home button{
+        font-size: 17px;
+    }
+    .esperando-jugar{
+        font-size: 25px;
+    }
+
+    }

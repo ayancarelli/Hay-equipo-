@@ -1,0 +1,80 @@
+/* HEADER STYLE */
+header .container-fluid{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-between;
+    background-color: #25306A;
+    color: white;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+}
+.logo {
+    width: 200px;
+}
+.header-navbar{
+    display: flex;
+    align-items: center;
+}
+.header-navbar a{
+    text-decoration: none;
+    color: #FCFCFC;
+}
+.header-navbar a:hover{
+    color: aqua;
+}
+#hamb-icon{
+    font-size: 20px;
+}
+#magic-button{
+    --bs-btn-bg: none;
+    --bs-btn-border-color: none;
+}
+#offcanvasRight{
+    background-color: #25306A;
+    bottom: unset;
+}
+#boton-cerrar{
+    align-self: flex-end;
+    color: white;
+    background: transparent;
+    border: none;
+    font-weight: bold;
+}
+.offcanvas-header{
+    flex-direction: column;
+    align-items: center;
+}
+#offcanvasRightLabel{
+    margin-bottom: 10px
+}
+.dropdown-menu{
+    background-color: #25306A;
+}
+.menu-navbar{
+    display: none;
+}
+
+@media (min-width: 768px) {
+
+    /* HEADER 768 */
+    .boton-magico{
+        display: none;
+    }
+    .header-navbar .menu-navbar {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        margin: auto;
+        margin-right: 10px;
+    }
+    .menu-navbar li{
+        margin-left: 10px;
+    }
+    .btn-outline-light {
+        margin-left: 10px;
+    }
+    /* FIN HEADER 768 */
+    
+    }

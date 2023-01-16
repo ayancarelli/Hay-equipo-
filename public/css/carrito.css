@@ -1,0 +1,82 @@
+/* STYLE DE CARRITO*/
+.banner-carrito h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    color: #25306A;
+}
+.banner-carrito a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.col-9{
+    display: flex;
+    align-items: center;
+    
+}
+#cuerpo-carrito{
+    align-items: center;
+    border-top:  solid 1px black;
+    border-bottom:  solid 1px black;
+    padding: 10px 0px;
+}
+.imagen-carrito{
+   display: none;
+   
+}
+#p-web{
+    display: none;
+}
+.reserva-fecha{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.btn-confirmar{
+    display: flex;
+    flex-direction:column-reverse;
+    padding: 30px;
+    align-items: center;
+    }
+
+.btn-confirmar #emailHelp {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+   
+    /* CARRITO 768 */
+    .col-9{
+        display: flex;
+        align-items: center;
+        
+    }
+    #cuerpo-carrito{
+        align-items: center;
+        border-top:  solid 1px black;
+        border-bottom:  solid 1px black;
+        padding: 10px 0px;
+    }
+    .imagen-carrito{
+        display: flex;
+        width: 200px;
+       
+    }
+    #p-mobile{
+        display: none;
+    }
+    #p-web{
+        display: flex;
+    }
+    .reserva-fecha{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    /* FIN CARRITO 768 */
+    }

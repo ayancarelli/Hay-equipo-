@@ -1,0 +1,68 @@
+/* STYLE DEL REGISTRO Y LOGIN */
+.registro-formulario .warnings{
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    color: #8b0000;
+    padding-top: 20px;
+}
+
+.registro-cuerpo{
+    display: flex;
+    justify-content: center;
+    background-color: #25306A;
+}
+.registro-formulario{
+    max-width: 350px;
+    min-width: 250px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: solid;
+    background-color: #5E658C;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.registro-formulario .form-control{
+    font-size: 12px;
+}
+.registro-formulario #emailHelp{
+    color: #C7CAD9;
+    
+}
+
+@media (min-width: 768px) {
+    
+    /* CUERPO REGISTRO Y LOGIN 768 */
+    .registro-cuerpo{
+        align-items: center;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    .registro-formulario{
+        
+        margin: 9% 0px;
+        padding: 15px;
+        box-sizing: border-box;
+        border: solid 1px;
+        background-color: #5E658C;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 1.2em;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        
+    }
+    /* LOGIN 768 */
+    #login-fondo{
+    background-image: url("/img/pelota.jpg");
+    }
+    
+    /* REGISTRO 768*/
+    #registro-fondo{
+        background-image: url("/img/tactica-futbol.jpg");
+        
+    }
+    /* FIN CUERPO REGISTRO Y LOGIN 768 */
+    
+    }
