@@ -15,7 +15,7 @@
             <form action="/products/editar-equipo/<%=equipo.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
-                    <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=equipo.nombre_equipo %>"> <!-- value="</%=oldData.nombre_equipo %>" -->
+                    <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=equipo.nombre_equipo %>">
                 </div>
                 <!-- <div class="mb-3">
                     <label for="fotoEquipo" class="form-label">Foto del Equipo:</label>
@@ -23,7 +23,7 @@
                 </div> -->
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 1:</label>
-                    <input type="text" class="form-control" name="jugador1" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=jugs[0].dataValues.nombre_jugador %>">
+                    <input type="text" class="form-control" name="jugador1" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=jugs[0].dataValues.nombre_jugador %>" disabled>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Jugador 2:</label>
