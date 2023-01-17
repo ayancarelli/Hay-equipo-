@@ -11,6 +11,7 @@ const productsController = require('../controllers/productsController');
 // Middlewares
 const upload = require('../middlewares/multerEquipo');
 const validacionCrearEquipo = require('../middlewares/validacionCrearEquipo');
+const validacionEditarEquipo = require('../middlewares/validacionEditarEquipo');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 
@@ -23,7 +24,7 @@ router.get ('/equipo/:id', productsController.equipo);
 
 // EDITAR Equipo
 router.get ('/editar-equipo/:id', authMiddleware, productsController.edit);
-router.put('/editar-equipo/:id', upload.single("fotoEquipo"), productsController.update);
+router.put('/editar-equipo/:id', upload.single("fotoEquipo"), validacionEditarEquipo, productsController.update);
 
 // BORRAR Equipo
 router.delete('/delete/:id', authMiddleware, productsController.destroy);

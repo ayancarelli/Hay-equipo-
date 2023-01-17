@@ -3,19 +3,19 @@ const moment = require('moment');
 const { where } = require('sequelize');
 
 const db = require('../database/models');
+const Op = db.Sequelize.Op;
 /* const { getMaxListeners } = require('process'); */
 
 const controlador = {
-    equipos: async (req, res) => {
-        //ESTO DE ABAJO SI FUNCIONA, SOLO FALTA SABER LOGICA PARA MOSTRAR RESTRICCIONES POR EQUIPO
-        /* let restr = await db.equipo_restriccion.findAll();
-
-        for(let i = 0; i<restr.length; i++){
-            console.log("----------------------------------------");
-            console.log(restr[i].dataValues);
-        } */
-
-        db.equipo.findAll().then((equipos) => {
+    equipos: (req, res) => {
+        db.usuario_equipo.findAll({
+            where:{
+                Usuario_id: {[Op.ne]: req.session.userLogged.id}
+            },
+            include: [{ association: 'equipo' }]
+        }).then(async (equipos) => {
+            /* let equipoR = await db.equipo.findAll({ include: [{ association: 'restriccion' }] })            
+            res.json(equipoR) */
             res.render('./products/equipos', { ps: equipos });
         });
     },

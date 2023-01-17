@@ -38,8 +38,8 @@ const rutasProductsApi = require('./src/routes/productsApi');
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
 app.use('/users', rutasUsers);
-app.use('/users', rutasUsersApi)
-app.use('/products', rutasProductsApi)
+app.use('/usersApi', rutasUsersApi)
+app.use('/productsApi', rutasProductsApi)
 
 
 
