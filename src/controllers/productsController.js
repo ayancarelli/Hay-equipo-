@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
 const moment = require('moment');
+const { where } = require('sequelize');
 
 const db = require('../database/models');
 /* const { getMaxListeners } = require('process'); */
@@ -22,7 +23,13 @@ const controlador = {
     create: async (req, res) => {
         let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] })
 
-        res.render('products/crear-equipo', { restricciones: restricciones });
+        let us = await db.usuario.findOne({
+            where: {
+                id: req.session.userLogged.id
+            }
+        })
+
+        res.render('products/crear-equipo', { restricciones: restricciones, us});
     },
 
     crear: async (req, res) => {
@@ -159,8 +166,18 @@ const controlador = {
 
     update: async (req, res) => {
 
+        let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] });
+        const rdosValidaciones = validationResult(req);
+
+        if (rdosValidaciones.errors.length > 0) {
+            return res.render('./products/editar-equipo', {
+                restricciones: restricciones,
+                errors: rdosValidaciones.mapped(),
+                oldData: req.body
+            });
+        }
+
         let idEquipo = await req.params.id;
-        console.log(req.body.nombreEquipo);
 
         db.equipo.update(
             {
@@ -173,35 +190,77 @@ const controlador = {
             }
         );
 
-        //VER COMO ACTUALIZAR JUGADORES---------------------------
-        /* db.usuario_equipo.update(
+        
+        let creador = await db.usuario_equipo.findOne({
+            where:{
+                Equipo_id: idEquipo
+            }
+        })
+
+        db.usuario_equipo.update(
             {
-                nombre_jugador: req.body.jugador1
+                nombre_jugador: req.body.jugador2
             },
             {
                 where: {
-                            id: idEquipo
+                            id: (creador.id +1)
                         }
             }
-        ); */
+        );
+        db.usuario_equipo.update(
+            {
+                nombre_jugador: req.body.jugador3
+            },
+            {
+                where: {
+                            id: (creador.id +2)
+                        }
+            }
+        );
+        db.usuario_equipo.update(
+            {
+                nombre_jugador: req.body.jugador4
+            },
+            {
+                where: {
+                            id: (creador.id +3)
+                        }
+            }
+        );
+        db.usuario_equipo.update(
+            {
+                nombre_jugador: req.body.jugador5
+            },
+            {
+                where: {
+                            id: (creador.id +4)
+                        }
+            }
+        );
 
-        res.redirect('/products/equipos');
-
-        /*let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] });
-
-        const rdosValidaciones = validationResult(req);
-        res.render('./products/editar-equipo', {
-            restricciones: restricciones,
-            errors: rdosValidaciones.mapped(),
-            oldData: req.body
+        /* let restri = await db.equipo_restriccion.findOne({
+            where:{
+                equipo_id: idEquipo
+            }
         })
-        if (rdosValidaciones.errors.length > 0) {
-            return res.render('./products/editar-equipo', {
-                restricciones: restricciones,
-                errors: rdosValidaciones.mapped(),
-                oldData: req.body
-            });
-        }*/
+
+        console.log("--------------------------------------------");
+        console.log(restri.id);
+        console.log("--------------------------------------------");
+        db.equipo_restriccion.update(
+            {
+                restriccion_id: req.body.restriccionesSexo
+            },
+            {
+                where: {
+                            equipo_id: idEquipo
+                        }
+            }
+        ) */
+
+        res.redirect('/products/mis-equipos');
+
+        
 
     },
 
@@ -233,9 +292,29 @@ const controlador = {
         res.render('./products/carrito');
     },
 
-    carrito2: (req, res) => {
-        res.render('./products/carrito2');
+    carrito2: async (req, res) => {
+        db.equipo.findOne({
+            where:{
+                id: req.params.id
+            }
+        }).then(async (equi)=>{
+            
+            db.usuario_equipo.findAll({
+                where: {
+                    usuario_id: req.session.userLogged.id
+                },
+                include: [{ association: 'equipo' }]
+            }).then((objEquipo) => {
+                res.render('./products/carrito2', {equi, moment, e: objEquipo});
+            })
+
+
+        })
     },
+    confirmation: (req,res)=>{
+        res.render("./products/confirmacion")
+    }
+    ,
     canchas: (req, res) => {
         res.render('./products/canchas', { moment: moment });
     }

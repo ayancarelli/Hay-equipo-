@@ -28,11 +28,16 @@ router.put('/editar-equipo/:id', upload.single("fotoEquipo"), productsController
 // BORRAR Equipo
 router.delete('/delete/:id', authMiddleware, productsController.destroy);
 
+//RESERVA
+router.get ('/carrito2/:id', productsController.carrito2);
+
+//CONFIRMACION
+router.get ('/confirmacion', productsController.confirmation);
+
 // VISTAS A DEFINIR !!!
 router.get ('/canchas', productsController.canchas);
 router.get ('/equipos', productsController.equipos);
 router.get ('/carrito', productsController.carrito);
-router.get ('/carrito2', productsController.carrito2);
 
 // MUESTRA MIS EQUIPOS
 router.get ('/mis-equipos', authMiddleware, productsController.misEquipos);

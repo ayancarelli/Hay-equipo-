@@ -31,11 +31,16 @@ app.set('view engine', 'ejs');
 const rutasMain = require('./src/routes/main');
 const rutasUsers = require('./src/routes/users');
 const rutasProducts = require('./src/routes/products');
+const rutasUsersApi = require('./src/routes/usersApi');
+const rutasProductsApi = require('./src/routes/productsApi');
 
 
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
 app.use('/users', rutasUsers);
+app.use('/users', rutasUsersApi)
+app.use('/products', rutasProductsApi)
+
 
 
 app.listen(process.env.PORT || 3000, function() {
