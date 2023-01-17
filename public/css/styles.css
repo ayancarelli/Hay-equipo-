@@ -523,4 +523,16 @@ background-image: url("/img/pelota.jpg");
     margin-left: 10px;
 }
 /* FIN CARRITO 768 */
+
+#argentina{
+    background-image: url("/img/argentina-campeon.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.texto-final{
+    font-weight: bold;
+    text-align: center;
+}
 }
