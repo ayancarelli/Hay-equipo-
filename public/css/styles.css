@@ -2,242 +2,6 @@
     font-family: "Lato";
 }
 
-/* HEADER STYLE */
-header .container-fluid{
-    display: flex;
-    flex-direction: row;
-    font-size: 16px;
-    justify-content: space-between;
-    background-color: #25306A;
-    color: white;
-    align-items: center;
-    padding: 10px;
-    margin: auto;
-}
-.logo {
-    width: 200px;
-}
-.header-navbar{
-    display: flex;
-    align-items: center;
-}
-.header-navbar a{
-    text-decoration: none;
-    color: #FCFCFC;
-}
-.header-navbar a:hover{
-    color: aqua;
-}
-#hamb-icon{
-    font-size: 20px;
-}
-#magic-button{
-    --bs-btn-bg: none;
-    --bs-btn-border-color: none;
-}
-#offcanvasRight{
-    background-color: #25306A;
-    bottom: unset;
-}
-#boton-cerrar{
-    align-self: flex-end;
-    color: white;
-    background: transparent;
-    border: none;
-    font-weight: bold;
-}
-.offcanvas-header{
-    flex-direction: column;
-    align-items: center;
-}
-#offcanvasRightLabel{
-    margin-bottom: 10px
-}
-.dropdown-menu{
-    background-color: #25306A;
-}
-.menu-navbar{
-    display: none;
-}
-/* FIN HEADER STYLER */
-
-/* FOOTER STYLE */
-footer .container-fluid{
-    display: flex;
-    flex-direction: row;
-    font-size: 12px;
-    justify-content: center;
-    background-color: #25306A;
-    color: white;
-    align-items: center;
-    padding: 10px;
-    margin: auto;
-    bottom: 0;
-}
-footer .container-fluid p{
-    margin: auto;
-}
-.redes-sociales{
-    list-style: none;
-    display: flex;
-    margin: auto;
-    --bs-link-color: white;
-    --bs-link-hover-color: #8A8EA6;
-}
-.redes-sociales li{
-    margin-left: 10px;
-}
-/* FIN FOOTER STYLE */
-
-/* HOME STYLE */
-#cuerpo-inicio{
-    margin-bottom: 10px;
-    background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.6)) , url(/img/cesped.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    color: #25306A;
-}
-.banner-home h2{
-    font-size: 34px;
-    font-weight: bold;
-    margin-left: 15px;
-    margin-bottom: 0px;
-    padding-top: 10px;
-}
-.banner-home h3{
-    font-size: 22px;
-    font-weight: bold;
-    margin-left: 15px;
-    margin-right: 10px;
-}
-.banner-home button{
-    background-color: #5E658C;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 10px;
-    margin-left: 15px;
-    margin-bottom: 10px;
-    position: sticky;
-    border-color: #5E658C;
-}
-.banner-home a{
-    text-decoration: none;
-    color: #FCFCFC;
-}
-.cartas-equipos{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#equipos-home{
-    margin-bottom: 20px;
-}
-.esperando-jugar{
-    width: 100vw;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    margin-left: 15px;
-}
-.card{
-    padding: 10px;
-    margin: 5px;
-}
-.card .marcador{
-    position: absolute;
-    background-color: #A1FCC6;
-    border: #5E658C 1px;
-    border-style: solid;
-    font-size: 10px;
-    color: #25306A;
-    border-radius: 20px;
-    padding: 3px 10px;
-    right: -5px;
-    top: -10px;
-}
-.card-body h5{
-    font-weight: bold;
-    color: #5E658C;
-}
-.card-body ul{
-    list-style: none;
-    font-size: 14px;
-    color: #25306A;
-}
-.card-body .btn-primary{
-    --bs-btn-bg: #8A8EA6;
-    --bs-btn-border-color: #8A8EA6;
-    --bs-btn-hover-bg: #25306A;
-    --bs-btn-hover-border-color: #25306A;
-}
-/* FIN HOME STYLE */
-
-/* STYLE DEL REGISTRO Y LOGIN */
-.registro-formulario .warnings{
-    width: 300px;
-    text-align: center;
-    margin: auto;
-    color: #8b0000;
-    padding-top: 20px;
-}
-
-.registro-cuerpo{
-    display: flex;
-    justify-content: center;
-    background-color: #25306A;
-}
-.registro-formulario{
-    max-width: 350px;
-    min-width: 250px;
-    padding: 15px;
-    box-sizing: border-box;
-    border: solid;
-    background-color: #5E658C;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 12px;
-}
-.registro-formulario .form-control{
-    font-size: 12px;
-}
-.registro-formulario #emailHelp{
-    color: #C7CAD9;
-    
-}
-/* FIN STYLE DE REGISTRO Y LOGIN */
-
-/*STYLE DE EQUIPOS*/
-.banner-equipo h3{
-    display: flex;
-    text-align: center;
-    background-color:#C7CAD9;
-    color: #25306A;
-    font-size: 22px;
-    font-weight: bold;
-    height: 70px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0%; 
-}
-.banner-equipo{
-    display: flex;
-    justify-content: center;
-
-}
-#equipos-section{
-    background-image: url(/img/red-arco.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 0.9;
-    padding: 10px;
-}
-/*FIN STYLE DE EQUIPOS*/
 
 /*STYLE DE CANCHAS*/
 .main-canchas{
@@ -348,191 +112,56 @@ footer .container-fluid p{
 /*FIN STYLE DE CANCHAS*/
 
 
-/* STYLE DE CARRITO*/
-.banner-carrito h3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0px;
-    color: #25306A;
-}
-.banner-carrito a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.col-9{
-    display: flex;
-    align-items: center;
-    
-}
-#cuerpo-carrito{
-    align-items: center;
-    border-top:  solid 1px black;
-    border-bottom:  solid 1px black;
-    padding: 10px 0px;
-}
-.imagen-carrito{
-   display: none;
-   
-}
-#p-web{
-    display: none;
-}
-.reserva-fecha{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-.btn-confirmar{
-    display: flex;
-    flex-direction:column-reverse;
-    padding: 30px;
-    align-items: center;
-    }
-
-.btn-confirmar #emailHelp {
-    margin-right: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-/* FIN STYLE DE CARRITO*/
-
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
 
 @media (min-width: 768px) {
 
-/* HEADER 768 */
-.boton-magico{
-    display: none;
-}
-.header-navbar .menu-navbar {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    margin: auto;
-    margin-right: 10px;
-}
-.menu-navbar li{
-    margin-left: 10px;
-}
-.btn-outline-light {
-    margin-left: 10px;
-}
-/* FIN HEADER 768 */
-
-/* FOOTER 768 */
-footer .container-fluid{
-    font-size: 16px;
-}
-/* FIN FOOTER 768 */
-
-/* HOME 768 */
-.banner-home h2{
    
-    font-size: 50px;
-}
-.banner-home h3{
-    font-size: 40px;
-}
-.banner-home button{
-    font-size: 17px;
-}
-.esperando-jugar{
-    font-size: 25px;
-}
-/* FIN HOME 768 */
-
-/* CUERPO REGISTRO Y LOGIN 768 */
-.registro-cuerpo{
-    align-items: center;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-.registro-formulario{
+    /* CANCHAS 768 */
+    .main-canchas{
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .container-padre-canchas{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .container-canchas{
+        margin-right: 40px;
+    }
+    .cancha1{
+        margin-bottom: 0%;
+    }
+    /* FIN CANCHAS 768 */
     
-    margin: 9% 0px;
-    padding: 15px;
-    box-sizing: border-box;
-    border: solid 1px;
-    background-color: #5E658C;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 1.2em;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    
-}
-/* LOGIN 768 */
-#login-fondo{
-background-image: url("/img/pelota.jpg");
-}
-
-/* REGISTRO 768*/
-#registro-fondo{
-    background-image: url("/img/tactica-futbol.jpg");
-    
-}
-/* FIN CUERPO REGISTRO Y LOGIN 768 */
-
-/* CANCHAS 768 */
-.main-canchas{
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.container-padre-canchas{
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.container-canchas{
-    margin-right: 40px;
-}
-.cancha1{
-    margin-bottom: 0%;
-}
-/* FIN CANCHAS 768 */
-
-/* CARRITO 768 */
-.col-9{
-    display: flex;
-    align-items: center;
-    
-}
-#cuerpo-carrito{
-    align-items: center;
-    border-top:  solid 1px black;
-    border-bottom:  solid 1px black;
-    padding: 10px 0px;
-}
-.imagen-carrito{
-    display: flex;
-    width: 200px;
-   
-}
-#p-mobile{
-    display: none;
-}
-#p-web{
-    display: flex;
-}
-.reserva-fecha{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-}
-/* FIN CARRITO 768 */
-
-#argentina{
-    background-image: url("/img/argentina-campeon.jpg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
-}
-
-.texto-final{
-    font-weight: bold;
-    text-align: center;
-}
-}
+    /* CARRITO 768 */
+    .col-9{
+        display: flex;
+        align-items: center;
+        
+    }
+    #cuerpo-carrito{
+        align-items: center;
+        border-top:  solid 1px black;
+        border-bottom:  solid 1px black;
+        padding: 10px 0px;
+    }
+    .imagen-carrito{
+        display: flex;
+        width: 200px;
+       
+    }
+    #p-mobile{
+        display: none;
+    }
+    #p-web{
+        display: flex;
+    }
+    .reserva-fecha{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    /* FIN CARRITO 768 */
+    }

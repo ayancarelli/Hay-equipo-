@@ -1,0 +1,35 @@
+/* FOOTER STYLE */
+footer .container-fluid{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    justify-content: center;
+    background-color: #25306A;
+    color: white;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+    bottom: 0;
+}
+footer .container-fluid p{
+    margin: auto;
+}
+.redes-sociales{
+    list-style: none;
+    display: flex;
+    margin: auto;
+    --bs-link-color: white;
+    --bs-link-hover-color: #8A8EA6;
+}
+.redes-sociales li{
+    margin-left: 10px;
+}
+
+@media (min-width: 768px) {
+   
+        /* FOOTER 768 */
+        footer .container-fluid{
+            font-size: 16px;
+        }  
+
+    }
