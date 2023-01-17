@@ -23,7 +23,13 @@ const controlador = {
     create: async (req, res) => {
         let restricciones = await db.tipo_restriccion.findAll({ include: [{ association: 'restriccion' }] })
 
-        res.render('products/crear-equipo', { restricciones: restricciones });
+        let us = await db.usuario.findOne({
+            where: {
+                id: req.session.userLogged.id
+            }
+        })
+
+        res.render('products/crear-equipo', { restricciones: restricciones, us});
     },
 
     crear: async (req, res) => {

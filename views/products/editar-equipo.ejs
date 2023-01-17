@@ -18,7 +18,8 @@
                     <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=equipo.nombre_equipo %>">
                 </div>
                 <!-- <div class="mb-3">
-                    <label for="fotoEquipo" class="form-label">Foto del Equipo:</label>
+                    <label for="fotoEquipo" class="form-label">Foto del Equipo:</label><br>
+                    <img src="/img/img-equipos/</%= equipo.img_equipo %>" alt="Foto Equipo" width="150px" height="150px">br
                     <input type="file" class="form-control" name="imgEquipo" id="fotoEquipo" accept=".jpg, .png">
                 </div> -->
                 <div class="mb-3">
@@ -41,10 +42,6 @@
                     <label for="formGroupExampleInput2" class="form-label">Jugador 5:</label>
                     <input type="text" class="form-control" name="jugador5" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%=jugs[4].dataValues.nombre_jugador %>">
                 </div>
-                <!-- <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Jugador 6:</label>
-                    <input type="text" class="form-control" name="jugador6" minlength="4" id="formGroupExampleInput2" placeholder="@usuario" value="<%= equipo.jugador6 %>">
-                </div> -->
                 <div class="mb-3">
                     <label for="restriccionesSexo" class="form-label">Juega Contra:</label><br>
                     <% if (equipo.restriccionesSexo == "Mixto"){ %>
