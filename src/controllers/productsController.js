@@ -286,9 +286,29 @@ const controlador = {
         res.render('./products/carrito');
     },
 
-    carrito2: (req, res) => {
-        res.render('./products/carrito2');
+    carrito2: async (req, res) => {
+        db.equipo.findOne({
+            where:{
+                id: req.params.id
+            }
+        }).then(async (equi)=>{
+            
+            db.usuario_equipo.findAll({
+                where: {
+                    usuario_id: req.session.userLogged.id
+                },
+                include: [{ association: 'equipo' }]
+            }).then((objEquipo) => {
+                res.render('./products/carrito2', {equi, moment, e: objEquipo});
+            })
+
+
+        })
     },
+    confirmation: (req,res)=>{
+        res.render("./products/confirmacion")
+    }
+    ,
     canchas: (req, res) => {
         res.render('./products/canchas', { moment: moment });
     }
