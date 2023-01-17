@@ -1,15 +1,9 @@
 const form = document.getElementById("form2")
 const nequipo = document.getElementById("formGroupExampleInput")
-const jugador1 = document.getElementById("nombre1")
-
 const jugador2 = document.getElementById("nombre2")
-
 const jugador3 = document.getElementById("nombre3")
-
 const jugador4 = document.getElementById("nombre4")
-
 const jugador5 = document.getElementById("nombre5")
-
 const parrafo = document.getElementById("warnings")
 const inputs = document.querySelectorAll('#form2 input')
 
@@ -25,11 +19,7 @@ form.addEventListener("submit", (e)=>{
             warnings += 'Poner Nombre de Equipo mayor a 3 caracteres <br>'
             entrar = true
         }    
-    if(jugador1.value.length <3){
-            warnings += 'Poner nombre del primer jugador mayor a 3 caracteres <br>'
-            entrar = true
-        }
-  
+    
     if(jugador2.value.length <3){
             warnings += 'Poner nombre del segundo jugador mayor a 3 caracteres <br>'
             entrar = true
