@@ -8,16 +8,29 @@ const Op = db.Sequelize.Op;
 
 const controlador = {
     equipos: (req, res) => {
-        db.usuario_equipo.findAll({
-            where: {
-                Usuario_id: { [Op.ne]: req.session.userLogged.id }
-            },
-            include: [{ association: 'equipo' }]
-        }).then(async (equipos) => {
-            /* let equipoR = await db.equipo.findAll({ include: [{ association: 'restriccion' }] })            
-            res.json(equipoR) */
-            res.render('./products/equipos', { ps: equipos });
-        });
+        if(req.session.userLogged){
+            db.usuario_equipo.findAll({
+                where: {
+                    Usuario_id: { [Op.ne]: req.session.userLogged.id }
+                },
+                include: [{ association: 'equipo' }]
+            }).then(async (equipos) => {
+                /* let equipoR = await db.equipo.findAll({ include: [{ association: 'restriccion' }] })   */         
+                //res.json(equipos)
+                res.render('./products/equipos', { ps: equipos });
+            });
+        }else{
+            db.usuario_equipo.findAll({
+                where:{
+                    Usuario_id: { [Op.ne]: null }
+                },
+                include: [{ association: 'equipo' }]
+            }).then(async (equipos) => {
+                /* let equipoR = await db.equipo.findAll({ include: [{ association: 'restriccion' }] })   */         
+                //res.json(equipos)
+                res.render('./products/equipos', { ps: equipos });
+            });
+        }
     },
 
     create: async (req, res) => {
@@ -293,6 +306,8 @@ const controlador = {
     },
 
     carrito2: async (req, res) => {
+        let recupero = await req.params.id;
+        
         db.equipo.findOne({
             where: {
                 id: req.params.id
@@ -306,14 +321,41 @@ const controlador = {
             }).then((objEquipo) => {
                 db.franja_horaria.findAll()
                 .then((franjaHoraria) => {
-                        db.complejo.findAll()
-                        .then((complejo) => {
-                                res.render('./products/carrito2', { equi, moment, e: objEquipo, franjaHoraria, complejo });
-                        })
+                    db.complejo.findAll()
+                    .then((complejo) => {
+                        res.render('./products/carrito2', { equi, moment, e: objEquipo, franjaHoraria, complejo, recupero });
+                    })
                 })
             })
         })
     },
+    desafio: async (req,res)=>{
+        /* let fecha = await req.body.fecha;
+        let franjaHoraria = await req.body.franjaHoraria;
+        let complejo = await req.body.complejo;
+        let equipo1 = await req.body.idEquipoD;
+        let equipo2 = await req.body.equipo;
+        
+        db.reserva.create(
+            {
+                Equipo1_id: 32,
+                Equipo2_id: req.body.equipo,
+                fecha_creacion: req.body.fecha,
+                fecha_partido: req.body.fecha,
+                franja_horaria_id: req.body.franjaHoraria,
+                complejo_id: req.body.complejo
+            }
+        )
+        console.log("----------------------------------");
+        console.log(equipo2);
+        console.log(fecha);
+        console.log(franjaHoraria);
+        console.log(complejo);
+        console.log(equipo1);
+        console.log("----------------------------------"); */
+        res.redirect("../confirmacion")
+    },
+     
     confirmation: (req, res) => {
         res.render("./products/confirmacion")
     }

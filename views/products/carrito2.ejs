@@ -13,73 +13,76 @@
     <section>
         <div class="banner-carrito">
             <h3>
-                TU TURNO SOLICITADO
+                TU DESAFÍO
             </h3>
-            <a href="canchas" class="boton-volver-reservas">Volver a la reserva</a>
         </div>
     </section>
-    
-    <section class="carrito-compras">       
+    <form action="/products/carrito2/:id" method="POST">
+        <section class="carrito-compras">       
             <div class="container">
               <div class="row">
                     <div class="col-9">Desafío</div>
               </div>                
             </div>
-    </section>
-    <section>
-        <div class="container">
-            <div class="row" id="cuerpo-carrito">
-                <div class="col-9">
-                    <img src="/img/img-equipos/<%= equi.img_equipo %>" class="imagen-carrito" alt="imagen de cancha">
+        </section>
+        <section>
+            <div class="container">
+                <div class="row" id="cuerpo-carrito">
+                    <div class="col-9">
+                        <img src="/img/img-equipos/<%= equi.img_equipo %>" class="imagen-carrito" alt="imagen de cancha">
                         <div class="reserva-fecha">
                             <p id="p-mobile"> <%= equi.nombre_equipo %> </p>
-                            <p id="p-web"> <%= equi.nombre_equipo %> 
-                            <form>
-                                <input class="dates-canchas" type="date" name="fecha-cancha1"  min="<%= moment().format('YYYY-MM-DD') %>" max="<%= moment().add(1, 'month').format('YYYY-MM-DD') %>">
-                            </form> </p>
+                            <p>
+                                <label for="idEquipoD">Numero de equipo</label><br>
+                                <input type="text" name="idEquipoD" id="idEquipoD" value="<%= recupero %>" disabled>
+                            </p>
+                            <p id="p-web"> <%= equi.nombre_equipo %>
+                                <input class="dates-canchas" type="date" name="fecha"  min="<%= moment().format('YYYY-MM-DD') %>" max="<%= moment().add(1, 'month').format('YYYY-MM-DD') %>">
+                            </p>
                             <div class="campos-canchas">
                                 <label for="formGroupExampleInput2" class="form-label horario-canchas label-canchas">Horario:</label>
-                                <select class="form-control inputs-canchas">
+                                <select class="form-control inputs-canchas" name="franjaHoraria" id="franjaHoraria">
                                     <% for( let fj of franjaHoraria ) { %>
                                         <option value="<%= fj.id  %>">
                                             <%= fj.detalle %>
                                         </option>
-                                        <% } %>
+                                    <% } %>
                                 </select>
-                            </div>
-                        </div> 
-                </div>
-                <div class="campos-canchas">
-                    <label for="formGroupExampleInput2" class="form-label horario-canchas label-canchas">Complejo:</label>
-                    <select class="form-control inputs-canchas">
-                        <% for( let co of complejo ) { %>
-                            <option value="<%= co.id  %>">
-                                <%= co.nombre %>
-                            </option>
-                            <% } %>
-                    </select>
-                </div>
-                <div class="col-1">
-                    <label for="equipo" class="form-label">
-                        Selecciona tu equipo
-                    </label><br>
-                    <select id="equipo" name='equipo' >
-                        <% for( let a of e ) { %>
-                            <div class="mb-3">
-                                <option value="<%= a.id  %>"> 
-                                    <%= a.equipo.nombre_equipo %>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="campos-canchas">
+                        <label for="formGroupExampleInput2" class="form-label horario-canchas label-canchas">Complejo:</label>
+                        <select class="form-control inputs-canchas" name="complejo" id="complejo">
+                            <% for( let co of complejo ) { %>
+                                <option value="<%= co.id  %>">
+                                    <%= co.nombre %>
                                 </option>
-                            </div>
-                        <% } %>
-                    </select>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="col-1">
+                        <label for="equipo" class="form-label">
+                            Selecciona tu equipo
+                        </label><br>
+                        <select id="equipo" name='equipo' >
+                            <% for( let a of e ) { %>
+                                <div class="mb-3">
+                                    <option value="<%= a.equipo_id  %>"> 
+                                        <%= a.equipo.nombre_equipo %>
+                                    </option>
+                                </div>
+                            <% } %>
+                        </select>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="btn-confirmar">
-        <a href="../confirmacion"><button type="submit" class="btn btn-primary">CONFIRMAR</button></a>
-        <div id="emailHelp" class="form-text">Al confirmar podrá ir al metodo de pago</div>
-    </section>
+            </div>    
+        </section>
+        <section class="btn-confirmar">
+            <button type="submit" class="btn btn-primary">CONFRIMARR</button>
+            <a href="/products/equipos" class="boton-volver-reservas">Volver a la reserva</a>
+        </section>
+    </form>
     <%- include('../partials/footer') %> 
     
 </body>

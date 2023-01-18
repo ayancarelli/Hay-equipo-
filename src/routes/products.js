@@ -31,6 +31,8 @@ router.delete('/delete/:id', authMiddleware, productsController.destroy);
 
 //RESERVA
 router.get ('/carrito2/:id', authMiddleware, productsController.carrito2);
+router.post ('/carrito2/:id', authMiddleware, productsController.desafio);
+
 
 //CONFIRMACION
 router.get ('/confirmacion', productsController.confirmation);
