@@ -163,6 +163,10 @@ const controlador = {
 
     edit: async (req, res) => {
 
+        let rest = await db.tipo_restriccion.findAll({
+            include: [{ association: 'restriccion' }]
+        })
+
         let jugs = await db.usuario_equipo.findAll({
             where: {
                 Equipo_id: req.params.id
@@ -172,9 +176,11 @@ const controlador = {
         db.equipo.findOne({
             where: {
                 id: req.params.id
-            }
+            },
+            include: [{ association: 'restriccion' }]
         }).then((objEquipo) => {
-            res.render('./products/editar-equipo', { equipo: objEquipo, jugs })
+            //res.json(objEquipo)
+            res.render('./products/editar-equipo', { equipo: objEquipo, jugs, rest })
         })
     },
 
@@ -252,11 +258,28 @@ const controlador = {
             }
         );
 
-        /* let restri = await db.equipo_restriccion.findOne({
+        /* console.log("--------------------------------------------");
+        console.log(req.body.restriccionesSexo);
+        console.log(req.body.restriccionEdad); */
+        /* db.equipo_restriccion.update(
+            {
+                restriccion_id: 
+            },
+            {
+                where:{
+                    equipo_id: idEquipo
+                }
+            }
+        ) */
+        /* let restri = await db.equipo_restriccion.findAll({
             where:{
                 equipo_id: idEquipo
             }
-        })
+        }) */
+
+
+
+        /* 
 
         console.log("--------------------------------------------");
         console.log(restri.id);
