@@ -22,7 +22,7 @@
     <section class="carrito-compras">       
             <div class="container">
               <div class="row">
-                    <div class="col-9">Reserva</div>
+                    <div class="col-9">Desafío</div>
               </div>                
             </div>
     </section>
@@ -40,12 +40,24 @@
                             <div class="campos-canchas">
                                 <label for="formGroupExampleInput2" class="form-label horario-canchas label-canchas">Horario:</label>
                                 <select class="form-control inputs-canchas">
-                                    <option value="18:00hs" selected>18:00hs</option>
-                                    <option value="19:00hs">19:00hs</option>
-                                    <option value="20:00hs">20:00hs</option>
+                                    <% for( let fj of franjaHoraria ) { %>
+                                        <option value="<%= fj.id  %>">
+                                            <%= fj.detalle %>
+                                        </option>
+                                        <% } %>
                                 </select>
                             </div>
                         </div> 
+                </div>
+                <div class="campos-canchas">
+                    <label for="formGroupExampleInput2" class="form-label horario-canchas label-canchas">Complejo:</label>
+                    <select class="form-control inputs-canchas">
+                        <% for( let co of complejo ) { %>
+                            <option value="<%= co.id  %>">
+                                <%= co.nombre %>
+                            </option>
+                            <% } %>
+                    </select>
                 </div>
                 <div class="col-1">
                     <label for="equipo" class="form-label">

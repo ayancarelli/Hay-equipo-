@@ -30,7 +30,7 @@ router.put('/editar-equipo/:id', upload.single("fotoEquipo"), validacionEditarEq
 router.delete('/delete/:id', authMiddleware, productsController.destroy);
 
 //RESERVA
-router.get ('/carrito2/:id', productsController.carrito2);
+router.get ('/carrito2/:id', authMiddleware, productsController.carrito2);
 
 //CONFIRMACION
 router.get ('/confirmacion', productsController.confirmation);

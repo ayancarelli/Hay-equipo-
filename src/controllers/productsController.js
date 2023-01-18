@@ -9,8 +9,8 @@ const Op = db.Sequelize.Op;
 const controlador = {
     equipos: (req, res) => {
         db.usuario_equipo.findAll({
-            where:{
-                Usuario_id: {[Op.ne]: req.session.userLogged.id}
+            where: {
+                Usuario_id: { [Op.ne]: req.session.userLogged.id }
             },
             include: [{ association: 'equipo' }]
         }).then(async (equipos) => {
@@ -29,7 +29,7 @@ const controlador = {
             }
         })
 
-        res.render('products/crear-equipo', { restricciones: restricciones, us});
+        res.render('products/crear-equipo', { restricciones: restricciones, us });
     },
 
     crear: async (req, res) => {
@@ -190,9 +190,9 @@ const controlador = {
             }
         );
 
-        
+
         let creador = await db.usuario_equipo.findOne({
-            where:{
+            where: {
                 Equipo_id: idEquipo
             }
         })
@@ -203,8 +203,8 @@ const controlador = {
             },
             {
                 where: {
-                            id: (creador.id +1)
-                        }
+                    id: (creador.id + 1)
+                }
             }
         );
         db.usuario_equipo.update(
@@ -213,8 +213,8 @@ const controlador = {
             },
             {
                 where: {
-                            id: (creador.id +2)
-                        }
+                    id: (creador.id + 2)
+                }
             }
         );
         db.usuario_equipo.update(
@@ -223,8 +223,8 @@ const controlador = {
             },
             {
                 where: {
-                            id: (creador.id +3)
-                        }
+                    id: (creador.id + 3)
+                }
             }
         );
         db.usuario_equipo.update(
@@ -233,8 +233,8 @@ const controlador = {
             },
             {
                 where: {
-                            id: (creador.id +4)
-                        }
+                    id: (creador.id + 4)
+                }
             }
         );
 
@@ -260,7 +260,7 @@ const controlador = {
 
         res.redirect('/products/mis-equipos');
 
-        
+
 
     },
 
@@ -294,24 +294,27 @@ const controlador = {
 
     carrito2: async (req, res) => {
         db.equipo.findOne({
-            where:{
+            where: {
                 id: req.params.id
             }
-        }).then(async (equi)=>{
-            
+        }).then(async (equi) => {
             db.usuario_equipo.findAll({
                 where: {
                     usuario_id: req.session.userLogged.id
                 },
                 include: [{ association: 'equipo' }]
             }).then((objEquipo) => {
-                res.render('./products/carrito2', {equi, moment, e: objEquipo});
+                db.franja_horaria.findAll()
+                .then((franjaHoraria) => {
+                        db.complejo.findAll()
+                        .then((complejo) => {
+                                res.render('./products/carrito2', { equi, moment, e: objEquipo, franjaHoraria, complejo });
+                        })
+                })
             })
-
-
         })
     },
-    confirmation: (req,res)=>{
+    confirmation: (req, res) => {
         res.render("./products/confirmacion")
     }
     ,
