@@ -5,7 +5,8 @@ function usuarioEquipoIntermedia(sequelize, Datatypes) {
         equipo_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
         usuario_id: { type: Datatypes.TINYINT(4).UNSIGNED },
         nombre_jugador: { type: Datatypes.STRING(20), allowNull: false },
-        apellido_jugador: { type: Datatypes.STRING(20), allowNull: false }
+        apellido_jugador: { type: Datatypes.STRING(20), allowNull: false },
+        borrado: {type: Datatypes.BOOLEAN(2), allowNull: false}
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };

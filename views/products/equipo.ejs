@@ -40,7 +40,7 @@
                     <% } %>
                 </form>
                 <% if ((locals.isLogged) && (userLogged.id==equipo.usuario_equipo[0].usuario_id)){ %>
-                    <form action="/products/delete/<%=equipo.id %>?_method=DELETE" method="POST">
+                    <form action="/products/delete/<%=equipo.id %>?_method=PUT" method="POST">
                         <button type="submit" class="btn btn-primary">ELIMINAR</button>
                     </form>
                 <% } %>

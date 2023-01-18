@@ -5,7 +5,8 @@ function equipoData(sequelize, Datatypes) {
         nombre_equipo: { type: Datatypes.STRING(20), allowNull: false },
         img_equipo: { type: Datatypes.STRING(255), allowNull: false },
         creacion: { type: Datatypes.DATE, defaultValue: Datatypes.NOW, allowNull: false },
-        fecha_baja: { type: Datatypes.DATE, defaultValue: null }
+        fecha_baja: { type: Datatypes.DATE, defaultValue: null },
+        borrado: {type: Datatypes.BOOLEAN, allowNull: false}
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };

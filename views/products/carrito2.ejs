@@ -31,14 +31,18 @@
                     <div class="col-9">
                         <img src="/img/img-equipos/<%= equi.img_equipo %>" class="imagen-carrito" alt="imagen de cancha">
                         <div class="reserva-fecha">
-                            <p id="p-mobile"> <%= equi.nombre_equipo %> </p>
-                            <p>
+                            <div>
+                                <p id="p-mobile"> <%= equi.nombre_equipo %> </p>
+                                <p id="p-web"> <%= equi.nombre_equipo %> </p>
+                            </div>
+                            <div>
                                 <label for="idEquipoD">Numero de equipo</label><br>
-                                <input type="text" name="idEquipoD" id="idEquipoD" value="<%= recupero %>" disabled>
-                            </p>
-                            <p id="p-web"> <%= equi.nombre_equipo %>
-                                <input class="dates-canchas" type="date" name="fecha"  min="<%= moment().format('YYYY-MM-DD') %>" max="<%= moment().add(1, 'month').format('YYYY-MM-DD') %>">
-                            </p>
+                                <input type="text" name="idEquipoD" id="idEquipoD" value="<%= equi.id %>"><br>
+                            </div>
+                            <div>
+                                <label for="fecha">Fecha de partido</label><br>
+                                <input class="dates-canchas" type="date" name="fecha" id="fecha" min="<%= moment().format('YYYY-MM-DD') %>" max="<%= moment().add(1, 'month').format('YYYY-MM-DD') %>">
+                            </div>
                             <div class="campos-canchas">
                                 <label for="formGroupExampleInput2" class="form-label horario-canchas label-canchas">Horario:</label>
                                 <select class="form-control inputs-canchas" name="franjaHoraria" id="franjaHoraria">
@@ -49,34 +53,37 @@
                                     <% } %>
                                 </select>
                             </div> 
+                        
+                            <div class="campos-canchas">
+                                <label for="formGroupExampleInput2" class="form-label horario-canchas label-canchas">Complejo:</label>
+                                <select class="form-control inputs-canchas" name="complejo" id="complejo">
+                                    <% for( let co of complejo ) { %>
+                                        <option value="<%= co.id  %>">
+                                            <%= co.nombre %>
+                                        </option>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <div class="col-1">
+                                <label for="equipo" class="form-label">
+                                    Selecciona tu equipo
+                                </label><br>
+                                <select id="equipo2" name='equipo2' >
+                                    <% for( let a of e ) { %>
+                                        <% if(a.equipo.borrado == 0) { %>
+                                            <div class="mb-3">
+                                                <option value="<%= a.equipo_id  %>"> 
+                                                    <%= a.equipo.nombre_equipo %>
+                                                </option>
+                                            </div>
+                                        <% } %>
+                                    <% } %>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <div class="campos-canchas">
-                        <label for="formGroupExampleInput2" class="form-label horario-canchas label-canchas">Complejo:</label>
-                        <select class="form-control inputs-canchas" name="complejo" id="complejo">
-                            <% for( let co of complejo ) { %>
-                                <option value="<%= co.id  %>">
-                                    <%= co.nombre %>
-                                </option>
-                            <% } %>
-                        </select>
-                    </div>
-                    <div class="col-1">
-                        <label for="equipo" class="form-label">
-                            Selecciona tu equipo
-                        </label><br>
-                        <select id="equipo" name='equipo' >
-                            <% for( let a of e ) { %>
-                                <div class="mb-3">
-                                    <option value="<%= a.equipo_id  %>"> 
-                                        <%= a.equipo.nombre_equipo %>
-                                    </option>
-                                </div>
-                            <% } %>
-                        </select>
-                    </div>
                 </div>
-            </div>    
+            </div>
         </section>
         <section class="btn-confirmar">
             <button type="submit" class="btn btn-primary">CONFRIMARR</button>

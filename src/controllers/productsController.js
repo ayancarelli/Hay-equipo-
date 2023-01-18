@@ -8,6 +8,7 @@ const Op = db.Sequelize.Op;
 
 const controlador = {
     equipos: (req, res) => {
+        
         if(req.session.userLogged){
             db.usuario_equipo.findAll({
                 where: {
@@ -279,7 +280,41 @@ const controlador = {
 
     destroy: async (req, res) => {
 
-        db.usuario_equipo.destroy({
+        db.equipo.update(
+            {
+                borrado: 1
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        )/* .then((eqEliminar)=>{
+            eqEliminar.borrado = 1;
+            db.usuario_equipo.findAll({
+                where: {
+                    Equipo_id: req.params.id
+                }
+            }).then((usEliminar)=>{
+                for(u of usEliminar){
+                    u.borrado = 1;
+                }
+                db.equipo_restriccion.findAll({
+                    where: {
+                        equipo_id: req.params.id
+                    }
+                }).then((resEliminar)=>{
+                    for(r of resEliminar){
+                        r.borrado = 1;
+                    }
+                }).then(() => {
+                    res.redirect('/products/equipos');
+                })
+            })
+        }) */.then(() => {
+            res.redirect('/products/equipos');
+        })
+        /* db.usuario_equipo.destroy({
             where: {
                 Equipo_id: req.params.id
             }
@@ -297,7 +332,7 @@ const controlador = {
             })
         }).then(() => {
             res.redirect('/products/equipos');
-        })
+        }) */
 
     },
 
@@ -306,7 +341,6 @@ const controlador = {
     },
 
     carrito2: async (req, res) => {
-        let recupero = await req.params.id;
         
         db.equipo.findOne({
             where: {
@@ -323,27 +357,26 @@ const controlador = {
                 .then((franjaHoraria) => {
                     db.complejo.findAll()
                     .then((complejo) => {
-                        res.render('./products/carrito2', { equi, moment, e: objEquipo, franjaHoraria, complejo, recupero });
+                        res.render('./products/carrito2', { equi, moment, e: objEquipo, franjaHoraria, complejo });
                     })
                 })
             })
         })
     },
     desafio: async (req,res)=>{
-        /* let fecha = await req.body.fecha;
+        let fecha = await req.body.fecha;
         let franjaHoraria = await req.body.franjaHoraria;
         let complejo = await req.body.complejo;
         let equipo1 = await req.body.idEquipoD;
-        let equipo2 = await req.body.equipo;
+        let equipo2 = await req.body.equipo2;
         
         db.reserva.create(
             {
-                Equipo1_id: 32,
-                Equipo2_id: req.body.equipo,
-                fecha_creacion: req.body.fecha,
-                fecha_partido: req.body.fecha,
-                franja_horaria_id: req.body.franjaHoraria,
-                complejo_id: req.body.complejo
+                equipo1_id: equipo1,
+                equipo2_id: equipo2,
+                fecha_partido: fecha,
+                franja_horaria_id: franjaHoraria,
+                complejo_id: complejo
             }
         )
         console.log("----------------------------------");
@@ -352,7 +385,7 @@ const controlador = {
         console.log(franjaHoraria);
         console.log(complejo);
         console.log(equipo1);
-        console.log("----------------------------------"); */
+        console.log("----------------------------------");
         res.redirect("../confirmacion")
     },
      

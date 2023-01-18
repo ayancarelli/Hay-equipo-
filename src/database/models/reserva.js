@@ -4,7 +4,7 @@ function reservaData(sequelize, Datatypes) {
         id: { type: Datatypes.TINYINT(4).UNSIGNED, primaryKey: true, autoIncrement: true, allowNull: false },
         equipo1_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
         equipo2_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
-        fecha_creacion: { type: Datatypes.DATEONLY, allowNull: false },
+        fecha_creacion: { type: Datatypes.DATE, defaultValue: Datatypes.NOW, allowNull: false },
         fecha_partido: { type: Datatypes.DATEONLY, allowNull: false },
         franja_horaria_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
         complejo_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },

@@ -27,7 +27,7 @@ router.get ('/editar-equipo/:id', authMiddleware, productsController.edit);
 router.put('/editar-equipo/:id', upload.single("fotoEquipo"), validacionEditarEquipo, productsController.update);
 
 // BORRAR Equipo
-router.delete('/delete/:id', authMiddleware, productsController.destroy);
+router.put('/delete/:id', authMiddleware, productsController.destroy);
 
 //RESERVA
 router.get ('/carrito2/:id', authMiddleware, productsController.carrito2);

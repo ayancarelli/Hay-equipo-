@@ -3,7 +3,8 @@ function equipo_restriccionData(sequelize, Datatypes) {
     cols = {
         id: { type: Datatypes.TINYINT(4).UNSIGNED, primaryKey: true, autoIncrement: true, allowNull: false },
         equipo_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
-        restriccion_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false }
+        restriccion_id: { type: Datatypes.TINYINT(4).UNSIGNED, allowNull: false },
+        borrado: {type: Datatypes.BOOLEAN(2), allowNull: false}
     }
 
     config = { freezeTableName: true, timestamps: false, camelCase: false };
