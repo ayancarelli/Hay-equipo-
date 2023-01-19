@@ -34,10 +34,8 @@
                             <div>
                                 <p id="p-mobile"> <%= equi.nombre_equipo %> </p>
                                 <p id="p-web"> <%= equi.nombre_equipo %> </p>
-                            </div>
-                            <div>                                
                                 <input type="text" name="idEquipoD" id="idEquipoD" value="<%= equi.id %>" style="display: none"><br>
-                            </div>
+                            </div>                            
                             <div>
                                 <label for="fecha">Fecha de partido</label><br>
                                 <input class="dates-canchas" type="date" name="fecha" id="fecha" min="<%= moment().format('YYYY-MM-DD') %>" max="<%= moment().add(1, 'month').format('YYYY-MM-DD') %>">

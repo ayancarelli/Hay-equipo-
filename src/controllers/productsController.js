@@ -364,7 +364,6 @@ const controlador = {
     },
 
     carrito2: async (req, res) => {
-        let equipo1_id = req.params.id;
         db.equipo.findOne({
             where: {
                 id: req.params.id
@@ -386,6 +385,7 @@ const controlador = {
             })
         })
     },
+    
     desafio: async (req,res)=>{
         let fecha = await req.body.fecha;
         let franjaHoraria = await req.body.franjaHoraria;
