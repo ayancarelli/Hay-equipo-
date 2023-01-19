@@ -33,14 +33,14 @@ const rutasUsers = require('./src/routes/users');
 const rutasProducts = require('./src/routes/products');
 const rutasUsersApi = require('./src/routes/usersApi');
 const rutasProductsApi = require('./src/routes/productsApi');
-
+const rutasReservaApi = require('./src/routes/reservaApi');
 
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
 app.use('/users', rutasUsers);
 app.use('/usersApi', rutasUsersApi)
 app.use('/productsApi', rutasProductsApi)
-
+app.use('/reservaApi', rutasReservaApi)
 
 
 app.listen(process.env.PORT || 3000, function() {
