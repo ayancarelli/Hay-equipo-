@@ -364,7 +364,7 @@ const controlador = {
     },
 
     carrito2: async (req, res) => {
-        
+        let equipo1_id = req.params.id;
         db.equipo.findOne({
             where: {
                 id: req.params.id
