@@ -52,6 +52,9 @@ const rutasProducts = require('./src/routes/products');
 const rutasUsersApi = require('./src/routes/usersApi');
 const rutasProductsApi = require('./src/routes/productsApi');
 const rutasReservaApi = require('./src/routes/reservaApi');
+const rutasCiudadApi = require('./src/routes/ciudadApi');
+const rutasComplejoApi = require('./src/routes/complejoApi');
+
 
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
@@ -59,8 +62,11 @@ app.use('/users', rutasUsers);
 app.use('/usersApi', rutasUsersApi)
 app.use('/productsApi', rutasProductsApi)
 app.use('/reservaApi', rutasReservaApi)
+app.use('/ciudadApi', rutasCiudadApi)
+app.use('/complejoApi', rutasComplejoApi)
 
 
-app.listen(process.env.PORT || 3002, function () {
+
+app.listen(process.env.PORT || 3000, function () {
     console.log("Servidor corriendo");
 });
