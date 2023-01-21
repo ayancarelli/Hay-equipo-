@@ -4,18 +4,36 @@ const path = require('path');
 const methodOverride = require('method-override');
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 const cookies = require('cookie-parser');
+const cors = require('cors');
 
 
 const app = express();
 
+// Error CORS
+const config = {
+    application: {
+        cors: {
+            server: [
+                {
+                    origin: "localhost:3000",
+                    credentials: true
+                }
+            ]
+        }
+    }
+}
+
 
 // Middlewares de aplicación
+app.use(cors(
+    config.application.cors.server
+));
 app.use(session({
     secret: "Secreto de Hay Equipo",
     resave: false,
     saveUninitialized: false
 }));
-app.use(express.static(path.resolve(__dirname,'./public')));
+app.use(express.static(path.resolve(__dirname, './public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
@@ -43,6 +61,6 @@ app.use('/productsApi', rutasProductsApi)
 app.use('/reservaApi', rutasReservaApi)
 
 
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3002, function () {
     console.log("Servidor corriendo");
 });

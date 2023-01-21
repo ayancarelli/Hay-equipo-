@@ -4,7 +4,9 @@ const db = require('../database/models');
 const controlador = {
     lista: (req, res) => {
         db.equipo
-        .findAll()
+        .findAll({            
+            include: [{ association: 'restriccion' }, { association: 'usuario_equipo' }]
+        })
         .then(equipo => {
             return res.status(200).json({
                 total: equipo.length,
