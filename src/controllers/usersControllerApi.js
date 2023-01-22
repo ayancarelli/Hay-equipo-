@@ -3,7 +3,7 @@ const db = require('../database/models');
 
 const controlador = {
     list: (req, res) => {
-        db.usuario
+        db.usuario_equipo
         .findAll()
         .then(usuario => {
             return res.status(200).json({
