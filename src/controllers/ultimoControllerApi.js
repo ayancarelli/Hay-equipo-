@@ -16,6 +16,18 @@ const controlador = {
                 })
             })
 
+    },
+
+    logged: (req, res) => {
+        db.usuario
+        .findByPk(req.session.id)
+        .then(usuario => {
+            return res.status(200).json({
+                data: usuario,
+                status: 200
+            })
+        })
+
     }
 }
 

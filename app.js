@@ -55,6 +55,7 @@ const rutasReservaApi = require('./src/routes/reservaApi');
 const rutasCiudadApi = require('./src/routes/ciudadApi');
 const rutasComplejoApi = require('./src/routes/complejoApi');
 const rutasUltimoApi = require('./src/routes/ultimoApi');
+const rutasUserSessionApi = require('./src/routes/sessionApi');
 
 
 app.use('/', rutasMain);
@@ -66,6 +67,7 @@ app.use('/reservaApi', rutasReservaApi)
 app.use('/ciudadApi', rutasCiudadApi)
 app.use('/complejoApi', rutasComplejoApi)
 app.use('/ultimo', rutasUltimoApi)
+app.use('/session', rutasUserSessionApi)
 
 
 app.listen(process.env.PORT || 3000, function () {
