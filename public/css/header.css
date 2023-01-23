@@ -22,7 +22,7 @@ header .container-fluid{
     color: #FCFCFC;
 }
 .header-navbar a:hover{
-    color: aqua;
+    color: black;
 }
 #hamb-icon{
     font-size: 20px;

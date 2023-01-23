@@ -160,7 +160,9 @@
     }
     .reserva-fecha{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
         margin-left: 10px;
     }
     /* FIN CARRITO 768 */
