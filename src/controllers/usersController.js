@@ -36,8 +36,8 @@ const controlador = {
                 });
             } else {
                 db.usuario.create({
-                    nombre: req.body.nombre.toUpperCase(),
-                    apellido: req.body.apellido.toUpperCase(),
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
                     dni: req.body.dni,
                     genero: req.body.genero,
                     email: req.body.email,
@@ -156,8 +156,8 @@ const controlador = {
         } else {
             db.usuario.update({
                 //foto_perfil: req.file.filename,
-                nombre: req.body.nombre.toUpperCase(),
-                apellido: req.body.apellido.toUpperCase(),
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
                 dni: req.body.dni,
                 genero: req.body.genero,
                 email: req.body.email

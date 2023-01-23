@@ -14,7 +14,7 @@
         <section class="registro-cuerpo" id="registro-fondo">
             <div class="registro-formulario">
                 <form action="/products/crear-equipo" method="POST">
-                    <div class="mb-3">
+                    <div class="mb-3 nomEqui">
                         <label for="formGroupExampleInput" class="form-label">
                             <%=equipo.nombre_equipo %>
                         </label>
@@ -24,16 +24,18 @@
                     </div>
                     <% for( let i=0; i < equipo.usuario_equipo.length; i++ ) { %>
                         <div class="mb-3">
-                                <label for="formGroupExampleInput2" class="form-label">Jugador <%= (i+1) %>: </label>
-                                <label for="formGroupExampleInput2" class="form-label">
+                                <label for="formGroupExampleInput2" class="form-label may">Jugador <%= (i+1) %>: </label>
+                                <label for="formGroupExampleInput2" class="form-label nomJug">
                                     <%=equipo.usuario_equipo[i].nombre_jugador +" "+ equipo.usuario_equipo[i].apellido_jugador  %></label>
                         </div>
                     <% } %>                
                     <div class=" mb-3">
-                        <label for="restriccionesSexo" name="restriccionesSexo" class="form-label">Juega Contra: <%= equipo.restriccion[1].nombre %> </label><br>
+                        <label for="restriccionesSexo" name="restriccionesSexo" class="form-label may">Juega Contra: </label>
+                        <label for="restriccionesSexo" name="restriccionesSexo" class="form-label nomJug"><%= equipo.restriccion[1].nombre %> </label><br>
                     </div>
                     <div class="mb-3">
-                        <label for="restriccionEdad" class="form-label">Restricción de Edad: <%= equipo.restriccion[0].nombre %> </label><br>
+                        <label for="restriccionEdad" class="form-label may">Restricción de Edad: </label><br>
+                        <label for="restriccionEdad" class="form-label nomJug"><%= equipo.restriccion[0].nombre %> </label><br> 
                     </div>
                     <% if ((locals.isLogged) && (userLogged.id==equipo.usuario_equipo[0].usuario_id)){ %>
                         <a href="/products/editar-equipo/<%= equipo.id %>" class="btn btn-primary">EDITAR</a>

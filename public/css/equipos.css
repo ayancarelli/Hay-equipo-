@@ -25,6 +25,15 @@
     opacity: 0.9;
     padding: 10px;
 }
-
-    
+.nomEqui{
+    text-align: center;
+    font-size: 20px;
+}
+.nomJug{
+    font-weight: lighter;
+    color: rgb(49, 47, 45);
+}
+.may{
+    text-transform: uppercase;
+}
 
