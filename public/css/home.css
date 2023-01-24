@@ -68,9 +68,12 @@
     right: -5px;
     top: -10px;
 }
+.card-body {
+    text-decoration: none;   
+}
 .card-body h5{
     font-weight: bold;
-    color: #5E658C;
+    color: #5E658C;    
 }
 .card-body ul{
     list-style: none;
