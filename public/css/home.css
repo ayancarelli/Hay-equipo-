@@ -56,6 +56,10 @@
     padding: 10px;
     margin: 5px;
 }
+
+.card a{
+    text-decoration: none;
+}
 .card-img-top {
     width: 250px;
 	height: 250px;
