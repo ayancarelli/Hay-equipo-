@@ -56,6 +56,11 @@
     padding: 10px;
     margin: 5px;
 }
+.card-img-top {
+    width: 250px;
+	height: 250px;
+	object-fit: cover;
+}
 .card .marcador{
     position: absolute;
     background-color: #A1FCC6;
