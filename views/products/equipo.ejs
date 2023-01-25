@@ -31,11 +31,11 @@
                     <% } %>                
                     <div class=" mb-3">
                         <label for="restriccionesSexo" name="restriccionesSexo" class="form-label may camposLog">Juega Contra: </label>
-                        <label for="restriccionesSexo" name="restriccionesSexo" class="form-label nomJug"><%= equipo.restriccion[1].nombre %> </label><br>
+                        <label for="restriccionesSexo" name="restriccionesSexo" class="form-label nomJug"><%= equipo.restriccion[0].nombre %> </label><br>
                     </div>
                     <div class="mb-3">
                         <label for="restriccionEdad" class="form-label may camposLog">Restricción de Edad: </label><br>
-                        <label for="restriccionEdad" class="form-label nomJug"><%= equipo.restriccion[0].nombre %> </label><br> 
+                        <label for="restriccionEdad" class="form-label nomJug"><%= equipo.restriccion[1].nombre %> </label><br> 
                     </div>
                     <% if ((locals.isLogged) && (userLogged.id==equipo.usuario_equipo[0].usuario_id)){ %>
                         <a href="/products/editar-equipo/<%= equipo.id %>" class="btn btn-primary">EDITAR</a>

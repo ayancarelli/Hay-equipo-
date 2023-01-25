@@ -88,7 +88,7 @@ const controlador = {
 
                 await db.usuario.findOne({
                     where: {
-                        email: req.cookies.userEmail
+                        id: req.session.userLogged.id
                     }
                 }).then((usuarioLogged) => {
                     let p = usuarioLogged.id;

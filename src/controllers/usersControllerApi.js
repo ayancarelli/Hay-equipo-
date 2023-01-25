@@ -25,6 +25,19 @@ const controlador = {
             })
         })
 
+    },
+
+    todos: (req, res) => {
+        db.usuario
+        .findAll()
+        .then(usuario => {
+            return res.status(200).json({
+                total: usuario.length,
+                data: usuario,
+                status: 200
+            })
+        })
+
     }
 
     }
