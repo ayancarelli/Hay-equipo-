@@ -59,7 +59,8 @@
     }
     /* LOGIN 768 */
     #login-fondo{
-    background-image: url("/img/pelota.jpg");
+    background-image: url("/img/pelota.jpg");    
+    height: 100vh
     }
     
     /* REGISTRO 768*/
