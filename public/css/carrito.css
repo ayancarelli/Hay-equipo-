@@ -106,6 +106,10 @@
 footer{
     margin-top: auto;
 }
+footer .container-fluid{
+    background-image: url("/img/fondo-formularios.jpg");
+
+}
 #divEqui{
     text-align: center;
 }

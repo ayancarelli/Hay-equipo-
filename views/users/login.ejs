@@ -16,7 +16,7 @@
             <div class="registro-formulario">
                 <form action="/users/login" method="POST" id="form">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email:</label>
+                        <label for="exampleInputEmail1" class="form-label camposLog">Email:</label>
                         <input
                             class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                             id="exampleInputEmail1" 
@@ -31,7 +31,7 @@
                                 <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
+                        <label for="exampleInputPassword1" class="form-label camposLog">Contraseña:</label>
                         <input type="password"
                             class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                             name="password" id="exampleInputPassword1"
@@ -43,7 +43,7 @@
                             <% } %>
                     </div>
                     <div class="form-group form-check">
-                        <label class="form-check-label">
+                        <label class="form-check-label camposLog">
                             <input type="checkbox" class="form-check-input" name="recordar">Recordar mi usuario
                         </label>
                     </div>

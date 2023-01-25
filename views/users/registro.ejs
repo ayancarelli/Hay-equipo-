@@ -15,7 +15,7 @@
             <div class="registro-formulario">
                 <form action="/users/registro" method="POST" enctype="multipart/form-data" id="formularioRegistro">
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre:</label>
+                        <label for="nombre" class="form-label camposLog">Nombre:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
                             name="nombre" id="nombre" value="<%= locals.oldData ? oldData.nombre : null %>"
@@ -27,7 +27,7 @@
                             <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="apellido" class="form-label">Apellido:</label>
+                        <label for="apellido" class="form-label camposLog">Apellido:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
                             name='apellido' id="apellido" value="<%= locals.oldData ? oldData.apellido : null %>"
@@ -39,7 +39,7 @@
                             <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="dni" class="form-label">DNI:</label>
+                        <label for="dni" class="form-label camposLog">DNI:</label>
                         <input type="number"
                             class="form-control <%= locals.errors && errors.dni ? 'is-invalid' : null %>" name='dni'
                             id="dni" value="<%= locals.oldData ? oldData.dni : null %>" placeholder="22333444">
@@ -50,7 +50,7 @@
                             <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="genero" class="form-label">Género:</label>
+                        <label for="genero" class="form-label camposLog">Género:</label>
                         <select name="genero" class="<%= locals.errors && errors.genero ? 'is-invalid' : null %>"
                             id="genero">
                             <option value=""> ... </option>
@@ -70,7 +70,7 @@
                             <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="formGroupExampleInput2" class="form-label">Foto de perfil</label>
+                        <label for="formGroupExampleInput2" class="form-label camposLog">Foto de perfil</label>
                         <input type="file" class="form-control" id="formGroupExampleInput2" name="fotoPerfil"
                             placeholder="Foto de perfil">
                         <% if (locals.errors && errors.fotoPerfil) { %>
@@ -80,7 +80,7 @@
                             <% } %>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
+                        <label for="email" class="form-label camposLog">Email:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" name="email"
                             id="email" value="<%= locals.oldData ? oldData.email : null %>"
@@ -93,7 +93,7 @@
                                 <div id="emailHelp" class="form-text">Nunca compartiremos tu información.</div>
                     </div>
                     <div class="mb-3">
-                        <label for="contraseña" class="form-label">Contraseña:</label>
+                        <label for="contraseña" class="form-label camposLog">Contraseña:</label>
                         <input type="password"
                             class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                             name="password" id="contraseña" value="<%= locals.oldData ? oldData.password : null %>"
@@ -106,7 +106,7 @@
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="tyc" required>
-                        <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
+                        <label class="form-check-label camposLog" for="exampleCheck1">Acepto términos y condiciones</label>
                     </div>
                     <button type="submit" class="btn btn-primary">ENVIAR</button>
                     <p class="warnings" id="warnings"></p>

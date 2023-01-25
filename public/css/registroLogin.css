@@ -18,11 +18,14 @@
     padding: 15px;
     box-sizing: border-box;
     border: solid;
-    background-color: #5E658C;
+    background-image: url("/img/fondo-formularios.jpg");
     border-radius: 20px;
     font-weight: bold;
     font-size: 12px;
     text-align: center;
+}
+.camposLog{
+    color: white;
 }
 .registro-formulario .form-control{
     font-size: 12px;

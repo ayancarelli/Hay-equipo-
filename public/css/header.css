@@ -4,7 +4,8 @@ header .container-fluid{
     flex-direction: row;
     font-size: 16px;
     justify-content: space-between;
-    background-color: #25306A;
+    /* background-color: #25306A; */
+    background-image: url("/img/fondo-formularios.jpg");
     color: white;
     align-items: center;
     padding: 10px;
