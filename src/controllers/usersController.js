@@ -36,8 +36,8 @@ const controlador = {
                 });
             } else {
                 db.usuario.create({
-                    nombre: req.body.nombre,
-                    apellido: req.body.apellido,
+                    nombre: req.body.nombre.toUpperCase(),
+                    apellido: req.body.apellido.toUpperCase(),
                     dni: req.body.dni,
                     genero: req.body.genero,
                     email: req.body.email,

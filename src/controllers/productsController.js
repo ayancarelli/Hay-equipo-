@@ -80,8 +80,9 @@ const controlador = {
 
                 let a = await db.equipo.create(
                     {
-                        nombre_equipo: req.body.nombreEquipo,
-                        img_equipo: req.file.filename
+                        nombre_equipo: req.body.nombreEquipo.toUpperCase(),
+                        img_equipo: req.file.filename,
+                        borrado: 0
                     }
                 )
 
@@ -95,27 +96,27 @@ const controlador = {
                 }).then((letra) => {
                     db.usuario_equipo.bulkCreate([
                         {
-                            nombre_jugador: req.body.nombre1,
+                            nombre_jugador: req.body.nombre1.toUpperCase(),
                             equipo_id: a.id,
                             usuario_id: letra
                         },
                         {
-                            nombre_jugador: req.body.nombre2,
+                            nombre_jugador: req.body.nombre2.toUpperCase(),
                             equipo_id: a.id,
                             usuario_id: null
                         },
                         {
-                            nombre_jugador: req.body.nombre3,
+                            nombre_jugador: req.body.nombre3.toUpperCase(),
                             equipo_id: a.id,
                             usuario_id: null
                         },
                         {
-                            nombre_jugador: req.body.nombre4,
+                            nombre_jugador: req.body.nombre4.toUpperCase(),
                             equipo_id: a.id,
                             usuario_id: null
                         },
                         {
-                            nombre_jugador: req.body.nombre5,
+                            nombre_jugador: req.body.nombre5.toUpperCase(),
                             equipo_id: a.id,
                             usuario_id: null
                         }

@@ -112,3 +112,13 @@ footer{
 .boton-volver-reservas{
     margin-bottom: 15px;
 }
+.imgEquipoimg{
+    display: flex;
+    justify-content: center;
+}
+.imEq{
+    border-radius: 15px;
+}
+.nom{
+    text-decoration: underline;
+}

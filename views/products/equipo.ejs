@@ -15,12 +15,12 @@
             <div class="registro-formulario">
                 <form action="/products/crear-equipo" method="POST">
                     <div class="mb-3 nomEqui">
-                        <label for="formGroupExampleInput" class="form-label">
+                        <label for="formGroupExampleInput" class="form-label nom">
                             <%=equipo.nombre_equipo %>
                         </label>
                     </div>
-                    <div class="mb-3">
-                        <img src="/img/img-equipos/<%= equipo.img_equipo %>" class="card-img-top" alt="Foto Equipo">
+                    <div class="mb-3 imgEquipoimg">
+                        <img src="/img/img-equipos/<%= equipo.img_equipo %>" class="card-img-top imEq" alt="Foto Equipo">
                     </div>
                     <% for( let i=0; i < equipo.usuario_equipo.length; i++ ) { %>
                         <div class="mb-3">
