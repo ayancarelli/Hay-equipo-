@@ -27,7 +27,7 @@
                             <-% } %>
                     </div> -->
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre:</label>
+                        <label for="nombre" class="form-label camposLog">Nombre:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
                             name="nombre" id="nombre"
@@ -39,7 +39,7 @@
                         </div>
                         <% } %>
                     <div class="mb-3">
-                        <label for="apellido" class="form-label">Apellido:</label>
+                        <label for="apellido" class="form-label camposLog">Apellido:</label>
                         <input type="text"
                             class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
                             name='apellido' id="apellido" value="<%= useraEditar.apellido %>" placeholder="Apellido">
@@ -50,7 +50,7 @@
                         </div>
                         <% } %>
                     <div class="mb-3">
-                        <label for="dni" class="form-label">Dni:</label>
+                        <label for="dni" class="form-label camposLog">Dni:</label>
                         <input type="number" class="form-control" name='dni' id="dni" value="<%= useraEditar.dni %>"
                             min="1000000" max="99999999" placeholder="Dni">
                     </div>
@@ -60,7 +60,7 @@
                         </div>
                         <% } %>
                     <div class="mb-3">
-                        <label for="sexo" class="form-label">Género:</label>
+                        <label for="sexo" class="form-label camposLog">Género:</label>
                         <% if (useraEditar.genero==false ){ %>
                             <select name="genero" id="sexo">
                                 <option value="true">Hombre</option>
@@ -78,7 +78,7 @@
                         <input type="file" class="form-control" id="formGroupExampleInput2" value="" placeholder="Foto de perfil">
                     </div> -->
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
+                        <label for="email" class="form-label camposLog">Email:</label>
                         <input type="email"
                             class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" name="email"
                             id="email" value="<%= locals.oldData ? oldData.email : useraEditar.email %>"
@@ -90,7 +90,7 @@
                         </div>
                         <% } %>
                     <div class="mb-3">
-                        <label for="contraseña" class="form-label">Contraseña:</label>
+                        <label for="contraseña" class="form-label camposLog">Contraseña:</label>
                         <input type="password" class="form-control" name="password"
                             minlength="6" id="contraseña"
                             placeholder="***********">

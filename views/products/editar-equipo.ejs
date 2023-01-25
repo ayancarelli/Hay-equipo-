@@ -15,7 +15,7 @@
             <form action="/products/editar-equipo/<%=equipo.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="form2">
                 <p class="warnings" id="warnings"></p>
                 <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Nombre del Equipo:</label>
+                    <label for="formGroupExampleInput" class="form-label camposLog">Nombre del Equipo:</label>
                     <input type="text" class="form-control" name="nombreEquipo" id="formGroupExampleInput" placeholder="Equipo A" value="<%=equipo.nombre_equipo %>">
                 </div>
                 <!-- <div class="mb-3">
@@ -24,28 +24,28 @@
                     <input type="file" class="form-control" name="imgEquipo" id="fotoEquipo" accept=".jpg, .png">
                 </div> -->
                 <div class="mb-3">
-                    <label for="nombre1" class="form-label">Jugador 1:</label>
+                    <label for="nombre1" class="form-label camposLog">Jugador 1:</label>
                     <input type="text" class="form-control" name="nombre1" minlength="4" id="nombre1" placeholder="@usuario" value="<%=jugs[0].dataValues.nombre_jugador %>">
                 </div>
                 <div class="mb-3">
-                    <label for="nombre2" class="form-label">Jugador 2:</label>
+                    <label for="nombre2" class="form-label camposLog">Jugador 2:</label>
                     <input type="text" class="form-control" name="nombre2" minlength="4" id="nombre2" placeholder="@usuario" value="<%=jugs[1].dataValues.nombre_jugador %>">
                 </div>
                 <div class="mb-3">
-                    <label for="nombre3" class="form-label">Jugador 3:</label>
+                    <label for="nombre3" class="form-label camposLog">Jugador 3:</label>
                     <input type="text" class="form-control" name="nombre3" minlength="4" id="nombre3" placeholder="@usuario" value="<%=jugs[2].dataValues.nombre_jugador %>">
                 </div>
                 <div class="mb-3">
-                    <label for="nombre4" class="form-label">Jugador 4:</label>
+                    <label for="nombre4" class="form-label camposLog">Jugador 4:</label>
                     <input type="text" class="form-control" name="nombre4" minlength="4" id="nombre4" placeholder="@usuario" value="<%=jugs[3].dataValues.nombre_jugador %>">
                 </div>
                 <div class="mb-3">
-                    <label for="nombre5" class="form-label">Jugador 5:</label>
+                    <label for="nombre5" class="form-label camposLog">Jugador 5:</label>
                     <input type="text" class="form-control" name="nombre5" minlength="4" id="nombre5" placeholder="@usuario" value="<%=jugs[4].dataValues.nombre_jugador %>">
                 </div>
                 <% for( let i = 0; i<equipo.restriccion.length; i++) { %>
                     <div class="mb-3">
-                        <label for="restriccion" class="form-label">
+                        <label for="restriccion" class="form-label camposLog">
                             <%= 'Preferencia de ' + rest[i].descripcion %>
                         </label><br>
                         <select id="restriccion"                                
