@@ -42,8 +42,8 @@
                         <input type="text"
                             class="form-control <%= locals.errors && errors.nombre1 ? 'is-invalid' : null %>"
                             name="nombre1" id="nombre1"
-                            value="<%= locals.oldData ? oldData.nombre1 : null %>" placeholder="Nombre y Apellido">
-                            <!-- value="<%= us.nombre + " " + us.apellido %>" disabled> -->
+                            value="<%= locals.oldData ? oldData.nombre1 : us.nombre + " " + us.apellido %>" placeholder="Nombre y Apellido" readonly>
+                            <!-- value="</%= us.nombre + " " + us.apellido %>" disabled> -->
                     </div>
                     <div class="mb-3">
                         <label for="nombre2" class="form-label">Jugador 2:</label>
